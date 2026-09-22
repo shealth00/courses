@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="26" text-anchor="middle" font-size="20" font-weight="700" fill="#1c2430">Antimicrobial Sites of Action</text>
+  <text x="400" y="45" text-anchor="middle" font-size="12.5" fill="#5b6472">Targets on a schematic bacterial cell</text>
+
+  <!-- bacterial cell schematic -->
+  <rect x="240" y="140" width="320" height="220" rx="60" fill="#fdf3e7" stroke="#1c2430" stroke-width="3"/>
+  <rect x="255" y="155" width="290" height="190" rx="50" fill="none" stroke="#c9a25a" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="400" y="360" text-anchor="middle" font-size="9" fill="#5b6472">cell wall (peptidoglycan) &#8212; outer solid line</text>
+  <text x="400" y="150" text-anchor="middle" font-size="9" fill="#946a2b">cell membrane &#8212; dashed line</text>
+
+  <!-- nucleoid / DNA -->
+  <path d="M340 250 q20 -20 40 0 q20 20 40 0" stroke="#3b5f8a" stroke-width="3" fill="none"/>
+  <text x="400" y="290" text-anchor="middle" font-size="9" fill="#3b5f8a">DNA</text>
+
+  <!-- ribosomes as dots -->
+  <circle cx="300" cy="200" r="5" fill="#2f7d4f"/>
+  <circle cx="480" cy="210" r="5" fill="#2f7d4f"/>
+  <circle cx="470" cy="310" r="5" fill="#2f7d4f"/>
+  <circle cx="310" cy="320" r="5" fill="#2f7d4f"/>
+  <text x="330" y="195" font-size="8" fill="#2f7d4f">70S ribosome (30S+50S)</text>
+
+  <!-- 1. Cell wall synthesis (beta-lactams, vancomycin) -->
+  <line x1="400" y1="140" x2="400" y2="70" stroke="#b5472a" stroke-width="2"/>
+  <rect x="270" y="20" width="260" height="50" rx="6" fill="#b5472a"/>
+  <text x="400" y="38" text-anchor="middle" font-size="10.5" font-weight="700" fill="#faf8f4">Cell wall synthesis</text>
+  <text x="400" y="52" text-anchor="middle" font-size="8.5" fill="#faf8f4">Penicillins/cephalosporins (PBP),</text>
+  <text x="400" y="63" text-anchor="middle" font-size="8.5" fill="#faf8f4">vancomycin (D-Ala-D-Ala), carbapenems</text>
+
+  <!-- 2. Folate pathway (right side) -->
+  <line x1="560" y1="230" x2="640" y2="230" stroke="#c9a25a" stroke-width="2"/>
+  <rect x="640" y="200" width="150" height="60" rx="6" fill="#c9a25a"/>
+  <text x="715" y="218" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Folate synthesis</text>
+  <text x="715" y="232" text-anchor="middle" font-size="8" fill="#1c2430">Sulfonamides (PABA&#8594;DHF,</text>
+  <text x="715" y="244" text-anchor="middle" font-size="8" fill="#1c2430">dihydropteroate synthase)</text>
+  <text x="715" y="256" text-anchor="middle" font-size="8" fill="#1c2430">Trimethoprim (DHFR)</text>
+
+  <!-- 3. DNA gyrase / topoisomerase (bottom right) -->
+  <line x1="440" y1="270" x2="640" y2="330" stroke="#3b5f8a" stroke-width="2"/>
+  <rect x="640" y="300" width="150" height="55" rx="6" fill="#3b5f8a"/>
+  <text x="715" y="320" text-anchor="middle" font-size="10" font-weight="700" fill="#faf8f4">DNA gyrase /</text>
+  <text x="715" y="333" text-anchor="middle" font-size="10" font-weight="700" fill="#faf8f4">topoisomerase IV</text>
+  <text x="715" y="346" text-anchor="middle" font-size="8" fill="#faf8f4">Fluoroquinolones</text>
+
+  <!-- 4. RNA polymerase (bottom left) -->
+  <line x1="360" y1="270" x2="160" y2="330" stroke="#946a2b" stroke-width="2"/>
+  <rect x="10" y="300" width="150" height="55" rx="6" fill="#946a2b"/>
+  <text x="85" y="320" text-anchor="middle" font-size="10" font-weight="700" fill="#faf8f4">RNA polymerase</text>
+  <text x="85" y="335" text-anchor="middle" font-size="8" fill="#faf8f4">Rifampin</text>
+
+  <!-- 5. Cell membrane -->
+  <line x1="255" y1="230" x2="160" y2="230" stroke="#2f7d4f" stroke-width="2"/>
+  <rect x="10" y="200" width="150" height="55" rx="6" fill="#2f7d4f"/>
+  <text x="85" y="220" text-anchor="middle" font-size="10" font-weight="700" fill="#faf8f4">Cell membrane</text>
+  <text x="85" y="234" text-anchor="middle" font-size="8" fill="#faf8f4">Daptomycin, polymyxins</text>
+  <text x="85" y="246" text-anchor="middle" font-size="8" fill="#faf8f4">(amphotericin B - fungal)</text>
+
+  <!-- 6. 30S ribosome -->
+  <line x1="300" y1="200" x2="200" y2="90" stroke="#2f7d4f" stroke-width="2"/>
+  <rect x="70" y="60" width="160" height="55" rx="6" fill="#2f7d4f"/>
+  <text x="150" y="80" text-anchor="middle" font-size="10" font-weight="700" fill="#faf8f4">30S ribosome</text>
+  <text x="150" y="94" text-anchor="middle" font-size="8" fill="#faf8f4">Aminoglycosides (misread),</text>
+  <text x="150" y="106" text-anchor="middle" font-size="8" fill="#faf8f4">Tetracyclines (block tRNA)</text>
+
+  <!-- 7. 50S ribosome -->
+  <line x1="480" y1="210" x2="600" y2="100" stroke="#3b5f8a" stroke-width="2"/>
+  <rect x="560" y="60" width="180" height="70" rx="6" fill="#3b5f8a"/>
+  <text x="650" y="80" text-anchor="middle" font-size="10" font-weight="700" fill="#faf8f4">50S ribosome</text>
+  <text x="650" y="94" text-anchor="middle" font-size="8" fill="#faf8f4">Macrolides (translocation),</text>
+  <text x="650" y="106" text-anchor="middle" font-size="8" fill="#faf8f4">Clindamycin, Linezolid,</text>
+  <text x="650" y="118" text-anchor="middle" font-size="8" fill="#faf8f4">Chloramphenicol</text>
+
+  <!-- mnemonic footnote -->
+  <rect x="30" y="410" width="740" height="65" fill="#ffffff" stroke="#c9a25a" stroke-width="1.2" rx="8"/>
+  <text x="45" y="430" font-size="9.5" font-weight="700" fill="#1c2430">Mnemonic (30S vs 50S): "Buy AT 30, CELL at 50" &#8212; Aminoglycosides/Tetracyclines act at 30S;</text>
+  <text x="45" y="446" font-size="9.5" fill="#5b6472">Chloramphenicol/Erythromycin(macrolides)/Lincosamides(clindamycin)/Linezolid act at 50S.</text>
+  <text x="45" y="463" font-size="9.5" fill="#5b6472">Bactericidal (cell wall, aminoglycosides, fluoroquinolones) vs. bacteriostatic (most protein synthesis inhibitors except aminoglycosides) matters for immunocompromised hosts.</text>
+</svg>

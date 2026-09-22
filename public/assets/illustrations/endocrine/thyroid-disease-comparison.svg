@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="26" text-anchor="middle" font-size="20" font-weight="700" fill="#1c2430">Thyroid Disease Comparison</text>
+  <text x="400" y="45" text-anchor="middle" font-size="12.5" fill="#5b6472">Graves' disease vs. Hashimoto's thyroiditis vs. toxic nodule &#8212; mechanism and labs</text>
+
+  <!-- column headers -->
+  <rect x="30" y="65" width="230" height="34" rx="6" fill="#b5472a"/>
+  <text x="145" y="87" text-anchor="middle" font-size="13" font-weight="700" fill="#faf8f4">Graves' Disease</text>
+  <rect x="285" y="65" width="230" height="34" rx="6" fill="#3b5f8a"/>
+  <text x="400" y="87" text-anchor="middle" font-size="13" font-weight="700" fill="#faf8f4">Hashimoto's Thyroiditis</text>
+  <rect x="540" y="65" width="230" height="34" rx="6" fill="#c9a25a"/>
+  <text x="655" y="87" text-anchor="middle" font-size="13" font-weight="700" fill="#1c2430">Toxic Nodule / Goiter</text>
+
+  <!-- mechanism icons -->
+  <g transform="translate(85,110)">
+    <ellipse cx="60" cy="35" rx="55" ry="30" fill="#f7ded5" stroke="#b5472a" stroke-width="2"/>
+    <circle cx="15" cy="5" r="6" fill="#b5472a"/>
+    <text x="25" y="9" font-size="8" fill="#b5472a">TSI (anti-TSH-R Ab)</text>
+    <path d="M20 10 L45 25" stroke="#b5472a" stroke-width="1.5"/>
+    <text x="60" y="38" text-anchor="middle" font-size="9" fill="#1c2430">diffuse hyperplasia</text>
+    <text x="60" y="50" text-anchor="middle" font-size="8" fill="#1c2430">(stimulatory antibody)</text>
+  </g>
+
+  <g transform="translate(340,110)">
+    <ellipse cx="60" cy="35" rx="55" ry="30" fill="#dde6f0" stroke="#3b5f8a" stroke-width="2"/>
+    <circle cx="35" cy="20" r="4" fill="#3b5f8a"/>
+    <circle cx="80" cy="45" r="4" fill="#3b5f8a"/>
+    <circle cx="60" cy="15" r="4" fill="#3b5f8a"/>
+    <text x="60" y="38" text-anchor="middle" font-size="9" fill="#1c2430">lymphocytic infiltrate</text>
+    <text x="60" y="50" text-anchor="middle" font-size="8" fill="#1c2430">(anti-TPO/thyroglobulin)</text>
+  </g>
+
+  <g transform="translate(595,110)">
+    <ellipse cx="60" cy="35" rx="55" ry="30" fill="#f3ead3" stroke="#c9a25a" stroke-width="2"/>
+    <circle cx="45" cy="35" r="14" fill="#e8cf9a" stroke="#946a2b" stroke-width="1.5"/>
+    <text x="60" y="38" text-anchor="middle" font-size="9" fill="#1c2430">autonomous nodule</text>
+    <text x="60" y="50" text-anchor="middle" font-size="8" fill="#1c2430">(TSH-independent)</text>
+  </g>
+
+  <!-- comparison table -->
+  <g font-size="10">
+    <line x1="30" y1="205" x2="770" y2="205" stroke="#c9a25a" stroke-width="1"/>
+    <text x="30" y="225" font-weight="700" fill="#1c2430">TSH / Free T4</text>
+    <text x="145" y="225" text-anchor="middle" fill="#1c2430">&#8595;TSH, &#8593;T4/T3</text>
+    <text x="400" y="225" text-anchor="middle" fill="#1c2430">&#8593;TSH, &#8595;T4 (early: transient &#8593;)</text>
+    <text x="655" y="225" text-anchor="middle" fill="#1c2430">&#8595;TSH, &#8593;T4/T3</text>
+
+    <line x1="30" y1="233" x2="770" y2="233" stroke="#eee" stroke-width="1"/>
+    <text x="30" y="253" font-weight="700" fill="#1c2430">Antibodies</text>
+    <text x="145" y="253" text-anchor="middle" fill="#1c2430">TSI / TRAb (stimulating)</text>
+    <text x="400" y="253" text-anchor="middle" fill="#1c2430">Anti-TPO, anti-thyroglobulin</text>
+    <text x="655" y="253" text-anchor="middle" fill="#1c2430">Usually negative</text>
+
+    <line x1="30" y1="261" x2="770" y2="261" stroke="#eee" stroke-width="1"/>
+    <text x="30" y="281" font-weight="700" fill="#1c2430">Radioactive iodine uptake</text>
+    <text x="145" y="281" text-anchor="middle" fill="#1c2430">Diffusely &#8593; uptake</text>
+    <text x="400" y="281" text-anchor="middle" fill="#1c2430">&#8595; / patchy uptake</text>
+    <text x="655" y="281" text-anchor="middle" fill="#1c2430">Focal "hot" nodule, rest suppressed</text>
+
+    <line x1="30" y1="289" x2="770" y2="289" stroke="#eee" stroke-width="1"/>
+    <text x="30" y="309" font-weight="700" fill="#1c2430">Distinctive exam findings</text>
+    <text x="145" y="309" text-anchor="middle" fill="#1c2430">Exophthalmos, pretibial myxedema</text>
+    <text x="400" y="309" text-anchor="middle" fill="#1c2430">Firm, non-tender goiter</text>
+    <text x="655" y="309" text-anchor="middle" fill="#1c2430">Palpable solitary/multinodular goiter</text>
+
+    <line x1="30" y1="317" x2="770" y2="317" stroke="#eee" stroke-width="1"/>
+    <text x="30" y="337" font-weight="700" fill="#1c2430">Histology</text>
+    <text x="145" y="337" text-anchor="middle" fill="#1c2430">Hyperplastic, scalloped colloid</text>
+    <text x="400" y="337" text-anchor="middle" fill="#1c2430">Hurthle cells, lymphoid follicles</text>
+    <text x="655" y="337" text-anchor="middle" fill="#1c2430">Colloid-rich, well-differentiated</text>
+
+    <line x1="30" y1="345" x2="770" y2="345" stroke="#eee" stroke-width="1"/>
+    <text x="30" y="365" font-weight="700" fill="#1c2430">Associations</text>
+    <text x="145" y="365" text-anchor="middle" fill="#1c2430">Other autoimmune disease</text>
+    <text x="400" y="365" text-anchor="middle" fill="#1c2430">&#8593; risk of lymphoma (MALT); other AI</text>
+    <text x="655" y="365" text-anchor="middle" fill="#1c2430">Iodine-deficient areas</text>
+  </g>
+
+  <!-- caveat box -->
+  <rect x="30" y="385" width="740" height="90" fill="#ffffff" stroke="#c9a25a" stroke-width="1.2" rx="8"/>
+  <text x="45" y="405" font-size="11" font-weight="700" fill="#1c2430">Clinical pearls</text>
+  <text x="45" y="424" font-size="9.5" fill="#5b6472">Hashimoto's often transitions from a brief hyperthyroid "hashitoxicosis" phase to permanent hypothyroidism as follicles are destroyed.</text>
+  <text x="45" y="441" font-size="9.5" fill="#5b6472">Graves' ophthalmopathy is from retro-orbital fibroblast/glycosaminoglycan deposition &#8212; independent of thyroid hormone level, driven by TSH-receptor cross-reactivity.</text>
+  <text x="45" y="458" font-size="9.5" fill="#5b6472">Toxic multinodular goiter (Plummer disease) and solitary toxic adenoma both show focal autonomous function with suppressed surrounding tissue on scan.</text>
+</svg>

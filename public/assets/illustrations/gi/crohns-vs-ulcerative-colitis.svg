@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="26" text-anchor="middle" font-size="20" font-weight="700" fill="#1c2430">Crohn's Disease vs. Ulcerative Colitis</text>
+  <text x="400" y="45" text-anchor="middle" font-size="12.5" fill="#5b6472">Distribution, depth of involvement, and key distinguishing features</text>
+
+  <!-- Column headers -->
+  <rect x="230" y="60" width="260" height="30" rx="6" fill="#b5472a"/>
+  <text x="360" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#faf8f4">Crohn's Disease</text>
+  <rect x="510" y="60" width="260" height="30" rx="6" fill="#3b5f8a"/>
+  <text x="640" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#faf8f4">Ulcerative Colitis</text>
+
+  <!-- Bowel schematics -->
+  <!-- Crohn's: skip lesions, can affect mouth to anus, terminal ileum classic -->
+  <g transform="translate(250,100)">
+    <path d="M10 20 Q60 -10 110 20 Q140 40 130 70 Q120 100 150 110 Q190 120 200 90"
+          fill="none" stroke="#5b6472" stroke-width="16" stroke-linecap="round"/>
+    <!-- skip lesion patches -->
+    <circle cx="30" cy="15" r="10" fill="#b5472a"/>
+    <circle cx="90" cy="15" r="10" fill="#eee0d5"/>
+    <circle cx="128" cy="68" r="10" fill="#b5472a"/>
+    <circle cx="165" cy="115" r="10" fill="#b5472a"/>
+    <text x="70" y="-2" font-size="8.5" fill="#5b6472">healthy skip area</text>
+    <text x="150" y="135" font-size="8.5" fill="#5b6472">terminal ileum (classic)</text>
+  </g>
+
+  <!-- UC: continuous from rectum proximally -->
+  <g transform="translate(555,100)">
+    <path d="M10 20 Q60 -10 110 20 Q140 40 130 70 Q120 100 150 110 Q190 120 200 90"
+          fill="none" stroke="#3b5f8a" stroke-width="16" stroke-linecap="round"/>
+    <text x="150" y="135" font-size="8.5" fill="#5b6472">rectum (always involved)</text>
+    <text x="30" y="-2" font-size="8.5" fill="#5b6472">continuous proximal extent</text>
+  </g>
+
+  <!-- Wall cross-section depth -->
+  <g transform="translate(280,240)" font-size="9">
+    <rect x="0" y="0" width="200" height="60" fill="none" stroke="#5b6472"/>
+    <rect x="0" y="0" width="200" height="15" fill="#eee0d5"/>
+    <rect x="0" y="15" width="200" height="15" fill="#d8c9b3"/>
+    <rect x="0" y="30" width="200" height="15" fill="#c2ab8a"/>
+    <rect x="0" y="45" width="200" height="15" fill="#a98f68"/>
+    <rect x="-2" y="0" width="204" height="60" fill="none" stroke="#b5472a" stroke-width="4"/>
+    <text x="205" y="10" fill="#5b6472">mucosa</text>
+    <text x="205" y="25" fill="#5b6472">submucosa</text>
+    <text x="205" y="40" fill="#5b6472">muscularis</text>
+    <text x="205" y="55" fill="#5b6472">serosa</text>
+    <text x="0" y="-8" font-weight="700" fill="#b5472a">Transmural</text>
+  </g>
+
+  <g transform="translate(560,240)" font-size="9">
+    <rect x="0" y="0" width="200" height="60" fill="none" stroke="#5b6472"/>
+    <rect x="0" y="0" width="200" height="15" fill="#eee0d5"/>
+    <rect x="0" y="15" width="200" height="45" fill="#f0ece2"/>
+    <rect x="-2" y="0" width="204" height="15" fill="none" stroke="#3b5f8a" stroke-width="4"/>
+    <text x="0" y="-8" font-weight="700" fill="#3b5f8a">Mucosa/submucosa only</text>
+  </g>
+
+  <!-- Comparison table -->
+  <g font-size="10.5">
+    <line x1="30" y1="325" x2="770" y2="325" stroke="#c9a25a" stroke-width="1"/>
+    <text x="30" y="345" font-weight="700" fill="#1c2430">Feature</text>
+    <text x="290" y="345" font-weight="700" fill="#b5472a">Crohn's</text>
+    <text x="570" y="345" font-weight="700" fill="#3b5f8a">Ulcerative Colitis</text>
+
+    <line x1="30" y1="353" x2="770" y2="353" stroke="#eee" stroke-width="1"/>
+    <text x="30" y="370" fill="#5b6472">Location</text>
+    <text x="290" y="370" fill="#1c2430">Mouth to anus, skip lesions</text>
+    <text x="570" y="370" fill="#1c2430">Colon/rectum only, continuous</text>
+
+    <line x1="30" y1="378" x2="770" y2="378" stroke="#eee" stroke-width="1"/>
+    <text x="30" y="395" fill="#5b6472">Depth</text>
+    <text x="290" y="395" fill="#1c2430">Transmural &#8594; fistulas, strictures</text>
+    <text x="570" y="395" fill="#1c2430">Mucosal/submucosal only</text>
+
+    <line x1="30" y1="403" x2="770" y2="403" stroke="#eee" stroke-width="1"/>
+    <text x="30" y="420" fill="#5b6472">Gross/scope findings</text>
+    <text x="290" y="420" fill="#1c2430">Cobblestoning, creeping fat, strictures</text>
+    <text x="570" y="420" fill="#1c2430">Continuous erythema, pseudopolyps</text>
+
+    <line x1="30" y1="428" x2="770" y2="428" stroke="#eee" stroke-width="1"/>
+    <text x="30" y="445" fill="#5b6472">Histology</text>
+    <text x="290" y="445" fill="#1c2430">Noncaseating granulomas</text>
+    <text x="570" y="445" fill="#1c2430">Crypt abscesses, no granulomas</text>
+
+    <line x1="30" y1="453" x2="770" y2="453" stroke="#eee" stroke-width="1"/>
+    <text x="30" y="470" fill="#5b6472">Serology / risk</text>
+    <text x="290" y="470" fill="#1c2430">ASCA+; smoking &#8593; risk</text>
+    <text x="570" y="470" fill="#1c2430">p-ANCA+; smoking &#8595; risk; &#8593; colon CA</text>
+  </g>
+</svg>

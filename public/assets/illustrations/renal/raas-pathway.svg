@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="26" text-anchor="middle" font-size="20" font-weight="700" fill="#1c2430">Renin-Angiotensin-Aldosterone System</text>
+  <text x="400" y="45" text-anchor="middle" font-size="12.5" fill="#5b6472">Cascade and pharmacologic targets</text>
+
+  <defs>
+    <marker id="arr-raas" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#1c2430"/>
+    </marker>
+  </defs>
+
+  <!-- Trigger -->
+  <rect x="30" y="70" width="180" height="50" rx="8" fill="#1c2430"/>
+  <text x="120" y="90" text-anchor="middle" font-size="11" font-weight="700" fill="#faf8f4">&#8595; renal perfusion / &#8595;Na&#8314;</text>
+  <text x="120" y="105" text-anchor="middle" font-size="11" font-weight="700" fill="#faf8f4">&#8593; sympathetic tone</text>
+  <line x1="210" y1="95" x2="255" y2="95" stroke="#1c2430" stroke-width="2.5" marker-end="url(#arr-raas)"/>
+
+  <!-- Renin -->
+  <rect x="260" y="70" width="130" height="50" rx="8" fill="#3b5f8a"/>
+  <text x="325" y="99" text-anchor="middle" font-size="13" font-weight="700" fill="#faf8f4">Renin</text>
+  <text x="325" y="60" text-anchor="middle" font-size="9.5" fill="#5b6472">JG cells of afferent arteriole</text>
+
+  <!-- Angiotensinogen -> AT I -->
+  <rect x="30" y="150" width="200" height="46" rx="8" fill="#ffffff" stroke="#5b6472" stroke-width="1.5"/>
+  <text x="130" y="178" text-anchor="middle" font-size="11.5" fill="#1c2430">Angiotensinogen (liver)</text>
+  <line x1="325" y1="120" x2="325" y2="150" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-raas)"/>
+  <line x1="230" y1="173" x2="260" y2="173" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-raas)"/>
+
+  <rect x="260" y="150" width="130" height="46" rx="8" fill="#3b5f8a"/>
+  <text x="325" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#faf8f4">Angiotensin I</text>
+
+  <line x1="390" y1="173" x2="440" y2="173" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-raas)"/>
+  <text x="405" y="163" font-size="9" fill="#1c2430">ACE</text>
+  <text x="392" y="145" font-size="9" fill="#5b6472">(lung endothelium)</text>
+
+  <rect x="445" y="150" width="150" height="46" rx="8" fill="#3b5f8a"/>
+  <text x="520" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#faf8f4">Angiotensin II</text>
+
+  <!-- ACE inhibitor block -->
+  <rect x="392" y="120" width="90" height="24" rx="4" fill="#b5472a"/>
+  <text x="437" y="137" text-anchor="middle" font-size="9.5" font-weight="700" fill="#faf8f4">ACE inhibitors</text>
+  <line x1="437" y1="144" x2="415" y2="173" stroke="#b5472a" stroke-width="2" stroke-dasharray="3 3"/>
+
+  <!-- ARB block near AT1 receptors below -->
+  <!-- AT II downstream effects -->
+  <line x1="520" y1="196" x2="520" y2="230" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-raas)"/>
+
+  <g>
+    <rect x="290" y="240" width="140" height="56" rx="8" fill="#c9a25a"/>
+    <text x="360" y="262" text-anchor="middle" font-size="11" font-weight="700" fill="#1c2430">Adrenal cortex</text>
+    <text x="360" y="278" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1c2430">&#8594; Aldosterone</text>
+    <text x="360" y="290" text-anchor="middle" font-size="8.5" fill="#1c2430">&#8593; Na&#8314; reabsorption (DCT)</text>
+
+    <rect x="450" y="240" width="140" height="56" rx="8" fill="#c9a25a"/>
+    <text x="520" y="260" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Systemic AT1 receptors</text>
+    <text x="520" y="274" text-anchor="middle" font-size="9.5" fill="#1c2430">arteriolar vasoconstriction</text>
+    <text x="520" y="288" text-anchor="middle" font-size="8.5" fill="#1c2430">&#8593; efferent tone &gt; afferent</text>
+
+    <rect x="610" y="240" width="150" height="56" rx="8" fill="#c9a25a"/>
+    <text x="685" y="260" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1c2430">Posterior pituitary</text>
+    <text x="685" y="274" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">&#8594; ADH release</text>
+    <text x="685" y="288" text-anchor="middle" font-size="8.5" fill="#1c2430">&#8593; free water reabsorption</text>
+  </g>
+  <line x1="450" y1="255" x2="430" y2="255" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-raas)"/>
+  <line x1="590" y1="255" x2="610" y2="255" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-raas)"/>
+
+  <!-- ARB block -->
+  <rect x="480" y="200" width="90" height="24" rx="4" fill="#b5472a"/>
+  <text x="525" y="217" text-anchor="middle" font-size="9.5" font-weight="700" fill="#faf8f4">ARBs (-sartan)</text>
+  <line x1="525" y1="224" x2="520" y2="240" stroke="#b5472a" stroke-width="2" stroke-dasharray="3 3"/>
+
+  <!-- Net effect box -->
+  <rect x="290" y="330" width="200" height="46" rx="8" fill="#2f7d4f"/>
+  <text x="390" y="352" text-anchor="middle" font-size="11" font-weight="700" fill="#faf8f4">&#8593; Blood pressure</text>
+  <text x="390" y="366" text-anchor="middle" font-size="9.5" font-weight="700" fill="#faf8f4">&#8593; Blood volume</text>
+  <line x1="360" y1="296" x2="370" y2="330" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-raas)"/>
+  <line x1="685" y1="296" x2="600" y2="345" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-raas)"/>
+
+  <!-- Drug legend -->
+  <rect x="560" y="90" width="200" height="105" fill="#ffffff" stroke="#c9a25a" rx="6"/>
+  <text x="572" y="108" font-size="11.5" font-weight="700" fill="#1c2430">Drug targets</text>
+  <text x="572" y="124" font-size="9.5" fill="#b5472a">&#9632; Aliskiren &#8212; direct renin inhibitor</text>
+  <text x="572" y="139" font-size="9.5" fill="#b5472a">&#9632; ACE inhibitors (-pril)</text>
+  <text x="572" y="154" font-size="9.5" fill="#b5472a">&#9632; ARBs (-sartan) &#8212; block AT1</text>
+  <text x="572" y="169" font-size="9.5" fill="#b5472a">&#9632; Spironolactone/eplerenone</text>
+  <text x="572" y="182" font-size="9.5" fill="#5b6472">&#160;&#160;&#160;&#8212; aldosterone antagonists</text>
+</svg>

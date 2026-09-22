@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="24" text-anchor="middle" font-size="19" font-weight="700" fill="#1c2430">Complement Pathway Map</text>
+  <text x="400" y="42" text-anchor="middle" font-size="11.5" fill="#5b6472">Classical, alternative, and lectin pathways converging on C3 and the membrane attack complex</text>
+
+  <defs>
+    <marker id="arr-comp" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+      <path d="M0,0 L6,2.5 L0,5 Z" fill="#1c2430"/>
+    </marker>
+  </defs>
+
+  <!-- Classical -->
+  <rect x="30" y="70" width="185" height="42" rx="7" fill="#3b5f8a"/>
+  <text x="122" y="88" text-anchor="middle" font-size="10.5" font-weight="700" fill="#faf8f4">Classical pathway</text>
+  <text x="122" y="102" text-anchor="middle" font-size="8.5" fill="#faf8f4">Antigen-antibody (IgG/IgM) + C1</text>
+  <line x1="122" y1="112" x2="122" y2="150" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-comp)"/>
+  <text x="130" y="135" font-size="8" fill="#5b6472">C4, C2</text>
+
+  <!-- Lectin -->
+  <rect x="305" y="70" width="185" height="42" rx="7" fill="#c9a25a"/>
+  <text x="397" y="88" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1c2430">Lectin pathway</text>
+  <text x="397" y="102" text-anchor="middle" font-size="8.5" fill="#1c2430">MBL binds mannose on microbes</text>
+  <line x1="397" y1="112" x2="397" y2="150" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-comp)"/>
+
+  <!-- Alternative -->
+  <rect x="580" y="70" width="190" height="42" rx="7" fill="#2f7d4f"/>
+  <text x="675" y="88" text-anchor="middle" font-size="10.5" font-weight="700" fill="#faf8f4">Alternative pathway</text>
+  <text x="675" y="102" text-anchor="middle" font-size="8.5" fill="#faf8f4">Spontaneous C3 hydrolysis on</text>
+  <text x="675" y="112" text-anchor="middle" font-size="8" fill="#faf8f4"></text>
+  <line x1="675" y1="112" x2="675" y2="150" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-comp)"/>
+  <text x="600" y="65" text-anchor="middle" font-size="8" fill="#5b6472">(microbial surfaces, no antibody needed &#8212; innate)</text>
+
+  <!-- Convergence to C3 convertase -->
+  <line x1="122" y1="150" x2="380" y2="185" stroke="#1c2430" stroke-width="1.8" marker-end="url(#arr-comp)"/>
+  <line x1="397" y1="150" x2="397" y2="180" stroke="#1c2430" stroke-width="1.8" marker-end="url(#arr-comp)"/>
+  <line x1="675" y1="150" x2="420" y2="185" stroke="#1c2430" stroke-width="1.8" marker-end="url(#arr-comp)"/>
+
+  <rect x="290" y="190" width="220" height="36" rx="7" fill="#1c2430"/>
+  <text x="400" y="213" text-anchor="middle" font-size="12" font-weight="700" fill="#faf8f4">C3 convertase &#8594; C3a + C3b</text>
+
+  <!-- C3a effects (branch left/down) -->
+  <line x1="330" y1="226" x2="220" y2="270" stroke="#b5472a" stroke-width="1.8" marker-end="url(#arr-comp)"/>
+  <rect x="90" y="272" width="180" height="46" rx="6" fill="#f7ded5" stroke="#b5472a"/>
+  <text x="180" y="290" text-anchor="middle" font-size="9.5" font-weight="700" fill="#b5472a">C3a &amp; C5a</text>
+  <text x="180" y="303" text-anchor="middle" font-size="8.5" fill="#1c2430">Anaphylatoxins &#8212; mast cell</text>
+  <text x="180" y="314" text-anchor="middle" font-size="8" fill="#1c2430">degranulation, chemotaxis (C5a)</text>
+
+  <!-- C3b opsonization -->
+  <line x1="360" y1="226" x2="380" y2="270" stroke="#3b5f8a" stroke-width="1.8" marker-end="url(#arr-comp)"/>
+  <rect x="290" y="272" width="180" height="46" rx="6" fill="#dde6f0" stroke="#3b5f8a"/>
+  <text x="380" y="290" text-anchor="middle" font-size="9.5" font-weight="700" fill="#3b5f8a">C3b</text>
+  <text x="380" y="303" text-anchor="middle" font-size="8.5" fill="#1c2430">Opsonization &#8212; enhanced</text>
+  <text x="380" y="314" text-anchor="middle" font-size="8" fill="#1c2430">phagocytosis; also clears IC via CR1</text>
+
+  <!-- C5 convertase -> MAC -->
+  <line x1="440" y1="226" x2="600" y2="270" stroke="#1c2430" stroke-width="1.8" marker-end="url(#arr-comp)"/>
+  <rect x="510" y="272" width="240" height="46" rx="6" fill="#2f7d4f"/>
+  <text x="630" y="290" text-anchor="middle" font-size="9.5" font-weight="700" fill="#faf8f4">C5 convertase &#8594; C5b + C5a</text>
+  <text x="630" y="304" text-anchor="middle" font-size="8" fill="#faf8f4">C5b initiates C6-C9 assembly</text>
+
+  <line x1="630" y1="318" x2="630" y2="350" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-comp)"/>
+  <rect x="530" y="352" width="200" height="46" rx="6" fill="#b5472a"/>
+  <text x="630" y="370" text-anchor="middle" font-size="10" font-weight="700" fill="#faf8f4">Membrane Attack Complex</text>
+  <text x="630" y="384" text-anchor="middle" font-size="8.5" fill="#faf8f4">(C5b-9) &#8212; lyses gram-negative</text>
+  <text x="630" y="394" text-anchor="middle" font-size="8" fill="#faf8f4">bacteria (esp. Neisseria)</text>
+
+  <!-- Regulatory proteins box -->
+  <rect x="30" y="352" width="470" height="115" fill="#ffffff" stroke="#c9a25a" stroke-width="1.2" rx="8"/>
+  <text x="45" y="372" font-size="11" font-weight="700" fill="#1c2430">Regulators &amp; deficiency states</text>
+  <text x="45" y="390" font-size="9.5" fill="#5b6472">C1 esterase inhibitor deficiency &#8594; hereditary angioedema (unchecked bradykinin/C1 activity)</text>
+  <text x="45" y="405" font-size="9.5" fill="#5b6472">Decay-accelerating factor (DAF/CD55) deficiency &#8594; paroxysmal nocturnal hemoglobinuria (complement-mediated RBC lysis)</text>
+  <text x="45" y="420" font-size="9.5" fill="#5b6472">C5-C9 (terminal/MAC) deficiency &#8594; recurrent Neisseria infections</text>
+  <text x="45" y="435" font-size="9.5" fill="#5b6472">C3 deficiency &#8594; severe recurrent pyogenic (esp. encapsulated) infections</text>
+  <text x="45" y="450" font-size="9.5" fill="#5b6472">Early classical (C1,C2,C4) deficiency &#8594; &#8593; SLE-like immune complex disease (impaired IC clearance)</text>
+</svg>

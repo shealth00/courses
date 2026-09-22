@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="22" text-anchor="middle" font-size="18" font-weight="700" fill="#1c2430">Cardiac Cycle Timeline (Wiggers Diagram)</text>
+  <text x="400" y="38" text-anchor="middle" font-size="11.5" fill="#5b6472">Pressure, volume, ECG, and heart sounds across one cycle (left heart)</text>
+
+  <!-- phase boundary verticals -->
+  <g stroke="#e4ddd0" stroke-width="1">
+    <line x1="150" y1="50" x2="150" y2="470"/>
+    <line x1="210" y1="50" x2="210" y2="470"/>
+    <line x1="330" y1="50" x2="330" y2="470"/>
+    <line x1="440" y1="50" x2="440" y2="470"/>
+    <line x1="480" y1="50" x2="480" y2="470"/>
+    <line x1="700" y1="50" x2="700" y2="470"/>
+  </g>
+
+  <!-- Pressure panel -->
+  <text x="60" y="65" font-size="11" font-weight="700" fill="#1c2430">Pressure (mmHg)</text>
+  <line x1="90" y1="55" x2="90" y2="170" stroke="#1c2430" stroke-width="1.5"/>
+  <!-- Aortic pressure -->
+  <path d="M90 110 C 130 108, 145 108, 150 108
+           C 170 90, 200 80, 230 78
+           C 300 76, 380 92, 440 108
+           C 460 112, 480 112, 500 113
+           C 560 115, 650 116, 730 116"
+        fill="none" stroke="#b5472a" stroke-width="2.5"/>
+  <text x="600" y="100" font-size="9.5" fill="#b5472a">Aortic pressure</text>
+  <!-- LV pressure -->
+  <path d="M90 160 C 130 160, 145 158, 150 155
+           C 170 130, 195 90, 210 80
+           C 260 78, 320 79, 330 82
+           C 350 90, 400 100, 440 112
+           C 450 140, 460 158, 480 162
+           C 560 165, 650 165, 730 162"
+        fill="none" stroke="#1c2430" stroke-width="2.5"/>
+  <text x="245" y="70" font-size="9.5" fill="#1c2430">LV pressure</text>
+  <!-- LA pressure (small, wavy) -->
+  <path d="M90 165 C 120 163, 140 158, 150 164
+           C 200 168, 260 166, 300 160
+           C 320 158, 325 157, 330 160
+           C 380 166, 420 168, 440 165
+           C 460 155, 470 150, 480 148
+           C 550 145, 650 155, 730 163"
+        fill="none" stroke="#3b5f8a" stroke-width="1.8" stroke-dasharray="4 3"/>
+  <text x="500" y="140" font-size="9.5" fill="#3b5f8a">LA pressure</text>
+
+  <!-- Volume panel -->
+  <text x="60" y="205" font-size="11" font-weight="700" fill="#1c2430">LV Volume (mL)</text>
+  <line x1="90" y1="195" x2="90" y2="260" stroke="#1c2430" stroke-width="1.5"/>
+  <path d="M90 205 L 150 205
+           C 155 205, 158 207, 160 212
+           L 210 250
+           L 330 253
+           L 440 210
+           L 480 207
+           L 730 207"
+        fill="none" stroke="#c9a25a" stroke-width="2.5"/>
+  <text x="170" y="222" font-size="9" fill="#946a2b">EDV ~120mL</text>
+  <text x="345" y="248" font-size="9" fill="#946a2b">ESV ~50mL</text>
+
+  <!-- ECG panel -->
+  <text x="60" y="290" font-size="11" font-weight="700" fill="#1c2430">ECG</text>
+  <path d="M90 300
+           h45 l4 -6 l6 15 l6 -32 l6 28 l4 -5 h9
+           q6 -14 12 0 t12 0
+           h130
+           l4 -6 l6 15 l6 -32 l6 28 l4 -5 h9
+           q6 -14 12 0 t12 0
+           h190"
+        fill="none" stroke="#5b6472" stroke-width="1.5"/>
+  <text x="120" y="282" font-size="9.5" fill="#5b6472">P</text>
+  <text x="165" y="270" font-size="9.5" fill="#5b6472">QRS</text>
+  <text x="225" y="282" font-size="9.5" fill="#5b6472">T</text>
+
+  <!-- Heart sounds -->
+  <text x="60" y="335" font-size="11" font-weight="700" fill="#1c2430">Heart sounds</text>
+  <g fill="#1c2430">
+    <rect x="147" y="325" width="6" height="18"/>
+    <text x="150" y="358" text-anchor="middle" font-size="11" font-weight="700">S1</text>
+    <rect x="437" y="325" width="6" height="18"/>
+    <text x="440" y="358" text-anchor="middle" font-size="11" font-weight="700">S2</text>
+  </g>
+
+  <!-- Valve events -->
+  <text x="60" y="385" font-size="11" font-weight="700" fill="#1c2430">Valve events</text>
+  <g font-size="9" fill="#5b6472">
+    <line x1="150" y1="375" x2="150" y2="395" stroke="#3b5f8a"/>
+    <text x="130" y="405">MV closes</text>
+    <line x1="210" y1="375" x2="210" y2="395" stroke="#3b5f8a"/>
+    <text x="195" y="405">AV opens</text>
+    <line x1="440" y1="375" x2="440" y2="395" stroke="#3b5f8a"/>
+    <text x="420" y="405">AV closes</text>
+    <line x1="480" y1="375" x2="480" y2="395" stroke="#3b5f8a"/>
+    <text x="465" y="418">MV opens</text>
+  </g>
+
+  <!-- Phase labels along bottom -->
+  <g font-size="10" fill="#1c2430" text-anchor="middle">
+    <text x="120" y="450">Atrial</text>
+    <text x="120" y="462">systole</text>
+    <text x="180" y="450">Isovolumetric</text>
+    <text x="180" y="462">contraction</text>
+    <text x="270" y="450">Ventricular ejection</text>
+    <text x="270" y="462">(rapid &#8594; reduced)</text>
+    <text x="385" y="450">Ejection</text>
+    <text x="460" y="450">Isovolumetric</text>
+    <text x="460" y="462">relaxation</text>
+    <text x="590" y="450">Rapid + reduced ventricular filling</text>
+  </g>
+  <line x1="90" y1="432" x2="730" y2="432" stroke="#1c2430" stroke-width="1"/>
+  <text x="410" y="480" text-anchor="middle" font-size="11" fill="#5b6472">Time &#8594;  (one cardiac cycle)</text>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="26" text-anchor="middle" font-size="20" font-weight="700" fill="#1c2430">Pharmacokinetics: Elimination &amp; Dosing</text>
+  <text x="400" y="45" text-anchor="middle" font-size="12.5" fill="#5b6472">Zero-order vs. first-order elimination, and loading/maintenance dosing</text>
+
+  <!-- Panel 1: elimination kinetics -->
+  <text x="215" y="70" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1c2430">Elimination kinetics</text>
+  <line x1="80" y1="230" x2="80" y2="80" stroke="#1c2430" stroke-width="2"/>
+  <line x1="80" y1="230" x2="380" y2="230" stroke="#1c2430" stroke-width="2"/>
+  <text x="230" y="255" text-anchor="middle" font-size="10.5" fill="#1c2430">Time</text>
+  <text x="35" y="155" text-anchor="middle" font-size="10.5" fill="#1c2430" transform="rotate(-90 35 155)">Plasma [drug]</text>
+
+  <!-- zero order: straight line to 0 (constant amount/time, e.g. ethanol, phenytoin, aspirin at high dose) -->
+  <path d="M90 100 L280 220" fill="none" stroke="#b5472a" stroke-width="2.8"/>
+  <text x="290" y="215" font-size="9.5" font-weight="700" fill="#b5472a">Zero-order</text>
+  <text x="290" y="227" font-size="8" fill="#5b6472">(constant amt/time)</text>
+
+  <!-- first order: exponential decay -->
+  <path d="M90 100 C 150 150, 220 200, 370 224" fill="none" stroke="#3b5f8a" stroke-width="2.8"/>
+  <text x="330" y="150" font-size="9.5" font-weight="700" fill="#3b5f8a">First-order</text>
+  <text x="330" y="162" font-size="8" fill="#5b6472">(constant fraction/time)</text>
+
+  <rect x="55" y="270" width="330" height="90" fill="#ffffff" stroke="#c9a25a" rx="6"/>
+  <text x="68" y="288" font-size="9.5" font-weight="700" fill="#1c2430">Zero-order (capacity-limited)</text>
+  <text x="68" y="302" font-size="8.5" fill="#5b6472">Constant AMOUNT eliminated/time;</text>
+  <text x="68" y="314" font-size="8.5" fill="#5b6472">enzymes saturated. Half-life not constant.</text>
+  <text x="68" y="329" font-size="8.5" fill="#5b6472">Ex: ethanol, phenytoin, aspirin (high dose)</text>
+  <text x="68" y="347" font-size="8.5" font-weight="700" fill="#1c2430">First-order (most drugs)</text>
+  <text x="68" y="359" font-size="8.5" fill="#5b6472">Constant FRACTION/time; t&#189; is constant.</text>
+
+  <!-- Panel 2: loading + maintenance dose -->
+  <text x="600" y="70" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1c2430">Loading vs. maintenance dose</text>
+  <line x1="440" y1="230" x2="440" y2="80" stroke="#1c2430" stroke-width="2"/>
+  <line x1="440" y1="230" x2="760" y2="230" stroke="#1c2430" stroke-width="2"/>
+  <text x="600" y="255" text-anchor="middle" font-size="10.5" fill="#1c2430">Time (doses)</text>
+  <text x="400" y="155" text-anchor="middle" font-size="10.5" fill="#1c2430" transform="rotate(-90 400 155)">Plasma [drug]</text>
+
+  <!-- target line -->
+  <line x1="440" y1="150" x2="760" y2="150" stroke="#c9a25a" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="700" y="145" font-size="8.5" fill="#946a2b">target steady-state level</text>
+
+  <!-- loading dose jump then maintenance sawtooth -->
+  <path d="M450 220 L450 150" stroke="#b5472a" stroke-width="3"/>
+  <text x="418" y="185" font-size="8.5" font-weight="700" fill="#b5472a">loading</text>
+  <text x="418" y="196" font-size="8.5" font-weight="700" fill="#b5472a">dose</text>
+
+  <path d="M450 150
+           L 500 175 L 500 155
+           L 550 175 L 550 155
+           L 600 175 L 600 155
+           L 650 175 L 650 155
+           L 700 175 L 700 155
+           L 750 175 L 750 155"
+        fill="none" stroke="#2f7d4f" stroke-width="2.2"/>
+  <text x="600" y="200" text-anchor="middle" font-size="9" font-weight="700" fill="#2f7d4f">maintenance doses (sawtooth around target)</text>
+
+  <rect x="440" y="270" width="330" height="90" fill="#ffffff" stroke="#c9a25a" rx="6"/>
+  <text x="452" y="288" font-size="9.5" font-weight="700" fill="#1c2430">Loading dose = Vd &#215; Target Cp / F</text>
+  <text x="452" y="303" font-size="8.5" fill="#5b6472">Gets to therapeutic level fast; NOT changed</text>
+  <text x="452" y="315" font-size="8.5" fill="#5b6472">by renal/hepatic impairment (depends on Vd)</text>
+  <text x="452" y="333" font-size="9.5" font-weight="700" fill="#1c2430">Maintenance dose = CL &#215; Target Cp &#215; &#964; / F</text>
+  <text x="452" y="348" font-size="8.5" fill="#5b6472">Sustains steady state; REDUCED in renal/</text>
+  <text x="452" y="359" font-size="8.5" fill="#5b6472">hepatic impairment (depends on clearance)</text>
+
+  <!-- General PK facts -->
+  <rect x="30" y="380" width="740" height="95" fill="#ffffff" stroke="#c9a25a" stroke-width="1.2" rx="8"/>
+  <text x="45" y="400" font-size="10.5" font-weight="700" fill="#1c2430">Core relationships</text>
+  <text x="45" y="418" font-size="9.5" fill="#5b6472">t&#189; = 0.7 &#215; Vd / CL &#8212; steady state reached in ~4-5 half-lives regardless of dose or dosing interval (first-order only).</text>
+  <text x="45" y="434" font-size="9.5" fill="#5b6472">Vd (volume of distribution) = Dose / Cp &#8212; large Vd (&gt;body water) implies extensive tissue sequestration (e.g., lipophilic drugs).</text>
+  <text x="45" y="450" font-size="9.5" fill="#5b6472">Clearance (CL) determines maintenance dosing and is what's reduced in organ dysfunction; Vd determines the loading dose.</text>
+  <text x="45" y="466" font-size="9.5" fill="#5b6472">Bioavailability (F) = 1 for IV; oral F &lt; 1 accounts for absorption and first-pass hepatic metabolism.</text>
+</svg>

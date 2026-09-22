@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="26" text-anchor="middle" font-size="20" font-weight="700" fill="#1c2430">Acid-Base Disturbance Map</text>
+  <text x="400" y="45" text-anchor="middle" font-size="12.5" fill="#5b6472">Winter's formula nomogram: primary disorders and expected compensation</text>
+
+  <!-- axes -->
+  <line x1="90" y1="430" x2="90" y2="90" stroke="#1c2430" stroke-width="2"/>
+  <line x1="90" y1="430" x2="650" y2="430" stroke="#1c2430" stroke-width="2"/>
+  <text x="370" y="465" text-anchor="middle" font-size="13" fill="#1c2430">Plasma [HCO&#8323;&#8315;] (mEq/L)</text>
+  <text x="35" y="260" text-anchor="middle" font-size="13" fill="#1c2430" transform="rotate(-90 35 260)">PaCO&#8322; (mmHg)</text>
+
+  <!-- gridlines / scale -->
+  <g font-size="9.5" fill="#5b6472">
+    <text x="88" y="443" text-anchor="middle">0</text>
+    <text x="230" y="443" text-anchor="middle">24</text>
+    <text x="370" y="443" text-anchor="middle">48</text>
+    <text x="510" y="443" text-anchor="middle">64</text>
+    <text x="80" y="393" text-anchor="end">20</text>
+    <text x="80" y="330" text-anchor="end">40</text>
+    <text x="80" y="260" text-anchor="end">60</text>
+    <text x="80" y="190" text-anchor="end">80</text>
+    <text x="80" y="120" text-anchor="end">100</text>
+  </g>
+
+  <!-- normal point -->
+  <circle cx="230" cy="330" r="6" fill="#1c2430"/>
+  <text x="240" y="326" font-size="10.5" fill="#1c2430">Normal (24, 40)</text>
+
+  <!-- Metabolic acidosis band with respiratory compensation (Winter's formula) -->
+  <path d="M110 400 L230 330 L340 275" fill="none" stroke="#b5472a" stroke-width="3"/>
+  <text x="120" y="400" font-size="10" font-weight="700" fill="#b5472a">Metabolic acidosis</text>
+  <text x="120" y="412" font-size="8.5" fill="#5b6472">compensation: PaCO&#8322; = 1.5(HCO&#8323;)+8&#177;2</text>
+
+  <!-- Metabolic alkalosis band -->
+  <path d="M230 330 L400 265 L520 235" fill="none" stroke="#3b5f8a" stroke-width="3"/>
+  <text x="420" y="255" font-size="10" font-weight="700" fill="#3b5f8a">Metabolic alkalosis</text>
+  <text x="420" y="267" font-size="8.5" fill="#5b6472">PaCO&#8322; &#8593; ~0.7 per &#8593;1 HCO&#8323;</text>
+
+  <!-- Acute respiratory acidosis -->
+  <path d="M230 330 L245 220" fill="none" stroke="#c9a25a" stroke-width="3"/>
+  <text x="250" y="215" font-size="10" font-weight="700" fill="#946a2b">Acute resp. acidosis</text>
+  <!-- chronic resp acidosis (more HCO3 compensation) -->
+  <path d="M230 330 L300 185" fill="none" stroke="#c9a25a" stroke-width="3" stroke-dasharray="6 4"/>
+  <text x="305" y="180" font-size="10" font-weight="700" fill="#946a2b">Chronic resp. acidosis</text>
+
+  <!-- Acute respiratory alkalosis -->
+  <path d="M230 330 L215 395" fill="none" stroke="#2f7d4f" stroke-width="3"/>
+  <text x="150" y="405" font-size="10" font-weight="700" fill="#2f7d4f">Acute resp. alkalosis</text>
+  <!-- chronic resp alkalosis -->
+  <path d="M230 330 L160 410" fill="none" stroke="#2f7d4f" stroke-width="3" stroke-dasharray="6 4"/>
+  <text x="95" y="420" font-size="10" font-weight="700" fill="#2f7d4f">Chronic resp. alkalosis</text>
+
+  <!-- legend / workflow box -->
+  <rect x="30" y="60" width="0" height="0"/>
+  <rect x="565" y="90" width="205" height="330" fill="#ffffff" stroke="#c9a25a" rx="8"/>
+  <text x="580" y="110" font-size="12" font-weight="700" fill="#1c2430">4-step approach</text>
+  <text x="580" y="130" font-size="9.5" fill="#5b6472">1. pH: acidemia (&lt;7.35) or</text>
+  <text x="580" y="142" font-size="9.5" fill="#5b6472">&#160;&#160;&#160;alkalemia (&gt;7.45)?</text>
+  <text x="580" y="160" font-size="9.5" fill="#5b6472">2. Primary disorder: compare</text>
+  <text x="580" y="172" font-size="9.5" fill="#5b6472">&#160;&#160;&#160;PaCO&#8322; &amp; HCO&#8323; direction vs pH</text>
+  <text x="580" y="190" font-size="9.5" fill="#5b6472">3. Check compensation: use</text>
+  <text x="580" y="202" font-size="9.5" fill="#5b6472">&#160;&#160;&#160;Winter's formula for metabolic</text>
+  <text x="580" y="214" font-size="9.5" fill="#5b6472">&#160;&#160;&#160;acidosis; if measured PaCO&#8322;</text>
+  <text x="580" y="226" font-size="9.5" fill="#5b6472">&#160;&#160;&#160;is outside predicted range &#8594;</text>
+  <text x="580" y="238" font-size="9.5" fill="#5b6472">&#160;&#160;&#160;mixed disorder</text>
+  <text x="580" y="256" font-size="9.5" fill="#5b6472">4. Anion gap: Na&#8315;(Cl+HCO&#8323;)</text>
+  <text x="580" y="268" font-size="9.5" fill="#5b6472">&#160;&#160;&#160;&gt;12 &#8594; gap metabolic acidosis</text>
+  <text x="580" y="286" font-size="9.5" font-weight="700" fill="#1c2430">High-AG causes (MUDPILES)</text>
+  <text x="580" y="300" font-size="8.5" fill="#5b6472">Methanol, Uremia, DKA,</text>
+  <text x="580" y="312" font-size="8.5" fill="#5b6472">Propylene glycol, Iron/INH,</text>
+  <text x="580" y="324" font-size="8.5" fill="#5b6472">Lactic acidosis, Ethylene</text>
+  <text x="580" y="336" font-size="8.5" fill="#5b6472">glycol, Salicylates</text>
+  <text x="580" y="354" font-size="9.5" font-weight="700" fill="#1c2430">Winter's formula</text>
+  <text x="580" y="368" font-size="9" fill="#5b6472">PaCO&#8322; = 1.5[HCO&#8323;] + 8 &#177; 2</text>
+  <text x="580" y="384" font-size="9" fill="#5b6472">(predicts resp. compensation</text>
+  <text x="580" y="396" font-size="9" fill="#5b6472">for a metabolic acidosis)</text>
+</svg>

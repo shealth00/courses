@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#1c2430">JVP Waveform &amp; Heart Sounds</text>
+  <text x="400" y="49" text-anchor="middle" font-size="12.5" fill="#5b6472">a, c, v waves aligned with the cardiac cycle and S1&#8211;S4</text>
+
+  <!-- timeline axis -->
+  <line x1="70" y1="410" x2="740" y2="410" stroke="#1c2430" stroke-width="1.5"/>
+
+  <!-- JVP waveform panel -->
+  <text x="70" y="90" font-size="13" font-weight="700" fill="#1c2430">JVP</text>
+  <line x1="70" y1="100" x2="70" y2="260" stroke="#1c2430" stroke-width="1.5"/>
+  <path d="M70 220
+           L 110 220
+           C 130 160, 150 150, 170 190
+           C 185 215, 195 225, 210 225
+           C 230 225, 245 205, 260 150
+           C 275 110, 290 105, 310 115
+           C 330 128, 345 160, 360 210
+           L 400 220
+           C 430 160, 450 152, 470 190
+           C 485 215, 495 225, 510 225
+           C 530 225, 545 205, 560 150
+           C 575 110, 590 105, 610 115
+           C 630 128, 645 160, 660 210
+           L 700 220"
+        fill="none" stroke="#3b5f8a" stroke-width="3"/>
+  <!-- wave labels -->
+  <text x="150" y="145" font-size="13" font-weight="700" fill="#3b5f8a">a</text>
+  <text x="195" y="245" font-size="11" fill="#5b6472">x</text>
+  <text x="285" y="95" font-size="13" font-weight="700" fill="#3b5f8a">c</text>
+  <text x="345" y="248" font-size="11" fill="#5b6472">x'</text>
+  <text x="592" y="95" font-size="13" font-weight="700" fill="#3b5f8a">v</text>
+  <text x="640" y="245" font-size="11" fill="#5b6472">y</text>
+
+  <!-- ECG panel (reference, thin) -->
+  <text x="70" y="285" font-size="13" font-weight="700" fill="#1c2430">ECG</text>
+  <path d="M70 320 h30 l6 -8 l8 20 l8 -45 l8 40 l6 -7 h20
+           q10 -20 20 0 t20 0 h40
+           h30 l6 -8 l8 20 l8 -45 l8 40 l6 -7 h20
+           q10 -20 20 0 t20 0 h40
+           h30 l6 -8 l8 20 l8 -45 l8 40 l6 -7 h20"
+        fill="none" stroke="#5b6472" stroke-width="1.5"/>
+  <text x="118" y="300" font-size="10.5" fill="#5b6472">P</text>
+  <text x="168" y="300" font-size="10.5" fill="#5b6472">QRS</text>
+  <text x="235" y="300" font-size="10.5" fill="#5b6472">T</text>
+
+  <!-- Heart sounds panel -->
+  <text x="70" y="360" font-size="13" font-weight="700" fill="#1c2430">Heart sounds</text>
+  <line x1="70" y1="330" x2="740" y2="330" stroke="#eee" stroke-width="1"/>
+  <g fill="#1c2430">
+    <rect x="167" y="385" width="6" height="22" rx="1"/>
+    <text x="170" y="422" text-anchor="middle" font-size="12" font-weight="700">S1</text>
+    <rect x="357" y="385" width="6" height="22" rx="1"/>
+    <text x="360" y="422" text-anchor="middle" font-size="12" font-weight="700">S2</text>
+  </g>
+  <rect x="395" y="392" width="5" height="14" rx="1" fill="#c9a25a"/>
+  <text x="397" y="422" text-anchor="middle" font-size="11" fill="#c9a25a">S3</text>
+  <rect x="140" y="395" width="5" height="10" rx="1" fill="#c9a25a"/>
+  <text x="142" y="422" text-anchor="middle" font-size="11" fill="#c9a25a">S4</text>
+
+  <!-- alignment dashed guides -->
+  <line x1="170" y1="100" x2="170" y2="410" stroke="#c9a25a" stroke-dasharray="3 4" stroke-width="1"/>
+  <line x1="360" y1="100" x2="360" y2="410" stroke="#c9a25a" stroke-dasharray="3 4" stroke-width="1"/>
+
+  <!-- legend -->
+  <rect x="560" y="270" width="180" height="130" fill="#ffffff" stroke="#c9a25a" rx="6"/>
+  <text x="572" y="288" font-size="11.5" font-weight="700" fill="#1c2430">Wave origins</text>
+  <text x="572" y="305" font-size="10" fill="#5b6472">a: atrial contraction</text>
+  <text x="572" y="320" font-size="10" fill="#5b6472">c: tricuspid bulge (RV systole)</text>
+  <text x="572" y="335" font-size="10" fill="#5b6472">v: atrial filling, closed TV</text>
+  <text x="572" y="350" font-size="10" fill="#5b6472">x: atrial relaxation + descent</text>
+  <text x="572" y="365" font-size="10" fill="#5b6472">y: TV opens, rapid RA emptying</text>
+  <text x="572" y="385" font-size="10" fill="#5b6472">S1 = MV/TV close (a-wave end)</text>
+  <text x="572" y="398" font-size="10" fill="#5b6472">S2 = AV/PV close (v-wave peak)</text>
+</svg>

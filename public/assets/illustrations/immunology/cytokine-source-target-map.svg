@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="24" text-anchor="middle" font-size="19" font-weight="700" fill="#1c2430">Cytokine Source &amp; Target Map</text>
+  <text x="400" y="42" text-anchor="middle" font-size="11.5" fill="#5b6472">Th1 / Th2 / Th17 source cells and their downstream effects</text>
+
+  <defs>
+    <marker id="arr-cyt" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+      <path d="M0,0 L6,2.5 L0,5 Z" fill="#5b6472"/>
+    </marker>
+  </defs>
+
+  <!-- naive Th0 -->
+  <circle cx="400" cy="90" r="30" fill="#1c2430"/>
+  <text x="400" y="94" text-anchor="middle" font-size="11" font-weight="700" fill="#faf8f4">Th0</text>
+
+  <!-- three lineages -->
+  <line x1="380" y1="115" x2="180" y2="160" stroke="#5b6472" stroke-width="2" marker-end="url(#arr-cyt)"/>
+  <text x="260" y="130" font-size="8" fill="#5b6472">IL-12 (from macrophages/DCs)</text>
+  <line x1="400" y1="120" x2="400" y2="160" stroke="#5b6472" stroke-width="2" marker-end="url(#arr-cyt)"/>
+  <text x="405" y="140" font-size="8" fill="#5b6472">IL-4</text>
+  <line x1="420" y1="115" x2="620" y2="160" stroke="#5b6472" stroke-width="2" marker-end="url(#arr-cyt)"/>
+  <text x="500" y="130" font-size="8" fill="#5b6472">TGF-&#946; + IL-6</text>
+
+  <!-- Th1 -->
+  <circle cx="150" cy="185" r="28" fill="#3b5f8a"/>
+  <text x="150" y="190" text-anchor="middle" font-size="11" font-weight="700" fill="#faf8f4">Th1</text>
+  <text x="150" y="225" text-anchor="middle" font-size="8.5" fill="#3b5f8a" font-weight="700">secretes IFN-&#947;, IL-2</text>
+
+  <!-- Th2 -->
+  <circle cx="400" cy="185" r="28" fill="#2f7d4f"/>
+  <text x="400" y="190" text-anchor="middle" font-size="11" font-weight="700" fill="#faf8f4">Th2</text>
+  <text x="400" y="225" text-anchor="middle" font-size="8.5" fill="#2f7d4f" font-weight="700">secretes IL-4, IL-5, IL-13</text>
+
+  <!-- Th17 -->
+  <circle cx="650" cy="185" r="28" fill="#b5472a"/>
+  <text x="650" y="190" text-anchor="middle" font-size="10.5" font-weight="700" fill="#faf8f4">Th17</text>
+  <text x="650" y="225" text-anchor="middle" font-size="8.5" fill="#b5472a" font-weight="700">secretes IL-17, IL-22</text>
+
+  <!-- Th1 targets -->
+  <line x1="150" y1="213" x2="60" y2="280" stroke="#3b5f8a" stroke-width="1.5" marker-end="url(#arr-cyt)"/>
+  <line x1="150" y1="213" x2="150" y2="280" stroke="#3b5f8a" stroke-width="1.5" marker-end="url(#arr-cyt)"/>
+  <line x1="150" y1="213" x2="240" y2="280" stroke="#3b5f8a" stroke-width="1.5" marker-end="url(#arr-cyt)"/>
+
+  <rect x="15" y="282" width="90" height="55" rx="6" fill="#dde6f0" stroke="#3b5f8a"/>
+  <text x="60" y="300" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1c2430">Macrophages</text>
+  <text x="60" y="313" text-anchor="middle" font-size="7.5" fill="#1c2430">activation, &#8593;killing</text>
+  <text x="60" y="325" text-anchor="middle" font-size="7.5" fill="#1c2430">(intracellular pathogens)</text>
+
+  <rect x="110" y="282" width="80" height="55" rx="6" fill="#dde6f0" stroke="#3b5f8a"/>
+  <text x="150" y="300" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1c2430">CD8 T cells</text>
+  <text x="150" y="313" text-anchor="middle" font-size="7.5" fill="#1c2430">&#8593; cytotoxic</text>
+  <text x="150" y="325" text-anchor="middle" font-size="7.5" fill="#1c2430">differentiation</text>
+
+  <rect x="195" y="282" width="90" height="55" rx="6" fill="#dde6f0" stroke="#3b5f8a"/>
+  <text x="240" y="300" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1c2430">B cells</text>
+  <text x="240" y="313" text-anchor="middle" font-size="7.5" fill="#1c2430">IgG class switch</text>
+  <text x="240" y="325" text-anchor="middle" font-size="7.5" fill="#1c2430">(opsonization)</text>
+
+  <!-- Th2 targets -->
+  <line x1="400" y1="213" x2="330" y2="280" stroke="#2f7d4f" stroke-width="1.5" marker-end="url(#arr-cyt)"/>
+  <line x1="400" y1="213" x2="400" y2="280" stroke="#2f7d4f" stroke-width="1.5" marker-end="url(#arr-cyt)"/>
+  <line x1="400" y1="213" x2="470" y2="280" stroke="#2f7d4f" stroke-width="1.5" marker-end="url(#arr-cyt)"/>
+
+  <rect x="290" y="282" width="80" height="55" rx="6" fill="#e2ecdf" stroke="#2f7d4f"/>
+  <text x="330" y="300" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1c2430">B cells</text>
+  <text x="330" y="313" text-anchor="middle" font-size="7.5" fill="#1c2430">IgE class switch</text>
+  <text x="330" y="325" text-anchor="middle" font-size="7.5" fill="#1c2430">(IL-4)</text>
+
+  <rect x="360" y="282" width="80" height="55" rx="6" fill="#e2ecdf" stroke="#2f7d4f"/>
+  <text x="400" y="300" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1c2430">Eosinophils</text>
+  <text x="400" y="313" text-anchor="middle" font-size="7.5" fill="#1c2430">recruit/activate</text>
+  <text x="400" y="325" text-anchor="middle" font-size="7.5" fill="#1c2430">(IL-5)</text>
+
+  <rect x="430" y="282" width="90" height="55" rx="6" fill="#e2ecdf" stroke="#2f7d4f"/>
+  <text x="475" y="300" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1c2430">Mast cells</text>
+  <text x="475" y="313" text-anchor="middle" font-size="7.5" fill="#1c2430">IgE-mediated</text>
+  <text x="475" y="325" text-anchor="middle" font-size="7.5" fill="#1c2430">degranulation</text>
+
+  <!-- Th17 targets -->
+  <line x1="650" y1="213" x2="600" y2="280" stroke="#b5472a" stroke-width="1.5" marker-end="url(#arr-cyt)"/>
+  <line x1="650" y1="213" x2="700" y2="280" stroke="#b5472a" stroke-width="1.5" marker-end="url(#arr-cyt)"/>
+
+  <rect x="545" y="282" width="100" height="55" rx="6" fill="#f7ded5" stroke="#b5472a"/>
+  <text x="595" y="300" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1c2430">Neutrophils</text>
+  <text x="595" y="313" text-anchor="middle" font-size="7.5" fill="#1c2430">recruitment</text>
+  <text x="595" y="325" text-anchor="middle" font-size="7.5" fill="#1c2430">(extracellular bacteria/fungi)</text>
+
+  <rect x="650" y="282" width="110" height="55" rx="6" fill="#f7ded5" stroke="#b5472a"/>
+  <text x="705" y="300" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1c2430">Epithelial cells</text>
+  <text x="705" y="313" text-anchor="middle" font-size="7.5" fill="#1c2430">&#8593; defensins,</text>
+  <text x="705" y="325" text-anchor="middle" font-size="7.5" fill="#1c2430">barrier defense</text>
+
+  <!-- clinical relevance box -->
+  <rect x="30" y="360" width="740" height="115" fill="#ffffff" stroke="#c9a25a" stroke-width="1.2" rx="8"/>
+  <text x="45" y="380" font-size="11" font-weight="700" fill="#1c2430">Clinical relevance</text>
+  <text x="45" y="398" font-size="9.5" fill="#5b6472">Th1/Th2 cross-inhibit: IFN-&#947; suppresses Th2, IL-4/IL-10 suppress Th1 &#8212; imbalance underlies disease patterns (e.g., leprosy: tuberculoid=Th1-dominant vs lepromatous=Th2-dominant).</text>
+  <text x="45" y="415" font-size="9.5" fill="#5b6472">Th2-driven IgE/eosinophil/mast cell axis = allergy, asthma, parasitic (helminth) defense.</text>
+  <text x="45" y="432" font-size="9.5" fill="#5b6472">Th17 drives neutrophilic/mucosal defense against extracellular bacteria &amp; fungi; dysregulated Th17 implicated in psoriasis, ankylosing spondylitis, MS &#8212; targets of IL-17/IL-23 inhibitors.</text>
+  <text x="45" y="449" font-size="9.5" fill="#5b6472">IL-12 (macrophage/DC) drives Th1; TGF-&#946;+IL-6 drives Th17; TGF-&#946; alone (without IL-6) instead promotes regulatory T cells (Treg).</text>
+  <text x="45" y="466" font-size="9.5" fill="#5b6472">IFN-&#947; (Th1) is the key macrophage-activating cytokine &#8212; central to granuloma formation in TB.</text>
+</svg>

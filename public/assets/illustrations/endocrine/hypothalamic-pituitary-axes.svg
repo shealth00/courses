@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="24" text-anchor="middle" font-size="19" font-weight="700" fill="#1c2430">Hypothalamic-Pituitary Axes</text>
+  <text x="400" y="42" text-anchor="middle" font-size="12" fill="#5b6472">HPA, HPT, and HPG feedback loops</text>
+
+  <defs>
+    <marker id="arr-hp" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+      <path d="M0,0 L6,2.5 L0,5 Z" fill="#1c2430"/>
+    </marker>
+    <marker id="arr-neg" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+      <path d="M0,0 L6,2.5 L0,5 Z" fill="#b5472a"/>
+    </marker>
+  </defs>
+
+  <!-- three panel columns -->
+  <g font-size="10.5">
+    <!-- Panel 1: HPA -->
+    <rect x="20" y="58" width="245" height="18" fill="none"/>
+    <text x="142" y="70" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b5472a">HPA axis (stress)</text>
+
+    <rect x="60" y="80" width="165" height="34" rx="6" fill="#1c2430"/>
+    <text x="142" y="101" text-anchor="middle" fill="#faf8f4" font-weight="700">Hypothalamus</text>
+    <line x1="142" y1="114" x2="142" y2="150" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-hp)"/>
+    <text x="150" y="135" font-size="9">CRH</text>
+
+    <rect x="60" y="150" width="165" height="34" rx="6" fill="#3b5f8a"/>
+    <text x="142" y="171" text-anchor="middle" fill="#faf8f4" font-weight="700">Ant. pituitary</text>
+    <line x1="142" y1="184" x2="142" y2="220" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-hp)"/>
+    <text x="150" y="205" font-size="9">ACTH</text>
+
+    <rect x="60" y="220" width="165" height="34" rx="6" fill="#c9a25a"/>
+    <text x="142" y="241" text-anchor="middle" fill="#1c2430" font-weight="700">Adrenal cortex</text>
+    <line x1="142" y1="254" x2="142" y2="285" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-hp)"/>
+    <text x="150" y="273" font-size="9">cortisol</text>
+
+    <rect x="70" y="285" width="145" height="30" rx="6" fill="#2f7d4f"/>
+    <text x="142" y="304" text-anchor="middle" fill="#faf8f4" font-size="10" font-weight="700">&#8593;glucose, &#8595;immune</text>
+
+    <path d="M225 300 C 280 260, 280 130, 225 95" fill="none" stroke="#b5472a" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arr-neg)"/>
+    <text x="228" y="200" font-size="8.5" fill="#b5472a" transform="rotate(-90 228 200)">negative feedback</text>
+  </g>
+
+  <g font-size="10.5">
+    <!-- Panel 2: HPT -->
+    <text x="400" y="70" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3b5f8a">HPT axis (metabolism)</text>
+
+    <rect x="318" y="80" width="165" height="34" rx="6" fill="#1c2430"/>
+    <text x="400" y="101" text-anchor="middle" fill="#faf8f4" font-weight="700">Hypothalamus</text>
+    <line x1="400" y1="114" x2="400" y2="150" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-hp)"/>
+    <text x="408" y="135" font-size="9">TRH</text>
+
+    <rect x="318" y="150" width="165" height="34" rx="6" fill="#3b5f8a"/>
+    <text x="400" y="171" text-anchor="middle" fill="#faf8f4" font-weight="700">Ant. pituitary</text>
+    <line x1="400" y1="184" x2="400" y2="220" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-hp)"/>
+    <text x="408" y="205" font-size="9">TSH</text>
+
+    <rect x="318" y="220" width="165" height="34" rx="6" fill="#c9a25a"/>
+    <text x="400" y="241" text-anchor="middle" fill="#1c2430" font-weight="700">Thyroid</text>
+    <line x1="400" y1="254" x2="400" y2="285" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-hp)"/>
+    <text x="408" y="273" font-size="9">T3/T4</text>
+
+    <rect x="328" y="285" width="145" height="30" rx="6" fill="#2f7d4f"/>
+    <text x="400" y="304" text-anchor="middle" fill="#faf8f4" font-size="10" font-weight="700">&#8593;basal metabolic rate</text>
+
+    <path d="M483 300 C 538 260, 538 130, 483 95" fill="none" stroke="#b5472a" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arr-neg)"/>
+  </g>
+
+  <g font-size="10.5">
+    <!-- Panel 3: HPG -->
+    <text x="655" y="70" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c9a25a">HPG axis (reproduction)</text>
+
+    <rect x="573" y="80" width="165" height="34" rx="6" fill="#1c2430"/>
+    <text x="655" y="101" text-anchor="middle" fill="#faf8f4" font-weight="700">Hypothalamus</text>
+    <line x1="655" y1="114" x2="655" y2="150" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-hp)"/>
+    <text x="663" y="135" font-size="9">GnRH (pulsatile)</text>
+
+    <rect x="573" y="150" width="165" height="34" rx="6" fill="#3b5f8a"/>
+    <text x="655" y="171" text-anchor="middle" fill="#faf8f4" font-weight="700">Ant. pituitary</text>
+    <line x1="655" y1="184" x2="655" y2="220" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-hp)"/>
+    <text x="663" y="205" font-size="9">LH / FSH</text>
+
+    <rect x="573" y="220" width="165" height="34" rx="6" fill="#c9a25a"/>
+    <text x="655" y="241" text-anchor="middle" fill="#1c2430" font-weight="700">Gonads</text>
+    <line x1="655" y1="254" x2="655" y2="285" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-hp)"/>
+    <text x="663" y="273" font-size="9">estrogen/testosterone</text>
+
+    <rect x="583" y="285" width="145" height="30" rx="6" fill="#2f7d4f"/>
+    <text x="655" y="304" text-anchor="middle" fill="#faf8f4" font-size="10" font-weight="700">gametogenesis, 2&#176; sex traits</text>
+
+    <path d="M738 300 C 790 260, 790 130, 738 95" fill="none" stroke="#b5472a" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arr-neg)"/>
+  </g>
+
+  <!-- clinical notes -->
+  <rect x="20" y="335" width="760" height="140" fill="#ffffff" stroke="#c9a25a" stroke-width="1.2" rx="8"/>
+  <text x="35" y="356" font-size="12" font-weight="700" fill="#1c2430">Clinically important exceptions</text>
+  <text x="35" y="376" font-size="9.5" fill="#5b6472">&#8226; Continuous (non-pulsatile) GnRH paradoxically suppresses LH/FSH &#8212; the basis for GnRH agonists (leuprolide) in prostate CA/endometriosis.</text>
+  <text x="35" y="393" font-size="9.5" fill="#5b6472">&#8226; Primary organ failure (e.g., primary hypothyroidism, Addison's) &#8594; loss of negative feedback &#8594; &#8593;&#8593; pituitary tropic hormone (&#8593;TSH, &#8593;ACTH).</text>
+  <text x="35" y="410" font-size="9.5" fill="#5b6472">&#8226; Secondary/tertiary failure (pituitary or hypothalamic disease) &#8594; low tropic hormone despite low end-organ hormone &#8212; distinguishes the level of the lesion.</text>
+  <text x="35" y="427" font-size="9.5" fill="#5b6472">&#8226; Prolactin is the exception: hypothalamic dopamine is tonically INHIBITORY, so a pituitary stalk lesion RAISES prolactin (disinhibition).</text>
+  <text x="35" y="444" font-size="9.5" fill="#5b6472">&#8226; Cortisol also shows a normal diurnal rhythm (peak on waking, trough at midnight) layered on top of stress-induced CRH/ACTH pulses.</text>
+  <text x="35" y="461" font-size="9.5" fill="#5b6472">&#8226; Estrogen has a brief positive-feedback surge at mid-cycle (triggers the LH surge/ovulation) before reverting to negative feedback.</text>
+</svg>

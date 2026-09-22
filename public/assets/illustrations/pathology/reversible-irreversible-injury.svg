@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="26" text-anchor="middle" font-size="20" font-weight="700" fill="#1c2430">Reversible &#8594; Irreversible Cell Injury</text>
+  <text x="400" y="45" text-anchor="middle" font-size="12.5" fill="#5b6472">Decision points from a cellular insult to necrosis or apoptosis</text>
+
+  <defs>
+    <marker id="arr-inj" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#1c2430"/>
+    </marker>
+  </defs>
+
+  <!-- Start: normal cell + insult -->
+  <rect x="320" y="60" width="160" height="40" rx="8" fill="#1c2430"/>
+  <text x="400" y="85" text-anchor="middle" font-size="12.5" font-weight="700" fill="#faf8f4">Cellular insult</text>
+  <text x="400" y="52" text-anchor="middle" font-size="9" fill="#5b6472">hypoxia, toxins, free radicals, infection</text>
+  <line x1="400" y1="100" x2="400" y2="135" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-inj)"/>
+
+  <!-- Reversible injury box -->
+  <rect x="270" y="135" width="260" height="80" rx="8" fill="#c9a25a"/>
+  <text x="400" y="158" text-anchor="middle" font-size="12" font-weight="700" fill="#1c2430">Reversible injury</text>
+  <text x="400" y="174" text-anchor="middle" font-size="8.5" fill="#1c2430">cellular/mito. swelling, &#8595;ATP,</text>
+  <text x="400" y="187" text-anchor="middle" font-size="8.5" fill="#1c2430">ER dilation, chromatin clumping,</text>
+  <text x="400" y="200" text-anchor="middle" font-size="8.5" fill="#1c2430">membrane blebbing &#8212; NO membrane rupture</text>
+
+  <!-- Branch: insult removed = recovery -->
+  <line x1="270" y1="175" x2="150" y2="175" stroke="#2f7d4f" stroke-width="2" marker-end="url(#arr-inj)"/>
+  <rect x="20" y="150" width="130" height="50" rx="8" fill="#2f7d4f"/>
+  <text x="85" y="171" text-anchor="middle" font-size="10.5" font-weight="700" fill="#faf8f4">Insult removed</text>
+  <text x="85" y="186" text-anchor="middle" font-size="9" fill="#faf8f4">&#8594; full recovery</text>
+
+  <!-- Branch: insult persists -> irreversible -->
+  <line x1="400" y1="215" x2="400" y2="250" stroke="#b5472a" stroke-width="2" marker-end="url(#arr-inj)"/>
+  <text x="410" y="238" font-size="9" fill="#b5472a">insult persists / severe</text>
+
+  <!-- Point of no return marker -->
+  <rect x="330" y="250" width="140" height="30" rx="6" fill="#b5472a"/>
+  <text x="400" y="270" text-anchor="middle" font-size="10.5" font-weight="700" fill="#faf8f4">Point of no return</text>
+  <text x="400" y="242" font-size="8" fill="#5b6472"></text>
+
+  <!-- Two irreversible outcomes -->
+  <line x1="360" y1="280" x2="230" y2="320" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-inj)"/>
+  <line x1="440" y1="280" x2="570" y2="320" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-inj)"/>
+
+  <!-- Necrosis panel -->
+  <rect x="90" y="320" width="280" height="130" rx="8" fill="#ffffff" stroke="#b5472a" stroke-width="1.8"/>
+  <text x="230" y="342" text-anchor="middle" font-size="12" font-weight="700" fill="#b5472a">Necrosis (accidental, pathologic)</text>
+  <text x="105" y="362" font-size="9" fill="#1c2430">&#8226; Membrane rupture &#8594; enzyme/content leak</text>
+  <text x="105" y="377" font-size="9" fill="#1c2430">&#8226; Triggers inflammation</text>
+  <text x="105" y="392" font-size="9" fill="#1c2430">&#8226; Karyolysis, pyknosis, karyorrhexis</text>
+  <text x="105" y="407" font-size="9" fill="#1c2430">&#8226; Irreversible mito. permeability</text>
+  <text x="105" y="422" font-size="9" fill="#1c2430">&#160;&#160;transition, massive Ca&#178;&#8314; influx</text>
+  <text x="105" y="437" font-size="9" fill="#1c2430">&#8226; Patterns: coagulative, liquefactive,</text>
+  <text x="105" y="447" font-size="8.5" fill="#1c2430">&#160;&#160;caseous, fat, fibrinoid, gangrenous</text>
+
+  <!-- Apoptosis panel -->
+  <rect x="430" y="320" width="280" height="130" rx="8" fill="#ffffff" stroke="#3b5f8a" stroke-width="1.8"/>
+  <text x="570" y="342" text-anchor="middle" font-size="12" font-weight="700" fill="#3b5f8a">Apoptosis (programmed)</text>
+  <text x="445" y="362" font-size="9" fill="#1c2430">&#8226; Membrane intact &#8594; no inflammation</text>
+  <text x="445" y="377" font-size="9" fill="#1c2430">&#8226; Cell shrinkage, chromatin</text>
+  <text x="445" y="392" font-size="9" fill="#1c2430">&#160;&#160;condensation, apoptotic bodies</text>
+  <text x="445" y="407" font-size="9" fill="#1c2430">&#8226; Caspase cascade (intrinsic/</text>
+  <text x="445" y="422" font-size="9" fill="#1c2430">&#160;&#160;mitochondrial via Bcl-2/BAX,</text>
+  <text x="445" y="435" font-size="9" fill="#1c2430">&#160;&#160;or extrinsic via death receptors)</text>
+  <text x="445" y="450" font-size="8.5" fill="#1c2430">&#8226; Phagocytosed without inciting response</text>
+
+  <!-- footnote -->
+  <rect x="560" y="60" width="200" height="130" fill="#ffffff" stroke="#c9a25a" rx="8"/>
+  <text x="572" y="80" font-size="11" font-weight="700" fill="#1c2430">Key discriminators</text>
+  <text x="572" y="98" font-size="9" fill="#5b6472">Reversible &#8594; irreversible:</text>
+  <text x="572" y="112" font-size="8.5" fill="#5b6472">diffuse mito. swelling/vacuolation,</text>
+  <text x="572" y="124" font-size="8.5" fill="#5b6472">membrane damage to plasma &amp;</text>
+  <text x="572" y="136" font-size="8.5" fill="#5b6472">lysosomal membranes, massive</text>
+  <text x="572" y="148" font-size="8.5" fill="#5b6472">Ca&#178;&#8314; influx into cytosol</text>
+  <text x="572" y="168" font-size="8.5" fill="#5b6472">Hypoxia &#8594; &#8595;ATP is the classic</text>
+  <text x="572" y="180" font-size="8.5" fill="#5b6472">USMLE trigger for this pathway</text>
+</svg>

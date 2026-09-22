@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="24" text-anchor="middle" font-size="19" font-weight="700" fill="#1c2430">Spermatogenesis &amp; Oogenesis</text>
+  <text x="400" y="42" text-anchor="middle" font-size="11.5" fill="#5b6472">Meiotic divisions with chromosome/chromatid count tracked at each stage</text>
+
+  <defs>
+    <marker id="arr-mei" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+      <path d="M0,0 L6,2.5 L0,5 Z" fill="#1c2430"/>
+    </marker>
+  </defs>
+
+  <!-- column headers -->
+  <text x="215" y="65" text-anchor="middle" font-size="13" font-weight="700" fill="#3b5f8a">Spermatogenesis</text>
+  <text x="600" y="65" text-anchor="middle" font-size="13" font-weight="700" fill="#b5472a">Oogenesis</text>
+  <line x1="400" y1="55" x2="400" y2="470" stroke="#c9a25a" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- Spermatogenesis chain -->
+  <g font-size="9">
+    <circle cx="90" cy="95" r="20" fill="#3b5f8a"/>
+    <text x="90" y="99" text-anchor="middle" fill="#faf8f4" font-weight="700" font-size="9">Spermatogonium</text>
+    <text x="90" y="125" text-anchor="middle" fill="#1c2430">2n, 46 chr / 46 chromatid</text>
+    <line x1="115" y1="95" x2="155" y2="95" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-mei)"/>
+    <text x="125" y="88" fill="#5b6472">mitosis</text>
+
+    <circle cx="185" cy="95" r="22" fill="#3b5f8a"/>
+    <text x="185" y="93" text-anchor="middle" fill="#faf8f4" font-weight="700" font-size="9">Primary</text>
+    <text x="185" y="103" text-anchor="middle" fill="#faf8f4" font-weight="700" font-size="9">spermatocyte</text>
+    <text x="185" y="125" text-anchor="middle" fill="#1c2430">2n, 46 chr / 92 chromatid</text>
+    <line x1="185" y1="117" x2="185" y2="150" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-mei)"/>
+    <text x="195" y="138" fill="#5b6472">Meiosis I</text>
+
+    <circle cx="140" cy="175" r="17" fill="#3b5f8a"/>
+    <circle cx="230" cy="175" r="17" fill="#3b5f8a"/>
+    <text x="185" y="205" text-anchor="middle" fill="#1c2430">2x Secondary spermatocytes</text>
+    <text x="185" y="217" text-anchor="middle" fill="#1c2430">n, 23 chr / 46 chromatid each</text>
+    <line x1="140" y1="192" x2="120" y2="225" stroke="#1c2430" stroke-width="1.8" marker-end="url(#arr-mei)"/>
+    <line x1="230" y1="192" x2="250" y2="225" stroke="#1c2430" stroke-width="1.8" marker-end="url(#arr-mei)"/>
+    <text x="220" y="212" fill="#5b6472">Meiosis II</text>
+
+    <circle cx="95" cy="245" r="13" fill="#3b5f8a"/>
+    <circle cx="140" cy="245" r="13" fill="#3b5f8a"/>
+    <circle cx="230" cy="245" r="13" fill="#3b5f8a"/>
+    <circle cx="275" cy="245" r="13" fill="#3b5f8a"/>
+    <text x="185" y="272" text-anchor="middle" fill="#1c2430" font-weight="700">4x Spermatids</text>
+    <text x="185" y="284" text-anchor="middle" fill="#1c2430">n, 23 chr / 23 chromatid each</text>
+    <line x1="185" y1="290" x2="185" y2="320" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-mei)"/>
+    <text x="195" y="310" fill="#5b6472">spermiogenesis</text>
+
+    <text x="185" y="345" text-anchor="middle" font-weight="700" fill="#1c2430">4x mature Sperm (n=23)</text>
+    <text x="185" y="360" text-anchor="middle" fill="#5b6472">all 4 are functional gametes</text>
+  </g>
+
+  <!-- Oogenesis chain -->
+  <g font-size="9">
+    <circle cx="475" cy="95" r="20" fill="#b5472a"/>
+    <text x="475" y="99" text-anchor="middle" fill="#faf8f4" font-weight="700" font-size="9">Oogonium</text>
+    <text x="475" y="125" text-anchor="middle" fill="#1c2430">2n, 46 chr / 46 chromatid</text>
+    <line x1="500" y1="95" x2="540" y2="95" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-mei)"/>
+    <text x="505" y="88" fill="#5b6472">mitosis (in utero)</text>
+
+    <circle cx="580" cy="95" r="22" fill="#b5472a"/>
+    <text x="580" y="93" text-anchor="middle" fill="#faf8f4" font-weight="700" font-size="9">Primary</text>
+    <text x="580" y="103" text-anchor="middle" fill="#faf8f4" font-weight="700" font-size="9">oocyte</text>
+    <text x="580" y="125" text-anchor="middle" fill="#1c2430">2n, 46 chr / 92 chromatid</text>
+    <text x="580" y="137" text-anchor="middle" fill="#5b6472" font-size="8">arrested in prophase I until puberty</text>
+    <line x1="580" y1="145" x2="580" y2="175" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-mei)"/>
+    <text x="590" y="163" fill="#5b6472">Meiosis I completes at ovulation</text>
+
+    <circle cx="560" cy="200" r="19" fill="#b5472a"/>
+    <circle cx="615" cy="215" r="9" fill="#c9a25a"/>
+    <text x="580" y="235" text-anchor="middle" fill="#1c2430">Secondary oocyte + 1st polar body</text>
+    <text x="580" y="247" text-anchor="middle" fill="#1c2430">n, 23 chr / 46 chromatid</text>
+    <text x="560" y="260" text-anchor="middle" fill="#5b6472" font-size="8">arrested in metaphase II &#8212; ovulated</text>
+    <line x1="560" y1="219" x2="540" y2="255" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-mei)"/>
+    <text x="490" y="270" fill="#5b6472">Meiosis II completes ONLY if fertilized</text>
+
+    <circle cx="530" cy="280" r="16" fill="#b5472a"/>
+    <circle cx="580" cy="295" r="8" fill="#c9a25a"/>
+    <text x="530" y="315" text-anchor="middle" font-weight="700" fill="#1c2430">Mature ovum</text>
+    <text x="530" y="327" text-anchor="middle" fill="#1c2430">n, 23 chr / 23 chromatid</text>
+    <text x="530" y="342" text-anchor="middle" fill="#5b6472" font-size="8">+ 2nd polar body (degenerates)</text>
+  </g>
+
+  <!-- Key facts -->
+  <rect x="30" y="380" width="740" height="95" fill="#ffffff" stroke="#c9a25a" stroke-width="1.2" rx="8"/>
+  <text x="45" y="400" font-size="10.5" font-weight="700" fill="#1c2430">Key contrasts</text>
+  <text x="45" y="417" font-size="9.5" fill="#5b6472">Spermatogenesis: continuous from puberty onward, ~64-74 days; symmetric divisions &#8594; 4 equal functional sperm.</text>
+  <text x="45" y="433" font-size="9.5" fill="#5b6472">Oogenesis: begins in utero, arrests in prophase I (diplotene) until puberty (can span decades &#8212; a factor in age-related aneuploidy risk); asymmetric division concentrates cytoplasm into one ovum + tiny polar bodies.</text>
+  <text x="45" y="449" font-size="9.5" fill="#5b6472">Meiosis I separates homologous chromosomes (reductional, 2n&#8594;n); Meiosis II separates sister chromatids (equational, like mitosis).</text>
+  <text x="45" y="465" font-size="9.5" fill="#5b6472">Nondisjunction risk rises with maternal age due to the prolonged meiosis I arrest &#8212; classic association with trisomy 21.</text>
+</svg>
