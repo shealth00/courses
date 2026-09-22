@@ -29,6 +29,692 @@ const SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY;
 
 const CLINICAL_TOPICS = [
   // ===========================================================================
+  // Module 1 — Biochemistry
+  // ===========================================================================
+  {
+    module_number: 1,
+    module_title: "Biochemistry",
+    key_submodule: "Nutritional Deficiencies",
+    slug: "vitamin-b12-deficiency",
+    title: "Vitamin B12 (Cobalamin) Deficiency",
+    sort_order: 1,
+
+    hook_vignette:
+      "A 68-year-old woman presents with fatigue and a 3-month history of tingling in her feet and difficulty walking in the dark. Exam shows decreased vibration and proprioception in the lower extremities, a positive Romberg sign, and a beefy-red, smooth tongue. She has been a strict vegan for over a decade and reports no dietary supplementation.",
+
+    ddx_mapping:
+      "Vitamin B12 (cobalamin) deficiency vs. folate deficiency vs. copper deficiency vs. other mimics of subacute combined degeneration:\n\nB12 deficiency — macrocytic anemia PLUS neurologic findings (subacute combined degeneration: dorsal columns + lateral corticospinal tracts + spinocerebellar tracts), elevated methylmalonic acid AND homocysteine, hypersegmented neutrophils.\n\nFolate deficiency — identical macrocytic anemia and hypersegmented neutrophils, elevated homocysteine, but methylmalonic acid is normal, and no neurologic findings occur — folate deficiency does not cause subacute combined degeneration.\n\nCopper deficiency (e.g., after bariatric surgery or excess zinc ingestion) — can mimic B12 deficiency almost exactly, with myeloneuropathy, macrocytic anemia, and even hypersegmented neutrophils, but methylmalonic acid and homocysteine are normal.\n\nDiabetic peripheral neuropathy — sensory loss but no macrocytosis, no dorsal-column-predominant proprioceptive loss, no glossitis.\n\nVitamin E deficiency — can cause a spinocerebellar-predominant myelopathy, but without anemia, glossitis, or elevated methylmalonic acid.",
+
+    diagnostic_evaluation:
+      "Initial: CBC shows macrocytic (MCV >100) anemia; peripheral smear shows oval macrocytes and hypersegmented neutrophils (≥5 lobes). Serum B12 level is low but has limited sensitivity/specificity, so a low-normal result should be confirmed with methylmalonic acid (MMA) and homocysteine — both are elevated in true B12 deficiency, since the conversion of methylmalonyl-CoA to succinyl-CoA requires B12 as a cofactor for methylmalonyl-CoA mutase. Once biochemically confirmed, evaluate the cause: anti-intrinsic factor and anti-parietal cell antibodies for pernicious anemia, dietary review (vegan/strict vegetarian), and assessment for malabsorption (terminal ileal disease, Crohn disease, prior ileal resection, chronic pancreatitis, bacterial overgrowth, or metformin use).",
+
+    management:
+      "Replace cobalamin — parenteral (intramuscular) B12 injections are first-line when malabsorption or pernicious anemia is suspected or when neurologic symptoms are present, given daily-to-weekly initially then monthly maintenance; high-dose oral B12 (1000–2000 mcg/day) can be effective even in pernicious anemia because a small fraction is absorbed by passive diffusion independent of intrinsic factor, and is reasonable once the diagnosis is secure and neurologic disease is mild or absent. Reassess response (reticulocytosis within about a week, normalized MCV over 6–8 weeks) and watch for hypokalemia during the first days of treatment from rapid erythropoiesis. Neurologic deficits improve with treatment but may be only partially reversible if longstanding before therapy starts, which is why early recognition matters. Treat the underlying cause when identifiable (lifelong B12 for pernicious anemia or ileal disease; dietary counseling and supplementation for vegans).",
+
+    first_order_prompt:
+      "Match this finding to its diagnosis: Elevated methylmalonic acid AND elevated homocysteine, with macrocytic anemia and dorsal column/lateral corticospinal tract signs.",
+    first_order_answer:
+      "Vitamin B12 (cobalamin) deficiency — subacute combined degeneration.",
+
+    second_order_vignette:
+      "A 52-year-old man with a history of Crohn disease and a prior ileocecal resection presents with 6 months of progressive gait unsteadiness and numbness in both feet. He denies dietary restrictions. Neurologic exam reveals impaired vibration and position sense in the toes bilaterally, a wide-based gait, and hyperreflexia at the knees with extensor plantar responses. Complete blood count shows a hemoglobin of 10.2 g/dL with an MCV of 112 fL. Serum B12 is 180 pg/mL (low-normal).",
+    second_order_question:
+      "Which of the following is the most appropriate next step to confirm the diagnosis?",
+    second_order_choices: JSON.stringify([
+      {
+        "text": "Serum folate level",
+        "label": "A",
+        "correct": false,
+        "explanation": "Folate deficiency doesn't explain isolated dorsal column/corticospinal signs, and replacing folate alone without addressing B12 could mask the anemia while neurologic disease progresses — it isn't the confirmatory test needed here."
+      },
+      {
+        "text": "Serum methylmalonic acid and homocysteine levels",
+        "label": "B",
+        "correct": true,
+        "explanation": "Correct — with a low-normal B12 level but a compatible picture (macrocytic anemia plus subacute combined degeneration, plausible malabsorption from ileal disease/resection), elevated MMA and homocysteine confirm true tissue-level B12 deficiency, since serum B12 alone is an imperfect biomarker."
+      },
+      {
+        "text": "Anti-intrinsic factor antibody only",
+        "label": "C",
+        "correct": false,
+        "explanation": "This identifies pernicious anemia specifically once B12 deficiency is confirmed, but doesn't itself establish that a biochemical deficiency exists — and here the likely cause (ileal resection/Crohn disease) is already apparent, so mechanistic confirmation of deficiency is still needed first."
+      },
+      {
+        "text": "MRI of the cervical spine",
+        "label": "D",
+        "correct": false,
+        "explanation": "MRI may show dorsal column T2 hyperintensity in subacute combined degeneration and can support the diagnosis, but is nonspecific and not how the diagnosis is biochemically confirmed."
+      },
+      {
+        "text": "Schilling test",
+        "label": "E",
+        "correct": false,
+        "explanation": "Historically used to determine the CAUSE of already-established B12 deficiency (malabsorption vs. pernicious anemia), not to confirm that deficiency exists in the first place; it is also now largely obsolete."
+      }
+    ]),
+    second_order_answer: "B",
+    second_order_explanation:
+      "Serum B12 has poor sensitivity in the low-normal range, so when clinical suspicion is high (macrocytic anemia plus posterior column and corticospinal tract findings, in a patient with a plausible malabsorptive cause), the next step is to confirm true tissue deficiency with methylmalonic acid and homocysteine, both of which rise because B12 is a required cofactor for methylmalonyl-CoA mutase (MMA metabolism) and methionine synthase (homocysteine remethylation). Only after biochemical confirmation should the underlying cause — here, terminal ileal loss of intrinsic factor–B12 receptor sites from Crohn disease/resection — be treated with parenteral B12.",
+
+    flowchart_title: "Working Up Suspected B12 Deficiency",
+    flowchart: JSON.stringify([
+      {
+        "node": "Macrocytic anemia (MCV >100) with or without neuropsychiatric/dorsal column signs",
+        "branches": [
+          {
+            "next": "Confirm with methylmalonic acid + homocysteine",
+            "label": "Low serum B12"
+          },
+          {
+            "next": "Suspect folate deficiency instead",
+            "label": "Low serum folate, normal B12"
+          },
+          {
+            "next": "Check MMA/homocysteine anyway; consider copper deficiency",
+            "label": "Normal B12 and folate but strong clinical suspicion"
+          }
+        ]
+      },
+      {
+        "node": "Methylmalonic acid (MMA) and homocysteine results",
+        "branches": [
+          {
+            "next": "True B12 deficiency confirmed",
+            "label": "Both MMA and homocysteine elevated"
+          },
+          {
+            "next": "Folate deficiency (not B12)",
+            "label": "Only homocysteine elevated, MMA normal"
+          },
+          {
+            "next": "Reconsider diagnosis; check serum copper",
+            "label": "Both normal despite low-normal B12"
+          }
+        ]
+      },
+      {
+        "node": "True B12 deficiency confirmed — determine cause",
+        "branches": [
+          {
+            "next": "Pernicious anemia — lifelong parenteral or high-dose oral B12",
+            "label": "Positive anti-intrinsic factor / anti-parietal cell antibodies"
+          },
+          {
+            "next": "Malabsorptive B12 deficiency — treat cause + replace B12",
+            "label": "History of ileal disease/resection, Crohn, bariatric surgery"
+          },
+          {
+            "next": "Dietary B12 deficiency — oral supplementation",
+            "label": "Strict vegan diet, no malabsorption"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 1,
+    module_title: "Biochemistry",
+    key_submodule: "Lysosomal Storage Diseases",
+    slug: "gaucher-disease",
+    title: "Gaucher Disease",
+    sort_order: 2,
+
+    hook_vignette:
+      "A 6-year-old boy of Ashkenazi Jewish descent is brought in for easy bruising and fatigue. Exam reveals massive hepatosplenomegaly and mild pallor. Skeletal imaging obtained for chronic bone pain shows a flask-shaped deformity of the distal femur (Erlenmeyer flask deformity). Laboratory testing shows thrombocytopenia and mild anemia.",
+
+    ddx_mapping:
+      "Gaucher disease vs. other lysosomal storage diseases presenting with hepatosplenomegaly:\n\nGaucher disease (glucocerebrosidase deficiency, glucocerebroside accumulation) — hepatosplenomegaly, bone crises/Erlenmeyer flask deformity, cytopenias from marrow infiltration and hypersplenism, 'crumpled tissue paper' macrophages (Gaucher cells) on biopsy; the common type 1 (adult) form has NO primary CNS involvement.\n\nNiemann-Pick disease (sphingomyelinase deficiency, sphingomyelin accumulation) — hepatosplenomegaly PLUS progressive neurodegeneration and a cherry-red macula; foam cells (not crumpled-paper macrophages) on biopsy.\n\nTay-Sachs disease (hexosaminidase A deficiency, GM2 ganglioside accumulation) — progressive neurodegeneration, cherry-red macula, exaggerated startle response, but NO hepatosplenomegaly — this distinguishes it from Niemann-Pick despite the shared cherry-red spot.\n\nMucopolysaccharidoses (e.g., Hurler syndrome) — coarse facial features, corneal clouding, organomegaly, and skeletal dysplasia, with urinary glycosaminoglycan accumulation rather than a sphingolipid.\n\nLeukemia/lymphoma — can also present with hepatosplenomegaly and cytopenias in a child, but marrow biopsy shows blasts rather than lipid-laden macrophages.",
+
+    diagnostic_evaluation:
+      "Definitive diagnosis is by measuring leukocyte beta-glucocerebrosidase (acid beta-glucosidase) enzyme activity, which is markedly reduced; genetic testing for GBA mutations confirms and can predict phenotype/carrier status, especially given the high carrier frequency in the Ashkenazi Jewish population. Bone marrow biopsy, when done, shows characteristic lipid-laden macrophages with a fibrillary, \"crumpled tissue paper\" cytoplasm (Gaucher cells) — but biopsy is not required when enzyme assay is available and is used mainly to exclude other causes of cytopenia. Supportive labs: markedly elevated serum ferritin, elevated acid phosphatase and ACE (nonspecific markers of macrophage activation), cytopenias on CBC. Skeletal imaging (plain film, or DEXA/MRI for marrow infiltration) may show the Erlenmeyer flask deformity and evidence of avascular necrosis or bone infarcts.",
+
+    management:
+      "Enzyme replacement therapy (ERT) with recombinant glucocerebrosidase (e.g., imiglucerase), given as periodic intravenous infusions, is first-line for symptomatic type 1 (non-neuronopathic) disease and reverses organomegaly and cytopenias over months — but it does not cross the blood-brain barrier, so it does not help neuronopathic (type 2/3) forms. Substrate reduction therapy (e.g., miglustat, eliglustat) — oral agents that reduce glucocerebroside production — is an alternative for patients unable to tolerate infusions. Supportive care includes management of bone disease (bisphosphonates, orthopedic monitoring for avascular necrosis); splenectomy is reserved as a last resort for severe hypersplenism given the risk of accelerating bone/lung disease. Genetic counseling given autosomal recessive inheritance and high Ashkenazi Jewish carrier frequency.",
+
+    first_order_prompt:
+      "Match this finding to its diagnosis: 'Crumpled tissue paper'-appearing macrophages on bone marrow biopsy in a child with hepatosplenomegaly and bone pain, no CNS involvement.",
+    first_order_answer:
+      "Gaucher disease (glucocerebrosidase deficiency).",
+
+    second_order_vignette:
+      "A 29-year-old woman of Ashkenazi Jewish ancestry presents for evaluation of easy bruising and chronic fatigue. She reports intermittent, severe bone pain in her legs since her teenage years, previously attributed to growing pains. Physical exam reveals a palpable spleen tip 8 cm below the costal margin and hepatomegaly. Labs show hemoglobin 9.8 g/dL, platelets 78,000/mm3, and a markedly elevated serum ferritin. A bone marrow biopsy shows macrophages with a wrinkled, fibrillary cytoplasmic appearance.",
+    second_order_question:
+      "A deficiency of which of the following enzymes is most likely responsible for this patient's presentation?",
+    second_order_choices: JSON.stringify([
+      {
+        "text": "Sphingomyelinase",
+        "label": "A",
+        "correct": false,
+        "explanation": "Sphingomyelinase deficiency causes Niemann-Pick disease, which typically also produces progressive neurodegeneration and a cherry-red macula, and shows foam cells rather than crumpled-paper macrophages on biopsy."
+      },
+      {
+        "text": "Hexosaminidase A",
+        "label": "B",
+        "correct": false,
+        "explanation": "Hexosaminidase A deficiency causes Tay-Sachs disease, characterized by neurodegeneration and a cherry-red macula WITHOUT hepatosplenomegaly — the opposite organ-involvement pattern from this patient."
+      },
+      {
+        "text": "Glucocerebrosidase",
+        "label": "C",
+        "correct": true,
+        "explanation": "Correct — glucocerebrosidase (acid beta-glucosidase) deficiency causes Gaucher disease, the most common lysosomal storage disease, with glucocerebroside accumulating in macrophages to produce the classic crumpled-paper appearance, hepatosplenomegaly, cytopenias, and chronic bone pain/crises — all present here, with the Ashkenazi Jewish ancestry further raising pretest probability."
+      },
+      {
+        "text": "Alpha-galactosidase A",
+        "label": "D",
+        "correct": false,
+        "explanation": "Deficiency of this enzyme causes Fabry disease, an X-linked disorder presenting with acroparesthesias, angiokeratomas, and progressive renal failure — not this hepatosplenomegaly/bone pain picture."
+      },
+      {
+        "text": "Arylsulfatase A",
+        "label": "E",
+        "correct": false,
+        "explanation": "Deficiency of this enzyme causes metachromatic leukodystrophy, a demyelinating disease presenting with progressive motor and cognitive decline, not organomegaly."
+      }
+    ]),
+    second_order_answer: "C",
+    second_order_explanation:
+      "This patient's hepatosplenomegaly, cytopenias from marrow infiltration/hypersplenism, chronic bone pain, elevated ferritin, and crumpled-tissue-paper macrophages on marrow biopsy — in a patient of Ashkenazi Jewish descent — is classic for Gaucher disease, caused by autosomal recessive deficiency of glucocerebrosidase and resulting lysosomal accumulation of glucocerebroside within macrophages (Gaucher cells). Unlike Niemann-Pick disease or Tay-Sachs disease, type 1 Gaucher disease (the most common form) spares the central nervous system, which is why cognitive/neurologic symptoms are absent here.",
+
+    flowchart_title: "Hepatosplenomegaly + Cytopenias — Which Storage Disease?",
+    flowchart: JSON.stringify([
+      {
+        "node": "Child or young adult with hepatosplenomegaly and cytopenias",
+        "branches": [
+          {
+            "next": "Suspect Gaucher disease",
+            "label": "Bone pain/crises, Erlenmeyer flask deformity, no neurologic findings"
+          },
+          {
+            "next": "Suspect Niemann-Pick disease",
+            "label": "Cherry-red macula and progressive neurodegeneration present"
+          },
+          {
+            "next": "Suspect a mucopolysaccharidosis (e.g., Hurler syndrome)",
+            "label": "Coarse facies, corneal clouding, skeletal dysplasia"
+          }
+        ]
+      },
+      {
+        "node": "Suspect Gaucher disease",
+        "branches": [
+          {
+            "next": "Confirm with leukocyte glucocerebrosidase assay",
+            "label": "Marrow biopsy: crumpled-paper macrophages, elevated ferritin"
+          },
+          {
+            "next": "Gaucher disease confirmed — type further by neurologic exam",
+            "label": "Assay shows markedly reduced enzyme activity"
+          }
+        ]
+      },
+      {
+        "node": "Type further by neurologic exam",
+        "branches": [
+          {
+            "next": "Type 1 (chronic, non-neuronopathic) — ERT first-line",
+            "label": "No CNS involvement"
+          },
+          {
+            "next": "Type 2 (acute neuronopathic) — ERT ineffective for CNS disease, poor prognosis",
+            "label": "Acute infantile CNS involvement"
+          },
+          {
+            "next": "Type 3 (chronic neuronopathic)",
+            "label": "Subacute CNS involvement, longer survival"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 1,
+    module_title: "Biochemistry",
+    key_submodule: "Peroxisomal Disorders",
+    slug: "x-linked-adrenoleukodystrophy",
+    title: "X-Linked Adrenoleukodystrophy",
+    sort_order: 3,
+
+    hook_vignette:
+      "An 8-year-old boy presents with declining school performance, behavioral changes, and progressive clumsiness over the past several months. His mother notes he has also developed increased skin pigmentation, particularly at the knuckles and gum lines, despite no increase in sun exposure. Neurologic exam shows spasticity and impaired vision. MRI of the brain shows symmetric, posterior-predominant white matter demyelination.",
+
+    ddx_mapping:
+      "X-linked adrenoleukodystrophy (ALD) vs. its closest peroxisomal and demyelinating mimics:\n\nX-linked ALD (ABCD1 mutation, impaired peroxisomal beta-oxidation of very-long-chain fatty acids/VLCFAs) — onset in childhood/adolescence (boys), progressive white matter demyelination PLUS primary adrenal insufficiency (skin hyperpigmentation, fatigue, hypotension) from VLCFA accumulation in the adrenal cortex; patients are born normally and develop symptoms later — a single peroxisomal transporter defect, not a defect in peroxisome assembly itself.\n\nZellweger syndrome (peroxisome biogenesis disorder, PEX gene mutations) — presents in the NEONATAL period with severe hypotonia, seizures, characteristic craniofacial dysmorphism, hepatomegaly, and early death; reflects failure to form peroxisomes at all, so multiple peroxisomal pathways (not just VLCFA oxidation — also plasmalogen synthesis, for example) are impaired, unlike isolated ALD.\n\nMultiple sclerosis — white matter demyelination at a similar age is rare (MS typically presents in young adults), lacks adrenal insufficiency, and shows dissemination in time and space rather than a steadily progressive course.\n\nMetachromatic leukodystrophy (arylsulfatase A deficiency) — also progressive childhood white matter disease, but no adrenal insufficiency, with prominent peripheral nerve involvement (abnormal nerve conduction studies) rather than adrenal.\n\nIsolated autoimmune Addison disease — can produce isolated hyperpigmentation and adrenal insufficiency, but without the neurodegenerative/white matter component; ALD should be considered in any young male with 'idiopathic' primary adrenal insufficiency.",
+
+    diagnostic_evaluation:
+      "First-line biochemical test: plasma very-long-chain fatty acid (VLCFA) levels, markedly elevated (particularly C26:0 and the C24:0/C22:0 and C26:0/C22:0 ratios) from impaired peroxisomal beta-oxidation. Confirm with genetic testing for ABCD1 mutations (X-linked). Because adrenal insufficiency may precede or lag behind neurologic symptoms, check morning cortisol and ACTH stimulation testing in any boy with elevated VLCFAs or suggestive hyperpigmentation. Brain MRI is essential for staging: classic ALD shows symmetric, posterior (parieto-occipital)-predominant white matter demyelination, often with a hyperintense \"leading edge\" of active inflammation on contrast enhancement — MRI findings guide eligibility for hematopoietic stem cell transplant, since transplant is only beneficial early, before extensive demyelination. Newborn screening (available in many US states) now measures VLCFA-related markers to identify ALD before symptoms develop.",
+
+    management:
+      "Adrenal insufficiency is treated with lifelong glucocorticoid (and mineralocorticoid, if needed) replacement regardless of neurologic status — this is often the most immediately life-saving intervention and should not be delayed pending neurologic workup. For the cerebral demyelinating form, allogeneic hematopoietic stem cell transplantation (or ex vivo gene therapy with an autologous, lentivirally corrected CD34+ cell product, an approved alternative when a matched donor is unavailable) can halt progression if performed early, while MRI changes are still mild — it does not reverse existing damage, so early detection via newborn screening or surveillance MRI in known carriers/affected relatives is critical. Lorenzo's oil (a mixture of oleic and erucic acid) normalizes plasma VLCFA levels but has not reliably been shown to prevent or slow neurologic progression once boys are symptomatic, so it is not definitive therapy, though it remains used/studied as an adjunct in presymptomatic boys. Regular surveillance MRI in presymptomatic boys with confirmed ABCD1 mutations is key, since transplant timing is the single biggest determinant of neurologic outcome.",
+
+    first_order_prompt:
+      "Match this finding to its diagnosis: A boy with progressive behavioral decline, spasticity, posterior-predominant white matter demyelination on MRI, and new skin hyperpigmentation.",
+    first_order_answer:
+      "X-linked adrenoleukodystrophy (ABCD1 mutation, elevated very-long-chain fatty acids) with adrenal insufficiency.",
+
+    second_order_vignette:
+      "A term male infant is noted at birth to have severe hypotonia and poor feeding. Over the first weeks of life, he develops seizures. Exam shows a high forehead, wide-set eyes, and hepatomegaly. He fails to meet any developmental milestones and dies at 7 months of age. Laboratory testing obtained early in the workup showed elevated plasma very-long-chain fatty acids.",
+    second_order_question:
+      "Which of the following best explains this infant's disease, in contrast to X-linked adrenoleukodystrophy?",
+    second_order_choices: JSON.stringify([
+      {
+        "text": "A mutation in a single peroxisomal beta-oxidation enzyme, sparing peroxisome assembly",
+        "label": "A",
+        "correct": false,
+        "explanation": "This describes the defect in X-linked ALD (ABCD1, a peroxisomal membrane transporter for VLCFA-CoA), not this infant's disease; ALD does not present with this severe neonatal, multi-organ phenotype."
+      },
+      {
+        "text": "A defect in peroxisome biogenesis affecting multiple peroxisomal enzyme functions",
+        "label": "B",
+        "correct": true,
+        "explanation": "Correct — this infant's neonatal-onset hypotonia, seizures, characteristic craniofacial dysmorphism, hepatomegaly, and early death describe Zellweger syndrome, caused by mutations in PEX genes required for peroxisome assembly. Because whole peroxisomes fail to form, ALL peroxisomal functions are impaired (VLCFA beta-oxidation, plasmalogen synthesis, bile acid synthesis), not just one enzyme — explaining the more severe, multisystem neonatal phenotype compared to isolated ALD."
+      },
+      {
+        "text": "An X-linked defect limited to adrenal cortex steroidogenesis",
+        "label": "C",
+        "correct": false,
+        "explanation": "This does not describe either disease's core molecular defect; while ALD does cause adrenal insufficiency, that is a downstream consequence of VLCFA accumulation in the adrenal cortex, not a primary steroidogenic enzyme defect, and it doesn't explain this infant's neonatal multisystem presentation."
+      },
+      {
+        "text": "Autosomal recessive deficiency of galactocerebrosidase",
+        "label": "D",
+        "correct": false,
+        "explanation": "This describes Krabbe disease, a lysosomal (not peroxisomal) storage disease with globoid cells; VLCFAs are not characteristically elevated in Krabbe disease."
+      },
+      {
+        "text": "Autosomal recessive deficiency of arylsulfatase A",
+        "label": "E",
+        "correct": false,
+        "explanation": "This describes metachromatic leukodystrophy, a lysosomal disease with normal VLCFAs, not this infant's peroxisomal biogenesis disorder."
+      }
+    ]),
+    second_order_answer: "B",
+    second_order_explanation:
+      "This infant's neonatal presentation — severe hypotonia, seizures, characteristic craniofacial features, hepatomegaly, and early death, with elevated VLCFAs — describes Zellweger syndrome, the most severe peroxisome biogenesis disorder. Unlike X-linked ALD, in which a single peroxisomal transporter (ABCD1) is defective and only VLCFA beta-oxidation is impaired (producing a later-onset, more limited phenotype of demyelination plus adrenal insufficiency), Zellweger syndrome results from failure of peroxisomes to assemble at all (PEX gene mutations), so every peroxisomal pathway is lost — a far more severe, multisystem, neonatal-lethal disease.",
+
+    flowchart_title: "Elevated VLCFA in an Infant or Child — ALD vs. Zellweger",
+    flowchart: JSON.stringify([
+      {
+        "node": "Elevated plasma very-long-chain fatty acids (VLCFA)",
+        "branches": [
+          {
+            "next": "Suspect Zellweger syndrome (peroxisome biogenesis disorder)",
+            "label": "Neonatal hypotonia, seizures, dysmorphic facies, hepatomegaly"
+          },
+          {
+            "next": "Suspect X-linked adrenoleukodystrophy",
+            "label": "School-age/adolescent boy: behavioral decline, spasticity, hyperpigmentation"
+          },
+          {
+            "next": "Presymptomatic ABCD1 carrier — begin MRI surveillance",
+            "label": "Asymptomatic boy with an affected relative"
+          }
+        ]
+      },
+      {
+        "node": "X-linked ALD confirmed by ABCD1 genetic testing — assess adrenal function and brain MRI",
+        "branches": [
+          {
+            "next": "Start lifelong glucocorticoid (+/- mineralocorticoid) replacement",
+            "label": "Low cortisol / abnormal ACTH stimulation test"
+          },
+          {
+            "next": "Refer promptly for hematopoietic stem cell transplant or gene therapy",
+            "label": "MRI shows early/mild cerebral demyelination"
+          },
+          {
+            "next": "Transplant offers limited benefit — supportive/palliative focus",
+            "label": "MRI shows extensive demyelination"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 1,
+    module_title: "Biochemistry",
+    key_submodule: "Dyslipidemias",
+    slug: "familial-hypercholesterolemia",
+    title: "Familial Hypercholesterolemia",
+    sort_order: 4,
+
+    hook_vignette:
+      "A 9-year-old boy is brought in after his parents noticed yellowish, raised nodules on his Achilles tendons and around both eyes. His father had a myocardial infarction at age 38. A lipid panel shows a total cholesterol of 410 mg/dL with an LDL of 340 mg/dL; triglycerides are normal.",
+
+    ddx_mapping:
+      "Familial hypercholesterolemia vs. other causes of markedly elevated LDL cholesterol:\n\nFamilial hypercholesterolemia (autosomal dominant; most commonly an LDL receptor mutation, also PCSK9 gain-of-function or ApoB defects) — isolated, severe LDL elevation from birth (triglycerides normal), tendon xanthomas (classically Achilles), xanthelasma, corneal arcus (especially before age 45), strong family history of very early atherosclerotic disease/MI; heterozygotes (~1 in 250) present in adulthood, homozygotes (rare) present in childhood with extreme LDL and MI before age 20.\n\nPolygenic/common hypercholesterolemia — modest LDL elevation from the combined small effect of many common variants plus diet, no tendon xanthomas, usually presents later and with less extreme LDL values and a weaker family history pattern.\n\nFamilial combined hyperlipidemia — elevated LDL AND triglycerides (a mixed pattern) with variable phenotype even within the same family, typically without tendon xanthomas.\n\nSecondary hypercholesterolemia (hypothyroidism, nephrotic syndrome, cholestasis, certain medications) — should be excluded with TSH, urinalysis for proteinuria, and a liver panel; still worth checking even when the pattern strongly suggests a genetic cause.\n\nSitosterolemia — also causes tendon xanthomas and premature atherosclerosis, but via a different mechanism (increased intestinal absorption of plant sterols from ABCG5/ABCG8 mutations), distinguished by elevated plasma plant sterols rather than isolated cholesterol elevation.",
+
+    diagnostic_evaluation:
+      "Diagnosis is primarily clinical, using validated criteria (e.g., Dutch Lipid Clinic Network criteria) that combine LDL level, tendon xanthomas, corneal arcus before age 45, and family history of premature coronary disease or very high LDL in first-degree relatives. A fasting lipid panel showing markedly elevated LDL with normal triglycerides is the key initial lab finding. Genetic testing (LDLR, APOB, PCSK9) confirms the diagnosis and is useful for cascade screening of relatives, though a substantial fraction of clinically diagnosed cases have no identifiable mutation on panel testing. Rule out secondary causes (TSH, urinalysis, liver function tests) before finalizing the diagnosis. Screen first-degree relatives with a lipid panel once an index case (proband) is identified, since roughly half of first-degree relatives of a heterozygote will also carry the mutation.",
+
+    management:
+      "High-intensity statin therapy is first-line in adults; in children/adolescents with FH, statins are typically started around age 8–10 depending on severity and guideline, given the markedly elevated lifetime cardiovascular risk. Ezetimibe is added if LDL goals are not met on maximally tolerated statin. PCSK9 inhibitors (evolocumab, alirocumab — monoclonal antibodies that prevent LDL receptor degradation) or, for severe/refractory cases, bempedoic acid or inclisiran (siRNA against PCSK9) are added for patients not at goal on statin plus ezetimibe, and are essentially required in homozygous FH since LDL-receptor-dependent statin efficacy is blunted when receptor function is severely impaired. Homozygous FH (extremely elevated LDL, MI risk in childhood) often requires LDL apheresis in addition to maximal drug therapy. Aggressive lifestyle modification (diet, exercise, smoking cessation) is adjunctive, not sufficient alone given the genetic, receptor-level defect. Cascade genetic/lipid screening of first-degree relatives is a key population-level management step once a proband is identified.",
+
+    first_order_prompt:
+      "Match this finding to its diagnosis: Isolated markedly elevated LDL (normal triglycerides) from birth, Achilles tendon xanthomas, and a father with an MI at age 38.",
+    first_order_answer:
+      "Familial hypercholesterolemia (typically an LDL receptor mutation).",
+
+    second_order_vignette:
+      "A 34-year-old woman presents for a routine physical. She has no symptoms but mentions that her father died suddenly of a heart attack at age 41 and her paternal uncle underwent bypass surgery in his 40s. Exam reveals bilateral yellowish plaques on the upper eyelids and a grayish ring around the periphery of both corneas. A fasting lipid panel shows total cholesterol 380 mg/dL, LDL 295 mg/dL, HDL 48 mg/dL, and triglycerides 110 mg/dL. TSH and urinalysis are normal.",
+    second_order_question:
+      "Which of the following is the most likely underlying molecular defect?",
+    second_order_choices: JSON.stringify([
+      {
+        "text": "Deficiency of lipoprotein lipase",
+        "label": "A",
+        "correct": false,
+        "explanation": "Lipoprotein lipase deficiency causes markedly elevated triglycerides (chylomicronemia), not the isolated LDL elevation with normal triglycerides seen here."
+      },
+      {
+        "text": "Mutation in the LDL receptor gene",
+        "label": "B",
+        "correct": true,
+        "explanation": "Correct — isolated, severe LDL elevation with normal triglycerides, xanthelasma, corneal arcus before age 45, and a strong family history of premature coronary disease is classic for heterozygous familial hypercholesterolemia, most commonly caused by loss-of-function mutations in the LDL receptor gene, which impair hepatic clearance of LDL particles."
+      },
+      {
+        "text": "Apolipoprotein A-I deficiency",
+        "label": "C",
+        "correct": false,
+        "explanation": "ApoA-I deficiency impairs HDL formation, causing low HDL, not elevated LDL — the opposite lipid abnormality from this patient's pattern."
+      },
+      {
+        "text": "Deficiency of apolipoprotein C-II",
+        "label": "D",
+        "correct": false,
+        "explanation": "ApoC-II deficiency impairs lipoprotein lipase activation, causing severe hypertriglyceridemia (chylomicronemia), not isolated LDL elevation."
+      },
+      {
+        "text": "Mutation causing loss of function of PCSK9",
+        "label": "E",
+        "correct": false,
+        "explanation": "Loss-of-function (not gain-of-function) PCSK9 mutations INCREASE LDL receptor recycling and LOWER LDL — this is actually protective against atherosclerosis, the opposite of this patient's presentation; a gain-of-function PCSK9 mutation would instead cause a hypercholesterolemia phenotype."
+      }
+    ]),
+    second_order_answer: "B",
+    second_order_explanation:
+      "This patient's isolated, severe LDL elevation with normal triglycerides, xanthelasma, arcus before age 45, and strong family history of premature coronary events is the classic phenotype of heterozygous familial hypercholesterolemia. The most common cause is a loss-of-function mutation in the LDL receptor, which normally mediates hepatic uptake and clearance of circulating LDL particles — when receptor number or function is reduced, LDL clearance falls and plasma LDL rises, driving early atherosclerosis and the physical stigmata of lipid deposition (xanthomas, xanthelasma, arcus).",
+
+    flowchart_title: "Severe Isolated LDL Elevation — Confirming Familial Hypercholesterolemia",
+    flowchart: JSON.stringify([
+      {
+        "node": "Markedly elevated LDL with normal triglycerides on fasting lipid panel",
+        "branches": [
+          {
+            "next": "Suspect familial hypercholesterolemia",
+            "label": "Tendon xanthomas, xanthelasma, or arcus before age 45"
+          },
+          {
+            "next": "More likely polygenic hypercholesterolemia",
+            "label": "No physical stigmata, weak family history, modest elevation"
+          },
+          {
+            "next": "Consider familial combined hyperlipidemia instead",
+            "label": "Elevated triglycerides also present"
+          }
+        ]
+      },
+      {
+        "node": "Suspect FH — after excluding secondary causes (TSH, urinalysis, liver panel normal), apply Dutch Lipid Clinic Network (or similar) clinical criteria",
+        "branches": [
+          {
+            "next": "Clinical diagnosis of FH — offer LDLR/APOB/PCSK9 genetic testing",
+            "label": "Criteria met: LDL severity + xanthomas + premature family MI"
+          },
+          {
+            "next": "Suspect homozygous FH — needs apheresis + maximal drug therapy",
+            "label": "Extreme LDL (>400-500) presenting in childhood with early MI"
+          }
+        ]
+      },
+      {
+        "node": "Diagnosis confirmed (clinical +/- genetic) — initiate treatment",
+        "branches": [
+          {
+            "next": "High-intensity statin; add ezetimibe, then PCSK9 inhibitor as needed; cascade-screen relatives",
+            "label": "Heterozygous FH"
+          },
+          {
+            "next": "Statin + ezetimibe + PCSK9 inhibitor plus LDL apheresis",
+            "label": "Homozygous FH"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 1,
+    module_title: "Biochemistry",
+    key_submodule: "Hematologic Abnormalities",
+    slug: "g6pd-deficiency",
+    title: "Glucose-6-Phosphate Dehydrogenase (G6PD) Deficiency",
+    sort_order: 5,
+
+    hook_vignette:
+      "A 6-year-old boy of Mediterranean descent presents with fatigue, dark urine, and scleral icterus 2 days after starting trimethoprim-sulfamethoxazole for a urinary tract infection. Labs show a hemoglobin drop from baseline, elevated indirect bilirubin, and elevated LDH with low haptoglobin. A peripheral smear shows bite cells and Heinz bodies.",
+
+    ddx_mapping:
+      "G6PD deficiency vs. other causes of acute hemolysis after an oxidative trigger:\n\nG6PD deficiency (X-linked, reduced NADPH-regenerating capacity, impaired neutralization of oxidative stress via reduced glutathione) — episodic hemolysis triggered by oxidative stressors (sulfa drugs, dapsone, primaquine/certain antimalarials, fava beans, infection itself); bite cells and Heinz bodies on smear; self-limited because the oldest, most-deficient RBCs are hemolyzed first while younger reticulocytes (relatively higher enzyme activity) survive — an enzyme assay done DURING an acute episode can be falsely normal because the most deficient cells have already been destroyed.\n\nPyruvate kinase deficiency — chronic, not episodic, hemolytic anemia (not triggered by oxidative stressors), autosomal recessive, no bite cells/Heinz bodies; caused by impaired glycolytic ATP production rather than impaired oxidative defense.\n\nHereditary spherocytosis — chronic hemolytic anemia with spherocytes (not bite cells) on smear, positive osmotic fragility test, splenomegaly common, autosomal dominant membrane defect — not triggered by oxidative drugs.\n\nAutoimmune hemolytic anemia — positive direct Coombs (direct antiglobulin) test, spherocytes may be present, not specifically tied to oxidative drug exposure, and can occur at any age without the male-predominant X-linked pattern.\n\nDrug-induced immune hemolysis (non-G6PD mechanism, e.g., certain penicillins) — also drug-associated, but mediated by antibody formation against a drug-hapten on the RBC membrane (Coombs-positive), not by direct oxidative RBC injury (Coombs-negative in G6PD deficiency).",
+
+    diagnostic_evaluation:
+      "During an acute hemolytic episode: CBC shows falling hemoglobin, peripheral smear shows bite cells (from splenic macrophages removing Heinz-body-containing membrane) and Heinz bodies (denatured hemoglobin precipitates, best seen with supravital stains like crystal violet), and hemolysis labs show elevated indirect bilirubin, elevated LDH, low haptoglobin, and reticulocytosis. Direct antiglobulin (Coombs) test is negative, distinguishing this from immune-mediated hemolysis. Definitive diagnosis is by measuring G6PD enzyme activity — but this assay is best deferred 2–3 months after an acute episode, since during/immediately after a hemolytic crisis the most severely deficient (oldest) red cells have already been destroyed and the remaining reticulocyte-enriched population can show falsely normal or near-normal activity.",
+
+    management:
+      "Acute episodes are usually self-limited once the offending oxidative trigger (drug, infection, fava beans) is identified and removed/treated — most patients do not require transfusion, but severe hemolysis with significant anemia or hemodynamic compromise warrants packed red blood cell transfusion and supportive care (IV fluids, monitoring for acute kidney injury from hemoglobinuria in severe cases). There is no enzyme-replacement or curative therapy; management centers on avoidance — patient education on the list of oxidative triggers to avoid for life (sulfonamides, dapsone, primaquine/certain antimalarials, nitrofurantoin, fava beans, and acute illness/infection itself, which can also precipitate hemolysis via oxidative stress from the immune response). Screen before prescribing known high-risk oxidant drugs in patients from high-prevalence populations (Mediterranean, African, Middle Eastern, and Southeast Asian ancestry) when feasible. Genetic counseling given X-linked inheritance — affected males are hemizygous, and heterozygous female carriers can have intermediate enzyme levels from random X-inactivation (lyonization) and occasionally manifest clinically.",
+
+    first_order_prompt:
+      "Match this finding to its diagnosis: Bite cells and Heinz bodies on peripheral smear with acute hemolysis 2 days after starting a sulfa antibiotic.",
+    first_order_answer:
+      "Glucose-6-phosphate dehydrogenase (G6PD) deficiency.",
+
+    second_order_vignette:
+      "A 4-year-old boy is brought to the emergency department with pallor and dark, tea-colored urine that began this morning. His parents report he ate fava beans for the first time at a family dinner two days ago. He appears jaundiced. Labs show hemoglobin 7.1 g/dL (baseline 12.5 g/dL one month ago), indirect bilirubin 4.8 mg/dL, markedly elevated LDH, and undetectable haptoglobin. Direct antiglobulin (Coombs) test is negative. Peripheral smear shows red cells with small, round areas of membrane missing along one edge.",
+    second_order_question:
+      "Which of the following best explains the mechanism of this patient's hemolysis?",
+    second_order_choices: JSON.stringify([
+      {
+        "text": "Antibody-mediated destruction of red cells sensitized by a drug hapten",
+        "label": "A",
+        "correct": false,
+        "explanation": "This mechanism describes certain drug-induced immune hemolytic anemias, which would show a POSITIVE direct Coombs test; this patient's Coombs test is negative, arguing against an antibody-mediated mechanism."
+      },
+      {
+        "text": "Impaired regeneration of reduced glutathione due to decreased NADPH production",
+        "label": "B",
+        "correct": true,
+        "explanation": "Correct — G6PD deficiency impairs the pentose phosphate pathway's ability to regenerate NADPH, which is required to keep glutathione in its reduced (protective, antioxidant) form. Without adequate reduced glutathione, oxidative stressors like fava bean glycosides cause hemoglobin denaturation (Heinz bodies), which splenic macrophages then \"bite\" out of the red cell membrane, producing the bite cells seen on this patient's smear and a Coombs-negative hemolytic anemia."
+      },
+      {
+        "text": "A structural defect in the red cell membrane cytoskeleton",
+        "label": "C",
+        "correct": false,
+        "explanation": "This describes hereditary spherocytosis, which produces spherocytes (not bite cells) on smear and is not triggered by fava bean ingestion."
+      },
+      {
+        "text": "Deficient red cell ATP production from a glycolytic enzyme defect",
+        "label": "D",
+        "correct": false,
+        "explanation": "This describes pyruvate kinase deficiency, a chronic (not acutely triggered) hemolytic anemia without the oxidative bite-cell morphology seen here."
+      },
+      {
+        "text": "Mechanical shearing of red cells across an abnormal vascular surface",
+        "label": "E",
+        "correct": false,
+        "explanation": "This describes a microangiopathic process (e.g., TTP/HUS/DIC), which would show schistocytes, not bite cells, and is not linked to fava bean exposure."
+      }
+    ]),
+    second_order_answer: "B",
+    second_order_explanation:
+      "Fava bean ingestion (favism) is a classic oxidative trigger for hemolysis in G6PD deficiency: G6PD deficiency limits NADPH generation via the pentose phosphate pathway, which in turn limits the red cell's ability to regenerate reduced glutathione, the main defense against oxidative damage to hemoglobin. Oxidative stress from fava bean glycosides causes hemoglobin to denature and precipitate as Heinz bodies, and splenic macrophages then remove these precipitates by 'biting' a piece out of the red cell membrane — producing the characteristic bite cells and a Coombs-negative hemolytic anemia.",
+
+    flowchart_title: "Acute Hemolysis After an Oxidative Trigger",
+    flowchart: JSON.stringify([
+      {
+        "node": "Acute drop in hemoglobin with jaundice/dark urine after a drug, infection, or fava bean exposure",
+        "branches": [
+          {
+            "next": "Consider drug-induced immune hemolytic anemia instead",
+            "label": "Direct Coombs test positive"
+          },
+          {
+            "next": "Suspect G6PD deficiency",
+            "label": "Direct Coombs negative, bite cells/Heinz bodies on smear"
+          },
+          {
+            "next": "Consider a microangiopathic process (TTP/HUS/DIC) instead",
+            "label": "Direct Coombs negative, schistocytes (not bite cells) on smear"
+          }
+        ]
+      },
+      {
+        "node": "Suspect G6PD deficiency",
+        "branches": [
+          {
+            "next": "G6PD enzyme assay may be falsely normal — defer definitive testing",
+            "label": "Acute episode, testing done now"
+          },
+          {
+            "next": "Repeat G6PD enzyme assay for definitive diagnosis",
+            "label": "2-3 months after the episode"
+          }
+        ]
+      },
+      {
+        "node": "Manage the acute episode",
+        "branches": [
+          {
+            "next": "Remove/avoid the trigger; supportive care, monitor for resolution",
+            "label": "Mild-moderate anemia, hemodynamically stable"
+          },
+          {
+            "next": "Transfuse packed red blood cells + IV fluids; monitor renal function",
+            "label": "Severe anemia or hemodynamic compromise"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 1,
+    module_title: "Biochemistry",
+    key_submodule: "Dermatitis",
+    slug: "pellagra-niacin-deficiency",
+    title: "Pellagra (Niacin/Vitamin B3 Deficiency)",
+    sort_order: 6,
+
+    hook_vignette:
+      "A 54-year-old man with chronic alcohol use disorder and a poor diet presents with a 2-month history of a painful, symmetric, hyperpigmented rash on his hands, forearms, and neck that worsens with sun exposure. He also reports profuse watery diarrhea and increasing confusion over the past few weeks, per his family.",
+
+    ddx_mapping:
+      "Pellagra (niacin/vitamin B3 deficiency, or deficiency of its precursor tryptophan) vs. its closest mimics:\n\nPellagra — the classic triad of dermatitis (symmetric, hyperpigmented, sharply demarcated rash in sun-exposed areas — a 'Casal necklace' around the neck is characteristic), diarrhea, and dementia ('the 3 D's,' with death the 4th D if untreated); risk factors include alcohol use disorder, malnutrition, carcinoid syndrome, and isoniazid therapy (which interferes with vitamin B6-dependent tryptophan-to-niacin conversion).\n\nHartnup disease — an autosomal recessive defect in neutral amino acid (including tryptophan) transport in renal and intestinal epithelium, causing a pellagra-like dermatitis and neurologic symptoms because tryptophan (a niacin precursor) is lost in the urine and malabsorbed; distinguished by neutral aminoaciduria on urine amino acid testing and usually presents in childhood.\n\nCarcinoid syndrome — tryptophan is diverted toward serotonin synthesis by the tumor, leaving less available for niacin synthesis, which can cause a secondary pellagra; distinguished by flushing, wheezing, and elevated urinary 5-HIAA.\n\nZinc deficiency/acrodermatitis enteropathica — also causes a symmetric, acral/periorificial dermatitis, but classically involves perioral, perianal, and periungual skin with more vesiculobullous/erosive lesions, plus alopecia and diarrhea, without the neuropsychiatric dementia component of pellagra; low serum zinc confirms.\n\nPorphyria cutanea tarda — also causes sun-exposed area skin changes, but produces blistering/fragility and hyperpigmentation with elevated urinary/plasma porphyrins, not a niacin-responsive rash, and lacks the diarrhea/dementia triad.",
+
+    diagnostic_evaluation:
+      "Pellagra is primarily a clinical diagnosis based on the classic triad (dermatitis, diarrhea, dementia) in a patient with a plausible risk factor (alcohol use disorder, severe malnutrition, isoniazid therapy, carcinoid syndrome, or a diet based heavily on unprocessed corn/maize, which contains niacin in a bound, poorly bioavailable form). Supportive labs include low urinary excretion of niacin metabolites (N1-methylnicotinamide), though this is rarely measured in practice. A therapeutic trial of niacin replacement with rapid clinical improvement is often used as practical confirmation. Evaluate for the underlying cause: nutritional history/alcohol screening, medication review (isoniazid use, and whether pyridoxine/B6 was co-administered), and, if carcinoid syndrome is suspected (flushing, diarrhea, wheezing), urinary 5-HIAA.",
+
+    management:
+      "Oral (or, in severe/malabsorptive cases, parenteral) niacin replacement — nicotinamide is often preferred over nicotinic acid to avoid the flushing side effect — produces rapid improvement in the dermatitis, GI symptoms, and neuropsychiatric symptoms, often within days, and is both diagnostic and therapeutic. Address the underlying cause: nutritional rehabilitation and alcohol use disorder treatment, adding pyridoxine (B6) supplementation for patients on isoniazid (B6 is a required cofactor for tryptophan-to-niacin conversion, and isoniazid depletes B6), and treatment of the underlying tumor if carcinoid syndrome is the cause. Because deficiency of one B vitamin often signals broader nutritional deficiency (especially in alcohol use disorder), evaluate for and empirically treat coexisting deficiencies (thiamine, folate, other B vitamins) — thiamine should generally be given before or alongside glucose administration in this population to avoid precipitating Wernicke encephalopathy.",
+
+    first_order_prompt:
+      "Match this finding to its diagnosis: Symmetric, hyperpigmented rash in sun-exposed skin plus diarrhea and confusion in a patient with alcohol use disorder.",
+    first_order_answer:
+      "Pellagra (niacin/vitamin B3 deficiency) — the classic triad of dermatitis, diarrhea, and dementia.",
+
+    second_order_vignette:
+      "A 61-year-old woman with a history of carcinoid tumor of the small bowel presents with a 3-month history of episodic facial flushing, wheezing, and watery diarrhea. She has also developed a rough, hyperpigmented, scaly rash on the backs of her hands and around her neck, along with new difficulty concentrating that her husband has noticed. Urinary 5-hydroxyindoleacetic acid (5-HIAA) is markedly elevated.",
+    second_order_question:
+      "The skin and neuropsychiatric findings in this patient are best explained by which of the following mechanisms?",
+    second_order_choices: JSON.stringify([
+      {
+        "text": "Direct cutaneous and neurologic toxicity from circulating serotonin",
+        "label": "A",
+        "correct": false,
+        "explanation": "Serotonin causes the flushing and GI symptoms of carcinoid syndrome, but it does not directly cause this niacin-deficiency dermatitis/dementia pattern — the mechanism here is indirect, via substrate diversion, not direct serotonin toxicity to skin or brain."
+      },
+      {
+        "text": "Increased shunting of dietary tryptophan toward serotonin synthesis, leaving insufficient tryptophan for niacin synthesis",
+        "label": "B",
+        "correct": true,
+        "explanation": "Correct — carcinoid tumors markedly upregulate conversion of tryptophan to serotonin (and its metabolite 5-HIAA); because a portion of the body's niacin (vitamin B3) is normally synthesized endogenously from dietary tryptophan, this diversion can deplete the tryptophan pool available for niacin synthesis and precipitate a secondary pellagra — with the classic dermatitis and dementia (plus the diarrhea also seen here) resulting from true niacin deficiency, not from serotonin itself."
+      },
+      {
+        "text": "Autoimmune destruction of dermal melanocytes triggered by tumor antigens",
+        "label": "C",
+        "correct": false,
+        "explanation": "This would describe a paraneoplastic vitiligo-like process, which does not fit this symmetric hyperpigmented (not depigmented), sun-exposed-area rash, nor would it explain the diarrhea/cognitive change."
+      },
+      {
+        "text": "Malabsorption of vitamin B12 due to tumor-related bacterial overgrowth",
+        "label": "D",
+        "correct": false,
+        "explanation": "B12 deficiency would cause macrocytic anemia and subacute combined degeneration (posterior column/corticospinal findings), not this dermatitis pattern, and isn't the mechanism linking carcinoid syndrome to pellagra."
+      },
+      {
+        "text": "Zinc chelation by excess circulating serotonin",
+        "label": "E",
+        "correct": false,
+        "explanation": "This is not a recognized mechanism; zinc deficiency causes a different dermatitis pattern (periorificial/acral) and is not linked to serotonin levels in carcinoid syndrome."
+      }
+    ]),
+    second_order_answer: "B",
+    second_order_explanation:
+      "Carcinoid tumors can cause a secondary (niacin-deficiency) pellagra because a large share of the body's dietary tryptophan can be diverted into the tumor's serotonin-synthesis pathway, depleting the substrate normally available for endogenous niacin synthesis. The resulting true niacin deficiency produces the same dermatitis-diarrhea-dementia triad seen in nutritional pellagra, layered on top of the tumor's own flushing/wheezing/diarrhea from serotonin excess — recognizing this link matters because niacin supplementation, not just tumor-directed therapy, treats the deficiency symptoms.",
+
+    flowchart_title: "Working Up Suspected Pellagra",
+    flowchart: JSON.stringify([
+      {
+        "node": "Symmetric, hyperpigmented rash in sun-exposed skin",
+        "branches": [
+          {
+            "next": "Suspect pellagra (niacin deficiency)",
+            "label": "Plus diarrhea and confusion/cognitive decline"
+          },
+          {
+            "next": "Suspect zinc deficiency (acrodermatitis enteropathica) instead",
+            "label": "Perioral/perianal/periungual distribution with alopecia"
+          },
+          {
+            "next": "Consider porphyria cutanea tarda instead",
+            "label": "Blistering/skin fragility, no diarrhea/dementia"
+          }
+        ]
+      },
+      {
+        "node": "Suspect pellagra (niacin deficiency)",
+        "branches": [
+          {
+            "next": "Nutritional pellagra",
+            "label": "History of alcohol use disorder / severe malnutrition"
+          },
+          {
+            "next": "Isoniazid-induced pellagra (impaired B6-dependent tryptophan-to-niacin conversion)",
+            "label": "On isoniazid therapy without B6 supplementation"
+          },
+          {
+            "next": "Secondary pellagra from carcinoid syndrome",
+            "label": "Flushing, wheezing, elevated urinary 5-HIAA"
+          },
+          {
+            "next": "Hartnup disease instead",
+            "label": "Childhood onset, neutral aminoaciduria on urine testing"
+          }
+        ]
+      },
+      {
+        "node": "Confirm and treat",
+        "branches": [
+          {
+            "next": "Oral nicotinamide replacement + treat underlying cause; rapid improvement confirms diagnosis",
+            "label": "Mild-moderate disease, oral intake tolerated"
+          },
+          {
+            "next": "Parenteral niacin replacement; screen for/treat coexisting thiamine and folate deficiency",
+            "label": "Severe disease or malabsorption"
+          }
+        ]
+      }
+    ]),
+  },
+  // ===========================================================================
   // Module 2 — Immunology
   // ===========================================================================
   {
