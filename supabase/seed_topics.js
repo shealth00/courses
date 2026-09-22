@@ -4209,6 +4209,646 @@ const CLINICAL_TOPICS = [
       }
     ]),
   },
+  // ==========================================================================
+  // Module 14 — Renal
+  // ==========================================================================
+  {
+    module_number: 14,
+    module_title: 'Renal',
+    key_submodule: 'Acute Kidney Injury (AKI)',
+    slug: 'prerenal-azotemia-vs-acute-tubular-necrosis',
+    title: 'Prerenal Azotemia vs. Acute Tubular Necrosis',
+    sort_order: 1,
+
+    hook_vignette:
+      'A 74-year-old man with heart failure is admitted for a diarrheal illness with poor oral intake over three days. On admission his creatinine has risen from a baseline of 1.0 mg/dL to 2.4 mg/dL. He is tachycardic, his mucous membranes are dry, and his urine output has fallen to 15 mL/hr.',
+
+    ddx_mapping:
+      'Prerenal azotemia vs. acute tubular necrosis (ATN) is the single most tested AKI distinction.\n' +
+      'Prerenal azotemia: kidney parenchyma is intact and tubules avidly reabsorb sodium and water in response to true or effective volume depletion (dehydration, hemorrhage, heart failure, cirrhosis, sepsis before tubular injury sets in). BUN rises disproportionately to creatinine (urea is passively reabsorbed with sodium), giving a BUN:Cr ratio >20:1.\n' +
+      'ATN: sustained hypoperfusion (a prolonged prerenal state) or a direct nephrotoxic insult (aminoglycosides, IV contrast, myoglobin, cisplatin) kills tubular epithelial cells, so the tubules lose their ability to concentrate urine or reabsorb sodium. BUN:Cr ratio falls toward 10-15:1.\n' +
+      'Other mimics: postrenal obstruction (BPH, pelvic mass, bilateral stones) — look for oliguria/anuria with a distended bladder or hydronephrosis on ultrasound, easily excluded with a bladder scan; acute interstitial nephritis (AIN) — a recent new drug (a beta-lactam, NSAID, PPI), fever, rash, and eosinophils/eosinophiluria with white cell casts but little proteinuria; acute glomerulonephritis — hematuria with dysmorphic RBCs and RBC casts, often with hypertension and edema.',
+
+    diagnostic_evaluation:
+      'Urinalysis and urine chemistries separate prerenal azotemia from ATN:\n' +
+      'Prerenal: FeNa <1% (FeUrea <35% if on diuretics), urine osmolality >500 mOsm/kg, urine sodium <20 mEq/L, bland sediment with hyaline casts.\n' +
+      'ATN: FeNa >2%, urine osmolality near plasma (roughly 300 mOsm/kg, isosthenuric — tubules can no longer concentrate), urine sodium >40 mEq/L, and muddy brown granular casts with renal tubular epithelial cells on microscopy.\n' +
+      'Renal ultrasound is obtained early to exclude obstruction. A rapid improvement in urine output/creatinine after a fluid challenge favors prerenal azotemia; no response supports established ATN.',
+
+    management:
+      'Prerenal azotemia: restore effective circulating volume with isotonic IV fluids, treat the underlying cause (hold diuretics/ACEi/ARB/NSAIDs, optimize cardiac output in heart failure, treat sepsis). Creatinine typically improves within 24-72 hours once perfusion is corrected; untreated, sustained hypoperfusion progresses to ATN.\n' +
+      'ATN: mainly supportive — stop the offending nephrotoxin, maintain euvolemia, correct electrolyte and acid-base derangements, renally dose medications, and start dialysis for refractory volume overload, hyperkalemia, severe acidosis, uremic symptoms, or toxin ingestion (the "AEIOU" indications). Tubular recovery typically takes one to three weeks, often with a polyuric recovery phase before function normalizes.',
+
+    first_order_prompt:
+      'A patient with AKI has FeNa 0.4%, urine osmolality 650 mOsm/kg, and a BUN:Cr ratio of 28:1. What is the diagnosis?',
+    first_order_answer:
+      'Prerenal azotemia — intact tubules are avidly reabsorbing sodium and concentrating urine in response to renal hypoperfusion.',
+
+    second_order_vignette:
+      'A 68-year-old woman is hospitalized for an ST-elevation MI and undergoes emergent cardiac catheterization with a large contrast load. Two days later her creatinine has risen from 0.9 to 2.1 mg/dL and her urine output has decreased. Urinalysis shows muddy brown granular casts. Urine sodium is 55 mEq/L.',
+    second_order_question:
+      "Which of the following best explains this patient's laboratory findings?",
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'Loss of tubular concentrating and sodium-reabsorbing capacity from ischemic/toxic tubular injury', correct: true, explanation: 'Correct. Contrast-induced ATN causes direct tubular epithelial injury (plus ischemia from medullary hypoperfusion), producing muddy brown granular casts and an inability to concentrate urine or conserve sodium (FeNa typically >2%, urine Na >40) — matching this presentation.' },
+      { label: 'B', text: 'Increased renin-angiotensin-aldosterone activity causing avid distal sodium reabsorption', correct: false, explanation: 'This describes the compensatory response seen in prerenal azotemia, which produces a low urine sodium and a bland sediment (hyaline casts) — the opposite of this patient’s high urine sodium and muddy brown casts.' },
+      { label: 'C', text: 'Obstruction of the ureters by a retroperitoneal mass', correct: false, explanation: 'Postrenal obstruction would be expected to show hydronephrosis on renal ultrasound and typically does not produce muddy brown casts, which are specific for tubular epithelial injury.' },
+      { label: 'D', text: 'Immune complex deposition in the glomerular basement membrane', correct: false, explanation: 'Immune complex glomerulonephritis produces dysmorphic RBCs and RBC casts with hematuria, not muddy brown granular casts, and would not typically follow a large contrast load by 48 hours.' },
+      { label: 'E', text: 'Acute hypersensitivity reaction to iodinated contrast with interstitial eosinophil infiltration', correct: false, explanation: 'Acute interstitial nephritis classically shows white cell casts and eosinophiluria, often with fever/rash; the muddy brown granular casts here are the classic marker of direct tubular injury (ATN), not interstitial inflammation.' },
+    ]),
+    second_order_answer: 'A',
+    second_order_explanation:
+      'Contrast-induced nephropathy is a common iatrogenic cause of ATN, typically manifesting 24-48 hours after a large iodinated contrast load, especially with pre-existing CKD, diabetes, or volume depletion. It combines direct tubular epithelial cytotoxicity with medullary vasoconstriction/ischemia, producing the classic ATN picture: muddy brown granular casts, FeNa >2%, urine Na >40 mEq/L, and isosthenuric urine — distinguishing it from prerenal azotemia (bland sediment, FeNa <1%) and from glomerular or interstitial causes.',
+
+    flowchart_title: 'Working up AKI',
+    flowchart: JSON.stringify([
+      { node: 'Rising creatinine / oliguria', branches: [
+        { label: 'Bladder distended or hydronephrosis on ultrasound', next: 'Postrenal obstruction — relieve with catheter/nephrostomy' },
+        { label: 'No obstruction, bland sediment, FeNa <1%, urine osm >500', next: 'Prerenal azotemia — trial of IV fluids' },
+        { label: 'No obstruction, muddy brown casts, FeNa >2%', next: 'Acute tubular necrosis — supportive care, remove nephrotoxin' },
+        { label: 'No obstruction, WBC casts, eosinophiluria, new drug exposure', next: 'Acute interstitial nephritis — stop offending drug' },
+      ]},
+      { node: 'Response to IV fluid challenge', branches: [
+        { label: 'Rapid improvement in urine output/creatinine', next: 'Confirms prerenal azotemia' },
+        { label: 'No improvement, persistent hypoperfusion', next: 'Progresses to ischemic ATN' },
+      ]},
+      { node: 'ATN confirmed', branches: [
+        { label: 'Refractory hyperkalemia, acidosis, volume overload, uremia, or toxin', next: 'Initiate dialysis (AEIOU indications)' },
+        { label: 'None of the above', next: 'Supportive management; expect recovery over 1-3 weeks' },
+      ]},
+    ]),
+  },
+
+  {
+    module_number: 14,
+    module_title: 'Renal',
+    key_submodule: 'Chronic Kidney Disease (CKD)',
+    slug: 'diabetic-nephropathy',
+    title: 'Diabetic Nephropathy',
+    sort_order: 2,
+
+    hook_vignette:
+      'A 58-year-old man with a 15-year history of type 2 diabetes presents for routine follow-up. He has no symptoms, but a screening urine albumin-to-creatinine ratio is 180 mg/g. His blood pressure is 148/92 mmHg, and his most recent HbA1c is 8.6%.',
+
+    ddx_mapping:
+      'Diabetic nephropathy is the leading cause of CKD/ESRD in the developed world and should be distinguished from other causes of proteinuric CKD in a diabetic patient.\n' +
+      'Diabetic nephropathy: a gradual, painless rise in albuminuria over years, typically accompanied by diabetic retinopathy, with slowly progressive GFR decline and normal-to-mildly-enlarged kidneys early in disease.\n' +
+      'Contrast with: hypertensive nephrosclerosis (usually milder proteinuria, long-standing poorly controlled hypertension, no retinopathy); another primary glomerular disease presenting in a diabetic (rapid-onset nephrotic-range proteinuria, no retinopathy, atypical sediment with dysmorphic RBCs/RBC casts — should prompt biopsy rather than assuming diabetic nephropathy); and ischemic nephropathy from renal artery stenosis (an abrupt creatinine rise after starting an ACEi/ARB, an abdominal bruit, asymmetric kidney size).\n' +
+      'A patient with long-standing diabetes, concurrent retinopathy, and a gradual proteinuric decline in GFR does not need a biopsy — the clinical picture is diagnostic. Absent retinopathy, or an atypical/rapid course, should trigger biopsy to look for another glomerulopathy.',
+
+    diagnostic_evaluation:
+      'Screening: an annual urine albumin-to-creatinine ratio (UACR) starting at diagnosis in type 2 diabetes (5 years after diagnosis in type 1). Moderately increased albuminuria = UACR 30-300 mg/g; severely increased albuminuria = UACR >300 mg/g, confirmed with a repeat sample since exercise, fever, and hyperglycemia can transiently elevate albuminuria.\n' +
+      'Estimated GFR by a creatinine-based equation, staged alongside albuminuria per the KDIGO heat-map (CKD stage = G1-G5 by eGFR x A1-A3 by albuminuria).\n' +
+      'Renal biopsy is reserved for atypical features (above); if performed, classic findings are diffuse glomerular basement membrane thickening, mesangial expansion, and eosinophilic nodular glomerulosclerosis (Kimmelstiel-Wilson nodules).',
+
+    management:
+      'Glycemic control slows progression, most robustly demonstrated early in disease.\n' +
+      'Blood pressure control with an ACE inhibitor or ARB — these lower intraglomerular pressure and reduce albuminuria independent of their systemic antihypertensive effect, and are first-line even in normotensive patients with albuminuria.\n' +
+      'SGLT2 inhibitors reduce proteinuria and slow eGFR decline independent of glycemic effect and are now standard add-on therapy for diabetic CKD with albuminuria.\n' +
+      'A nonsteroidal mineralocorticoid receptor antagonist (finerenone) is added for residual albuminuria despite maximal ACEi/ARB and SGLT2i therapy in appropriate patients.\n' +
+      'General CKD care: blood pressure goal typically <130/80, sodium restriction, avoiding nephrotoxins, statin therapy, and monitoring potassium after starting ACEi/ARB/finerenone. Refer to nephrology and begin dialysis-access planning as eGFR approaches stage G4/G5.',
+
+    first_order_prompt:
+      'What renal biopsy finding is classically described in advanced diabetic nephropathy?',
+    first_order_answer:
+      'Nodular glomerulosclerosis (Kimmelstiel-Wilson nodules) with diffuse glomerular basement membrane thickening and mesangial expansion.',
+
+    second_order_vignette:
+      'A 61-year-old woman with type 2 diabetes for 12 years and known moderate nonproliferative diabetic retinopathy is found on routine labs to have a UACR of 420 mg/g and an eGFR of 52 mL/min/1.73m². She has no hematuria and a bland urine sediment. She currently takes metformin and empagliflozin; her blood pressure is 138/86 mmHg and she is not on any antihypertensive.',
+    second_order_question:
+      'Which of the following is the most appropriate next step in management?',
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'Perform a renal biopsy', correct: false, explanation: 'Her clinical picture — long-standing diabetes, concurrent retinopathy, gradual albuminuric CKD with a bland sediment — is classic for diabetic nephropathy and does not require biopsy; biopsy is reserved for atypical features such as absent retinopathy, an active sediment, or a rapid GFR decline.' },
+      { label: 'B', text: 'Discontinue empagliflozin due to her declining eGFR', correct: false, explanation: 'SGLT2 inhibitors are renoprotective in diabetic CKD and should be continued (with monitoring) at this eGFR; they are only stopped at very low eGFR thresholds per labeling, not simply because eGFR is below normal.' },
+      { label: 'C', text: 'Start an ACE inhibitor or ARB', correct: true, explanation: 'Correct. In a diabetic patient with albuminuria (UACR >300 mg/g), an ACE inhibitor or ARB is first-line regardless of blood pressure because it lowers intraglomerular pressure and slows progression of albuminuric CKD, in addition to treating her hypertension.' },
+      { label: 'D', text: 'Restrict dietary protein to below 0.6 g/kg/day', correct: false, explanation: 'Severe protein restriction is not standard therapy for diabetic nephropathy and risks malnutrition; this is not the most appropriate next step compared with starting renin-angiotensin system blockade.' },
+      { label: 'E', text: 'Initiate hemodialysis access planning immediately', correct: false, explanation: 'An eGFR of 52 (stage G3a) does not warrant dialysis planning; access planning typically begins as eGFR approaches stage G4 (eGFR <30) or sooner if rapidly progressive.' },
+    ]),
+    second_order_answer: 'C',
+    second_order_explanation:
+      'In diabetic patients with albuminuric CKD, ACE inhibitors/ARBs are first-line regardless of blood pressure because they lower intraglomerular pressure via efferent arteriolar dilation, reducing albuminuria and slowing GFR decline beyond their antihypertensive effect. SGLT2 inhibitors and, when needed, finerenone are added for residual risk; biopsy is reserved for atypical presentations.',
+
+    flowchart_title: 'Diabetic CKD screening and management',
+    flowchart: JSON.stringify([
+      { node: 'Diabetic patient: annual UACR + eGFR screening', branches: [
+        { label: 'UACR <30 mg/g', next: 'Normal — continue annual screening' },
+        { label: 'UACR 30-300 mg/g (confirmed on repeat)', next: 'Moderately increased albuminuria — start ACEi/ARB + SGLT2i' },
+        { label: 'UACR >300 mg/g', next: 'Severely increased albuminuria — ACEi/ARB + SGLT2i, consider finerenone' },
+      ]},
+      { node: 'Atypical features present?', branches: [
+        { label: 'No retinopathy, active sediment, or rapid GFR decline', next: 'Consider renal biopsy for an alternate glomerulopathy' },
+        { label: 'Typical diabetic course with retinopathy', next: 'Diagnosis is clinical — no biopsy needed' },
+      ]},
+      { node: 'Albuminuria persists despite ACEi/ARB + SGLT2i', branches: [
+        { label: 'eGFR and potassium acceptable', next: 'Add finerenone' },
+        { label: 'eGFR declining toward stage G4', next: 'Refer nephrology; begin dialysis-access planning' },
+      ]},
+    ]),
+  },
+
+  {
+    module_number: 14,
+    module_title: 'Renal',
+    key_submodule: 'Albuminuria and Proteinuria',
+    slug: 'minimal-change-disease',
+    title: 'Minimal Change Disease',
+    sort_order: 3,
+
+    hook_vignette:
+      'A previously healthy 4-year-old boy is brought in for new periorbital swelling that is worse in the morning, followed over the next two days by swelling of his legs and abdomen. He has had no fever, rash, or gross blood in his urine. Urinalysis shows 4+ protein without blood.',
+
+    ddx_mapping:
+      'Nephrotic syndrome (proteinuria >3.5 g/day, hypoalbuminemia, edema, hyperlipidemia) has different leading causes by age.\n' +
+      'Minimal change disease (MCD): overwhelmingly the most common cause of nephrotic syndrome in children (peak age 2-6 years), presenting with abrupt-onset edema, normal renal function, normal complement, and a bland urine sediment (no hematuria, no casts). Often follows a viral URI or immunization; classically exquisitely steroid-responsive.\n' +
+      'Membranous nephropathy: the most common cause of primary nephrotic syndrome in non-diabetic adults; more insidious onset, associated with anti-PLA2R antibodies (primary) or with malignancy/hepatitis B/lupus/NSAIDs (secondary); higher risk of renal vein thrombosis than other nephrotic syndromes.\n' +
+      'Focal segmental glomerulosclerosis (FSGS): another major adult cause, associated with HIV, heroin use, obesity, or idiopathic/genetic disease; more often has some hematuria, hypertension, and a lower complete steroid-response rate than MCD.\n' +
+      'Diabetic nephropathy and amyloidosis are important adult causes with distinct clinical contexts (long-standing diabetes/retinopathy; systemic amyloid deposition, e.g. in multiple myeloma or chronic inflammatory disease).\n' +
+      'The key discriminator favoring MCD over these mimics is the combination of young age, abrupt onset, and a completely bland sediment with normal complement and normal renal function at presentation.',
+
+    diagnostic_evaluation:
+      'Urinalysis: heavy proteinuria (dipstick 3-4+), no hematuria, no cellular casts (fatty casts/oval fat bodies with a "Maltese cross" appearance under polarized light may be seen from lipiduria).\n' +
+      'A 24-hour urine protein or spot urine protein-to-creatinine ratio confirms nephrotic-range proteinuria (>3.5 g/day or ratio >3.5).\n' +
+      'Labs: hypoalbuminemia (<3 g/dL), hyperlipidemia (compensatory hepatic lipoprotein synthesis), normal serum complement (C3/C4), normal renal function.\n' +
+      'In children with a classic presentation, empiric corticosteroid therapy is started without biopsy. Biopsy is reserved for children with atypical features (age <1 or >8, hematuria, hypertension, renal insufficiency, low complement) or for adults; biopsy in MCD typically shows effacement of podocyte foot processes on electron microscopy with normal light microscopy and negative immunofluorescence.',
+
+    management:
+      'First-line: oral corticosteroids, to which the great majority of children with MCD achieve complete remission (resolution of proteinuria), usually within 2-4 weeks; this steroid responsiveness is itself considered strong confirmatory evidence for the diagnosis.\n' +
+      'Frequent relapsers or steroid-dependent/steroid-resistant patients are managed with steroid-sparing agents (e.g., cyclophosphamide, a calcineurin inhibitor such as cyclosporine/tacrolimus, mycophenolate mofetil, or rituximab).\n' +
+      'Supportive care during active nephrotic syndrome: sodium restriction and diuretics for symptomatic edema, plus monitoring — nephrotic patients are hypercoagulable (urinary loss of antithrombin III) and at increased infection risk (urinary loss of immunoglobulins, particularly pneumococcal infection/spontaneous bacterial peritonitis), so watch for thrombosis and infection during flares.',
+
+    first_order_prompt:
+      'What is the most common cause of nephrotic syndrome in children, and what electron microscopy finding is characteristic?',
+    first_order_answer:
+      'Minimal change disease; effacement (fusion) of podocyte foot processes on electron microscopy, with normal light microscopy and negative immunofluorescence.',
+
+    second_order_vignette:
+      'A 5-year-old girl develops new periorbital and lower extremity edema one week after an upper respiratory infection. Labs show serum albumin 1.9 g/dL, total cholesterol 320 mg/dL, and a urine protein-to-creatinine ratio of 6.2. Serum creatinine and complement levels are normal, and urine microscopy shows no red blood cells or casts.',
+    second_order_question:
+      'What is the most appropriate next step in management?',
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'Renal biopsy before starting any treatment', correct: false, explanation: 'Biopsy is reserved for children with atypical features (age <1 or >8 years, hematuria, hypertension, renal insufficiency, or low complement) — none of which this patient has, so empiric steroids without biopsy is appropriate.' },
+      { label: 'B', text: 'Empiric oral corticosteroid therapy', correct: true, explanation: 'Correct. In a child with the classic presentation of minimal change disease (young age, abrupt nephrotic-range proteinuria, bland sediment, normal complement and renal function), empiric corticosteroids are started without biopsy; the rapid, complete response to steroids is itself diagnostic.' },
+      { label: 'C', text: 'Testing for anti-PLA2R antibodies', correct: false, explanation: 'Anti-PLA2R antibodies are associated with primary membranous nephropathy, an adult disease; they have no role in evaluating a child with a classic minimal change disease presentation.' },
+      { label: 'D', text: 'Start an ACE inhibitor as sole therapy', correct: false, explanation: 'ACE inhibitors reduce proteinuria in chronic proteinuric kidney disease but are not first-line, steroid-sparing therapy for pediatric minimal change disease, which is exquisitely steroid-responsive; steroids are the appropriate first step.' },
+      { label: 'E', text: 'Immediate initiation of cyclophosphamide', correct: false, explanation: 'Cytotoxic agents like cyclophosphamide are reserved for frequently relapsing, steroid-dependent, or steroid-resistant disease — not first-line therapy for an initial presentation.' },
+    ]),
+    second_order_answer: 'B',
+    second_order_explanation:
+      'Minimal change disease is the leading cause of nephrotic syndrome in young children and typically presents with abrupt edema, heavy proteinuria, hypoalbuminemia, hyperlipidemia, a bland urine sediment, and normal complement/renal function. Given this classic picture, empiric corticosteroids are started without biopsy, and the near-universal, rapid remission with steroids in this age group is itself considered confirmatory.',
+
+    flowchart_title: 'Nephrotic syndrome in a child',
+    flowchart: JSON.stringify([
+      { node: 'Nephrotic-range proteinuria + edema in a child', branches: [
+        { label: 'Age 1-8, bland sediment, normal complement/renal function', next: 'Presumed minimal change disease — start empiric steroids' },
+        { label: 'Age <1 or >8, hematuria, hypertension, low complement, or renal insufficiency', next: 'Atypical — renal biopsy indicated' },
+      ]},
+      { node: 'Empiric steroid trial', branches: [
+        { label: 'Complete remission within 2-4 weeks', next: 'Confirms minimal change disease — taper steroids' },
+        { label: 'Steroid-resistant or frequent relapses', next: 'Biopsy + steroid-sparing agent (calcineurin inhibitor, cyclophosphamide, or rituximab)' },
+      ]},
+      { node: 'During an active nephrotic flare', branches: [
+        { label: 'Signs of thrombosis (loss of antithrombin III)', next: 'Evaluate for venous thromboembolism' },
+        { label: 'Fever / peritoneal signs', next: 'Evaluate for spontaneous bacterial peritonitis (from urinary Ig loss)' },
+      ]},
+    ]),
+  },
+
+  {
+    module_number: 14,
+    module_title: 'Renal',
+    key_submodule: 'Hematuria',
+    slug: 'iga-nephropathy',
+    title: 'IgA Nephropathy',
+    sort_order: 4,
+
+    hook_vignette:
+      'A 22-year-old man presents with cola-colored urine that began one day after he developed a sore throat and low-grade fever. He has had two similar episodes of gross hematuria over the past year, each coinciding with an upper respiratory infection. His blood pressure is mildly elevated and he has no edema.',
+
+    ddx_mapping:
+      'IgA nephropathy (Berger disease) is the most common cause of primary glomerulonephritis worldwide. Its hallmark is gross hematuria that begins synpharyngitically — within 24-48 hours of a mucosal (upper respiratory or GI) infection — reflecting a rise in poorly galactosylated IgA1 immune complexes that deposit in the mesangium. Episodes recur with subsequent infections, and microscopic hematuria often persists between flares.\n' +
+      'Post-streptococcal glomerulonephritis (PSGN): the key distinguisher from IgA nephropathy is timing — PSGN classically develops 1-3 weeks after group A streptococcal pharyngitis or a skin infection (the latency reflects the time needed to generate immune complexes), not 1-2 days. It is more common in children, presents with the full nephritic syndrome (hematuria, hypertension, edema, oliguria), and is associated with a low C3 that normalizes over 6-8 weeks.\n' +
+      'Alport syndrome: a (usually X-linked) type IV collagen defect presenting with persistent microscopic/gross hematuria plus sensorineural hearing loss and ocular abnormalities, with a family history of males with progressive renal failure — a genetic/syndromic picture rather than infection-triggered episodes.\n' +
+      'Thin basement membrane disease (benign familial hematuria): persistent isolated microscopic hematuria with normal renal function and a benign family history, without progression to renal failure or hearing/eye involvement.\n' +
+      'The combination of a very short latency to infection, recurrent episodic gross hematuria, and normal complement favors IgA nephropathy over PSGN, Alport syndrome, or thin basement membrane disease.',
+
+    diagnostic_evaluation:
+      'Urinalysis during a flare: gross or microscopic hematuria with dysmorphic RBCs and RBC casts (confirming a glomerular source), and variable, usually sub-nephrotic, proteinuria.\n' +
+      'Serum complement (C3/C4): normal in IgA nephropathy, distinguishing it from PSGN (low C3) and lupus nephritis (low C3/C4).\n' +
+      'Serum IgA is elevated in a minority of patients and is not diagnostic on its own.\n' +
+      'Definitive diagnosis requires renal biopsy: light microscopy shows mesangial proliferation/expansion, immunofluorescence shows dominant mesangial IgA deposits (often with C3 and IgG), and electron microscopy shows mesangial electron-dense deposits. Biopsy is typically pursued for recurrent gross hematuria, proteinuria >0.5-1 g/day, hypertension, or a declining eGFR — an isolated episode with normal function and minimal proteinuria may simply be observed.',
+
+    management:
+      'Isolated hematuria with normal blood pressure, normal eGFR, and minimal proteinuria: observation with periodic monitoring of blood pressure, eGFR, and proteinuria — many patients have a benign course.\n' +
+      'Persistent proteinuria (>0.5-1 g/day) and/or hypertension: maximal-tolerated ACE inhibitor or ARB therapy to reduce intraglomerular pressure and proteinuria, along with blood pressure control and general supportive CKD measures — first-line regardless of biopsy severity.\n' +
+      'An SGLT2 inhibitor is added in patients with proteinuric CKD from IgA nephropathy, consistent with its broader use in proteinuric kidney disease.\n' +
+      'Persistent proteinuria (>0.75-1 g/day) despite maximal supportive therapy for 3-6 months, particularly with active inflammation on biopsy: a glucocorticoid course (or a targeted-release budesonide formulation) may be added; immunosuppression is reserved for higher-risk patients given the side-effect burden.\n' +
+      'A meaningful minority of patients progress to ESRD over decades; the disease can recur in a transplanted kidney, usually slowly.',
+
+    first_order_prompt:
+      'How many days after an upper respiratory infection does gross hematuria classically appear in IgA nephropathy, and how does this differ from post-streptococcal glomerulonephritis?',
+    first_order_answer:
+      'IgA nephropathy: 1-2 days (synpharyngitic). PSGN: 1-3 weeks (the latent period needed for immune complex formation).',
+
+    second_order_vignette:
+      'A 9-year-old boy presents with dark, tea-colored urine, periorbital edema, and a blood pressure of 128/86 mmHg. His mother reports he had a sore throat with fever about two weeks ago that resolved without antibiotics. Labs show a low serum C3 with a normal C4, and urinalysis shows RBC casts.',
+    second_order_question:
+      'What is the most likely diagnosis?',
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'IgA nephropathy', correct: false, explanation: 'IgA nephropathy causes gross hematuria within 1-2 days of a mucosal infection (synpharyngitic), not after a two-week latency, and complement levels are typically normal — both features argue against IgA nephropathy here.' },
+      { label: 'B', text: 'Alport syndrome', correct: false, explanation: 'Alport syndrome presents with a chronic pattern of hematuria plus sensorineural hearing loss and ocular findings from a hereditary collagen defect, not an acute nephritic syndrome following a discrete streptococcal infection with low complement.' },
+      { label: 'C', text: 'Minimal change disease', correct: false, explanation: 'Minimal change disease causes nephrotic syndrome (heavy proteinuria, hypoalbuminemia) with a bland urine sediment — not RBC casts and hypertension, which indicate a nephritic, glomerulonephritic process.' },
+      { label: 'D', text: 'Post-streptococcal glomerulonephritis', correct: true, explanation: 'Correct. The roughly two-week latency after streptococcal pharyngitis, the full nephritic syndrome (hematuria, edema, hypertension), RBC casts, and a transiently low C3 with normal C4 are classic for PSGN, resulting from immune complex deposition after a preceding group A strep infection.' },
+      { label: 'E', text: 'Lupus nephritis', correct: false, explanation: 'Lupus nephritis can present with low complement and RBC casts, but this young boy lacks other systemic lupus features, and the clear temporal association with recent streptococcal pharyngitis strongly favors PSGN over lupus.' },
+    ]),
+    second_order_answer: 'D',
+    second_order_explanation:
+      'Post-streptococcal glomerulonephritis follows group A streptococcal pharyngitis or impetigo by 1-3 weeks (the time needed to form and deposit immune complexes), classically presenting in children with the full nephritic syndrome — hematuria with RBC casts, hypertension, and edema — along with a transiently depressed C3 that normalizes over 6-8 weeks. This contrasts with IgA nephropathy’s rapid (24-48 hour) synpharyngitic hematuria and normal complement.',
+
+    flowchart_title: 'Gross hematuria after a recent infection',
+    flowchart: JSON.stringify([
+      { node: 'Gross hematuria temporally linked to an infection', branches: [
+        { label: 'Hematuria within 1-2 days of URI, recurrent episodes, normal complement', next: 'IgA nephropathy' },
+        { label: 'Hematuria 1-3 weeks after strep pharyngitis/skin infection, low C3', next: 'Post-streptococcal glomerulonephritis' },
+        { label: 'Chronic hematuria + sensorineural hearing loss + family history', next: 'Alport syndrome' },
+        { label: 'Isolated persistent microscopic hematuria, benign family history', next: 'Thin basement membrane disease' },
+      ]},
+      { node: 'Biopsy indicated? (recurrent gross hematuria, proteinuria >0.5-1 g/day, hypertension, or falling eGFR)', branches: [
+        { label: 'Yes', next: 'Biopsy: mesangial IgA deposits confirm IgA nephropathy' },
+        { label: 'No — isolated hematuria, normal function', next: 'Observe with periodic monitoring' },
+      ]},
+      { node: 'Confirmed IgA nephropathy with proteinuria/hypertension', branches: [
+        { label: 'Responds to ACEi/ARB + SGLT2i', next: 'Continue supportive therapy' },
+        { label: 'Persistent proteinuria >0.75-1 g/day despite 3-6 months', next: 'Consider glucocorticoid/budesonide therapy' },
+      ]},
+    ]),
+  },
+
+  {
+    module_number: 14,
+    module_title: 'Renal',
+    key_submodule: 'Flank Pain',
+    slug: 'nephrolithiasis',
+    title: 'Nephrolithiasis',
+    sort_order: 5,
+
+    hook_vignette:
+      'A 38-year-old man presents with sudden-onset, severe left flank pain that radiates to his groin, coming in waves. He is writhing on the stretcher, unable to find a comfortable position, and has associated nausea and one episode of vomiting. Urinalysis shows microscopic hematuria.',
+
+    ddx_mapping:
+      'Acute flank pain has several mimics that renal colic must be distinguished from.\n' +
+      'Nephrolithiasis (renal colic): colicky pain that waxes and wanes as the stone moves and the ureter spasms, radiating from flank toward the groin/testicle or labia as the stone descends; the patient is restless, constantly shifting position (in contrast to peritonitis, where patients lie still). Hematuria is common but its absence does not exclude a stone.\n' +
+      'Pyelonephritis: fever, chills, and costovertebral angle tenderness with a more constant (not colicky) pain, associated with pyuria, bacteriuria, and systemic toxicity — urinalysis and clinical context differentiate it from a sterile stone.\n' +
+      'Ruptured or leaking abdominal aortic aneurysm: must be strongly considered in an older patient with vascular risk factors who has flank/back pain, hypotension, and a pulsatile abdominal mass — immediately life-threatening and must be excluded before attributing pain to a stone in this demographic.\n' +
+      'Ovarian torsion / testicular torsion: unilateral pelvic or scrotal pain that can radiate to the flank in a younger patient; exam and targeted ultrasound (Doppler flow) distinguish these.\n' +
+      'Musculoskeletal strain: pain reproducible/worsened by movement or palpation, without hematuria or a colicky quality.\n' +
+      'The waxing-waning colicky quality with radiation toward the groin, patient restlessness, and hematuria specifically point toward a ureteral stone.',
+
+    diagnostic_evaluation:
+      'Urinalysis: microscopic (or gross) hematuria in most patients (absence does not rule out a stone, especially with complete obstruction).\n' +
+      'Non-contrast CT of the abdomen and pelvis (CT KUB) is the gold-standard imaging study — it identifies virtually all stone types (including radiolucent uric acid stones, which are visible on CT though not on plain film) as well as size, location, and degree of hydronephrosis.\n' +
+      'Renal ultrasound is a reasonable first-line study in pregnant patients or children (avoids radiation) and can detect hydronephrosis, though it is less sensitive for small or ureteral stones.\n' +
+      'Metabolic workup (24-hour urine collection for volume, calcium, oxalate, citrate, uric acid, and sodium, plus stone analysis if captured) is reserved for recurrent stone formers or high-risk first stones, to guide targeted prevention.\n' +
+      'Stone composition context: calcium oxalate stones are by far the most common overall; struvite (magnesium ammonium phosphate) stones form in alkaline urine from urease-producing organisms (Proteus, Klebsiella) and can form large "staghorn" calculi; uric acid stones form in persistently acidic urine and are radiolucent on plain film; cystine stones occur in the inherited disorder cystinuria.',
+
+    management:
+      'Acute management: IV fluids for hydration, NSAIDs (e.g., ketorolac) as first-line analgesia (also reduce ureteral smooth muscle spasm and inflammation), with opioids as needed for breakthrough pain and antiemetics for nausea.\n' +
+      'Most stones <5 mm pass spontaneously with hydration and analgesia within a few weeks; a stone 5-10 mm may be given a trial of medical expulsive therapy with an alpha-blocker (e.g., tamsulosin) to relax ureteral smooth muscle and facilitate passage.\n' +
+      'Indications for urologic intervention: a stone unlikely to pass spontaneously (size >10 mm), persistent obstruction, infection in the setting of an obstructing stone (a urologic emergency requiring urgent decompression — percutaneous nephrostomy or ureteral stent — plus antibiotics), intractable pain/vomiting, or a solitary kidney with obstruction. Options include extracorporeal shock-wave lithotripsy (ESWL), ureteroscopy with laser lithotripsy, or percutaneous nephrolithotomy for very large/staghorn stones.\n' +
+      'Secondary prevention: increased fluid intake (goal urine output >2-2.5 L/day) is universally recommended; moderate dietary sodium and animal protein; thiazide diuretics reduce urinary calcium excretion for recurrent calcium stone formers; potassium citrate alkalinizes urine and increases citrate (a stone inhibitor) for calcium oxalate and uric acid stones; allopurinol lowers uric acid for urate stone formers.',
+
+    first_order_prompt:
+      'A patient with an obstructing 6 mm ureteral stone develops fever and chills. What is the appropriate management?',
+    first_order_answer:
+      'Urgent decompression (percutaneous nephrostomy or ureteral stent) plus antibiotics — an infected obstructed system is a urologic emergency, not managed with medical expulsive therapy alone.',
+
+    second_order_vignette:
+      'A 45-year-old woman presents with three episodes of colicky right flank pain over the past two years, each associated with passage of a small stone. Stone analysis from her most recent episode reveals a struvite (magnesium ammonium phosphate) composition. Urine culture grows Proteus mirabilis.',
+    second_order_question:
+      "What is the most likely underlying mechanism promoting this patient's stone formation?",
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'Chronically acidic urine promoting uric acid precipitation', correct: false, explanation: 'Persistently acidic urine (not alkaline) favors uric acid stone formation, typically in patients with gout, high-purine diets, or chronic diarrhea — not the mechanism behind struvite stones, which require alkaline urine from urease-producing bacteria.' },
+      { label: 'B', text: 'Excess intestinal oxalate absorption from fat malabsorption', correct: false, explanation: 'Enteric hyperoxaluria from fat malabsorption (e.g., Crohn disease or after bariatric surgery) promotes calcium oxalate stones, not struvite stones, which are driven specifically by urease-splitting infection.' },
+      { label: 'C', text: 'An inherited defect in renal tubular amino acid transport', correct: false, explanation: 'This describes cystinuria, which produces cystine stones (often hexagonal crystals on microscopy), not struvite stones tied to chronic urease-positive urinary infection.' },
+      { label: 'D', text: 'Idiopathic hypercalciuria from excess intestinal calcium absorption', correct: false, explanation: 'Idiopathic hypercalciuria is the most common identifiable cause of calcium oxalate/phosphate stones, not struvite stones, which form specifically in the setting of chronic infection with urease-producing organisms.' },
+      { label: 'E', text: 'Urease-producing bacteria alkalinizing the urine and increasing ammonia concentration', correct: true, explanation: 'Correct. Proteus mirabilis (and other urease-producing organisms like Klebsiella) hydrolyzes urea to ammonia, alkalinizing the urine and raising ammonium and phosphate concentrations, which precipitate with magnesium to form struvite stones — these can enlarge quickly into staghorn calculi filling the renal pelvis.' },
+    ]),
+    second_order_answer: 'E',
+    second_order_explanation:
+      'Struvite stones are unique among the major stone types in being directly caused by infection rather than a metabolic derangement: urease-producing organisms such as Proteus mirabilis, Klebsiella, and Providencia split urinary urea into ammonia, alkalinizing the urine and supersaturating it with ammonium and phosphate. These stones can grow rapidly into staghorn calculi filling the collecting system, and management requires both stone removal (often percutaneous nephrolithotomy for large stones) and eradication of the underlying infection to prevent recurrence.',
+
+    flowchart_title: 'Acute flank pain with suspected stone',
+    flowchart: JSON.stringify([
+      { node: 'Acute colicky flank pain', branches: [
+        { label: 'Older patient, vascular risk factors, hypotension/pulsatile mass', next: 'Exclude ruptured AAA emergently' },
+        { label: 'Fever, chills, CVA tenderness, pyuria', next: 'Suspect pyelonephritis — evaluate for a concomitant stone' },
+        { label: 'Colicky pain radiating to groin, restless patient, hematuria', next: 'Suspect nephrolithiasis — obtain non-contrast CT KUB' },
+      ]},
+      { node: 'Non-contrast CT confirms a ureteral stone', branches: [
+        { label: 'Stone <5 mm, no infection, pain controlled', next: 'Trial of spontaneous passage: fluids + NSAIDs' },
+        { label: 'Stone 5-10 mm', next: 'Medical expulsive therapy with an alpha-blocker (tamsulosin)' },
+        { label: 'Stone >10 mm or refractory symptoms', next: 'Urologic intervention (ureteroscopy, ESWL, or PCNL)' },
+        { label: 'Fever/signs of infection with obstruction', next: 'Emergent decompression (stent/nephrostomy) + antibiotics' },
+      ]},
+      { node: 'Recurrent stone former', branches: [
+        { label: 'Calcium oxalate stones', next: 'Increase fluids, reduce sodium/protein, consider thiazide + citrate' },
+        { label: 'Uric acid stones', next: 'Urinary alkalinization, allopurinol' },
+        { label: 'Struvite stones with recurrent infection', next: 'Complete stone clearance + treat/prevent UTI' },
+      ]},
+    ]),
+  },
+
+  {
+    module_number: 14,
+    module_title: 'Renal',
+    key_submodule: 'Renal and Urinary Tract Masses',
+    slug: 'renal-cell-carcinoma',
+    title: 'Renal Cell Carcinoma',
+    sort_order: 6,
+
+    hook_vignette:
+      'A 63-year-old man with a 40-pack-year smoking history presents with several weeks of intermittent gross hematuria and a dull, constant right flank ache. He reports an unintentional 12-lb weight loss over three months. On exam, a vague fullness is palpable in the right flank.',
+
+    ddx_mapping:
+      'Renal and urinary tract masses differ substantially by age, presentation, and cell of origin.\n' +
+      'Renal cell carcinoma (RCC): the most common primary renal malignancy in adults (typically 6th-7th decade), arising from proximal tubular epithelium (clear cell subtype most common). Risk factors include smoking, obesity, hypertension, acquired cystic kidney disease from long-term dialysis, and von Hippel-Lindau syndrome (bilateral/multiple RCCs at a younger age). The classic triad of flank pain, hematuria, and a palpable mass is present together in only a minority of patients at diagnosis; more often it is found incidentally on imaging, or presents with a paraneoplastic syndrome (erythrocytosis from ectopic EPO, hypercalcemia from PTHrP, hypertension from renin secretion, or nonmetastatic hepatic dysfunction/Stauffer syndrome).\n' +
+      'Urothelial (transitional cell) carcinoma of the renal pelvis/ureter/bladder: painless gross hematuria is the dominant presenting symptom, strongly linked to smoking and occupational aromatic amine exposure; arises from urothelium rather than renal parenchyma and can be multifocal along the urothelial-lined tract.\n' +
+      'Wilms tumor (nephroblastoma): the most common renal malignancy of childhood (peak age 2-5 years), presenting as an asymptomatic abdominal mass found by a caregiver or on exam, usually not crossing the midline; associated with WT1 mutations and syndromes (WAGR, Denys-Drash, Beckwith-Wiedemann).\n' +
+      'Simple renal cyst: an incidental, well-circumscribed, fluid-filled, avascular lesion on imaging (Bosniak category I) — benign, requiring no further workup, distinguished from a complex/solid mass by imaging characteristics.\n' +
+      'Angiomyolipoma: a benign fat-containing renal tumor (fat density on CT is diagnostic), associated with tuberous sclerosis when multiple/bilateral; risk of spontaneous hemorrhage when large.',
+
+    diagnostic_evaluation:
+      'Contrast-enhanced CT of the abdomen (CT urogram) is the primary imaging modality — RCC appears as a solid, enhancing renal mass (enhancement with contrast is the key feature distinguishing a solid tumor from a simple cyst). The Bosniak classification stratifies cystic renal lesions by malignancy risk based on wall thickness, septations, calcification, and enhancement.\n' +
+      'Renal mass biopsy is not routinely required before resection of a suspicious solid enhancing mass (imaging plus clinical context is usually sufficient to proceed to surgery), but may be used when the diagnosis is uncertain or systemic therapy is planned without surgery.\n' +
+      'Staging includes chest imaging (RCC commonly metastasizes hematogenously to lung, bone, and brain), and bone scan/brain MRI if symptomatic.\n' +
+      'Labs may show erythrocytosis (ectopic EPO), hypercalcemia (PTHrP), or liver enzyme/dysfunction out of proportion to actual hepatic metastasis (Stauffer syndrome), any of which typically resolve after nephrectomy if driven by the tumor itself.',
+
+    management:
+      'Localized disease: partial nephrectomy (nephron-sparing) is preferred for smaller tumors when technically feasible to preserve renal function; radical nephrectomy for larger or centrally located tumors. RCC is notably resistant to conventional cytotoxic chemotherapy and radiation, so surgery is the mainstay for localized disease.\n' +
+      'Small, incidentally found renal masses (<2-3 cm) in select patients (older, significant comorbidities) may be managed with active surveillance given their low metastatic potential, or with thermal ablation.\n' +
+      'Metastatic/advanced disease does not respond well to conventional chemotherapy; treatment relies on targeted therapy against the VHL/HIF/VEGF pathway (tyrosine kinase inhibitors such as sunitinib, pazopanib, cabozantinib) and immune checkpoint inhibitors (nivolumab, ipilimumab, pembrolizumab), often in combination, reflecting RCC’s relative immunogenicity.\n' +
+      'Cytoreductive nephrectomy may be considered in select metastatic patients as part of a multimodal approach. Paraneoplastic derangements (erythrocytosis, hypercalcemia, hypertension) are managed symptomatically and by treating the underlying tumor, after which they often resolve.',
+
+    first_order_prompt:
+      'What cell of origin distinguishes renal cell carcinoma from urothelial (transitional cell) carcinoma of the renal pelvis?',
+    first_order_answer:
+      'RCC arises from renal tubular epithelium (most commonly proximal tubule, clear cell type); urothelial carcinoma arises from the transitional epithelium lining the renal pelvis, ureter, and bladder.',
+
+    second_order_vignette:
+      'A 58-year-old woman undergoes an abdominal CT for unrelated gallstone symptoms and is incidentally found to have a 4 cm solid, enhancing mass in the left kidney. She reports no flank pain, hematuria, or weight loss. Routine labs show a hemoglobin of 18.9 g/dL and a normal calcium.',
+    second_order_question:
+      "What is the most likely explanation for this patient's elevated hemoglobin?",
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'Chronic gastrointestinal blood loss leading to iron overload', correct: false, explanation: 'GI blood loss causes iron-deficiency anemia (a low, not elevated, hemoglobin), the opposite of this patient’s finding.' },
+      { label: 'B', text: 'Ectopic erythropoietin production by the tumor', correct: true, explanation: 'Correct. Renal cell carcinoma is a classic cause of paraneoplastic erythrocytosis via ectopic (or dysregulated local) erythropoietin secretion, independent of any bleeding or physiologic hypoxia. This typically resolves after nephrectomy if driven by the tumor.' },
+      { label: 'C', text: 'Dehydration causing hemoconcentration', correct: false, explanation: 'While dehydration can mildly elevate hemoglobin via hemoconcentration, nothing in this vignette suggests volume depletion, and a well-described paraneoplastic mechanism directly linked to RCC is the more likely explanation given the incidental renal mass.' },
+      { label: 'D', text: 'Polycythemia vera from a JAK2 mutation', correct: false, explanation: 'Polycythemia vera is a primary bone marrow disorder unrelated to this incidentally discovered renal mass; while it should be considered in unexplained erythrocytosis generally, the solid enhancing renal mass makes paraneoplastic EPO production from RCC the more directly relevant explanation here.' },
+      { label: 'E', text: 'Hypercalcemia-induced renal concentrating defect', correct: false, explanation: 'This patient’s calcium is normal, and a renal concentrating defect from hypercalcemia would cause polyuria/volume depletion, not a specific rise in red cell mass, so it does not explain true erythrocytosis.' },
+    ]),
+    second_order_answer: 'B',
+    second_order_explanation:
+      'Renal cell carcinoma is well known for paraneoplastic syndromes, most classically erythrocytosis from ectopic erythropoietin secretion, but also hypercalcemia from PTHrP, hypertension from renin secretion, and Stauffer syndrome (nonmetastatic hepatic dysfunction). These syndromes can be the presenting clue to an otherwise asymptomatic tumor and typically resolve after nephrectomy when tumor-driven.',
+
+    flowchart_title: 'Evaluating an incidental renal mass',
+    flowchart: JSON.stringify([
+      { node: 'Renal mass found on imaging', branches: [
+        { label: 'Simple, fluid-filled, avascular, thin wall (Bosniak I)', next: 'Simple cyst — benign, no further workup' },
+        { label: 'Fat density on CT', next: 'Angiomyolipoma — consider tuberous sclerosis if multiple/bilateral' },
+        { label: 'Solid, enhancing with contrast', next: 'Suspicious for renal cell carcinoma' },
+        { label: 'Complex cystic features (septa, calcification, enhancement)', next: 'Bosniak II-IV — risk-stratify; higher categories favor resection' },
+      ]},
+      { node: 'Suspected RCC — staging workup', branches: [
+        { label: 'Localized, feasible margins', next: 'Partial (nephron-sparing) or radical nephrectomy' },
+        { label: 'Small mass, poor surgical candidate', next: 'Active surveillance or thermal ablation' },
+        { label: 'Metastatic disease on staging imaging', next: 'Systemic therapy: TKI ± checkpoint inhibitor' },
+      ]},
+      { node: 'Paraneoplastic labs present (erythrocytosis, hypercalcemia, hypertension)', branches: [
+        { label: 'Resolves after nephrectomy', next: 'Confirms a tumor-driven paraneoplastic syndrome' },
+        { label: 'Persists despite nephrectomy', next: 'Evaluate for residual/metastatic disease or an unrelated cause' },
+      ]},
+    ]),
+  },
+
+  {
+    module_number: 14,
+    module_title: 'Renal',
+    key_submodule: 'Congenital Anomalies',
+    slug: 'autosomal-dominant-polycystic-kidney-disease',
+    title: 'Autosomal Dominant Polycystic Kidney Disease',
+    sort_order: 7,
+
+    hook_vignette:
+      'A 34-year-old woman presents with new-onset hypertension and intermittent dull bilateral flank discomfort. Her father was started on dialysis at age 58. Abdominal exam reveals bilaterally palpable, irregular flank masses.',
+
+    ddx_mapping:
+      'Congenital/hereditary renal anomalies differ in inheritance, age of presentation, and associated findings.\n' +
+      'Autosomal dominant polycystic kidney disease (ADPKD): the most common inherited kidney disease, from mutations in PKD1 (~85%, more severe/earlier ESRD) or PKD2 (~15%, a milder course). Presents in adulthood (often the 30s-40s) with hypertension (often the earliest sign, from cyst-mediated activation of the renin-angiotensin system), bilateral flank pain/hematuria, and progressive bilateral kidney enlargement with numerous cysts, eventually progressing to ESRD in the majority of PKD1 patients. Key extrarenal associations: intracranial (berry) aneurysms — screened with MR angiography only if there is a family history of aneurysm/hemorrhage or a high-risk occupation — hepatic cysts (the most common extrarenal manifestation), mitral valve prolapse, and colonic diverticula.\n' +
+      'Autosomal recessive polycystic kidney disease (ARPKD): a PKHD1 mutation presenting in infancy/childhood, often with oligohydramnios in utero (from decreased fetal urine output) leading to Potter sequence (pulmonary hypoplasia, characteristic facies, limb deformities) in severe cases, plus congenital hepatic fibrosis — a very different, earlier and typically more severe course than ADPKD.\n' +
+      'Posterior urethral valves: the most common cause of congenital lower urinary tract obstruction in male infants (an obstructing membrane in the posterior urethra), presenting with a weak urinary stream, a palpable bladder, and bilateral hydronephrosis, and can cause oligohydramnios/pulmonary hypoplasia in utero if severe — an obstructive rather than cystic process, and specific to males.\n' +
+      'Simple/acquired cysts, unlike ADPKD, are typically unilateral or few in number, lack a strong family history, and do not carry the same extrarenal disease burden.\n' +
+      'The combination of adult-onset bilateral flank masses, hypertension, and a strong family history of ESRD distinguishes ADPKD from these other congenital entities.',
+
+    diagnostic_evaluation:
+      'Renal ultrasound is the standard screening/diagnostic test in a patient with a family history: age-based ultrasound criteria (e.g., at least 2 cysts total, uni- or bilateral, in an at-risk patient age 15-39, with more cysts required at older ages since cysts also increase with normal aging) confirm the diagnosis in most at-risk relatives.\n' +
+      'Genetic testing (PKD1/PKD2) is reserved for atypical presentations, equivocal imaging, or reproductive/living-donor decision-making.\n' +
+      'Once diagnosed, monitor blood pressure closely and renal function (eGFR trend; total kidney volume by MRI is used as a prognostic marker in some patients to identify rapid progressors), and screen for extrarenal manifestations as indicated (liver imaging if symptomatic; MR angiography for intracranial aneurysm only with a family history of aneurysm/subarachnoid hemorrhage or a high-risk occupation, not as universal screening).\n' +
+      'Urinalysis may show microscopic hematuria; gross hematuria can occur with cyst rupture or infection.',
+
+    management:
+      'Blood pressure control is central — an ACE inhibitor or ARB is first-line, targeting tighter blood pressure control in most patients to slow cyst growth and preserve renal function.\n' +
+      'Tolvaptan (a vasopressin V2-receptor antagonist) slows cyst growth and eGFR decline in patients with rapidly progressive disease by blocking cAMP-mediated cystogenesis; requires monitoring for hepatotoxicity and causes significant polyuria/thirst as an on-target effect.\n' +
+      'General supportive measures: adequate hydration (may help suppress vasopressin-driven cyst growth), avoiding nephrotoxins, treating cyst infections with lipophilic antibiotics that penetrate cysts (e.g., fluoroquinolones, trimethoprim-sulfamethoxazole), and conservative management of pain from cyst hemorrhage/mass effect (rarely, cyst decompression or nephrectomy for severe symptomatic cases).\n' +
+      'Progression to ESRD is managed with dialysis or transplantation as in other causes of CKD; genetic counseling is offered given the 50% inheritance risk to offspring of an affected parent, and first-degree relatives are screened with renal ultrasound.',
+
+    first_order_prompt:
+      'What is the earliest and most common systemic finding in ADPKD, and what is its mechanism?',
+    first_order_answer:
+      'Hypertension — cyst expansion causes local renal ischemia, activating the renin-angiotensin-aldosterone system, often preceding any decline in GFR.',
+
+    second_order_vignette:
+      "A 41-year-old man with known ADPKD and well-controlled hypertension presents with a sudden severe headache described as \"the worst of his life,\" along with neck stiffness and photophobia. He has a family history of a sibling who died suddenly of a brain hemorrhage in his 30s.",
+    second_order_question:
+      'What is the most likely cause of this presentation?',
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'Hypertensive encephalopathy from poorly controlled blood pressure', correct: false, explanation: "This patient's hypertension is described as well-controlled, and hypertensive encephalopathy typically presents with a more gradual, severe headache with altered mental status/visual changes rather than a sudden \"worst headache of life\" with meningismus, which is more specific for subarachnoid hemorrhage." },
+      { label: 'B', text: 'Rupture of a hepatic cyst', correct: false, explanation: 'Hepatic cysts are the most common extrarenal manifestation of ADPKD but present with right upper quadrant pain/hepatomegaly, not a thunderclap headache and meningismus.' },
+      { label: 'C', text: 'Rupture of an intracranial (berry) aneurysm', correct: true, explanation: 'Correct. ADPKD is associated with an increased prevalence of intracranial saccular (berry) aneurysms, particularly in the anterior circulation. A thunderclap headache with meningismus, especially with a family history of aneurysmal hemorrhage, is classic for rupture causing subarachnoid hemorrhage — a recognized, life-threatening extrarenal complication of ADPKD.' },
+      { label: 'D', text: 'Bacterial meningitis', correct: false, explanation: 'Bacterial meningitis can present with headache, neck stiffness, and photophobia, but typically also with fever and a more subacute onset over hours, whereas the sudden onset and ADPKD/family history context point specifically to aneurysmal subarachnoid hemorrhage.' },
+      { label: 'E', text: 'Mitral valve prolapse causing an embolic stroke', correct: false, explanation: 'MVP is associated with ADPKD but is a rare source of embolic stroke; the presentation described (thunderclap headache, meningismus) is classic for subarachnoid hemorrhage from aneurysm rupture, not embolic ischemic stroke.' },
+    ]),
+    second_order_answer: 'C',
+    second_order_explanation:
+      'Intracranial berry aneurysms occur at a meaningfully increased rate in ADPKD patients compared with the general population, especially with a family history of aneurysm or hemorrhage. Rupture causes subarachnoid hemorrhage, classically presenting as a sudden, severe ("thunderclap") headache with meningismus — a neurosurgical emergency requiring urgent CT/CT angiography and neurosurgical evaluation. This is why MR angiography screening is targeted at ADPKD patients with such a family history rather than performed universally.',
+
+    flowchart_title: 'Evaluating suspected ADPKD',
+    flowchart: JSON.stringify([
+      { node: 'Adult with a family history of ESRD + bilateral flank masses/hypertension', branches: [
+        { label: 'Age-appropriate cyst count on renal ultrasound', next: 'Diagnostic for ADPKD' },
+        { label: 'Equivocal imaging or atypical presentation', next: 'PKD1/PKD2 genetic testing' },
+      ]},
+      { node: 'ADPKD confirmed', branches: [
+        { label: 'Hypertension present', next: 'Start ACEi/ARB, tight BP control' },
+        { label: 'Rapidly progressive disease (large total kidney volume, PKD1)', next: 'Consider tolvaptan' },
+        { label: 'Family history of intracranial aneurysm/hemorrhage', next: 'MR angiography screening' },
+      ]},
+      { node: 'Sudden thunderclap headache in an ADPKD patient', branches: [
+        { label: 'Meningismus present', next: 'Emergent CT/CTA — evaluate for a ruptured berry aneurysm' },
+        { label: 'Gradual, atypical headache without meningismus', next: 'Evaluate other, less urgent causes' },
+      ]},
+    ]),
+  },
+
+  {
+    module_number: 14,
+    module_title: 'Renal',
+    key_submodule: 'Urinary Incontinence',
+    slug: 'urinary-incontinence-classification',
+    title: 'Urinary Incontinence: Stress vs. Urge vs. Overflow',
+    sort_order: 8,
+
+    hook_vignette:
+      'A 58-year-old woman who has had three vaginal deliveries reports leaking small amounts of urine whenever she coughs, sneezes, or lifts her grandchildren. She does not leak at night and has no urgency or sensation preceding the leakage.',
+
+    ddx_mapping:
+      'Urinary incontinence is classified by mechanism, and distinguishing the type from history alone directs both workup and treatment.\n' +
+      'Stress incontinence: involuntary leakage with increased intra-abdominal pressure (coughing, sneezing, laughing, lifting) from urethral sphincter/pelvic floor weakness (vaginal childbirth, pelvic surgery, age-related estrogen loss) or urethral hypermobility. Small-volume leaks, no preceding urge, provoked by a specific activity.\n' +
+      'Urge incontinence (overactive bladder): a sudden, strong urge to void immediately followed by involuntary leakage, from detrusor overactivity/involuntary bladder contractions; often with urinary frequency and nocturia. Can be idiopathic or associated with neurologic disease (stroke, multiple sclerosis, Parkinson disease) or bladder irritation (UTI, stone, tumor).\n' +
+      'Overflow incontinence: continuous or frequent dribbling/leakage from a chronically over-distended bladder that cannot empty (impaired detrusor contractility or bladder outlet obstruction), commonly from diabetic neuropathy, BPH, or anticholinergic/opioid medications; associated with a weak stream, an incomplete-emptying sensation, and an elevated post-void residual volume.\n' +
+      'Mixed incontinence: features of both stress and urge incontinence together — common, particularly in older women.\n' +
+      'Functional incontinence: a normal urinary tract, but the patient cannot reach the toilet in time due to cognitive, mobility, or environmental factors (e.g., dementia, severe arthritis) — an important "non-urologic" mimic, since treating the urinary tract itself will not help.\n' +
+      'The single most useful discriminating feature is whether leakage is provoked by increased abdominal pressure without urge (stress), preceded by an urgent sensation (urge), continuous/dribbling with incomplete emptying (overflow), or purely situational/mobility-related (functional).',
+
+    diagnostic_evaluation:
+      'History and a bladder diary (voiding frequency, volumes, and triggers) are the foundation of evaluation and often sufficient to classify the type.\n' +
+      'Urinalysis to exclude UTI or hematuria (which would suggest an alternative or contributing cause such as stone or malignancy) in all patients.\n' +
+      'Post-void residual (PVR) volume by bladder ultrasound or catheterization: an elevated PVR (generally >150-200 mL) supports overflow incontinence or points to outlet obstruction/impaired detrusor contractility; a low PVR supports stress or urge incontinence.\n' +
+      'Cough stress test (observing for leakage with a full bladder during a cough): a positive test (immediate leakage coincident with the cough) supports stress incontinence.\n' +
+      'Urodynamic studies (measuring detrusor pressure and involuntary contractions) are reserved for diagnostic uncertainty, mixed symptoms, prior failed treatment, or before surgical correction — not first-line for a classic presentation.\n' +
+      'Pelvic exam assesses for pelvic organ prolapse and urethral hypermobility (Q-tip test) contributing to stress incontinence; a post-menopausal woman should also be assessed for atrophic vaginitis.',
+
+    management:
+      'Stress incontinence: first-line is pelvic floor (Kegel) muscle training, often with a pelvic floor physical therapist; weight loss if overweight; a pessary or vaginal support device for select patients. Surgery (most often a mid-urethral sling) for those who fail conservative management.\n' +
+      'Urge incontinence/overactive bladder: first-line is behavioral therapy — bladder training (scheduled voiding, urge suppression techniques), fluid/caffeine moderation, and pelvic floor exercises. Pharmacologic options if behavioral therapy is insufficient: antimuscarinics (e.g., oxybutynin, tolterodine — watch for anticholinergic side effects, use cautiously in the elderly and in cognitive impairment) or a beta-3 agonist (mirabegron, which relaxes the detrusor without anticholinergic burden and is often preferred in older adults). Refractory cases may proceed to onabotulinumtoxinA bladder injection or sacral neuromodulation.\n' +
+      'Overflow incontinence: address the underlying cause of impaired emptying — relieve outlet obstruction (e.g., an alpha-blocker or surgery for BPH), discontinue offending medications where possible, and use intermittent self-catheterization for a neurogenic/atonic bladder to prevent chronic over-distension and upper tract damage. Anticholinergics and other agents that further impair contractility should be avoided.\n' +
+      'Functional incontinence: address the underlying mobility, cognitive, or environmental barrier (scheduled toileting, improved toilet access, treating the underlying condition) rather than the bladder itself.\n' +
+      'Mixed incontinence: treat the dominant component first, typically starting with behavioral therapy that helps both.',
+
+    first_order_prompt:
+      'A patient leaks urine continuously in small amounts and has an elevated post-void residual volume. What type of incontinence is this, and what is the general treatment approach?',
+    first_order_answer:
+      'Overflow incontinence — from impaired detrusor contractility or bladder outlet obstruction; treat the underlying cause (e.g., relieve obstruction, stop offending medications) and use intermittent catheterization if needed.',
+
+    second_order_vignette:
+      'A 71-year-old man with type 2 diabetes and known BPH reports several months of constant dribbling incontinence and a sensation of incomplete bladder emptying. He denies urgency or leakage with coughing. Bladder ultrasound after voiding shows a post-void residual of 420 mL.',
+    second_order_question:
+      'What is the most appropriate next step in management?',
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'Start oxybutynin for overactive bladder', correct: false, explanation: 'Anticholinergics like oxybutynin are used for urge incontinence/detrusor overactivity, but they further impair detrusor contractility and would worsen overflow incontinence and urinary retention in this patient — the opposite of what is needed.' },
+      { label: 'B', text: 'Pelvic floor (Kegel) muscle training', correct: false, explanation: 'Kegel exercises target stress incontinence from pelvic floor/sphincter weakness, which is not this patient’s problem — he has no leakage with increased abdominal pressure, and his elevated PVR points to a retention/overflow process instead.' },
+      { label: 'C', text: 'Reassure that this is normal age-related bladder dysfunction requiring no intervention', correct: false, explanation: 'A PVR of 420 mL is markedly abnormal and puts the patient at risk for recurrent UTIs, bladder stones, and upper tract damage (hydronephrosis) if untreated — this requires active management, not reassurance.' },
+      { label: 'D', text: 'Intermittent self-catheterization', correct: true, explanation: "Correct. This patient's constant dribbling, incomplete-emptying sensation, and markedly elevated post-void residual (420 mL) indicate overflow incontinence from impaired bladder emptying — likely a combination of diabetic autonomic neuropathy and BPH-related outlet obstruction. Intermittent catheterization relieves chronic over-distension and prevents upper urinary tract damage while the underlying causes are addressed." },
+      { label: 'E', text: 'Mid-urethral sling placement', correct: false, explanation: 'A mid-urethral sling is a surgical treatment for stress incontinence, which is not this patient’s presentation; placing a sling would not address — and could worsen — his underlying outlet obstruction and retention.' },
+    ]),
+    second_order_answer: 'D',
+    second_order_explanation:
+      'Overflow incontinence results from a bladder that cannot empty effectively, from impaired detrusor contractility (e.g., diabetic autonomic/peripheral neuropathy), bladder outlet obstruction (e.g., BPH), or both together, as in this patient. Its hallmark is continuous dribbling with a markedly elevated post-void residual. Management addresses the underlying cause(s) and relieves chronic bladder over-distension, typically with intermittent catheterization, while avoiding agents (like anticholinergics) that would further impair emptying.',
+
+    flowchart_title: 'Classifying urinary incontinence',
+    flowchart: JSON.stringify([
+      { node: 'New urinary incontinence — history + bladder diary + urinalysis + PVR', branches: [
+        { label: 'Leakage with cough/sneeze/lifting, no urge, low PVR', next: 'Stress incontinence' },
+        { label: 'Sudden strong urge then leakage, frequency/nocturia, low PVR', next: 'Urge incontinence / overactive bladder' },
+        { label: 'Continuous dribbling, incomplete emptying, high PVR', next: 'Overflow incontinence' },
+        { label: 'Normal urinary tract, impaired mobility/cognition', next: 'Functional incontinence' },
+      ]},
+      { node: 'Stress incontinence confirmed', branches: [
+        { label: 'First-line', next: 'Pelvic floor muscle training ± pessary' },
+        { label: 'Fails conservative therapy', next: 'Mid-urethral sling surgery' },
+      ]},
+      { node: 'Urge incontinence confirmed', branches: [
+        { label: 'First-line', next: 'Bladder training, fluid/caffeine moderation' },
+        { label: 'Inadequate response', next: 'Antimuscarinic or beta-3 agonist (mirabegron)' },
+        { label: 'Refractory', next: 'Botulinum toxin bladder injection or sacral neuromodulation' },
+      ]},
+      { node: 'Overflow incontinence confirmed', branches: [
+        { label: 'Identify cause (BPH, neuropathy, medications)', next: 'Treat obstruction / stop offending drugs' },
+        { label: 'Persistent high PVR', next: 'Intermittent self-catheterization' },
+      ]},
+    ]),
+  },
+
+  {
+    module_number: 14,
+    module_title: 'Renal',
+    key_submodule: 'Electrolyte Disturbances',
+    slug: 'siadh',
+    title: 'SIADH',
+    sort_order: 9,
+
+    hook_vignette:
+      'A 67-year-old man with small cell lung cancer is found on routine labs to have a serum sodium of 118 mEq/L. He reports mild headache and nausea but is alert and oriented. He has no edema, and his blood pressure and heart rate are normal.',
+
+    ddx_mapping:
+      'Hypotonic hyponatremia is worked up by first assessing volume status, since SIADH is a euvolemic hyponatremia and only one branch of that workup.\n' +
+      'Hypovolemic hyponatremia: volume depletion (vomiting, diarrhea, diuretic use, adrenal insufficiency) triggers non-osmotic ADH release as a compensatory response to protect circulating volume at the expense of serum sodium; exam shows dry mucous membranes, tachycardia, orthostasis; urine sodium is low (<20 mEq/L) unless the cause is renal salt wasting or diuretics.\n' +
+      'Hypervolemic hyponatremia: heart failure, cirrhosis, and nephrotic syndrome all decrease effective circulating volume (despite total body volume overload), triggering ADH release and sodium/water retention; exam shows edema, ascites, or an elevated JVP; urine sodium is typically low (<20 mEq/L), reflecting avid renal sodium retention.\n' +
+      'SIADH (euvolemic hyponatremia, the most common cause of hyponatremia in hospitalized patients): ADH is secreted independent of the normal osmotic or volume stimuli, causing water retention with mild volume expansion that is not clinically detectable as edema (no edema, no orthostasis). Urine osmolality is inappropriately concentrated (>100 mOsm/kg, often much higher) relative to the low serum osmolality, and urine sodium is typically >40 mEq/L (reflecting normal renal sodium handling in a euvolemic, not volume-depleted, patient).\n' +
+      'Causes of SIADH: ectopic ADH production (classically small cell lung cancer), CNS causes (stroke, hemorrhage, meningitis, trauma), pulmonary causes (pneumonia, positive-pressure ventilation), and drugs (SSRIs, carbamazepine, cyclophosphamide, DDAVP).\n' +
+      'Other euvolemic causes to exclude before diagnosing SIADH: hypothyroidism and adrenal (cortisol) insufficiency, since low cortisol itself permits inappropriate ADH release.',
+
+    diagnostic_evaluation:
+      'Confirm hypotonic hyponatremia: serum osmolality <275 mOsm/kg (excludes pseudohyponatremia from hyperlipidemia/hyperproteinemia and hyperglycemia-driven translocational hyponatremia).\n' +
+      'Assess volume status clinically (exam for edema, orthostatics, mucous membranes) — SIADH is diagnosed only after excluding hypovolemic and hypervolemic causes.\n' +
+      'Diagnostic criteria for SIADH: euvolemia, urine osmolality >100 mOsm/kg (inappropriately concentrated given the low serum osmolality), urine sodium usually >40 mEq/L (with normal salt/water intake), and normal thyroid and adrenal (cortisol) function (both must be excluded, since they can mimic SIADH).\n' +
+      'Once SIADH is confirmed, search for the underlying cause: chest imaging (malignancy, pneumonia), CNS imaging if a neurologic cause is suspected, and a thorough medication review.',
+
+    management:
+      'The rate of sodium correction is the single highest-yield management point: chronic hyponatremia must not be corrected faster than 8 mEq/L in any 24-hour period, because overly rapid correction risks osmotic demyelination syndrome (central pontine myelinolysis) — presenting days later with spastic quadriparesis, dysarthria, and altered consciousness. Patients at highest risk for ODS include those with severe hyponatremia, alcoholism, malnutrition, or hypokalemia.\n' +
+      'Mild/moderate, chronic, asymptomatic SIADH: fluid restriction (typically <800 mL-1 L/day) is first-line; salt tablets or a loop diuretic can be added to increase free water excretion.\n' +
+      'More severe or symptomatic (but not severely symptomatic) cases refractory to fluid restriction: a vasopressin receptor antagonist ("vaptan," e.g., tolvaptan) can be used, or demeclocycline (induces a form of nephrogenic diabetes insipidus) as a second-line option; vaptans should not be combined with fluid restriction due to the risk of overly rapid correction.\n' +
+      'Severe, symptomatic hyponatremia (seizure, severe confusion, coma): hypertonic (3%) saline is given in a monitored setting, in small boluses, specifically to raise sodium quickly enough to halt/reverse life-threatening symptoms while still respecting the 24-hour correction limit — frequent sodium rechecks are mandatory to avoid overcorrection; if correction is inadvertently too rapid, this can be actively re-lowered with desmopressin plus free water.\n' +
+      'Definitive management is treatment of the underlying cause (tumor treatment, discontinuing an offending drug, treating the CNS/pulmonary process).',
+
+    first_order_prompt:
+      'Why must chronic hyponatremia not be corrected faster than about 8 mEq/L in 24 hours?',
+    first_order_answer:
+      'To avoid osmotic demyelination syndrome (central pontine myelinolysis), a delayed, often irreversible neurologic injury from overly rapid correction of chronic hyponatremia.',
+
+    second_order_vignette:
+      'A 74-year-old woman with a history of chronic alcohol use disorder and poor nutritional intake is admitted with a serum sodium of 108 mEq/L, found to be due to SIADH from a recent pneumonia. Her sodium is carefully corrected to 116 mEq/L over the first 24 hours per protocol. On hospital day 4, she develops new dysarthria and lethargy progressing to obtundation, along with spastic weakness in all four limbs.',
+    second_order_question:
+      'What is the most likely diagnosis for her new neurologic findings?',
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'Recurrent severe hyponatremia', correct: false, explanation: 'Recurrent hyponatremia would present with symptoms similar to her original presentation (confusion, possible seizure) at a time when sodium is re-measured as low again — but the delayed onset days after correction, with dysarthria and spastic quadriparesis, is specific for osmotic demyelination rather than a return of hyponatremic symptoms.' },
+      { label: 'B', text: 'Wernicke encephalopathy from thiamine deficiency', correct: false, explanation: 'Wernicke encephalopathy classically presents with the triad of confusion, ophthalmoplegia, and ataxia in a malnourished/alcohol-use patient — it does not typically cause spastic quadriparesis, and the temporal relationship to a recent sodium correction points specifically to osmotic demyelination.' },
+      { label: 'C', text: 'Acute ischemic stroke', correct: false, explanation: 'While stroke is always a consideration with new focal neurologic deficits, the specific clinical context — recent correction of severe hyponatremia in a high-risk patient, with a delayed, symmetric presentation of dysarthria and quadriparesis — is far more consistent with osmotic demyelination syndrome than a vascular event.' },
+      { label: 'D', text: 'Hepatic encephalopathy', correct: false, explanation: 'Hepatic encephalopathy typically presents with confusion and asterixis in the setting of significant liver dysfunction/portal hypertension, not the delayed dysarthria and spastic quadriparesis following sodium correction described here, and there is no mention of underlying cirrhosis in this vignette.' },
+      { label: 'E', text: 'Osmotic demyelination syndrome', correct: true, explanation: 'Correct. Despite a sodium correction rate that stayed within the generally accepted 24-hour limit (an 8 mEq/L rise here), this patient has multiple major risk factors for osmotic demyelination syndrome — severe baseline hyponatremia, chronic alcohol use, and malnutrition — all of which lower the safe threshold for correction. The delayed onset (days later) of dysarthria, altered consciousness, and spastic quadriparesis is the classic presentation of ODS rather than an acute complication of hyponatremia itself.' },
+    ]),
+    second_order_answer: 'E',
+    second_order_explanation:
+      'Osmotic demyelination syndrome can occur even when correction technically stays within generally cited 24-hour limits, particularly in high-risk patients — severe baseline hyponatremia (sodium <110-115), chronic alcohol use disorder, malnutrition, and hypokalemia all lower the safe correction threshold. Its hallmark is a delayed (days later) onset of dysarthria, dysphagia, altered consciousness, and spastic quadriparesis from pontine (and sometimes extrapontine) demyelination, which is why especially cautious, slower correction and frequent monitoring are warranted in higher-risk patients even when following standard rate limits.',
+
+    flowchart_title: 'Working up hyponatremia',
+    flowchart: JSON.stringify([
+      { node: 'Serum sodium <135 mEq/L', branches: [
+        { label: 'Serum osmolality normal/high', next: 'Pseudohyponatremia or translocational (hyperglycemia) — not true hypotonic hyponatremia' },
+        { label: 'Serum osmolality <275 mOsm/kg (true hypotonic hyponatremia)', next: 'Assess volume status' },
+      ]},
+      { node: 'Volume status assessment', branches: [
+        { label: 'Hypovolemic (dry mucous membranes, orthostasis)', next: 'Hypovolemic hyponatremia — treat with isotonic saline' },
+        { label: 'Hypervolemic (edema, ascites, elevated JVP)', next: 'Hypervolemic hyponatremia (CHF/cirrhosis/nephrotic) — fluid + sodium restriction, treat underlying disease' },
+        { label: 'Euvolemic, urine osm >100, urine Na >40, normal thyroid/cortisol', next: 'SIADH — search for cause (malignancy, CNS, pulmonary, drugs)' },
+      ]},
+      { node: 'Treating hyponatremia', branches: [
+        { label: 'Asymptomatic/mild, chronic', next: 'Fluid restriction ± salt tablets/loop diuretic' },
+        { label: 'Refractory to fluid restriction', next: 'Vasopressin antagonist (tolvaptan) or demeclocycline' },
+        { label: 'Severe symptoms (seizure, coma)', next: 'Hypertonic 3% saline in a monitored setting, frequent sodium rechecks' },
+      ]},
+      { node: 'Correction rate management', branches: [
+        { label: 'Standard risk', next: 'Limit rise to ~8 mEq/L per 24 hours' },
+        { label: 'High risk for ODS (severe hyponatremia, alcoholism, malnutrition, hypokalemia)', next: 'Correct even more cautiously; monitor closely for delayed neurologic symptoms' },
+      ]},
+    ]),
+  },
 ];
 
 // ---------------------------------------------------------------------------
