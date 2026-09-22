@@ -1,7 +1,7 @@
 {
   "name": "usmle-illustration-portfolio",
   "version": "1.0.0",
-  "description": "USMLE Step 1 & Step 2 medical illustration course portfolio — 2D diagram sets and 3D interactive models, backed by Supabase.",
+  "description": "USMLE Step 1 & Step 2 medical illustration course portfolio - 2D diagram sets and 3D interactive models, backed by Supabase.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
