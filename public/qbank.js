@@ -97,9 +97,13 @@ function blockCard(block) {
 }
 
 async function startAttempt(supabase, blockId, mode) {
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   const { data, error } = await supabase
     .from('qbank_attempts')
-    .insert({ block_id: blockId, mode, started_at: new Date().toISOString() })
+    .insert({ block_id: blockId, mode, started_at: new Date().toISOString(), user_id: user?.id ?? null })
     .select('id')
     .single();
   if (error) {
