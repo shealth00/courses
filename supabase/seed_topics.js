@@ -3306,6 +3306,381 @@ const CLINICAL_TOPICS = [
       }
     ]),
   },
+  {
+    module_number: 3,
+    module_title: "Microbiology",
+    key_submodule: "Tuberculosis",
+    slug: "pulmonary-tuberculosis-evaluation",
+    title: "Pulmonary Tuberculosis: Latent vs. Active Disease Workup",
+    sort_order: 9,
+
+    hook_vignette:
+      "A 41-year-old man who immigrated 2 years ago from a country with high tuberculosis prevalence presents with 6 weeks of productive cough, low-grade fevers, night sweats, and a 12-lb unintentional weight loss. He works at a homeless shelter. Chest X-ray shows a cavitary lesion in the right upper lobe.",
+
+    ddx_mapping:
+      "Active pulmonary tuberculosis classically causes a subacute-to-chronic (weeks-to-months) course of productive cough, low-grade fevers, drenching night sweats, and substantial weight loss, often with upper-lobe cavitary disease on imaging (reflecting the higher oxygen tension favoring obligate aerobic Mycobacterium tuberculosis growth apically), with risk factors including recent immigration from an endemic region, congregate living/homeless shelter exposure, and HIV coinfection.\nCommunity-acquired bacterial pneumonia typically has a much more acute (days, not weeks) onset with high fever and lobar consolidation rather than cavitation, and responds to a short course of empiric antibiotics rather than following the indolent, progressively wasting course described here.\nPrimary lung malignancy (particularly squamous cell carcinoma, which favors a central/upper-lobe location and can cavitate) can mimic TB's chronicity and weight loss, but typically occurs in an older patient with a heavy smoking history, lacks the prominent fevers/night sweats pattern, and is distinguished by cytology/biopsy rather than acid-fast smear.\nNontuberculous mycobacterial (NTM) infection (e.g., Mycobacterium avium complex) can also cause chronic cough, cavitary upper-lobe disease, and weight loss, particularly in older patients with underlying structural lung disease (bronchiectasis, COPD), but lacks the same epidemiologic risk factors here and requires mycobacterial speciation (not just AFB smear positivity, which cannot distinguish TB from NTM) to guide a markedly different treatment regimen.\nEndemic fungal infections (e.g., histoplasmosis, coccidioidomycosis) can also produce chronic cavitary lung disease with weight loss and can mimic TB radiographically, but are suggested by a compatible geographic exposure history (river valleys for Histoplasma; the desert Southwest for Coccidioides) rather than this patient's risk factors, and are diagnosed by fungal antigen/serology and culture rather than AFB smear.",
+
+    diagnostic_evaluation:
+      "Any patient with suspected active pulmonary TB should be placed in airborne isolation immediately, before further workup, given the risk of aerosol transmission.\nThree separate sputum specimens (ideally morning samples on different days) should be sent for acid-fast bacilli (AFB) smear microscopy, nucleic acid amplification testing (NAAT, e.g., Xpert MTB/RIF, which also rapidly screens for rifampin resistance), and mycobacterial culture, which remains the gold standard and is required for full drug-susceptibility testing even though it can take weeks to result.\nInterferon-gamma release assays (IGRA) or the tuberculin skin test (TST) support a diagnosis of TB infection (exposure) but cannot distinguish latent from active disease and should not be relied upon alone when active disease is clinically suspected — a symptomatic patient with a cavitary infiltrate needs sputum studies regardless of IGRA/TST result.\nHIV testing should be performed in every patient newly diagnosed with active TB, given the strong bidirectional relationship between the two infections and the implications for treatment duration/regimen and immune reconstitution risk.\nIn a patient with only an incidentally found positive IGRA/TST and no symptoms or radiographic abnormality, latent TB infection (LTBI) is diagnosed once active disease has been excluded by history, exam, and chest imaging.",
+
+    management:
+      "Active, drug-susceptible pulmonary TB is treated with a four-drug regimen — rifampin, isoniazid, pyrazinamide, and ethambutol (RIPE) — for an initial 2-month intensive phase, followed by a 4-month continuation phase of rifampin plus isoniazid (total 6 months), once susceptibility to rifampin and isoniazid is confirmed.\nPyridoxine (vitamin B6) is co-administered with isoniazid to prevent isoniazid-associated peripheral neuropathy, and baseline/periodic liver function tests are monitored given the hepatotoxicity risk of isoniazid, rifampin, and pyrazinamide.\nDirectly observed therapy (DOT) is preferred to ensure adherence and prevent the emergence of drug resistance, and public health authorities must be notified for contact tracing and airborne isolation precautions until the patient is no longer considered infectious (generally after smear conversion and clinical improvement on appropriate therapy).\nLatent TB infection, once active disease is excluded, is treated with a shorter rifamycin-based regimen (e.g., 4 months of rifampin, or 3 months of once-weekly isoniazid plus rifapentine) now preferred over the older 9-month isoniazid monotherapy regimen, given better completion rates with similar efficacy and lower hepatotoxicity risk.",
+
+    first_order_prompt:
+      "Why does active pulmonary tuberculosis characteristically involve the upper lobes rather than the lower lobes?",
+    first_order_answer:
+      "Because M. tuberculosis is an obligate aerobe, and the lung apices have relatively higher oxygen tension and lower lymphatic drainage/blood flow than the lower lobes, favoring bacillary growth there.",
+
+    second_order_vignette:
+      "A 52-year-old man with a positive tuberculin skin test placed for a pre-employment health screen (16 mm induration) has no cough, fever, weight loss, or night sweats. He has no documented prior TB exposure history, and a chest X-ray shows no infiltrate, cavitation, or hilar adenopathy. He has no history of HIV infection or other immunosuppression.",
+    second_order_question:
+      "Which of the following is the most appropriate next step in management?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Treat for latent TB infection with a rifamycin-based regimen after excluding active disease",
+        "correct": true,
+        "explanation": "Correct. Active disease has already been reasonably excluded by history, exam, and a normal chest X-ray, so a clearly positive TST is managed as latent TB infection, treated with a shorter rifamycin-based regimen to reduce future reactivation risk."
+      },
+      {
+        "label": "B",
+        "text": "Start standard four-drug RIPE therapy for active tuberculosis",
+        "correct": false,
+        "explanation": "Incorrect. There is no clinical or radiographic evidence of active disease, so full active-TB therapy is not indicated."
+      },
+      {
+        "label": "C",
+        "text": "Repeat the tuberculin skin test in 3 months to confirm a true positive",
+        "correct": false,
+        "explanation": "Incorrect. A clearly positive TST with active disease already excluded does not require repeat testing before treating for LTBI."
+      },
+      {
+        "label": "D",
+        "text": "No further action is needed since he has no symptoms",
+        "correct": false,
+        "explanation": "Incorrect. A positive TST/IGRA with active disease excluded should generally be treated for LTBI, since this reduces the future risk of reactivation."
+      },
+      {
+        "label": "E",
+        "text": "Obtain a sputum AFB smear and culture despite the normal chest X-ray",
+        "correct": false,
+        "explanation": "Incorrect. Without symptoms or an abnormal chest X-ray, sputum studies for active disease are low-yield and unnecessary once active disease has already been reasonably excluded."
+      }
+    ]),
+    second_order_answer: "A",
+    second_order_explanation:
+      "A clearly positive tuberculin skin test or IGRA in an asymptomatic patient with a normal chest X-ray, once active tuberculosis has been reasonably excluded by history, exam, and imaging, is managed as latent TB infection (LTBI). LTBI treatment (a rifamycin-based regimen — 4 months of rifampin, or 3 months of once-weekly isoniazid plus rifapentine — now preferred over the older 9-month isoniazid monotherapy course) reduces the lifetime risk of reactivation to active disease and does not require repeat skin testing or sputum studies when active disease has already been excluded.",
+
+    flowchart_title: "Evaluation of Suspected Tuberculosis",
+    flowchart: JSON.stringify([
+      {
+        "node": "Patient with risk factors + subacute cough/fever/night sweats/weight loss, or an incidental positive IGRA/TST",
+        "branches": [
+          {
+            "label": "Symptomatic with abnormal CXR (infiltrate/cavitation)",
+            "next": "Airborne isolation; send 3 sputum specimens for AFB smear + NAAT + mycobacterial culture"
+          },
+          {
+            "label": "Asymptomatic, positive IGRA/TST, normal CXR",
+            "next": "Evaluate for latent TB infection (LTBI) once active disease is excluded"
+          }
+        ]
+      },
+      {
+        "node": "Sputum studies",
+        "branches": [
+          {
+            "label": "AFB smear/NAAT positive for M. tuberculosis",
+            "next": "Begin empiric 4-drug RIPE therapy; notify public health; continue isolation"
+          },
+          {
+            "label": "AFB smear negative but clinical suspicion remains high",
+            "next": "Continue isolation pending culture; consider repeat sampling/bronchoscopy"
+          }
+        ]
+      },
+      {
+        "node": "Culture and susceptibility results",
+        "branches": [
+          {
+            "label": "Drug-susceptible M. tuberculosis confirmed",
+            "next": "Continue RIPE x2 months, then rifampin + isoniazid x4 months (total 6 months)"
+          },
+          {
+            "label": "Drug-resistant organism (e.g., rifampin-resistant/MDR-TB)",
+            "next": "Refer to a TB specialist for an individualized multidrug regimen"
+          }
+        ]
+      },
+      {
+        "node": "LTBI pathway (active disease excluded)",
+        "branches": [
+          {
+            "label": "No contraindication to rifamycin-based therapy",
+            "next": "4 months rifampin, or 3 months once-weekly isoniazid + rifapentine"
+          },
+          {
+            "label": "Rifamycin contraindicated (e.g., significant drug interaction)",
+            "next": "9 months isoniazid monotherapy with pyridoxine"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 3,
+    module_title: "Microbiology",
+    key_submodule: "Antibiotic-Associated Diarrhea",
+    slug: "clostridioides-difficile-colitis",
+    title: "Clostridioides difficile Colitis",
+    sort_order: 10,
+
+    hook_vignette:
+      "A 74-year-old woman hospitalized 10 days ago for a hip fracture repair, treated with perioperative cefazolin and then a course of clindamycin for a presumed wound infection, develops new watery diarrhea (8 episodes per day) with diffuse abdominal cramping and a low-grade fever on hospital day 9. She has no blood in her stool.",
+
+    ddx_mapping:
+      "Clostridioides difficile colitis should be strongly suspected in any patient with new diarrhea (typically watery, sometimes with mucus, only occasionally grossly bloody) occurring during or within several weeks of antibiotic exposure — clindamycin, fluoroquinolones, and broad-spectrum cephalosporins carry the highest risk — especially in a hospitalized or recently hospitalized older adult, resulting from antibiotic-driven disruption of normal colonic flora that allows toxin-producing C. difficile overgrowth.\nAntibiotic-associated diarrhea without true colitis (a benign osmotic/functional effect of antibiotics on gut flora, without toxin-mediated mucosal injury) can produce similar mild diarrhea during antibiotic therapy, but lacks fever, marked leukocytosis, or pseudomembranes, and resolves once the antibiotic is stopped without needing directed anti-C. difficile therapy.\nAn inflammatory bowel disease flare (particularly ulcerative colitis) can present with diarrhea and abdominal pain in a patient with a known IBD history, but typically lacks a clear temporal relationship to recent antibiotic exposure and more often features bloody stool as a prominent finding; C. difficile infection can also complicate or trigger an IBD flare, so testing for it remains appropriate in this population.\nIschemic colitis presents with abdominal pain (often out of proportion to exam, or in an older patient with vascular risk factors) and bloody diarrhea, typically without an antibiotic-exposure history, and is instead associated with hypotension, atrial fibrillation, or other risk factors for bowel hypoperfusion.\nNorovirus or other viral gastroenteritis causes acute watery diarrhea with vomiting, often in outbreak clusters (e.g., on a hospital ward), typically self-limited over 1-3 days without the antibiotic-exposure link or the more prolonged course seen in C. difficile colitis.",
+
+    diagnostic_evaluation:
+      "Stool testing should be sent only in patients with clinically significant diarrhea (generally ≥3 unformed stools in 24 hours) and no clear alternative explanation (e.g., laxative use), since testing an asymptomatic patient or one with formed stool risks detecting nonpathogenic colonization and leading to unnecessary treatment.\nA two-step testing algorithm is preferred: a highly sensitive nucleic acid amplification test (NAAT, detecting the toxin gene) or glutamate dehydrogenase (GDH) antigen screen is used first, followed by a toxin enzyme immunoassay (EIA) to confirm that toxin is actually being produced when the first test is positive, since NAAT/GDH alone cannot distinguish true toxin-producing infection from asymptomatic colonization with a toxigenic strain.\nA complete blood count and basic metabolic panel are obtained to assess severity — a markedly elevated white blood cell count (especially >15,000/mm3) and/or an elevated creatinine are used to risk-stratify to severe disease and guide treatment choice.\nAbdominal imaging (CT) and/or flexible sigmoidoscopy (looking for the characteristic yellow-white pseudomembranes) are reserved for patients with severe or fulminant presentations (e.g., ileus, toxic megacolon, or diagnostic uncertainty), not for routine, uncomplicated cases.",
+
+    management:
+      "The offending antibiotic should be discontinued as soon as clinically feasible, and treatment is stratified by severity: for a first, non-severe episode, oral vancomycin or oral fidaxomicin is now preferred over oral metronidazole, which is reserved for settings where the preferred agents are unavailable given its inferior efficacy.\nFor a first severe episode (marked leukocytosis and/or elevated creatinine as above), oral vancomycin is used at a standard dose and fidaxomicin is also an option; for fulminant disease (hypotension, ileus, or toxic megacolon), oral (or per-rectum, if ileus prevents oral delivery) vancomycin is combined with IV metronidazole, and surgery (subtotal colectomy) is considered for those who fail to improve or who develop perforation.\nRecurrent C. difficile infection (relapse within about 8 weeks of completing therapy) is common and is managed with a prolonged/tapered vancomycin course, fidaxomicin, or — for multiple recurrences — fecal microbiota transplantation, which restores healthy colonic flora and has high efficacy in preventing further relapse; bezlotoxumab (a monoclonal antibody against C. difficile toxin B) can also be added to reduce recurrence risk in high-risk patients.\nAntimotility agents (e.g., loperamide) are generally avoided in active C. difficile colitis, as they may worsen toxin retention and precipitate toxic megacolon, similar to the concern with EHEC infection.",
+
+    first_order_prompt:
+      "What is the recommended first-line oral regimen for a first episode of non-severe C. difficile colitis, and which agent is no longer considered first-line?",
+    first_order_answer:
+      "Oral vancomycin or oral fidaxomicin is preferred first-line; oral metronidazole is no longer first-line and is reserved for situations where the preferred agents are unavailable.",
+
+    second_order_vignette:
+      "A 68-year-old man is hospitalized for C. difficile colitis, diagnosed by NAAT and toxin EIA after receiving levofloxacin for presumed sinusitis, and is started on oral vancomycin. On hospital day 3 he develops worsening abdominal distension, absent bowel sounds, and a rising white blood cell count to 28,000/mm3, with blood pressure now 84/52 mmHg.",
+    second_order_question:
+      "Which of the following is the most appropriate next step in management?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Add IV metronidazole to the ongoing oral vancomycin and urgently evaluate for possible colectomy",
+        "correct": true,
+        "explanation": "Correct. Ileus, hypotension, and a rising white blood cell count on established therapy indicate fulminant C. difficile colitis, which is managed with combination oral/rectal vancomycin plus IV metronidazole and urgent surgical evaluation."
+      },
+      {
+        "label": "B",
+        "text": "Switch from oral vancomycin to oral fidaxomicin monotherapy",
+        "correct": false,
+        "explanation": "Incorrect. A lateral switch in oral monotherapy does not address the fulminant picture (ileus, shock), which requires escalation, not substitution."
+      },
+      {
+        "label": "C",
+        "text": "Discontinue vancomycin and begin fecal microbiota transplantation immediately",
+        "correct": false,
+        "explanation": "Incorrect. Fecal microbiota transplantation is indicated for recurrent, not acute/fulminant first-episode, disease, and is not an emergent intervention for shock or ileus."
+      },
+      {
+        "label": "D",
+        "text": "Add loperamide to reduce stool frequency and improve hemodynamics",
+        "correct": false,
+        "explanation": "Incorrect. Antimotility agents are contraindicated in active C. difficile colitis and risk worsening toxin retention and toxic megacolon."
+      },
+      {
+        "label": "E",
+        "text": "Continue current oral vancomycin alone and reassess in 48 hours",
+        "correct": false,
+        "explanation": "Incorrect. Ileus, hypotension, and rising leukocytosis signal fulminant disease, a medical/surgical emergency that requires immediate escalation, not watchful waiting."
+      }
+    ]),
+    second_order_answer: "A",
+    second_order_explanation:
+      "New ileus, hypotension, and rising leukocytosis in a patient already on oral vancomycin for C. difficile colitis indicate progression to fulminant disease (including possible toxic megacolon). Management escalates to combination therapy — oral (or per-rectum, if ileus prevents oral delivery) vancomycin plus IV metronidazole — together with urgent surgical evaluation for possible subtotal colectomy, since fulminant C. difficile colitis carries a high risk of perforation and death if not promptly escalated.",
+
+    flowchart_title: "C. difficile Testing and Severity-Based Management",
+    flowchart: JSON.stringify([
+      {
+        "node": "Hospitalized or recently antibiotic-exposed patient with ≥3 unformed stools/24h",
+        "branches": [
+          {
+            "label": "No alternative cause identified (e.g., laxatives, tube feeds)",
+            "next": "Send NAAT/GDH screen + toxin EIA (two-step algorithm)"
+          },
+          {
+            "label": "Alternative cause identified",
+            "next": "Do not test; address the alternative cause"
+          }
+        ]
+      },
+      {
+        "node": "Stool testing result",
+        "branches": [
+          {
+            "label": "NAAT/GDH positive and toxin EIA positive",
+            "next": "Confirmed C. difficile infection; discontinue offending antibiotic; risk-stratify severity"
+          },
+          {
+            "label": "NAAT/GDH positive but toxin EIA negative",
+            "next": "Likely colonization, not active toxin-mediated disease; treat only if strong clinical suspicion remains"
+          }
+        ]
+      },
+      {
+        "node": "Severity assessment",
+        "branches": [
+          {
+            "label": "WBC <15,000/mm3, creatinine normal",
+            "next": "Non-severe: oral vancomycin or fidaxomicin"
+          },
+          {
+            "label": "WBC ≥15,000/mm3 and/or elevated creatinine, no ileus/shock",
+            "next": "Severe: oral vancomycin (or fidaxomicin), standard dosing"
+          },
+          {
+            "label": "Ileus, toxic megacolon, or hypotension",
+            "next": "Fulminant: oral/rectal vancomycin + IV metronidazole; urgent surgical evaluation"
+          }
+        ]
+      },
+      {
+        "node": "Recurrent disease (relapse within ~8 weeks)",
+        "branches": [
+          {
+            "label": "First recurrence",
+            "next": "Prolonged/tapered vancomycin or fidaxomicin"
+          },
+          {
+            "label": "Multiple recurrences",
+            "next": "Fecal microbiota transplantation ± bezlotoxumab"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 3,
+    module_title: "Microbiology",
+    key_submodule: "Tick-Borne Illness",
+    slug: "lyme-disease-staged-presentation",
+    title: "Lyme Disease: Staged Presentation and Testing",
+    sort_order: 11,
+
+    hook_vignette:
+      "A 34-year-old man returns from a camping trip in Connecticut 10 days ago and now has an expanding, painless, erythematous patch with partial central clearing on his thigh, 14 cm in diameter, along with mild fatigue and low-grade fever. He does not recall a tick bite.",
+
+    ddx_mapping:
+      "Early localized Lyme disease presents 3-30 days after a tick bite (often unrecognized, since the Ixodes tick bite itself is typically painless) as erythema migrans — an expanding, usually painless or minimally pruritic annular erythematous patch, classically (though not always) with central clearing — often with mild constitutional symptoms (fatigue, low-grade fever, myalgias) but no other organ involvement, and is a clinical diagnosis that does not require serologic confirmation before treatment.\nCellulitis (typically Staphylococcus aureus or Streptococcus pyogenes) can also cause an expanding area of erythema, but is usually more acutely painful, warm, and tender, expands more rapidly (over hours to a day or two, not days to weeks), and lacks the central clearing pattern typical of erythema migrans.\nA local irritant/hypersensitivity reaction to the tick bite itself is typically smaller (usually less than 5 cm), appears within hours to a day or two of the bite rather than after a delay, and resolves within a few days without expanding, unlike the progressively enlarging erythema migrans lesion.\nSouthern tick-associated rash illness (STARI), caused by the bite of the Lone Star tick (Amblyomma americanum) rather than Ixodes, produces a nearly identical expanding erythema migrans-like lesion but occurs in the southeastern/south-central United States, outside the range of Lyme-transmitting Ixodes ticks, is not caused by Borrelia burgdorferi, and does not progress to disseminated Lyme manifestations.\nEarly disseminated Lyme disease (weeks after the bite, if early localized disease is untreated or missed) can present with multiple secondary erythema migrans lesions, facial nerve palsy (sometimes bilateral), or lymphocytic meningitis, and late Lyme disease (months later) classically causes an oligoarticular, migratory large-joint arthritis (especially the knee) or, less commonly, cardiac conduction abnormalities (e.g., AV block) — recognizing which stage is present matters for the diagnostic approach and treatment duration.",
+
+    diagnostic_evaluation:
+      "Early localized Lyme disease (a classic erythema migrans lesion in a patient with plausible exposure in an endemic area) is diagnosed clinically — serologic testing is neither required nor reliable at this stage, since antibodies typically have not yet developed and a substantial proportion of early infections would be missed by testing, falsely reassuring a negative result.\nFor any later-stage or extracutaneous manifestation (facial palsy, meningitis, arthritis, carditis), the standard two-tier serologic algorithm is used: a sensitive first-tier enzyme immunoassay (EIA), and if positive or equivocal, a confirmatory second-tier test — traditionally a Western blot (IgM and IgG bands), though a second EIA-based two-tier algorithm is also now accepted — since a single EIA alone has too high a false-positive rate to stand alone.\nIgM Western blot is interpreted cautiously and largely discounted beyond the first month of illness, since false-positive IgM bands are common with prolonged symptoms, and a positive IgM with a negative IgG in a patient with symptoms lasting more than a month should raise suspicion for a false-positive rather than active early infection.\nLumbar puncture (with CSF Lyme antibody index) is reserved for patients with suspected Lyme neuroborreliosis (meningitis, radiculopathy, or encephalitis) rather than isolated facial palsy or arthritis, where serology plus a compatible clinical picture is generally sufficient.",
+
+    management:
+      "Early localized Lyme disease (erythema migrans) is treated with a course of oral doxycycline (now considered acceptable for short courses even in young children, per updated evidence), or oral amoxicillin/cefuroxime as alternatives, typically for 10-14 days depending on the specific regimen and guideline used.\nEarly disseminated disease with isolated facial nerve palsy (without meningitis) is treated with the same oral regimens as early localized disease, since oral therapy achieves adequate CNS penetration for isolated cranial neuropathy without overt meningitis; frank Lyme meningitis is treated with IV ceftriaxone, though oral doxycycline is also now considered acceptable by some guidelines for uncomplicated Lyme meningitis in patients who can take oral medication.\nLyme arthritis is treated with a longer course (typically 28 days) of oral doxycycline or amoxicillin; if joint symptoms persist despite an appropriate oral course (\"antibiotic-refractory\" Lyme arthritis, thought to reflect a post-infectious immune process rather than ongoing active infection), NSAIDs or DMARDs are used rather than additional prolonged antibiotics.\nLyme carditis with high-grade AV block may require temporary pacing in addition to antibiotics (IV ceftriaxone for hospitalized/high-grade block, oral therapy for milder involvement), and typically resolves fully once treated, since the conduction disturbance is usually reversible.",
+
+    first_order_prompt:
+      "Why is serologic testing not recommended for a classic erythema migrans lesion in a patient with a plausible tick exposure?",
+    first_order_answer:
+      "Because early localized Lyme disease is a clinical diagnosis — antibodies have often not yet developed at this early stage, so serologic testing has poor sensitivity here, and a negative result could be falsely reassuring and delay treatment.",
+
+    second_order_vignette:
+      "A 45-year-old woman from Wisconsin presents with a 3-month history of recurrent, migratory swelling and pain in her right knee, each episode lasting 1-2 weeks and resolving before recurring in the same or the opposite knee. She recalls a single episode of an expanding thigh rash with a tick bite about 5 months ago that resolved without treatment. She has no fever currently. Two-tier Lyme serology (EIA followed by Western blot) is positive for IgG.",
+    second_order_question:
+      "Which of the following is the most appropriate treatment?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Oral doxycycline (or amoxicillin) for 28 days",
+        "correct": true,
+        "explanation": "Correct. This migratory large-joint arthritis pattern following an untreated erythema migrans lesion, with positive two-tier serology, is Lyme arthritis, treated with a 28-day course of oral doxycycline or amoxicillin."
+      },
+      {
+        "label": "B",
+        "text": "Intra-articular corticosteroid injection alone, without antibiotics",
+        "correct": false,
+        "explanation": "Incorrect. Active Lyme arthritis should be treated with antibiotics first; steroid injections are not primary therapy and are not given without first addressing the underlying infection."
+      },
+      {
+        "label": "C",
+        "text": "IV ceftriaxone for 14 days as first-line therapy",
+        "correct": false,
+        "explanation": "Incorrect. Oral therapy is first-line for Lyme arthritis; IV ceftriaxone is reserved for neurologic involvement, carditis with high-grade block, or arthritis that fails an oral course."
+      },
+      {
+        "label": "D",
+        "text": "No antibiotic therapy is needed since the acute erythema migrans phase has already resolved",
+        "correct": false,
+        "explanation": "Incorrect. Active arthritis, a later-stage manifestation, still requires antibiotic treatment even though the initial skin lesion has already resolved."
+      },
+      {
+        "label": "E",
+        "text": "Methotrexate as first-line disease-modifying therapy for presumed rheumatoid arthritis",
+        "correct": false,
+        "explanation": "Incorrect. This migratory large-joint pattern with a preceding erythema migrans and positive Lyme serology points to Lyme arthritis, not rheumatoid arthritis; antibiotics, not DMARDs, are first-line."
+      }
+    ]),
+    second_order_answer: "A",
+    second_order_explanation:
+      "A migratory, monoarticular-to-oligoarticular large-joint arthritis (classically the knee) following an untreated or missed erythema migrans lesion months earlier, confirmed by positive two-tier Lyme serology, is Lyme arthritis. It is treated with a longer oral antibiotic course (28 days of doxycycline or amoxicillin) than earlier-stage disease; IV therapy and DMARDs are reserved for neurologic/cardiac involvement or antibiotic-refractory arthritis that persists despite an appropriate oral course.",
+
+    flowchart_title: "Staged Evaluation and Treatment of Lyme Disease",
+    flowchart: JSON.stringify([
+      {
+        "node": "Patient with possible tick exposure in an endemic area",
+        "branches": [
+          {
+            "label": "Expanding annular erythema (± central clearing), days after exposure",
+            "next": "Diagnose early localized Lyme disease clinically; no serology needed; oral doxycycline/amoxicillin x10-14 days"
+          },
+          {
+            "label": "Facial palsy, meningitis symptoms, migratory arthritis, or cardiac symptoms, weeks-months after exposure",
+            "next": "Send two-tier serology (EIA, then Western blot/second EIA if positive or equivocal)"
+          }
+        ]
+      },
+      {
+        "node": "Two-tier serology result",
+        "branches": [
+          {
+            "label": "Positive on both tiers",
+            "next": "Diagnose Lyme disease at the corresponding stage"
+          },
+          {
+            "label": "Negative",
+            "next": "Reconsider alternative diagnosis; repeat serology in 2-4 weeks if early disseminated disease still suspected"
+          }
+        ]
+      },
+      {
+        "node": "Disseminated disease — determine manifestation",
+        "branches": [
+          {
+            "label": "Isolated facial palsy, no meningitis",
+            "next": "Oral doxycycline/amoxicillin, same as early localized regimen"
+          },
+          {
+            "label": "Meningitis/radiculopathy",
+            "next": "IV ceftriaxone (oral doxycycline acceptable per some guidelines if uncomplicated)"
+          },
+          {
+            "label": "Migratory large-joint arthritis",
+            "next": "Oral doxycycline/amoxicillin x28 days"
+          },
+          {
+            "label": "Carditis with high-grade AV block",
+            "next": "IV ceftriaxone ± temporary pacing"
+          }
+        ]
+      },
+      {
+        "node": "Arthritis persists after an appropriate oral course",
+        "branches": [
+          {
+            "label": "Antibiotic-refractory (post-infectious) arthritis",
+            "next": "NSAIDs/DMARDs, not repeated or prolonged antibiotics"
+          },
+          {
+            "label": "Ongoing active infection suspected (rare)",
+            "next": "Consider retreatment or specialist referral"
+          }
+        ]
+      }
+    ]),
+  },
   // Module 13 — Psychiatry
   // ===========================================================================
   {

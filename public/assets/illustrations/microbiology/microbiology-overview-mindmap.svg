@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="1000" height="460" fill="#faf8f4"/>
+  <text x="500" y="22" text-anchor="middle" font-size="17" font-weight="700" fill="#1c2430">Microbiology: Presentation-Based Overview</text>
+  <text x="500" y="39" text-anchor="middle" font-size="11" fill="#5b6472">Central concept branches into major clinical presentations, each branching to its classic pathogens</text>
+  <rect x="370" y="54" width="260" height="50" rx="12" fill="#1c2430"/>
+  <text x="500" y="86" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff" letter-spacing="1">MICROBIOLOGY</text>
+  <line x1="500" y1="104" x2="95" y2="132" stroke="#3b5f8a" stroke-width="2.2"/>
+  <rect x="17" y="132" width="156" height="40" rx="8" fill="#3b5f8a"/>
+  <text x="95" y="149" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">CNS</text>
+  <text x="95" y="162" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">Infections</text>
+  <line x1="95" y1="172" x2="95" y2="412" stroke="#3b5f8a" stroke-width="1.4"/>
+  <rect x="17" y="190" width="156" height="38" rx="6" fill="#faf8f4" stroke="#3b5f8a" stroke-width="1.5"/>
+  <text x="95" y="205" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">S. pneumoniae</text>
+  <text x="95" y="218" text-anchor="middle" font-size="8.1" fill="#5b6472">meningitis (adults)</text>
+  <rect x="17" y="236" width="156" height="38" rx="6" fill="#faf8f4" stroke="#3b5f8a" stroke-width="1.5"/>
+  <text x="95" y="251" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">N. meningitidis</text>
+  <text x="95" y="264" text-anchor="middle" font-size="8.1" fill="#5b6472">petechial rash</text>
+  <rect x="17" y="282" width="156" height="38" rx="6" fill="#faf8f4" stroke="#3b5f8a" stroke-width="1.5"/>
+  <text x="95" y="297" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">Listeria</text>
+  <text x="95" y="310" text-anchor="middle" font-size="8.1" fill="#5b6472">age &gt;50 / EtOH / preg.</text>
+  <rect x="17" y="328" width="156" height="38" rx="6" fill="#faf8f4" stroke="#3b5f8a" stroke-width="1.5"/>
+  <text x="95" y="343" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">HSV</text>
+  <text x="95" y="356" text-anchor="middle" font-size="8.1" fill="#5b6472">temporal lobe encephalitis</text>
+  <rect x="17" y="374" width="156" height="38" rx="6" fill="#faf8f4" stroke="#3b5f8a" stroke-width="1.5"/>
+  <text x="95" y="389" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">Cryptococcus</text>
+  <text x="95" y="402" text-anchor="middle" font-size="8.1" fill="#5b6472">AIDS, high opening pressure</text>
+  <line x1="500" y1="104" x2="258" y2="132" stroke="#b5472a" stroke-width="2.2"/>
+  <rect x="180" y="132" width="156" height="40" rx="8" fill="#b5472a"/>
+  <text x="258" y="149" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">Pulmonary</text>
+  <text x="258" y="162" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">Infections</text>
+  <line x1="258" y1="172" x2="258" y2="412" stroke="#b5472a" stroke-width="1.4"/>
+  <rect x="180" y="190" width="156" height="38" rx="6" fill="#faf8f4" stroke="#b5472a" stroke-width="1.5"/>
+  <text x="258" y="205" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">S. pneumoniae</text>
+  <text x="258" y="218" text-anchor="middle" font-size="8.1" fill="#5b6472">lobar CAP</text>
+  <rect x="180" y="236" width="156" height="38" rx="6" fill="#faf8f4" stroke="#b5472a" stroke-width="1.5"/>
+  <text x="258" y="251" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">Mycoplasma</text>
+  <text x="258" y="264" text-anchor="middle" font-size="8.1" fill="#5b6472">atypical, young adult</text>
+  <rect x="180" y="282" width="156" height="38" rx="6" fill="#faf8f4" stroke="#b5472a" stroke-width="1.5"/>
+  <text x="258" y="297" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">Legionella</text>
+  <text x="258" y="310" text-anchor="middle" font-size="8.1" fill="#5b6472">GI sx + hyponatremia</text>
+  <rect x="180" y="328" width="156" height="38" rx="6" fill="#faf8f4" stroke="#b5472a" stroke-width="1.5"/>
+  <text x="258" y="343" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">M. tuberculosis</text>
+  <text x="258" y="356" text-anchor="middle" font-size="8.1" fill="#5b6472">cavitary, weight loss</text>
+  <rect x="180" y="374" width="156" height="38" rx="6" fill="#faf8f4" stroke="#b5472a" stroke-width="1.5"/>
+  <text x="258" y="389" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">P. jirovecii (PJP)</text>
+  <text x="258" y="402" text-anchor="middle" font-size="8.1" fill="#5b6472">AIDS, CD4 &lt;200</text>
+  <line x1="500" y1="104" x2="421" y2="132" stroke="#2a7a72" stroke-width="2.2"/>
+  <rect x="343" y="132" width="156" height="40" rx="8" fill="#2a7a72"/>
+  <text x="421" y="149" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">Bloodstream /</text>
+  <text x="421" y="162" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">Endocarditis</text>
+  <line x1="421" y1="172" x2="421" y2="366" stroke="#2a7a72" stroke-width="1.4"/>
+  <rect x="343" y="190" width="156" height="38" rx="6" fill="#faf8f4" stroke="#2a7a72" stroke-width="1.5"/>
+  <text x="421" y="205" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">S. aureus</text>
+  <text x="421" y="218" text-anchor="middle" font-size="8.1" fill="#5b6472">acute, IV drug use</text>
+  <rect x="343" y="236" width="156" height="38" rx="6" fill="#faf8f4" stroke="#2a7a72" stroke-width="1.5"/>
+  <text x="421" y="251" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">Viridans strep</text>
+  <text x="421" y="264" text-anchor="middle" font-size="8.1" fill="#5b6472">subacute, dental</text>
+  <rect x="343" y="282" width="156" height="38" rx="6" fill="#faf8f4" stroke="#2a7a72" stroke-width="1.5"/>
+  <text x="421" y="297" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">HACEK organisms</text>
+  <text x="421" y="310" text-anchor="middle" font-size="8.1" fill="#5b6472">culture-negative IE</text>
+  <rect x="343" y="328" width="156" height="38" rx="6" fill="#faf8f4" stroke="#2a7a72" stroke-width="1.5"/>
+  <text x="421" y="343" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">Candida</text>
+  <text x="421" y="356" text-anchor="middle" font-size="8.1" fill="#5b6472">prosthetic valve</text>
+  <line x1="500" y1="104" x2="584" y2="132" stroke="#5a7a3c" stroke-width="2.2"/>
+  <rect x="506" y="132" width="156" height="40" rx="8" fill="#5a7a3c"/>
+  <text x="584" y="149" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">GI /</text>
+  <text x="584" y="162" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">Diarrheal Illness</text>
+  <line x1="584" y1="172" x2="584" y2="412" stroke="#5a7a3c" stroke-width="1.4"/>
+  <rect x="506" y="190" width="156" height="38" rx="6" fill="#faf8f4" stroke="#5a7a3c" stroke-width="1.5"/>
+  <text x="584" y="205" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">EHEC O157:H7</text>
+  <text x="584" y="218" text-anchor="middle" font-size="8.1" fill="#5b6472">watery → bloody, → HUS</text>
+  <rect x="506" y="236" width="156" height="38" rx="6" fill="#faf8f4" stroke="#5a7a3c" stroke-width="1.5"/>
+  <text x="584" y="251" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">Shigella</text>
+  <text x="584" y="264" text-anchor="middle" font-size="8.1" fill="#5b6472">dysentery, low ID50</text>
+  <rect x="506" y="282" width="156" height="38" rx="6" fill="#faf8f4" stroke="#5a7a3c" stroke-width="1.5"/>
+  <text x="584" y="297" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">Campylobacter</text>
+  <text x="584" y="310" text-anchor="middle" font-size="8.1" fill="#5b6472">→ Guillain-Barré</text>
+  <rect x="506" y="328" width="156" height="38" rx="6" fill="#faf8f4" stroke="#5a7a3c" stroke-width="1.5"/>
+  <text x="584" y="343" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">Salmonella</text>
+  <text x="584" y="356" text-anchor="middle" font-size="8.1" fill="#5b6472">poultry / eggs / reptiles</text>
+  <rect x="506" y="374" width="156" height="38" rx="6" fill="#faf8f4" stroke="#5a7a3c" stroke-width="1.5"/>
+  <text x="584" y="389" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">C. difficile</text>
+  <text x="584" y="402" text-anchor="middle" font-size="8.1" fill="#5b6472">post-antibiotic colitis</text>
+  <line x1="500" y1="104" x2="747" y2="132" stroke="#7a4a8a" stroke-width="2.2"/>
+  <rect x="669" y="132" width="156" height="40" rx="8" fill="#7a4a8a"/>
+  <text x="747" y="149" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">GU /</text>
+  <text x="747" y="162" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">Dysuria</text>
+  <line x1="747" y1="172" x2="747" y2="366" stroke="#7a4a8a" stroke-width="1.4"/>
+  <rect x="669" y="190" width="156" height="38" rx="6" fill="#faf8f4" stroke="#7a4a8a" stroke-width="1.5"/>
+  <text x="747" y="205" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">E. coli</text>
+  <text x="747" y="218" text-anchor="middle" font-size="8.1" fill="#5b6472">uncomplicated cystitis</text>
+  <rect x="669" y="236" width="156" height="38" rx="6" fill="#faf8f4" stroke="#7a4a8a" stroke-width="1.5"/>
+  <text x="747" y="251" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">N. gonorrhoeae</text>
+  <text x="747" y="264" text-anchor="middle" font-size="8.1" fill="#5b6472">urethritis / cervicitis</text>
+  <rect x="669" y="282" width="156" height="38" rx="6" fill="#faf8f4" stroke="#7a4a8a" stroke-width="1.5"/>
+  <text x="747" y="297" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">C. trachomatis</text>
+  <text x="747" y="310" text-anchor="middle" font-size="8.1" fill="#5b6472">urethritis, often co-infxn</text>
+  <rect x="669" y="328" width="156" height="38" rx="6" fill="#faf8f4" stroke="#7a4a8a" stroke-width="1.5"/>
+  <text x="747" y="343" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">Trichomonas</text>
+  <text x="747" y="356" text-anchor="middle" font-size="8.1" fill="#5b6472">vaginitis, motile trichomonads</text>
+  <line x1="500" y1="104" x2="910" y2="132" stroke="#946a2b" stroke-width="2.2"/>
+  <rect x="832" y="132" width="156" height="40" rx="8" fill="#946a2b"/>
+  <text x="910" y="149" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">Skin /</text>
+  <text x="910" y="162" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">Soft Tissue</text>
+  <line x1="910" y1="172" x2="910" y2="366" stroke="#946a2b" stroke-width="1.4"/>
+  <rect x="832" y="190" width="156" height="38" rx="6" fill="#faf8f4" stroke="#946a2b" stroke-width="1.5"/>
+  <text x="910" y="205" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">S. pyogenes</text>
+  <text x="910" y="218" text-anchor="middle" font-size="8.1" fill="#5b6472">cellulitis / erysipelas</text>
+  <rect x="832" y="236" width="156" height="38" rx="6" fill="#faf8f4" stroke="#946a2b" stroke-width="1.5"/>
+  <text x="910" y="251" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">S. aureus (MRSA)</text>
+  <text x="910" y="264" text-anchor="middle" font-size="8.1" fill="#5b6472">abscess / furuncle</text>
+  <rect x="832" y="282" width="156" height="38" rx="6" fill="#faf8f4" stroke="#946a2b" stroke-width="1.5"/>
+  <text x="910" y="297" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">C. perfringens</text>
+  <text x="910" y="310" text-anchor="middle" font-size="8.1" fill="#5b6472">gas gangrene</text>
+  <rect x="832" y="328" width="156" height="38" rx="6" fill="#faf8f4" stroke="#946a2b" stroke-width="1.5"/>
+  <text x="910" y="343" text-anchor="middle" font-size="10.3" font-weight="700" fill="#1c2430">Pasteurella</text>
+  <text x="910" y="356" text-anchor="middle" font-size="8.1" fill="#5b6472">animal / cat bite</text>
+</svg>
