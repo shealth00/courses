@@ -5,13 +5,34 @@ import { mountViewer } from './viewer3d.js';
 import { mountQBank } from './qbank.js';
 import { mountFlashcards } from './flashcards.js';
 import { mountPathways } from './pathway.js';
+import { mountAccount } from './account.js';
 
 const appEl = document.getElementById('app');
 const navLinks = document.querySelectorAll('.topnav a');
+const navAccountLink = document.getElementById('nav-account');
 
 function setActiveNav(route) {
   navLinks.forEach((a) => a.classList.toggle('active', a.dataset.route === route));
 }
+
+// Keep the nav's "Sign in" link in sync with auth state (shows the signed-in
+// email instead once logged in). Anonymous usage is unaffected either way.
+async function refreshAccountNav() {
+  if (!navAccountLink) return;
+  const supabase = await getSupabase();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  navAccountLink.textContent = user ? user.email || 'Account' : 'Sign in';
+}
+
+getSupabase().then((supabase) => {
+  refreshAccountNav();
+  supabase.auth.onAuthStateChange(() => {
+    refreshAccountNav();
+    if ((window.location.hash || '').startsWith('#/account')) router();
+  });
+});
 
 function escapeHtml(str) {
   const div = document.createElement('div');
@@ -47,6 +68,11 @@ async function router() {
     setActiveNav('pathways');
     const supabase = await getSupabase();
     return mountPathways(appEl, supabase, path === 'pathway' ? rest : []);
+  }
+  if (path === 'account') {
+    setActiveNav('account');
+    const supabase = await getSupabase();
+    return mountAccount(appEl, supabase);
   }
 
   setActiveNav('catalog');

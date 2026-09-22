@@ -32,6 +32,7 @@ public/
                           flagging, per-choice "why X is wrong" explanations, results screen
   flashcards.js           deck home, manual card creation, SM-2 study mode, short quiz mode
   pathway.js              step-through pathway/pathogenesis viewer (play or step manually)
+  account.js              optional Supabase Auth UI (#/account): sign up, sign in, sign out
 ```
 
 ## 1. Set up Supabase
@@ -187,6 +188,10 @@ The QBank models UWorld's exam interface. Current implementation:
   rollup)
 - Anonymous attempts by default — the attempt id in the URL hash is the
   access token for that run; no login required to take a block
+- Optional Supabase Auth (email + password, `#/account`) — signing in
+  attaches new attempts to `qbank_attempts.user_id` instead of leaving it
+  null; anonymous attempts keep working exactly as before for anyone who
+  doesn't sign in
 
 **Planned / not yet built** (the UWorld feature set to grow into)
 - **Highlighting / strike-through** on the question stem and choices —
@@ -218,19 +223,21 @@ The QBank models UWorld's exam interface. Current implementation:
   needs a concept-tag table, a many-to-many join to questions, and a query
   that finds a user's weakest concepts from their `qbank_attempt_answers`
   history — the biggest lift on this list.
-- **Auth-backed attempts** — wiring up Supabase Auth so results persist
-  across devices instead of being scoped to an anonymous attempt-id in the
-  URL hash. `qbank_attempts.user_id` already references `auth.users` and
-  the RLS policy already accounts for both cases, so this is mostly
-  frontend (login UI + reading `supabase.auth.getUser()`), not a schema
-  change.
+- ~~Auth-backed attempts~~ — done: `#/account` (email + password via
+  Supabase Auth) lets `startAttempt()` set `qbank_attempts.user_id` to
+  `supabase.auth.getUser()`'s id when signed in. Password reset, OAuth, and
+  email-verification UI are still out of scope.
 
 ## Flashcards: what's implemented vs. planned
 
 `flashcards.js` + `schema_flashcards.sql`. Anonymous by default, same model
 as QBank attempts, but persisted: a browser-generated `owner_id` (uuid) is
 stored in `localStorage` (not the URL) so a deck survives across sessions on
-the same browser.
+the same browser. `getOwnerId()` now checks for a signed-in Supabase Auth
+session first and uses the real `auth.uid()` as the owner id when there is
+one, falling back to the localStorage uuid otherwise — so a deck follows a
+login (`#/account`) once signed in, and keeps working exactly as before for
+anyone who isn't.
 
 **Implemented**
 - Manual card creation (front/back/system tag) from the deck home
@@ -250,7 +257,7 @@ the same browser.
   the study queue
 
 **Planned / not yet built**
-- Auth-backed decks (so a deck follows a login instead of a browser)
+- ~~Auth-backed decks~~ — done, see above
 - A dashboard surfacing `flashcard_reviews` history (retention rate over
   time, cards nearing a lapse, etc.)
 - Full Anki-parity scheduling (sub-day learning steps, configurable fuzz,
@@ -306,10 +313,11 @@ before any real assets exist.
   that scores the attempt and shows a results screen with a per-system
   breakdown.
 - Attempts are anonymous by default (`user_id` is null) — the attempt id in
-  the URL hash is the access token for that run. Wiring up Supabase Auth so
-  attempts are tied to a logged-in account (and results persist across
-  devices) is a natural next step; `qbank_attempts.user_id` already
-  references `auth.users` and the RLS policy already accounts for it.
+  the URL hash is the access token for that run. Signing in at `#/account`
+  (Supabase Auth, email + password) ties new attempts to that account
+  instead, so results can persist across devices; `qbank_attempts.user_id`
+  already references `auth.users` and the RLS policy already accounts for
+  both cases.
 
 ## 5. Adding real content
 
