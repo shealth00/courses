@@ -1,11 +1,15 @@
 # 3D Model Attribution
 
-All models below were sourced under licenses that permit reuse (CC BY 4.0
-in every case here) and are attributed per the license's requirements.
-Each was downloaded as a `.stl` file and converted to `.glb` (glTF binary)
-locally with [trimesh](https://trimesh.org/) (large meshes were also
-decimated with `fast-simplification` to keep file size reasonable — no
-geometry was invented, only the polygon count was reduced).
+All models below were sourced under licenses that permit reuse — **CC BY
+4.0** or **CC BY-SA 3.0** (ShareAlike), as noted per model — and are
+attributed per each license's requirements. Any file marked **CC BY-SA**
+is itself derived from a ShareAlike-licensed source: if that `.glb` (or a
+modified version of it) is redistributed, it must be redistributed under
+the same CC BY-SA terms, with attribution preserved. Each was downloaded
+as a `.stl` file and converted to `.glb` (glTF binary) locally with
+[trimesh](https://trimesh.org/) (large meshes were also decimated with
+`fast-simplification` to keep file size reasonable — no geometry was
+invented, only the polygon count was reduced).
 
 ---
 
@@ -61,6 +65,107 @@ geometry was invented, only the polygon count was reduced).
 
 ---
 
+## cardiovascular/coronary-artery-distribution.glb
+
+- **Plate**: Coronary Artery Distribution
+- **Title**: "3DPX-003333 Coronary CTA Nevit Dilmen.stl"
+- **Author**: Nevit Dilmen (Wikimedia Commons / NIH 3D Print Exchange)
+- **Source**: https://commons.wikimedia.org/wiki/File:3DPX-003333_Coronary_CTA_Nevit_Dilmen.stl
+- **Description** (source page): "Coronary arteries from cardiac computed
+  tomography angiography."
+- **License**: **CC BY-SA 3.0** — https://creativecommons.org/licenses/by-sa/3.0/
+- **Share-alike notice**: This file is derived from a CC BY-SA-licensed
+  source. If this `.glb` (or a modified version of it) is redistributed,
+  it must itself be licensed CC BY-SA 3.0, with attribution to Nevit Dilmen
+  preserved.
+
+## neuroscience/cerebral-vasculature-cast.glb
+
+- **Plate**: Cerebral Vasculature Cast
+- **Title**: "3DPX-003440 CNS Venography Nevit Dilmen.stl"
+- **Author**: Nevit Dilmen (Wikimedia Commons / NIH 3D Print Exchange)
+- **Source**: https://commons.wikimedia.org/wiki/File:3DPX-003440_CNS_Venography_Nevit_Dilmen.stl
+- **Description** (source page): "MRI venography of central nervous system.
+  (Also contains some arteries)"
+- **License**: **CC BY-SA 3.0** — https://creativecommons.org/licenses/by-sa/3.0/
+- **Share-alike notice**: This file is derived from a CC BY-SA-licensed
+  source. If this `.glb` (or a modified version of it) is redistributed,
+  it must itself be licensed CC BY-SA 3.0, with attribution to Nevit Dilmen
+  preserved.
+- **Note**: this is predominantly a venous (MR venography) cast of the CNS
+  with some arterial structure included per the source description — a real
+  vessel-cast model of the intracranial vasculature, not a dedicated
+  arterial Circle-of-Willis reconstruction. Used as the best available real,
+  open-licensed stand-in for "Cerebral Vasculature Cast" per the task's
+  guidance that an honest real model beats a placeholder.
+
+## neuroscience/white-matter-tract-bundles.glb
+
+- **Plate**: White Matter Tract Bundles
+- **Title**: "3DPX-003145 Fractional Anisotrpy Tractography White Matter NevitDilmen.stl"
+- **Author**: Nevit Dilmen (Wikimedia Commons / NIH 3D Print Exchange)
+- **Source**: https://commons.wikimedia.org/wiki/File:3DPX-003145_Fractional_Anisotrpy_Tractography_White_Matter_NevitDilmen.stl
+- **Description** (source page): "Intensity of fractional anisotropy of
+  human brain from diffusion MRI converted to 3D model."
+- **License**: **CC BY-SA 3.0** — https://creativecommons.org/licenses/by-sa/3.0/
+- **Share-alike notice**: This file is derived from a CC BY-SA-licensed
+  source. If this `.glb` (or a modified version of it) is redistributed,
+  it must itself be licensed CC BY-SA 3.0, with attribution to Nevit Dilmen
+  preserved.
+
+## gi/abdominal-viscera-in-situ.glb
+
+- **Plate**: Abdominal Viscera In Situ
+- **Title**: "3DPX-002591 CE Abdominal CTA Nevit Dilmen.stl"
+- **Author**: Nevit Dilmen (Wikimedia Commons / NIH 3D Print Exchange)
+- **Source**: https://commons.wikimedia.org/wiki/File:3DPX-002591_CE_Abdominal_CTA_Nevit_Dilmen.stl
+- **Description** (source page): "3D model of abdominal aorta, celiac
+  trunk, superior mesenteric artery, renal arteries, proximal iliac
+  arteries and branches in a patient with atherosclerosis."
+- **License**: **CC BY-SA 3.0** — https://creativecommons.org/licenses/by-sa/3.0/
+- **Share-alike notice**: This file is derived from a CC BY-SA-licensed
+  source. If this `.glb` (or a modified version of it) is redistributed,
+  it must itself be licensed CC BY-SA 3.0, with attribution to Nevit Dilmen
+  preserved.
+- **Note**: this is a contrast-enhanced CT angiography vascular
+  reconstruction (aorta + celiac trunk/SMA/renal/iliac branches), not organ
+  parenchyma or peritoneal-reflection geometry — it maps the abdominal
+  viscera's territory via their real vascular supply rather than showing
+  the organs themselves. Used as the best available real, open-licensed
+  stand-in for "Abdominal Viscera In Situ" per the task's guidance that an
+  honest real model beats a placeholder.
+
+## renal/kidney-cutaway-model.glb
+
+- **Plate**: Kidney Cutaway Model
+- **Title**: "3DPX-002331 Urinary collecting system 3DFile.stl"
+- **Author**: Nevit Dilmen (Wikimedia Commons / NIH 3D Print Exchange)
+- **Source**: https://commons.wikimedia.org/wiki/File:3DPX-002331_Urinary_collecting_system_3DFile.stl
+- **Description** (source page): "3D Model of Urinary tract collecting
+  system."
+- **License**: **CC BY-SA 3.0** — https://creativecommons.org/licenses/by-sa/3.0/
+- **Share-alike notice**: This file is derived from a CC BY-SA-licensed
+  source. If this `.glb` (or a modified version of it) is redistributed,
+  it must itself be licensed CC BY-SA 3.0, with attribution to Nevit Dilmen
+  preserved.
+- **Note**: this is a cast of the renal pelvis/calyceal collecting system
+  (a real internal structure normally hidden inside the kidney, so it reads
+  as a genuine "cutaway" view), not a full cortex/medulla/pelvis coronal
+  section with a traced nephron. Used as the best available real,
+  open-licensed stand-in for "Kidney Cutaway Model."
+- **Renal Vascular Architecture (`renal/renal-vascular-architecture.glb`)
+  intentionally left unfilled**: the only distinct renal-artery-level
+  vasculature found in the same collection is the renal-artery branches
+  inside `3DPX-002591 CE Abdominal CTA Nevit Dilmen.stl`, already used
+  above for `gi/abdominal-viscera-in-situ.glb` as part of its full
+  aorta/celiac/SMA/renal/iliac tree. Re-using that same source file's
+  content a second time under a different plate name (without a real,
+  independent renal-vasculature-only model) would misrepresent it as a
+  second distinct asset, so this plate was left as the placeholder mesh
+  rather than forcing a duplicate.
+
+---
+
 ## Sources checked but not used
 
 - **NIH 3D Print Exchange** (3d.nih.gov) — many strong anatomical matches
@@ -74,10 +179,18 @@ geometry was invented, only the polygon count was reduced).
   large, well-matched set of real CT/MRI-derived NIH 3D Print Exchange
   models is mirrored here under clear licensing (coronary CTA, white-matter
   tractography, CNS venography, abdominal CTA, urinary collecting system,
-  large intestine, brain, etc. — excellent matches for several plates).
-  Skipped because the license on all of them is **CC BY-SA 3.0**
-  (ShareAlike), not plain CC0/PD/CC-BY as this task's license policy
-  requires.
+  large intestine, brain, etc.). Originally skipped in the prior pass
+  because the license on all of them is **CC BY-SA 3.0** (ShareAlike),
+  which the license policy at the time excluded. That policy was later
+  relaxed to allow CC BY-SA (with explicit share-alike labeling), and five
+  models from this same collection were used above — see the
+  `cardiovascular/coronary-artery-distribution.glb`,
+  `neuroscience/cerebral-vasculature-cast.glb`,
+  `neuroscience/white-matter-tract-bundles.glb`,
+  `gi/abdominal-viscera-in-situ.glb`, and `renal/kidney-cutaway-model.glb`
+  entries above. Other files in this same collection (large intestine,
+  biliary tract MRCP, hydronephrosis, etc.) were considered but not used —
+  no additional plate in this task's scope was a good match for them.
 - **BodyParts3D / Life Sciences Integrated Database** (Japan) — the task
   brief listed this as a "CC-BY" source, but the database's own license
   page and its GitHub STL mirror both state the actual license is
