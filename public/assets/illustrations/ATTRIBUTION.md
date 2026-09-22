@@ -30,29 +30,22 @@ the core concept rather than the full original composite scene.
 | Pancreatic Islet Signaling | `endocrine/pancreatic-islet-signaling.png` | https://commons.wikimedia.org/wiki/File:Schematic_diagram_showing_the_interdependency_of_islet_cells.png | Da Silva Xavier, G. | CC BY 4.0 |
 | Fracture Pattern Atlas | `musculoskeletal/fracture-pattern-atlas.jpg` | https://commons.wikimedia.org/wiki/File:612_Types_of_Fractures.jpg | OpenStax College | CC BY 4.0 |
 | Epithelial Tissue Types | `pathology/epithelial-tissue-types.jpg` | https://commons.wikimedia.org/wiki/File:423_Table_04_02_Summary_of_Epithelial_Tissue_CellsN.jpg | OpenStax College | CC BY 3.0 |
+| Female Pelvic Anatomy Schematic | `reproductive/female-pelvic-anatomy-schematic.png` | https://commons.wikimedia.org/wiki/File:Gray1139.png | Henry Vandyke Carter (Gray's Anatomy) | Public Domain |
+| Autonomic Pharmacology Map | `pharmacology/autonomic-pharmacology-map.jpg` | https://commons.wikimedia.org/wiki/File:2032_Automatic_Innervation.jpg | OpenStax College | CC BY 3.0 |
+| Tumor Grading & Staging | `pathology/tumor-grading-staging.jpg` | https://commons.wikimedia.org/wiki/File:Micrograph_of_prostate_cancer_with_Gleason_score_6_(3%2B3).jpg | Jennifer Gordetsky and Jonathan Epstein | CC BY 4.0 |
+| Classic Malignant Patterns | `pathology/classic-malignant-patterns.jpg` | https://commons.wikimedia.org/wiki/File:Micrograph_of_well-differentiated_and_infiltrating_squamous-cell_carcinoma,_annotated.jpg | Kouassi Kouamé Jean Eric et al. | CC BY 4.0 |
+| Imaging Correlation Panels | `step2-clinical/imaging-correlation-panels.png` | https://commons.wikimedia.org/wiki/File:Chest_Xray_PA_3-8-2010.png | Stillwaterising | CC0 |
+| Surgical Approach Diagrams | `step2-clinical/surgical-approach-diagrams.svg` | https://commons.wikimedia.org/wiki/File:Incisions_of_the_torso.svg | Mvolz | CC0 |
+| Congenital Malformation Atlas | `reproductive/congenital-malformation-atlas.jpg` | https://commons.wikimedia.org/wiki/File:10-month-old_girl_showing_scar_from_facial_reconstruction_surgery_for_cleft_lip.jpg | King97tut | Public Domain |
+| Procedural Step Sequences | `step2-clinical/procedural-step-sequences.jpg` | https://commons.wikimedia.org/wiki/File:US_Navy_070711-N-0989H-058_Hospital_Corpsman_1st_Class_Charles_Givens,_Task_Group_40.9_independent_duty_corpsman,_demonstrate_the_proper_procedures_for_providing_CPR.jpg | U.S. Navy photo | Public Domain |
 
-## Remaining plates (11 of 30)
+## Remaining plates (3 of 30)
 
-19 of the 30 target plates are sourced above. The other 11 keep their
-original Supabase Storage placeholder `storage_path` (no file exists at
-that path, so the frontend shows a text-label placeholder) and fall into
-two groups:
-
-**Pending — a real, license-verified candidate was already identified but
-not yet downloaded/committed** (blocked by an extended Wikimedia
-upload-CDN rate limit during this pass; left for a follow-up PR rather
-than guessed at):
-- Female Pelvic Anatomy Schematic — Gray1139.png (Public Domain)
-- Classic Malignant Patterns — CC BY 4.0 annotated squamous-cell
-  carcinoma micrograph
-- Tumor Grading & Staging — CC BY 4.0 Gleason score 6 (3+3) micrograph
-- Autonomic Pharmacology Map — OpenStax "Automatic Innervation" (CC BY 3.0)
-- Congenital Malformation Atlas — Public Domain cleft-lip clinical photo
-- Procedural Step Sequences — Public Domain U.S. Navy CPR training photo
-- Imaging Correlation Panels — CC0 chest X-ray (PA view)
-- Surgical Approach Diagrams — CC0 "Incisions of the torso" diagram
-
-**Skipped — searched, no reusable CC0/Public-Domain/CC-BY source found:**
+27 of the 30 target plates are sourced above. The other 3 were searched
+but no reusable CC0/Public-Domain/CC-BY source could be found, so they
+keep their original Supabase Storage placeholder `storage_path` (no file
+exists at that path, so the frontend shows a text-label placeholder)
+rather than being guessed at:
 - Limb Compartment Cross-Sections
 - Genital Duct Derivatives
 - Embryonic Folding Sequence
