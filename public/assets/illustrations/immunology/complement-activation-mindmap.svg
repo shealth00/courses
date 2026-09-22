@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="1000" height="800" fill="#faf8f4"/>
+  <text x="500" y="30" text-anchor="middle" font-size="21" font-weight="700" fill="#1c2430">Complement Pathway Activation</text>
+  <text x="500" y="49" text-anchor="middle" font-size="12" fill="#5b6472">Three entry routes converge on one cascade, driving three effector functions &#8212; and their deficiency states</text>
+
+  <!-- ============================== CONNECTORS: center to branch ============================== -->
+  <g stroke="#3b5f8a" stroke-width="2.2" fill="none"><line x1="500" y1="400" x2="366" y2="266"/></g>
+  <g stroke="#b5472a" stroke-width="2.2" fill="none"><line x1="500" y1="400" x2="634" y2="266"/></g>
+  <g stroke="#c9a25a" stroke-width="2.2" fill="none"><line x1="500" y1="400" x2="634" y2="534"/></g>
+  <g stroke="#5b6472" stroke-width="2.2" fill="none"><line x1="500" y1="400" x2="366" y2="534"/></g>
+
+  <!-- Activation Pathways branch -> leaves -->
+  <g stroke="#3b5f8a" stroke-width="1.3" opacity="0.7" fill="none">
+    <line x1="366" y1="266" x2="373" y2="52"/>
+    <line x1="366" y1="266" x2="238" y2="138"/>
+    <line x1="366" y1="266" x2="152" y2="273"/>
+  </g>
+  <!-- Convergence Cascade branch -> leaves -->
+  <g stroke="#b5472a" stroke-width="1.3" opacity="0.7" fill="none">
+    <line x1="634" y1="266" x2="848" y2="273"/>
+    <line x1="634" y1="266" x2="762" y2="138"/>
+    <line x1="634" y1="266" x2="627" y2="52"/>
+  </g>
+  <!-- Biological Effects branch -> leaves -->
+  <g stroke="#c9a25a" stroke-width="1.3" opacity="0.7" fill="none">
+    <line x1="634" y1="534" x2="627" y2="748"/>
+    <line x1="634" y1="534" x2="762" y2="662"/>
+    <line x1="634" y1="534" x2="848" y2="527"/>
+  </g>
+  <!-- Deficiency States branch -> leaves -->
+  <g stroke="#5b6472" stroke-width="1.3" opacity="0.7" fill="none">
+    <line x1="366" y1="534" x2="138" y2="477"/>
+    <line x1="366" y1="534" x2="193" y2="607"/>
+    <line x1="366" y1="534" x2="293" y2="707"/>
+    <line x1="366" y1="534" x2="423" y2="762"/>
+  </g>
+
+  <!-- ============================== CENTER HUB ============================== -->
+  <circle cx="500" cy="400" r="66" fill="#1c2430"/>
+  <circle cx="500" cy="400" r="60" fill="none" stroke="#faf8f4" stroke-width="1.5" opacity="0.5"/>
+  <text x="500" y="396" text-anchor="middle" font-size="14" font-weight="700" fill="#faf8f4">Complement</text>
+  <text x="500" y="413" text-anchor="middle" font-size="14" font-weight="700" fill="#faf8f4">System</text>
+
+  <!-- ============================== BRANCH NODES ============================== -->
+  <rect x="271" y="241" width="190" height="50" rx="10" fill="#3b5f8a"/>
+  <text x="366" y="262" text-anchor="middle" font-size="12" font-weight="700" fill="#faf8f4">Activation</text>
+  <text x="366" y="278" text-anchor="middle" font-size="12" font-weight="700" fill="#faf8f4">Pathways</text>
+
+  <rect x="539" y="241" width="190" height="50" rx="10" fill="#b5472a"/>
+  <text x="634" y="262" text-anchor="middle" font-size="12" font-weight="700" fill="#faf8f4">Convergence</text>
+  <text x="634" y="278" text-anchor="middle" font-size="12" font-weight="700" fill="#faf8f4">Cascade</text>
+
+  <rect x="539" y="509" width="190" height="50" rx="10" fill="#c9a25a"/>
+  <text x="634" y="530" text-anchor="middle" font-size="12" font-weight="700" fill="#1c2430">Biological</text>
+  <text x="634" y="546" text-anchor="middle" font-size="12" font-weight="700" fill="#1c2430">Effects</text>
+
+  <rect x="271" y="509" width="190" height="50" rx="10" fill="#5b6472"/>
+  <text x="366" y="530" text-anchor="middle" font-size="12" font-weight="700" fill="#faf8f4">Deficiency</text>
+  <text x="366" y="546" text-anchor="middle" font-size="12" font-weight="700" fill="#faf8f4">States</text>
+
+  <!-- ============================== LEAVES: Activation Pathways ============================== -->
+  <g>
+    <rect x="281" y="14" width="184" height="58" rx="8" fill="#ffffff" stroke="#3b5f8a" stroke-width="1.4"/>
+    <text x="373" y="34" text-anchor="middle" font-size="11.5" font-weight="700" fill="#3b5f8a">Classical</text>
+    <text x="373" y="51" text-anchor="middle" font-size="9.5" fill="#1c2430">C1q binds Fc of IgG/IgM</text>
+    <text x="373" y="64" text-anchor="middle" font-size="9.5" fill="#1c2430">already bound to antigen</text>
+  </g>
+  <g>
+    <rect x="146" y="100" width="184" height="58" rx="8" fill="#ffffff" stroke="#3b5f8a" stroke-width="1.4"/>
+    <text x="238" y="120" text-anchor="middle" font-size="11.5" font-weight="700" fill="#3b5f8a">Lectin</text>
+    <text x="238" y="137" text-anchor="middle" font-size="9.5" fill="#1c2430">Mannose-binding lectin binds</text>
+    <text x="238" y="150" text-anchor="middle" font-size="9.5" fill="#1c2430">microbial surface sugars</text>
+  </g>
+  <g>
+    <rect x="60" y="244" width="184" height="58" rx="8" fill="#ffffff" stroke="#3b5f8a" stroke-width="1.4"/>
+    <text x="152" y="264" text-anchor="middle" font-size="11.5" font-weight="700" fill="#3b5f8a">Alternative</text>
+    <text x="152" y="281" text-anchor="middle" font-size="9.5" fill="#1c2430">Spontaneous C3 hydrolysis</text>
+    <text x="152" y="294" text-anchor="middle" font-size="9.5" fill="#1c2430">stabilized on pathogen surface</text>
+  </g>
+
+  <!-- ============================== LEAVES: Convergence Cascade ============================== -->
+  <g>
+    <rect x="756" y="244" width="184" height="58" rx="8" fill="#ffffff" stroke="#b5472a" stroke-width="1.4"/>
+    <text x="848" y="264" text-anchor="middle" font-size="11.5" font-weight="700" fill="#b5472a">C3 Convertase</text>
+    <text x="848" y="281" text-anchor="middle" font-size="9.5" fill="#1c2430">Cleaves C3 &#8594;</text>
+    <text x="848" y="294" text-anchor="middle" font-size="9.5" fill="#1c2430">C3a + C3b</text>
+  </g>
+  <g>
+    <rect x="670" y="100" width="184" height="58" rx="8" fill="#ffffff" stroke="#b5472a" stroke-width="1.4"/>
+    <text x="762" y="120" text-anchor="middle" font-size="11.5" font-weight="700" fill="#b5472a">C5 Convertase</text>
+    <text x="762" y="137" text-anchor="middle" font-size="9.5" fill="#1c2430">Cleaves C5 &#8594;</text>
+    <text x="762" y="150" text-anchor="middle" font-size="9.5" fill="#1c2430">C5a + C5b</text>
+  </g>
+  <g>
+    <rect x="535" y="14" width="184" height="58" rx="8" fill="#ffffff" stroke="#b5472a" stroke-width="1.4"/>
+    <text x="627" y="34" text-anchor="middle" font-size="11.5" font-weight="700" fill="#b5472a">C5b-9 (MAC)</text>
+    <text x="627" y="51" text-anchor="middle" font-size="9.5" fill="#1c2430">Inserts in membrane &#8594;</text>
+    <text x="627" y="64" text-anchor="middle" font-size="9.5" fill="#1c2430">osmotic lysis</text>
+  </g>
+
+  <!-- ============================== LEAVES: Biological Effects ============================== -->
+  <g>
+    <rect x="535" y="728" width="184" height="58" rx="8" fill="#ffffff" stroke="#946a2b" stroke-width="1.4"/>
+    <text x="627" y="748" text-anchor="middle" font-size="11.5" font-weight="700" fill="#946a2b">Opsonization</text>
+    <text x="627" y="765" text-anchor="middle" font-size="9.5" fill="#1c2430">C3b coats microbe &#8594;</text>
+    <text x="627" y="778" text-anchor="middle" font-size="9.5" fill="#1c2430">enhanced phagocytosis</text>
+  </g>
+  <g>
+    <rect x="670" y="642" width="184" height="58" rx="8" fill="#ffffff" stroke="#946a2b" stroke-width="1.4"/>
+    <text x="762" y="662" text-anchor="middle" font-size="11.5" font-weight="700" fill="#946a2b">Anaphylatoxins</text>
+    <text x="762" y="679" text-anchor="middle" font-size="9.5" fill="#1c2430">C3a/C5a &#8594; mast cell</text>
+    <text x="762" y="692" text-anchor="middle" font-size="9.5" fill="#1c2430">degranulation, chemotaxis</text>
+  </g>
+  <g>
+    <rect x="756" y="498" width="184" height="58" rx="8" fill="#ffffff" stroke="#946a2b" stroke-width="1.4"/>
+    <text x="848" y="518" text-anchor="middle" font-size="11.5" font-weight="700" fill="#946a2b">Direct Lysis</text>
+    <text x="848" y="535" text-anchor="middle" font-size="9.5" fill="#1c2430">MAC lyses thin-walled</text>
+    <text x="848" y="548" text-anchor="middle" font-size="9.5" fill="#1c2430">gram-negative bacteria</text>
+  </g>
+
+  <!-- ============================== LEAVES: Deficiency States ============================== -->
+  <g>
+    <rect x="46" y="448" width="184" height="58" rx="8" fill="#ffffff" stroke="#5b6472" stroke-width="1.4"/>
+    <text x="138" y="468" text-anchor="middle" font-size="11.5" font-weight="700" fill="#5b6472">C1-INH Deficiency</text>
+    <text x="138" y="485" text-anchor="middle" font-size="9.5" fill="#1c2430">Hereditary angioedema</text>
+  </g>
+  <g>
+    <rect x="101" y="578" width="184" height="58" rx="8" fill="#ffffff" stroke="#5b6472" stroke-width="1.4"/>
+    <text x="193" y="598" text-anchor="middle" font-size="11.5" font-weight="700" fill="#5b6472">DAF/CD55 Deficiency</text>
+    <text x="193" y="615" text-anchor="middle" font-size="9.5" fill="#1c2430">Paroxysmal nocturnal</text>
+    <text x="193" y="628" text-anchor="middle" font-size="9.5" fill="#1c2430">hemoglobinuria</text>
+  </g>
+  <g>
+    <rect x="201" y="678" width="184" height="58" rx="8" fill="#ffffff" stroke="#5b6472" stroke-width="1.4"/>
+    <text x="293" y="698" text-anchor="middle" font-size="11.5" font-weight="700" fill="#5b6472">Terminal (C5-9) Def.</text>
+    <text x="293" y="715" text-anchor="middle" font-size="9.5" fill="#1c2430">Recurrent Neisseria</text>
+    <text x="293" y="728" text-anchor="middle" font-size="9.5" fill="#1c2430">infections</text>
+  </g>
+  <g>
+    <rect x="331" y="733" width="184" height="58" rx="8" fill="#ffffff" stroke="#5b6472" stroke-width="1.4"/>
+    <text x="423" y="753" text-anchor="middle" font-size="11.5" font-weight="700" fill="#5b6472">C3 Deficiency</text>
+    <text x="423" y="770" text-anchor="middle" font-size="9.5" fill="#1c2430">Severe recurrent</text>
+    <text x="423" y="783" text-anchor="middle" font-size="9.5" fill="#1c2430">pyogenic infections</text>
+  </g>
+</svg>
