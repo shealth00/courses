@@ -18,6 +18,222 @@ function formatTime(totalSeconds) {
   return h > 0 ? `${h}:${pad(m)}:${pad(sec)}` : `${pad(m)}:${pad(sec)}`;
 }
 
+// ---------------------------------------------------------------------------
+// Lab values reference panel — static normal-ranges table, independent of
+// any one question. No schema/state needed, so it's plain module data.
+// ---------------------------------------------------------------------------
+const LAB_VALUES = [
+  {
+    section: 'Complete Blood Count (CBC)',
+    rows: [
+      ['Hemoglobin (Hgb)', 'Male: 13.5–17.5 g/dL · Female: 12.0–15.5 g/dL'],
+      ['Hematocrit (Hct)', 'Male: 41–53% · Female: 36–46%'],
+      ['WBC count', '4,500–11,000 /mm³'],
+      ['Platelets', '150,000–400,000 /mm³'],
+    ],
+  },
+  {
+    section: 'Basic Metabolic Panel (BMP)',
+    rows: [
+      ['Sodium (Na+)', '135–145 mEq/L'],
+      ['Potassium (K+)', '3.5–5.0 mEq/L'],
+      ['Chloride (Cl−)', '95–105 mEq/L'],
+      ['Bicarbonate (HCO3−)', '22–28 mEq/L'],
+      ['BUN', '7–20 mg/dL'],
+      ['Creatinine (Cr)', '0.6–1.2 mg/dL'],
+      ['Glucose (fasting)', '70–100 mg/dL'],
+    ],
+  },
+  {
+    section: 'Liver Function Tests (LFTs)',
+    rows: [
+      ['AST', '8–20 U/L'],
+      ['ALT', '8–20 U/L'],
+      ['Alkaline phosphatase (ALP)', '20–70 U/L'],
+      ['Total bilirubin', '0.1–1.0 mg/dL'],
+      ['Albumin', '3.5–5.5 g/dL'],
+      ['Total protein', '6.0–7.8 g/dL'],
+    ],
+  },
+  {
+    section: 'Arterial Blood Gas (ABG)',
+    rows: [
+      ['pH', '7.35–7.45'],
+      ['PaCO2', '33–45 mmHg'],
+      ['PaO2', '75–105 mmHg (on room air)'],
+      ['HCO3−', '22–28 mEq/L'],
+    ],
+  },
+  {
+    section: 'Coagulation',
+    rows: [
+      ['PT', '11–15 sec'],
+      ['PTT', '25–40 sec'],
+      ['INR', '0.8–1.1'],
+      ['Bleeding time', '2–7 min'],
+    ],
+  },
+  {
+    section: 'Other',
+    rows: [
+      ['Calcium (Ca2+)', '8.4–10.2 mg/dL'],
+      ['Magnesium (Mg2+)', '1.5–2.0 mEq/L'],
+      ['Phosphate', '3.0–4.5 mg/dL'],
+      ['TSH', '0.4–4.0 μU/mL'],
+      ['Uric acid', 'Male: 3.5–7.2 mg/dL · Female: 2.6–6.0 mg/dL'],
+    ],
+  },
+];
+
+function labValuesSectionHtml(section) {
+  return `
+    <div class="labvalues-section">
+      <h4>${escapeHtml(section.section)}</h4>
+      <table class="labvalues-table">
+        ${section.rows
+          .map(
+            ([name, range]) => `
+          <tr class="labvalues-row" data-search="${escapeHtml(`${name} ${range}`.toLowerCase())}">
+            <td>${escapeHtml(name)}</td>
+            <td>${escapeHtml(range)}</td>
+          </tr>`
+          )
+          .join('')}
+      </table>
+    </div>
+  `;
+}
+
+function openLabValuesPanel() {
+  const overlay = document.createElement('div');
+  overlay.className = 'labvalues-overlay';
+  overlay.innerHTML = `
+    <div class="labvalues-panel">
+      <div class="labvalues-head">
+        <h3>Normal Lab Values</h3>
+        <button class="labvalues-close" aria-label="Close">&times;</button>
+      </div>
+      <input type="text" class="labvalues-filter" id="labvalues-filter" placeholder="Filter (e.g. potassium, Hgb)&hellip;">
+      <div class="labvalues-body" id="labvalues-body">
+        ${LAB_VALUES.map(labValuesSectionHtml).join('')}
+      </div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  function close() {
+    overlay.remove();
+    document.removeEventListener('keydown', onKey);
+  }
+  function onKey(e) {
+    if (e.key === 'Escape') close();
+  }
+  overlay.querySelector('.labvalues-close').addEventListener('click', close);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) close();
+  });
+  document.addEventListener('keydown', onKey);
+
+  const filterInput = overlay.querySelector('#labvalues-filter');
+  filterInput.addEventListener('input', () => {
+    const term = filterInput.value.trim().toLowerCase();
+    overlay.querySelectorAll('.labvalues-row').forEach((row) => {
+      row.style.display = row.dataset.search.includes(term) ? '' : 'none';
+    });
+    overlay.querySelectorAll('.labvalues-section').forEach((sec) => {
+      const anyVisible = [...sec.querySelectorAll('.labvalues-row')].some((r) => r.style.display !== 'none');
+      sec.style.display = anyVisible ? '' : 'none';
+    });
+  });
+  filterInput.focus();
+}
+
+// ---------------------------------------------------------------------------
+// Highlighting — select text in the question stem, click the popup to mark
+// it. Session-only (in-memory, resets on reload): questionId -> [start, end]
+// plain-text character ranges into that question's stem.
+// ---------------------------------------------------------------------------
+let activeHighlightPopup = null;
+
+function hideHighlightPopup() {
+  if (activeHighlightPopup) {
+    activeHighlightPopup.remove();
+    activeHighlightPopup = null;
+  }
+}
+
+function showHighlightPopup(range, onApply) {
+  hideHighlightPopup();
+  const rect = range.getBoundingClientRect();
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'qb-highlight-popup';
+  btn.textContent = 'Highlight';
+  btn.style.position = 'fixed';
+  btn.style.top = `${Math.max(8, rect.top - 36)}px`;
+  btn.style.left = `${Math.max(8, rect.left)}px`;
+  btn.addEventListener('mousedown', (e) => {
+    // mousedown (not click) fires before the selection-clearing click below.
+    e.preventDefault();
+    e.stopPropagation();
+    onApply();
+  });
+  document.body.appendChild(btn);
+  activeHighlightPopup = btn;
+
+  setTimeout(() => {
+    document.addEventListener('click', function onDocClick(ev) {
+      if (ev.target !== btn) {
+        hideHighlightPopup();
+        document.removeEventListener('click', onDocClick);
+      }
+    });
+  }, 0);
+}
+
+function mergeRanges(ranges) {
+  if (!ranges.length) return [];
+  const sorted = ranges.map((r) => [...r]).sort((a, b) => a[0] - b[0]);
+  const merged = [sorted[0]];
+  for (let i = 1; i < sorted.length; i += 1) {
+    const last = merged[merged.length - 1];
+    const [s, e] = sorted[i];
+    if (s <= last[1]) last[1] = Math.max(last[1], e);
+    else merged.push([s, e]);
+  }
+  return merged;
+}
+
+// Builds the stem's inner HTML, wrapping highlighted ranges in <mark>. Each
+// segment is escaped independently so this stays as safe as plain escapeHtml.
+function renderStemHtml(text, ranges) {
+  const merged = mergeRanges(ranges || []);
+  if (!merged.length) return escapeHtml(text);
+  let html = '';
+  let cursor = 0;
+  merged.forEach(([s, e]) => {
+    html += escapeHtml(text.slice(cursor, s));
+    html += `<mark class="qb-highlight" data-hl-start="${s}" data-hl-end="${e}" title="Click to remove highlight">${escapeHtml(text.slice(s, e))}</mark>`;
+    cursor = e;
+  });
+  html += escapeHtml(text.slice(cursor));
+  return html;
+}
+
+// Converts a DOM Range boundary (node + offset) into a plain-character offset
+// relative to `container`'s full text content (walking only text nodes).
+function textOffsetWithin(container, node, offset) {
+  const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
+  let total = 0;
+  let current = walker.nextNode();
+  while (current) {
+    if (current === node) return total + offset;
+    total += current.textContent.length;
+    current = walker.nextNode();
+  }
+  return total;
+}
+
 export async function mountQBank(appEl, routeParts) {
   const supabase = await getSupabase();
 
@@ -179,6 +395,12 @@ async function renderSession(appEl, supabase, attemptId) {
     return renderResults(appEl, { attempt, block, questions, choicesByQuestion, answerState });
   }
 
+  // Session-only UI state (in-memory, lost on reload) for the two purely
+  // visual UWorld-style tools: stem highlighting and choice strike-through.
+  // Neither affects scoring or is persisted to Supabase.
+  const highlightState = {}; // question_id -> [start, end][] (char ranges into q.stem)
+  const strikeState = {}; // question_id -> Set<choice_id>
+
   let currentIndex = 0;
   const isTimed = attempt.mode === 'timed';
   const timeLimitSec = block?.time_limit_sec || 3600;
@@ -206,6 +428,7 @@ async function renderSession(appEl, supabase, attemptId) {
         <button class="exam-btn" id="btn-prev">&larr; Previous</button>
         <div style="display:flex;gap:10px;">
           <button class="exam-btn flag" id="btn-flag">Flag for review</button>
+          <button class="exam-btn" id="btn-lab-values">Lab values</button>
           <button class="exam-btn primary" id="btn-submit-block">End block</button>
         </div>
         <button class="exam-btn primary" id="btn-next">Next &rarr;</button>
@@ -244,7 +467,7 @@ async function renderSession(appEl, supabase, attemptId) {
 
     mainEl.innerHTML = `
       <div class="exam-stem">
-        ${escapeHtml(q.stem)}
+        <span class="stem-text" id="stem-text">${renderStemHtml(q.stem, highlightState[q.id])}</span>
         ${q.exhibit_image_path ? `<img class="exam-exhibit" src="${escapeHtml(supabase.storage.from('illustrations').getPublicUrl(q.exhibit_image_path).data.publicUrl)}" alt="Exhibit">` : ''}
         ${q.lead_in ? `<div class="exam-lead-in">${escapeHtml(q.lead_in)}</div>` : ''}
       </div>
@@ -254,7 +477,9 @@ async function renderSession(appEl, supabase, attemptId) {
             const classes = ['choice-row'];
             const isSelected = st.choiceId === c.id;
             const revealed = tutorReveal || !!attempt.submitted_at;
+            const isStruck = strikeState[q.id]?.has(c.id);
             if (isSelected) classes.push('selected');
+            if (isStruck) classes.push('struck');
             if (revealed) {
               if (c.is_correct) classes.push('correct');
               else if (isSelected) classes.push('incorrect');
@@ -262,7 +487,8 @@ async function renderSession(appEl, supabase, attemptId) {
             return `
             <div class="${classes.join(' ')}" data-choice-id="${c.id}">
               <span class="choice-label">${escapeHtml(c.label)}</span>
-              <span>${escapeHtml(c.choice_text)}</span>
+              <span class="choice-text">${escapeHtml(c.choice_text)}</span>
+              <button type="button" class="choice-strike-btn${isStruck ? ' active' : ''}" data-strike-choice="${c.id}" title="Eliminate this choice">Strike</button>
             </div>
             ${
               revealed && c.explanation
@@ -324,6 +550,47 @@ async function renderSession(appEl, supabase, attemptId) {
       });
     });
 
+    // Strike-through: purely visual "eliminate this choice" toggle, independent
+    // of actually selecting the choice as the answer — doesn't touch scoring.
+    mainEl.querySelectorAll('.choice-strike-btn').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation(); // don't let the click bubble up into choice-row selection
+        const choiceId = btn.dataset.strikeChoice;
+        const struck = (strikeState[q.id] ??= new Set());
+        if (struck.has(choiceId)) struck.delete(choiceId);
+        else struck.add(choiceId);
+        renderQuestion();
+      });
+    });
+
+    // Highlighting: select text in the stem, click the popup to mark it;
+    // click an existing <mark> to remove it. Session-only (see highlightState).
+    const stemTextEl = mainEl.querySelector('#stem-text');
+    if (stemTextEl) {
+      stemTextEl.addEventListener('mouseup', () => {
+        const sel = window.getSelection();
+        if (!sel || sel.isCollapsed || sel.rangeCount === 0) return;
+        const range = sel.getRangeAt(0);
+        if (!stemTextEl.contains(range.commonAncestorContainer)) return;
+        const start = textOffsetWithin(stemTextEl, range.startContainer, range.startOffset);
+        const end = textOffsetWithin(stemTextEl, range.endContainer, range.endOffset);
+        if (end <= start) return;
+        showHighlightPopup(range, () => {
+          (highlightState[q.id] ??= []).push([start, end]);
+          sel.removeAllRanges();
+          renderQuestion();
+        });
+      });
+      stemTextEl.addEventListener('click', (e) => {
+        const mark = e.target.closest('mark.qb-highlight');
+        if (!mark) return;
+        const s = Number(mark.dataset.hlStart);
+        const en = Number(mark.dataset.hlEnd);
+        highlightState[q.id] = (highlightState[q.id] || []).filter(([rs, re]) => rs !== s || re !== en);
+        renderQuestion();
+      });
+    }
+
     appEl.querySelector('#btn-flag').classList.toggle('active', st.flagged);
     appEl.querySelector('#btn-prev').disabled = currentIndex === 0;
     appEl.querySelector('#btn-next').textContent = currentIndex === questions.length - 1 ? 'Finish review' : 'Next →';
@@ -356,6 +623,7 @@ async function renderSession(appEl, supabase, attemptId) {
       finishAttempt();
     }
   });
+  appEl.querySelector('#btn-lab-values').addEventListener('click', () => openLabValuesPanel());
 
   // Timer
   let timerInterval;
