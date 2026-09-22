@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="420" fill="#faf8f4"/>
+  <text x="400" y="22" text-anchor="middle" font-size="16" font-weight="700" fill="#1c2430">Antibiotic Classes and Mechanisms of Action</text>
+  <text x="400" y="38" text-anchor="middle" font-size="10.5" fill="#5b6472">Grouped by site of action on the bacterial cell, with representative drugs</text>
+  <rect x="290" y="52" width="220" height="44" rx="10" fill="#1c2430"/>
+  <text x="400" y="80" text-anchor="middle" font-size="16.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">ANTIBIOTICS</text>
+  <line x1="400" y1="96" x2="70" y2="118" stroke="#3b5f8a" stroke-width="2"/>
+  <rect x="5" y="118" width="130" height="36" rx="7" fill="#3b5f8a"/>
+  <text x="70" y="133" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Cell Wall</text>
+  <text x="70" y="146" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Synthesis</text>
+  <line x1="70" y1="154" x2="70" y2="328" stroke="#3b5f8a" stroke-width="1.3"/>
+  <rect x="5" y="168" width="130" height="34" rx="5" fill="#faf8f4" stroke="#3b5f8a" stroke-width="1.4"/>
+  <text x="70" y="182" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Penicillins</text>
+  <text x="70" y="194" text-anchor="middle" font-size="7.8" fill="#5b6472">PBP inhibition</text>
+  <rect x="5" y="210" width="130" height="34" rx="5" fill="#faf8f4" stroke="#3b5f8a" stroke-width="1.4"/>
+  <text x="70" y="224" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Cephalosporins</text>
+  <text x="70" y="236" text-anchor="middle" font-size="7.8" fill="#5b6472">PBP inhibition, tiered</text>
+  <rect x="5" y="252" width="130" height="34" rx="5" fill="#faf8f4" stroke="#3b5f8a" stroke-width="1.4"/>
+  <text x="70" y="266" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Vancomycin</text>
+  <text x="70" y="278" text-anchor="middle" font-size="7.8" fill="#5b6472">D-Ala-D-Ala binding</text>
+  <rect x="5" y="294" width="130" height="34" rx="5" fill="#faf8f4" stroke="#3b5f8a" stroke-width="1.4"/>
+  <text x="70" y="308" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Carbapenems</text>
+  <text x="70" y="320" text-anchor="middle" font-size="7.8" fill="#5b6472">broad PBP inhibition</text>
+  <line x1="400" y1="96" x2="200" y2="118" stroke="#b5472a" stroke-width="2"/>
+  <rect x="135" y="118" width="130" height="36" rx="7" fill="#b5472a"/>
+  <text x="200" y="133" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">30S Ribosome</text>
+  <text x="200" y="146" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Inhibitors</text>
+  <line x1="200" y1="154" x2="200" y2="244" stroke="#b5472a" stroke-width="1.3"/>
+  <rect x="135" y="168" width="130" height="34" rx="5" fill="#faf8f4" stroke="#b5472a" stroke-width="1.4"/>
+  <text x="200" y="182" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Aminoglycosides</text>
+  <text x="200" y="194" text-anchor="middle" font-size="7.8" fill="#5b6472">misreading (irreversible)</text>
+  <rect x="135" y="210" width="130" height="34" rx="5" fill="#faf8f4" stroke="#b5472a" stroke-width="1.4"/>
+  <text x="200" y="224" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Tetracyclines</text>
+  <text x="200" y="236" text-anchor="middle" font-size="7.8" fill="#5b6472">block aminoacyl-tRNA site</text>
+  <line x1="400" y1="96" x2="330" y2="118" stroke="#2a7a72" stroke-width="2"/>
+  <rect x="265" y="118" width="130" height="36" rx="7" fill="#2a7a72"/>
+  <text x="330" y="133" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">50S Ribosome</text>
+  <text x="330" y="146" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Inhibitors</text>
+  <line x1="330" y1="154" x2="330" y2="328" stroke="#2a7a72" stroke-width="1.3"/>
+  <rect x="265" y="168" width="130" height="34" rx="5" fill="#faf8f4" stroke="#2a7a72" stroke-width="1.4"/>
+  <text x="330" y="182" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Macrolides</text>
+  <text x="330" y="194" text-anchor="middle" font-size="7.8" fill="#5b6472">block translocation</text>
+  <rect x="265" y="210" width="130" height="34" rx="5" fill="#faf8f4" stroke="#2a7a72" stroke-width="1.4"/>
+  <text x="330" y="224" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Clindamycin</text>
+  <text x="330" y="236" text-anchor="middle" font-size="7.8" fill="#5b6472">blocks peptidyl transfer</text>
+  <rect x="265" y="252" width="130" height="34" rx="5" fill="#faf8f4" stroke="#2a7a72" stroke-width="1.4"/>
+  <text x="330" y="266" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Linezolid</text>
+  <text x="330" y="278" text-anchor="middle" font-size="7.8" fill="#5b6472">blocks initiation complex</text>
+  <rect x="265" y="294" width="130" height="34" rx="5" fill="#faf8f4" stroke="#2a7a72" stroke-width="1.4"/>
+  <text x="330" y="308" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Chloramphenicol</text>
+  <text x="330" y="320" text-anchor="middle" font-size="7.8" fill="#5b6472">blocks peptidyl transferase</text>
+  <line x1="400" y1="96" x2="460" y2="118" stroke="#5a7a3c" stroke-width="2"/>
+  <rect x="395" y="118" width="130" height="36" rx="7" fill="#5a7a3c"/>
+  <text x="460" y="133" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Nucleic Acid</text>
+  <text x="460" y="146" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Synthesis</text>
+  <line x1="460" y1="154" x2="460" y2="286" stroke="#5a7a3c" stroke-width="1.3"/>
+  <rect x="395" y="168" width="130" height="34" rx="5" fill="#faf8f4" stroke="#5a7a3c" stroke-width="1.4"/>
+  <text x="460" y="182" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Fluoroquinolones</text>
+  <text x="460" y="194" text-anchor="middle" font-size="7.8" fill="#5b6472">DNA gyrase / topo IV</text>
+  <rect x="395" y="210" width="130" height="34" rx="5" fill="#faf8f4" stroke="#5a7a3c" stroke-width="1.4"/>
+  <text x="460" y="224" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Rifampin</text>
+  <text x="460" y="236" text-anchor="middle" font-size="7.8" fill="#5b6472">RNA polymerase</text>
+  <rect x="395" y="252" width="130" height="34" rx="5" fill="#faf8f4" stroke="#5a7a3c" stroke-width="1.4"/>
+  <text x="460" y="266" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Metronidazole</text>
+  <text x="460" y="278" text-anchor="middle" font-size="7.8" fill="#5b6472">free-radical DNA damage</text>
+  <line x1="400" y1="96" x2="590" y2="118" stroke="#7a4a8a" stroke-width="2"/>
+  <rect x="525" y="118" width="130" height="36" rx="7" fill="#7a4a8a"/>
+  <text x="590" y="133" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Folate</text>
+  <text x="590" y="146" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Synthesis</text>
+  <line x1="590" y1="154" x2="590" y2="244" stroke="#7a4a8a" stroke-width="1.3"/>
+  <rect x="525" y="168" width="130" height="34" rx="5" fill="#faf8f4" stroke="#7a4a8a" stroke-width="1.4"/>
+  <text x="590" y="182" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Sulfonamides</text>
+  <text x="590" y="194" text-anchor="middle" font-size="7.8" fill="#5b6472">dihydropteroate synthase</text>
+  <rect x="525" y="210" width="130" height="34" rx="5" fill="#faf8f4" stroke="#7a4a8a" stroke-width="1.4"/>
+  <text x="590" y="224" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Trimethoprim</text>
+  <text x="590" y="236" text-anchor="middle" font-size="7.8" fill="#5b6472">dihydrofolate reductase</text>
+  <line x1="400" y1="96" x2="720" y2="118" stroke="#946a2b" stroke-width="2"/>
+  <rect x="655" y="118" width="130" height="36" rx="7" fill="#946a2b"/>
+  <text x="720" y="133" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Cell</text>
+  <text x="720" y="146" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">Membrane</text>
+  <line x1="720" y1="154" x2="720" y2="244" stroke="#946a2b" stroke-width="1.3"/>
+  <rect x="655" y="168" width="130" height="34" rx="5" fill="#faf8f4" stroke="#946a2b" stroke-width="1.4"/>
+  <text x="720" y="182" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Daptomycin</text>
+  <text x="720" y="194" text-anchor="middle" font-size="7.8" fill="#5b6472">depolarizes gram+ membrane</text>
+  <rect x="655" y="210" width="130" height="34" rx="5" fill="#faf8f4" stroke="#946a2b" stroke-width="1.4"/>
+  <text x="720" y="224" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Polymyxins</text>
+  <text x="720" y="236" text-anchor="middle" font-size="7.8" fill="#5b6472">permeabilizes gram- membrane</text>
+</svg>
