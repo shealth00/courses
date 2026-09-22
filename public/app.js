@@ -8,6 +8,7 @@ import { mountPathways } from './pathway.js';
 import { mountProgress } from './progress.js';
 import { mountAccount } from './account.js';
 import { mountTopics } from './topics.js';
+import { mountPathophysiology } from './pathophysiology.js';
 
 const appEl = document.getElementById('app');
 const navLinks = document.querySelectorAll('.topnav a');
@@ -98,6 +99,11 @@ async function router() {
     setActiveNav('topics');
     const supabase = await getSupabase();
     return mountTopics(appEl, supabase, path === 'topic' ? rest : []);
+  }
+  if (path === 'pathophysiology') {
+    setActiveNav('pathophysiology');
+    const supabase = await getSupabase();
+    return mountPathophysiology(appEl, supabase, rest);
   }
 
   setActiveNav('catalog');
