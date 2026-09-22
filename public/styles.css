@@ -195,6 +195,10 @@ body {
 
 .empty-state { text-align: center; padding: 60px 20px; color: var(--ink-soft); font-size: 14px; }
 
+/* ---------- Progress dashboard bars (no charting library — plain CSS width%) ---------- */
+.progress-bar-track { width: 100%; height: 7px; border-radius: 4px; background: var(--line); overflow: hidden; }
+.progress-bar-fill { height: 100%; background: var(--accent-blue); border-radius: 4px; }
+
 .pathway-shell { display: flex; gap: 28px; flex-wrap: wrap; }
 .pathway-flow { flex: 0 0 220px; display: flex; flex-direction: column; align-items: center; }
 .pathway-node {

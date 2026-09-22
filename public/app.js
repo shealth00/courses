@@ -5,6 +5,7 @@ import { mountViewer } from './viewer3d.js';
 import { mountQBank } from './qbank.js';
 import { mountFlashcards } from './flashcards.js';
 import { mountPathways } from './pathway.js';
+import { mountProgress } from './progress.js';
 
 const appEl = document.getElementById('app');
 const navLinks = document.querySelectorAll('.topnav a');
@@ -47,6 +48,11 @@ async function router() {
     setActiveNav('pathways');
     const supabase = await getSupabase();
     return mountPathways(appEl, supabase, path === 'pathway' ? rest : []);
+  }
+  if (path === 'progress') {
+    setActiveNav('progress');
+    const supabase = await getSupabase();
+    return mountProgress(appEl, supabase, rest);
   }
 
   setActiveNav('catalog');
