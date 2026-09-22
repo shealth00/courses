@@ -5853,6 +5853,383 @@ If a central cause is suspected instead (based on red flags noted above), immedi
       ] },
     ]),
   },
+
+  // ===========================================================================
+  // Module 5 — Pharmacology
+  // (Serotonin Syndrome already exists under Module 13 — Psychiatry, so it is
+  // deliberately not duplicated here; Salicylate Toxicity covers a comparable
+  // toxidrome/overdose theme instead.)
+  // ===========================================================================
+  {
+    module_number: 5,
+    module_title: "Pharmacology",
+    key_submodule: "Psychiatric Drug Emergencies",
+    slug: "neuroleptic-malignant-syndrome",
+    title: "Neuroleptic Malignant Syndrome",
+    sort_order: 1,
+
+    hook_vignette:
+      "A 34-year-old man with schizophrenia is brought to the emergency department by his family 4 days after his antipsychotic medication was switched to a higher-potency agent and his dose was increased. He is diaphoretic, has a temperature of 40.1°C (104.2°F), and is minimally responsive. Exam reveals diffuse \"lead-pipe\" muscle rigidity, and his family notes he has been increasingly confused for the past day. Heart rate is 128/min and blood pressure is 162/98 mmHg.",
+
+    ddx_mapping:
+      "Neuroleptic malignant syndrome vs. serotonin syndrome vs. malignant hyperthermia vs. heat stroke vs. CNS infection:\n\nNMS — recent (days-to-weeks) start or dose increase of a dopamine antagonist (antipsychotic), or abrupt withdrawal of a dopamine agonist (e.g., levodopa); fever plus lead-pipe RIGIDITY plus autonomic instability plus altered mental status, with HYPOreflexia; onset over 1-3 days; markedly elevated CK from muscle breakdown; leukocytosis.\n\nSerotonin syndrome — recent addition of a serotonergic agent or combination (SSRI plus MAOI/tramadol/linezolid/triptan); onset within hours; HYPERreflexia and inducible or spontaneous CLONUS (especially in the lower extremities), tremor, diarrhea — reflexes are increased, not decreased.\n\nMalignant hyperthermia — onset during or shortly after general anesthesia with a volatile anesthetic or succinylcholine, not an outpatient psychiatric medication change; ryanodine receptor (RYR1) mutation; rigidity plus rapidly rising end-tidal CO2 and hyperkalemia.\n\nHeat stroke — history of environmental/exertional heat exposure rather than a psychotropic medication change; skin is classically hot and DRY (anhidrotic); no true diffuse muscular rigidity/hyporeflexia pattern.\n\nCNS infection (meningoencephalitis) — fever and altered mental status overlap, but nuchal rigidity (not diffuse limb rigidity), headache, and CSF pleocytosis point toward infection rather than a drug reaction, with no clear temporal link to an antipsychotic change.",
+
+    diagnostic_evaluation:
+      "Diagnosis is clinical, anchored to the temporal relationship with an antipsychotic (or dopamine agonist withdrawal) plus the core tetrad of fever, rigidity, autonomic instability, and altered mental status. Supporting labs: markedly elevated creatine kinase (often well above 1,000 U/L) from ongoing muscle breakdown, leukocytosis, and sometimes elevated liver transaminases. Renal function should be checked given the risk of rhabdomyolysis-induced acute kidney injury (myoglobinuric renal failure). Other causes of fever plus altered mental status (CNS infection, serotonin syndrome, malignant hyperthermia, thyrotoxicosis) should be excluded based on history, exposure timeline, and exam findings — lumbar puncture is reserved for genuine suspicion of infection, since NMS itself is a clinical diagnosis rather than one confirmed by a specific test.",
+
+    management:
+      "Immediately stop the offending antipsychotic (or resume the dopamine agonist if NMS was triggered by its withdrawal). Supportive care is central: aggressive IV fluid hydration to prevent myoglobinuric renal failure, active cooling for hyperthermia, and cardiorespiratory monitoring (ICU-level for severe cases). For moderate-to-severe disease, dantrolene (a direct skeletal muscle relaxant that blocks ryanodine receptor-mediated calcium release) reduces rigidity and hyperthermia, and bromocriptine or amantadine (dopamine agonists) counteract the central dopamine blockade driving the syndrome. Benzodiazepines help with agitation. If antipsychotic therapy must eventually be resumed, wait at least 2 weeks, use a lower-potency or atypical agent at the lowest effective dose, and monitor closely, since recurrence risk is significant.",
+
+    first_order_prompt:
+      "Match this finding to its diagnosis: Fever, lead-pipe rigidity, autonomic instability, and altered mental status with HYPOreflexia, beginning 1-3 days after starting a high-potency antipsychotic.",
+    first_order_answer:
+      "Neuroleptic malignant syndrome (NMS).",
+
+    second_order_vignette:
+      "A 41-year-old woman with bipolar disorder is started on haloperidol for acute agitation during a psychiatric hospitalization. Three days later, nursing staff note she is markedly diaphoretic, tachycardic, and difficult to arouse. Temperature is 39.8°C (103.6°F). Exam shows diffuse rigidity of all four extremities and depressed deep tendon reflexes. Laboratory studies show a creatine kinase of 12,400 U/L and a white blood cell count of 16,000/mm^3.",
+    second_order_question:
+      "Which of the following is the most appropriate next step in management?",
+    second_order_choices: JSON.stringify([
+      { label: "A", text: "Discontinue haloperidol and begin aggressive IV hydration with cardiorespiratory monitoring", correct: true,
+        explanation: "Correct — the first and most essential steps are stopping the offending antipsychotic and starting supportive care (fluids to prevent myoglobinuric renal failure, monitoring), with dantrolene/bromocriptine reserved for more severe or refractory cases." },
+      { label: "B", text: "Administer cyproheptadine and continue haloperidol at a reduced dose", correct: false,
+        explanation: "Cyproheptadine treats serotonin syndrome, not NMS, and the offending antipsychotic must be stopped, not continued at a lower dose." },
+      { label: "C", text: "Perform an emergent lumbar puncture before initiating any treatment", correct: false,
+        explanation: "NMS is a clinical diagnosis; delaying supportive care and drug discontinuation to pursue an LP first is not appropriate given the classic, temporally-linked presentation." },
+      { label: "D", text: "Start dantrolene alone while continuing haloperidol until the diagnosis is confirmed", correct: false,
+        explanation: "The offending antipsychotic must be stopped regardless of whether dantrolene is also used; continuing it perpetuates the underlying cause." },
+      { label: "E", text: "Administer succinylcholine to facilitate rapid intubation", correct: false,
+        explanation: "Succinylcholine carries its own risk of triggering a malignant hyperthermia-like reaction and hyperkalemia, and is not an appropriate routine step here." },
+    ]),
+    second_order_answer: "A",
+    second_order_explanation:
+      "The most urgent priorities in NMS are removing the causative agent and starting supportive care (IV fluids to prevent myoglobinuric renal failure from rhabdomyolysis, cooling, and monitoring). Dantrolene and/or bromocriptine are added for moderate-to-severe or refractory cases, but discontinuing haloperidol and initiating supportive care cannot wait, and continuing the antipsychotic in any form (choices B and D) would perpetuate the syndrome.",
+
+    flowchart_title: "Working Up Fever + Rigidity + Altered Mental Status",
+    flowchart: JSON.stringify([
+      { node: "Fever + altered mental status + muscle rigidity", branches: [
+        { label: "Recent antipsychotic start/increase, HYPOreflexia", next: "Suspect neuroleptic malignant syndrome" },
+        { label: "Recent serotonergic drug combination, HYPERreflexia/clonus", next: "Suspect serotonin syndrome" },
+        { label: "Recent inhalational anesthetic/succinylcholine exposure", next: "Suspect malignant hyperthermia" },
+        { label: "Environmental heat exposure, hot dry skin", next: "Suspect heat stroke" },
+      ] },
+      { node: "Suspected NMS — confirm and grade severity", branches: [
+        { label: "CK markedly elevated, leukocytosis, lead-pipe rigidity", next: "Stop antipsychotic; IV fluids; active cooling" },
+        { label: "Refractory rigidity or severe autonomic instability", next: "Add dantrolene and/or bromocriptine" },
+      ] },
+      { node: "Recovery and antipsychotic re-challenge", branches: [
+        { label: "Symptoms resolved", next: "Wait at least 2 weeks before resuming an antipsychotic if needed" },
+        { label: "Antipsychotic still required", next: "Use a lower-potency or atypical agent at the lowest effective dose, monitor closely" },
+      ] },
+    ]),
+  },
+  {
+    module_number: 5,
+    module_title: "Pharmacology",
+    key_submodule: "Toxidromes",
+    slug: "anticholinergic-toxicity",
+    title: "Anticholinergic Toxicity",
+    sort_order: 2,
+
+    hook_vignette:
+      "A 22-year-old man is brought to the emergency department by paramedics after being found agitated and disoriented in a park, picking at his clothing. He is flushed and febrile (38.7°C), with dry mucous membranes, dilated pupils that react sluggishly to light, and no bowel sounds on auscultation. He is unable to void and requires bladder catheterization. Friends report he had been chewing on the seeds of a wild plant.",
+
+    ddx_mapping:
+      "Anticholinergic toxicity vs. sympathomimetic toxicity vs. serotonin syndrome vs. NMS vs. heat stroke:\n\nAnticholinergic toxicity (e.g., diphenhydramine, tricyclic antidepressants, atropine, jimsonweed/Datura) — hyperthermia, mydriasis, DRY mucous membranes and skin, urinary retention, DECREASED bowel sounds, agitated delirium (\"dry as a bone, red as a beet, mad as a hatter, blind as a bat, full as a flask\").\n\nSympathomimetic toxicity (cocaine, amphetamines) — shares mydriasis, tachycardia, agitation, and hyperthermia, but skin is DIAPHORETIC and bowel sounds are hyperactive rather than decreased.\n\nSerotonin syndrome — agitation and hyperthermia overlap, but the hallmark findings are hyperreflexia and clonus, not urinary retention/decreased bowel sounds, and there is a recent serotonergic drug history.\n\nNeuroleptic malignant syndrome — fever and altered mental status overlap, but lead-pipe rigidity with hyporeflexia and a recent antipsychotic exposure (not an anticholinergic ingestion) are the key clues.\n\nHeat stroke — hot, dry skin overlaps, but no mydriasis/urinary retention/decreased-bowel-sounds pattern, and there is clear environmental/exertional heat exposure rather than an ingestion.",
+
+    diagnostic_evaluation:
+      "Diagnosis is primarily clinical, based on recognizing the toxidrome (mydriasis, dry/flushed skin, hyperthermia, urinary retention, decreased bowel sounds, agitated delirium) plus an exposure history (over-the-counter sleep aids/antihistamines, tricyclic antidepressants, motion-sickness patches, or plant ingestion such as jimsonweed/Datura). An ECG should be obtained to look for QRS/QTc prolongation, which suggests concomitant tricyclic antidepressant or other sodium/potassium-channel-blocking co-ingestion, since this changes management. Basic labs (electrolytes, creatine kinase, renal function) assess for rhabdomyolysis from agitation/hyperthermia and guide supportive care. Bladder scan or catheterization confirms urinary retention when present.",
+
+    management:
+      "Supportive care is the mainstay: IV fluids, benzodiazepines for agitation/seizures, and active cooling for hyperthermia. Physostigmine, a centrally acting acetylcholinesterase inhibitor, can reverse the syndrome and is considered for severe, refractory delirium/agitation, but only when the ECG shows no evidence of sodium-channel blockade (normal QRS), since physostigmine can precipitate seizures or asystole when a sodium-channel-blocking co-ingestant (e.g., a tricyclic) is also on board — in that setting IV sodium bicarbonate is used instead to narrow the QRS and stabilize cardiac conduction. Bladder catheterization treats urinary retention. Activated charcoal may be considered if the ingestion was recent and the airway is protected. Most cases resolve with supportive care alone as the causative agent is metabolized and cleared.",
+
+    first_order_prompt:
+      "Match this finding to its diagnosis: Hyperthermia, mydriasis, dry/flushed skin, urinary retention, decreased bowel sounds, and agitated delirium after an antihistamine overdose.",
+    first_order_answer:
+      "Anticholinergic toxicity.",
+
+    second_order_vignette:
+      "A 17-year-old girl is brought to the emergency department after ingesting an unknown quantity of diphenhydramine tablets in a suicide attempt. She is agitated, flushed, and has dry mucous membranes, dilated pupils, and absent bowel sounds. An ECG shows a QRS duration of 145 ms.",
+    second_order_question:
+      "Which of the following is the most appropriate next step in management?",
+    second_order_choices: JSON.stringify([
+      { label: "A", text: "IV sodium bicarbonate", correct: true,
+        explanation: "Correct — the markedly widened QRS indicates sodium-channel blockade (diphenhydramine can produce this at high doses, similar to a tricyclic), and sodium bicarbonate narrows the QRS and stabilizes cardiac conduction; physostigmine would be relatively contraindicated here." },
+      { label: "B", text: "Physostigmine", correct: false,
+        explanation: "Physostigmine is relatively contraindicated when there is evidence of sodium-channel blockade (widened QRS), given the risk of asystole/refractory arrhythmia." },
+      { label: "C", text: "Discharge home once she is medically cleared psychiatrically", correct: false,
+        explanation: "She has active, significant cardiac conduction abnormality and requires further inpatient monitoring and treatment, not discharge." },
+      { label: "D", text: "Naloxone", correct: false,
+        explanation: "There are no signs of opioid toxicity (this patient has mydriasis and dry mucosa, not miosis/sedation), so naloxone would not be expected to help." },
+      { label: "E", text: "Atropine", correct: false,
+        explanation: "Atropine is itself an anticholinergic and would worsen this patient's anticholinergic toxicity." },
+    ]),
+    second_order_answer: "A",
+    second_order_explanation:
+      "A QRS duration of 145 ms indicates significant cardiac sodium-channel blockade, a recognized effect of diphenhydramine at high doses (similar to tricyclic antidepressants). IV sodium bicarbonate is the appropriate next step: it increases the extracellular sodium gradient and alkalinizes the serum, both of which improve sodium channel function and narrow the QRS, reducing the risk of ventricular arrhythmia. Physostigmine, while useful for anticholinergic delirium without cardiac conduction abnormality, is relatively contraindicated once significant QRS widening is present.",
+
+    flowchart_title: "Approach to Suspected Anticholinergic Toxicity",
+    flowchart: JSON.stringify([
+      { node: "Agitated delirium + dry/flushed skin + mydriasis + urinary retention", branches: [
+        { label: "Decreased bowel sounds, hot/dry skin", next: "Anticholinergic toxidrome" },
+        { label: "Diaphoretic, hyperactive bowel sounds", next: "Reconsider sympathomimetic toxicity" },
+      ] },
+      { node: "Anticholinergic toxidrome confirmed — check ECG", branches: [
+        { label: "QRS under 100 ms, no arrhythmia", next: "Supportive care; consider physostigmine if severe/refractory" },
+        { label: "QRS 100 ms or greater (sodium-channel blockade)", next: "IV sodium bicarbonate; avoid physostigmine" },
+      ] },
+      { node: "Ongoing management", branches: [
+        { label: "Severe agitation/hyperthermia", next: "Benzodiazepines, active cooling, IV fluids" },
+        { label: "Urinary retention", next: "Bladder catheterization" },
+      ] },
+    ]),
+  },
+  {
+    module_number: 5,
+    module_title: "Pharmacology",
+    key_submodule: "Cardiac Drug Toxicity",
+    slug: "digoxin-toxicity",
+    title: "Digoxin Toxicity",
+    sort_order: 3,
+
+    hook_vignette:
+      "A 78-year-old woman with heart failure and atrial fibrillation on chronic digoxin therapy presents with nausea, vomiting, and fatigue for the past week. She reports seeing yellow-green halos around lights. Her family notes she was recently started on a new antibiotic for a urinary tract infection. ECG shows a new atrial tachycardia with variable AV block.",
+
+    ddx_mapping:
+      "Digoxin toxicity vs. other causes of nausea/visual disturbance/arrhythmia:\n\nDigoxin toxicity — GI symptoms (nausea, vomiting, anorexia), visual disturbances (yellow-green halos, blurred vision), and virtually any arrhythmia (classically atrial tachycardia with AV block, or an accelerated junctional rhythm); often precipitated by a new interacting drug (clarithromycin, verapamil, amiodarone, quinidine — all raise digoxin levels) or by renal impairment reducing its clearance, and potentiated by hypokalemia (increases digoxin binding to Na+/K+-ATPase) and hypomagnesemia.\n\nPrimary hyperkalemia (unrelated to digoxin) — can cause arrhythmia and GI symptoms, but lacks visual halos and typically shows peaked T waves rather than the classic \"scooped\" ST depression of digoxin effect; in acute digoxin toxicity, potassium is often elevated as a direct result of Na+/K+-ATPase inhibition, reflecting toxicity rather than a separate primary cause.\n\nOther drug-induced arrhythmia (e.g., a QT-prolonging drug) — can produce arrhythmia, but without the digoxin-specific visual disturbance and GI prodrome.\n\nAge-related renal decline alone — can raise digoxin levels over time even without a newly added interacting drug, so renal function should always be checked as a contributing cause.",
+
+    diagnostic_evaluation:
+      "Check a serum digoxin level (though levels correlate imperfectly with toxicity, especially with chronic use) along with serum potassium, magnesium, and renal function. ECG is essential: digoxin toxicity can produce virtually any arrhythmia, but atrial tachycardia with AV block and accelerated junctional rhythm are particularly characteristic; the diffuse \"scooped\" ST-segment depression (digoxin effect) is a normal finding at therapeutic levels and does not itself indicate toxicity. Review the medication list for a recently added interacting drug (clarithromycin, verapamil, amiodarone, quinidine — all raise digoxin levels via reduced clearance or altered distribution) and assess renal function, since digoxin is renally cleared and toxicity risk rises sharply with even modest kidney injury.",
+
+    management:
+      "Discontinue digoxin and correct contributing electrolyte abnormalities (potassium, magnesium), while avoiding overly aggressive potassium correction if hyperkalemia is already present from acute toxicity, since digoxin-toxic myocardium behaves unpredictably. For hemodynamically significant arrhythmias, symptomatic bradycardia/AV block, or markedly elevated potassium from acute toxicity, give digoxin-specific antibody fragments (digoxin immune Fab), which bind free digoxin and rapidly reverse toxicity. Calcium administration for digoxin-associated hyperkalemia is classically avoided (historical concern for worsening cardiac excitability), with digoxin immune Fab favored first in significant toxicity. Continuous cardiac monitoring is required until the arrhythmia resolves.",
+
+    first_order_prompt:
+      "Match this finding to its diagnosis: Nausea, yellow-green visual halos, and a new atrial tachycardia with AV block in a patient on chronic digoxin after starting a new antibiotic.",
+    first_order_answer:
+      "Digoxin toxicity (precipitated by a drug interaction with the newly added antibiotic).",
+
+    second_order_vignette:
+      "An 82-year-old man on digoxin for atrial fibrillation is started on clarithromycin for a respiratory infection. Five days later he develops nausea, confusion, and a regularized, slow ventricular rate on telemetry. Serum potassium is 6.1 mEq/L, and his digoxin level is markedly elevated.",
+    second_order_question:
+      "Which of the following is the most appropriate next step in management?",
+    second_order_choices: JSON.stringify([
+      { label: "A", text: "Digoxin-specific antibody fragments (digoxin immune Fab)", correct: true,
+        explanation: "Correct — with a markedly elevated digoxin level, significant hyperkalemia, and an arrhythmia, digoxin immune Fab provides rapid, targeted reversal of toxicity." },
+      { label: "B", text: "IV calcium gluconate as first-line therapy for the hyperkalemia", correct: false,
+        explanation: "Calcium is classically avoided as first-line therapy for digoxin-toxicity-associated hyperkalemia because of concern for worsening cardiac excitability; digoxin immune Fab is preferred." },
+      { label: "C", text: "Increase the digoxin dose to overcome the antibiotic interaction", correct: false,
+        explanation: "This would worsen an already toxic, elevated digoxin level and is dangerous." },
+      { label: "D", text: "Emergent hemodialysis to remove digoxin", correct: false,
+        explanation: "Digoxin has a very large volume of distribution and is not effectively removed by hemodialysis; digoxin immune Fab is the appropriate targeted therapy." },
+      { label: "E", text: "Administer atropine and observe", correct: false,
+        explanation: "Atropine alone is insufficient for this degree of toxicity with significant hyperkalemia and a clinically significant arrhythmia." },
+    ]),
+    second_order_answer: "A",
+    second_order_explanation:
+      "This patient has clear digoxin toxicity (markedly elevated level, precipitated by clarithromycin's interaction with digoxin) with hyperkalemia and a significant arrhythmia — findings that warrant digoxin immune Fab, which binds and neutralizes free digoxin, rapidly reversing both the arrhythmia and the toxicity-driven hyperkalemia. Hemodialysis is not effective given digoxin's large volume of distribution, and increasing the dose or using atropine/calcium as sole measures does not address the underlying toxicity.",
+
+    flowchart_title: "Suspected Digoxin Toxicity",
+    flowchart: JSON.stringify([
+      { node: "Nausea + visual disturbance + new arrhythmia in a patient on digoxin", branches: [
+        { label: "Recent interacting drug (clarithromycin, verapamil, amiodarone) or renal decline", next: "Check digoxin level, potassium, and renal function" },
+        { label: "No clear precipitant identified", next: "Still check digoxin level; consider chronic accumulation" },
+      ] },
+      { node: "Digoxin level elevated / ECG shows a toxicity-pattern arrhythmia", branches: [
+        { label: "Stable rhythm, mild symptoms", next: "Stop digoxin; correct potassium/magnesium; monitor" },
+        { label: "Life-threatening arrhythmia or markedly elevated potassium", next: "Give digoxin immune Fab" },
+      ] },
+      { node: "After stabilization", branches: [
+        { label: "Ongoing AF/heart failure management needed", next: "Resume rate/rhythm control with a non-digoxin agent" },
+        { label: "Renal impairment identified", next: "Adjust future digoxin dosing or avoid it entirely" },
+      ] },
+    ]),
+  },
+  {
+    module_number: 5,
+    module_title: "Pharmacology",
+    key_submodule: "Toxicology and Overdose Management",
+    slug: "acetaminophen-overdose",
+    title: "Acetaminophen (Paracetamol) Overdose",
+    sort_order: 4,
+
+    hook_vignette:
+      "A 19-year-old woman is brought to the emergency department 8 hours after intentionally ingesting approximately 40 tablets of acetaminophen (500 mg each) in a suicide attempt. She currently feels well other than mild nausea and vomiting. She has no prior liver disease.",
+
+    ddx_mapping:
+      "Acetaminophen toxicity vs. other causes of acute liver injury / toxic ingestion:\n\nAcetaminophen toxicity — classically an early asymptomatic or mild-nausea phase (first 24 hr), followed by rising transaminases and hepatic injury (24-72 hr), then either recovery or fulminant hepatic failure (72-96+ hr); history of a large single ingestion or supratherapeutic chronic use; diagnosis anchored to a timed serum acetaminophen level plotted on the Rumack-Matthew nomogram.\n\nSalicylate (aspirin) toxicity — can also cause nausea/vomiting after overdose, but classically produces tinnitus and a mixed respiratory alkalosis/anion gap metabolic acidosis, not the delayed hepatotoxic course of acetaminophen.\n\nViral hepatitis — elevated transaminases overlap, but has a more gradual onset over days-to-weeks with a prodrome (malaise, low-grade fever) and positive viral serologies, not a specific timed toxic ingestion.\n\nIschemic hepatitis (\"shock liver\") — very high transaminases can overlap acetaminophen toxicity, but occurs after a hypotensive/hypoxic episode, not an ingestion, and typically improves rapidly once perfusion is restored.\n\nOther hepatotoxic ingestions (e.g., Amanita phalloides mushrooms, isoniazid, valproate) — should be considered when the acetaminophen history is unclear or transaminases are disproportionate to the reported acetaminophen level.",
+
+    diagnostic_evaluation:
+      "Obtain a serum acetaminophen level at (or extrapolated to) 4 hours post-ingestion and plot it on the Rumack-Matthew nomogram to estimate hepatotoxicity risk and the need for treatment; levels drawn earlier than 4 hours may not reflect peak absorption and should be repeated. Check liver function tests (AST/ALT, bilirubin, INR) and renal function, since severe cases can also cause acute kidney injury. Serial monitoring of INR and transaminases over the following days tracks the degree of hepatic injury; a rising INR with encephalopathy signals impending fulminant hepatic failure and the need for transplant evaluation (e.g., via King's College criteria).",
+
+    management:
+      "N-acetylcysteine (NAC) is the antidote — it replenishes hepatic glutathione stores, which conjugate and detoxify NAPQI (N-acetyl-p-benzoquinone imine), the toxic CYP2E1-generated metabolite that accumulates once glutathione is depleted, especially after a large single overdose. NAC is most effective when started within 8-10 hours of ingestion but still provides benefit later, including in patients who already have fulminant hepatic failure. Activated charcoal can be given if the patient presents within about 1-2 hours of ingestion and can protect their airway. Patients with a level above the treatment line on the nomogram, an unknown ingestion time with a potentially toxic history, or evidence of hepatotoxicity should receive NAC; severe cases with progressive hepatic failure require transfer to a transplant center.",
+
+    first_order_prompt:
+      "Match this finding to its diagnosis: A patient 8 hours after a large single acetaminophen ingestion, currently asymptomatic other than mild nausea, with a plan to plot a 4-hour level on a treatment nomogram.",
+    first_order_answer:
+      "Acetaminophen overdose (early, pre-hepatotoxic phase).",
+
+    second_order_vignette:
+      "A 24-year-old man presents 30 hours after ingesting an unknown large quantity of acetaminophen tablets. He now has right upper quadrant pain, nausea, and jaundice. AST is 3,800 U/L, ALT is 4,100 U/L, and INR is 2.4.",
+    second_order_question:
+      "Which of the following is the most appropriate next step in management?",
+    second_order_choices: JSON.stringify([
+      { label: "A", text: "Begin N-acetylcysteine immediately regardless of a current acetaminophen level", correct: true,
+        explanation: "Correct — with established hepatotoxicity this far out from ingestion, NAC should be started immediately; it still reduces morbidity and mortality even in established liver injury and should not be delayed to obtain a level, which may now be low or undetectable despite ongoing injury." },
+      { label: "B", text: "Withhold NAC since more than 24 hours have passed and it is no longer effective", correct: false,
+        explanation: "NAC still provides meaningful benefit well beyond 24 hours, including in patients with established hepatotoxicity or fulminant hepatic failure, so it should not be withheld." },
+      { label: "C", text: "Activated charcoal alone", correct: false,
+        explanation: "Activated charcoal is only useful very early after ingestion (roughly within 1-2 hours) and is not an appropriate sole therapy this far out with established liver injury." },
+      { label: "D", text: "Immediate liver transplantation without a trial of medical therapy", correct: false,
+        explanation: "Transplant evaluation is reserved for progressive fulminant hepatic failure meeting criteria (e.g., King's College criteria); NAC and supportive care should be tried first." },
+      { label: "E", text: "Discharge with outpatient hepatology follow-up", correct: false,
+        explanation: "This patient has active, significant hepatotoxicity (markedly elevated transaminases, elevated INR) and requires inpatient treatment and monitoring, not discharge." },
+    ]),
+    second_order_answer: "A",
+    second_order_explanation:
+      "Even though this patient presents well beyond the window where activated charcoal or nomogram-based risk stratification are most useful, N-acetylcysteine still meaningfully reduces morbidity and mortality once hepatotoxicity is established and should be started immediately rather than delayed. Serial monitoring of transaminases and INR guides ongoing care, and evaluation for transplantation is reserved for those who progress to fulminant hepatic failure.",
+
+    flowchart_title: "Working Up Suspected Acetaminophen Overdose",
+    flowchart: JSON.stringify([
+      { node: "History or suspicion of acetaminophen ingestion", branches: [
+        { label: "Under 24 hr since ingestion, level plottable on nomogram", next: "Obtain a 4-hour (or later) level and plot on the Rumack-Matthew nomogram" },
+        { label: "Over 24 hr since ingestion or timing unknown, signs of liver injury", next: "Start NAC empirically without waiting on the nomogram" },
+      ] },
+      { node: "Nomogram / clinical assessment", branches: [
+        { label: "Level above the treatment line", next: "Start N-acetylcysteine" },
+        { label: "Level below the treatment line, asymptomatic", next: "Observe; NAC not needed" },
+      ] },
+      { node: "Monitor hepatic injury", branches: [
+        { label: "Improving LFTs/INR", next: "Continue NAC to completion; supportive care" },
+        { label: "Rising INR with encephalopathy (fulminant hepatic failure)", next: "Evaluate for liver transplantation (e.g., King's College criteria)" },
+      ] },
+    ]),
+  },
+  {
+    module_number: 5,
+    module_title: "Pharmacology",
+    key_submodule: "Anticoagulant Pharmacology",
+    slug: "anticoagulant-reversal-warfarin-heparin",
+    title: "Anticoagulant-Associated Bleeding: Warfarin and Heparin Reversal",
+    sort_order: 5,
+
+    hook_vignette:
+      "A 74-year-old man on chronic warfarin therapy for a mechanical aortic valve presents with a large, painful thigh hematoma after a fall. His INR is 9.2, and his hemoglobin has dropped from a baseline of 13.5 g/dL to 9.8 g/dL. He is hemodynamically stable but reports increasing pain and swelling.",
+
+    ddx_mapping:
+      "Choosing an anticoagulant reversal strategy depends on which agent is involved, the severity of bleeding, and urgency:\n\nWarfarin excess/bleeding — reversed with vitamin K (restores synthesis of factors II, VII, IX, X over hours-to-a-day) and, for serious bleeding or an urgent procedure, 4-factor prothrombin complex concentrate (PCC) for immediate factor replacement (faster acting and with a smaller volume load than fresh frozen plasma).\n\nUnfractionated heparin excess/bleeding — reversed with protamine sulfate, which directly binds and neutralizes heparin, with rapid effect.\n\nLow molecular weight heparin (e.g., enoxaparin) excess/bleeding — protamine only partially reverses LMWH's anti-Xa activity (it more completely reverses the anti-IIa component), so reversal is less complete than with unfractionated heparin.\n\nDirect oral anticoagulants (DOACs) — dabigatran is reversed with idarucizumab (a monoclonal antibody fragment); factor Xa inhibitors (apixaban, rivaroxaban) are reversed with andexanet alfa or, if unavailable, 4-factor PCC; identifying which specific DOAC a patient is on (and last dose timing) is essential since the antidotes are agent-specific and not interchangeable.\n\nMinor bleeding or asymptomatic supratherapeutic INR — often managed simply by holding the next dose(s) and monitoring, without reversal agents, since aggressive reversal itself carries thrombotic risk (especially with a mechanical valve or recent VTE).",
+
+    diagnostic_evaluation:
+      "Confirm the specific anticoagulant, last dose and timing, and the indication for anticoagulation (which affects how aggressively to reverse, given competing thrombotic risk). Check INR (warfarin), aPTT or anti-Xa level (unfractionated heparin), or a DOAC-specific/anti-Xa assay when available (many hospital labs cannot rapidly quantify DOAC levels, so clinical judgment based on last dose timing is often used instead). Assess the severity and location of bleeding (e.g., life-threatening intracranial or retroperitoneal hemorrhage vs. minor bruising) and hemodynamic stability, since these determine urgency of reversal. Obtain a complete blood count and type and screen if transfusion may be needed.",
+
+    management:
+      "For life-threatening or severe warfarin-associated bleeding: hold warfarin, give IV vitamin K, and administer 4-factor PCC (preferred over fresh frozen plasma for speed and lower volume) for immediate reversal, then repeat the INR to confirm correction. For minor bleeding or an asymptomatic elevated INR without bleeding, oral or no vitamin K and simply holding doses may suffice. For unfractionated heparin-associated bleeding, give protamine sulfate dosed to the estimated circulating heparin. For DOAC-associated life-threatening bleeding, give the agent-specific antidote (idarucizumab for dabigatran; andexanet alfa, or 4-factor PCC if unavailable, for factor Xa inhibitors) alongside general supportive measures (local hemostasis, transfusion as needed, holding future anticoagulant doses until safe to resume). In every case, weigh the competing risk of thrombosis (mechanical valve thrombosis, recurrent VTE/stroke) before over-aggressively reversing anticoagulation, and resume it as soon as it is safe to do so.",
+
+    first_order_prompt:
+      "Match this finding to its treatment: Life-threatening bleeding with an INR of 9.2 in a patient on warfarin.",
+    first_order_answer:
+      "IV vitamin K plus 4-factor prothrombin complex concentrate (PCC).",
+
+    second_order_vignette:
+      "A 68-year-old woman on dabigatran for atrial fibrillation presents after a motor vehicle collision with a large intracranial hemorrhage on CT. She last took her dose 4 hours ago.",
+    second_order_question:
+      "Which of the following is the most appropriate agent to reverse her anticoagulation?",
+    second_order_choices: JSON.stringify([
+      { label: "A", text: "Idarucizumab", correct: true,
+        explanation: "Correct — idarucizumab is a monoclonal antibody fragment that specifically and rapidly binds and neutralizes dabigatran, making it the agent-specific reversal choice for this life-threatening bleed." },
+      { label: "B", text: "Protamine sulfate", correct: false,
+        explanation: "Protamine reverses heparin (unfractionated more completely than low molecular weight), not dabigatran, a direct thrombin inhibitor." },
+      { label: "C", text: "Vitamin K", correct: false,
+        explanation: "Vitamin K reverses warfarin by restoring vitamin K-dependent clotting factor synthesis; it has no effect on dabigatran." },
+      { label: "D", text: "Andexanet alfa", correct: false,
+        explanation: "Andexanet alfa reverses factor Xa inhibitors (apixaban, rivaroxaban), not the direct thrombin inhibitor dabigatran." },
+      { label: "E", text: "Fresh frozen plasma alone", correct: false,
+        explanation: "FFP is not a reliable, targeted reversal strategy for dabigatran and should not substitute for the specific antidote when it is available for this life-threatening bleed." },
+    ]),
+    second_order_answer: "A",
+    second_order_explanation:
+      "Dabigatran is a direct thrombin (factor IIa) inhibitor, and its specific reversal agent is idarucizumab, a monoclonal antibody fragment that binds dabigatran with high affinity and rapidly neutralizes its anticoagulant effect — the appropriate choice for this life-threatening intracranial hemorrhage. Protamine, vitamin K, and andexanet alfa are each specific to a different anticoagulant class and would not effectively reverse dabigatran.",
+
+    flowchart_title: "Choosing an Anticoagulant Reversal Strategy",
+    flowchart: JSON.stringify([
+      { node: "Bleeding or supratherapeutic anticoagulation", branches: [
+        { label: "On warfarin", next: "Check INR; assess bleeding severity" },
+        { label: "On unfractionated or low molecular weight heparin", next: "Check aPTT/anti-Xa; assess bleeding severity" },
+        { label: "On a DOAC (dabigatran, apixaban, rivaroxaban)", next: "Identify the specific agent and last dose timing" },
+      ] },
+      { node: "Severity assessment", branches: [
+        { label: "Minor bleeding / asymptomatic", next: "Hold dose(s), monitor, minimal intervention" },
+        { label: "Life-threatening bleeding or urgent procedure", next: "Proceed to agent-specific reversal" },
+      ] },
+      { node: "Agent-specific reversal", branches: [
+        { label: "Warfarin", next: "Vitamin K plus 4-factor PCC" },
+        { label: "Unfractionated heparin", next: "Protamine sulfate" },
+        { label: "Dabigatran", next: "Idarucizumab" },
+        { label: "Apixaban/rivaroxaban", next: "Andexanet alfa (or 4-factor PCC if unavailable)" },
+      ] },
+    ]),
+  },
+  {
+    module_number: 5,
+    module_title: "Pharmacology",
+    key_submodule: "Toxicology and Overdose Management",
+    slug: "salicylate-toxicity",
+    title: "Salicylate (Aspirin) Toxicity",
+    sort_order: 6,
+
+    hook_vignette:
+      "A 26-year-old woman presents to the emergency department with tinnitus, nausea, vomiting, and rapid breathing several hours after ingesting a large quantity of aspirin in a suicide attempt. She is tachypneic with a respiratory rate of 32/min. Arterial blood gas shows a pH of 7.48, PCO2 of 22 mmHg, and HCO3- of 16 mEq/L.",
+
+    ddx_mapping:
+      "Salicylate toxicity vs. other causes of a mixed acid-base disturbance / toxic ingestion:\n\nSalicylate toxicity — a classic MIXED acid-base disturbance: early respiratory alkalosis (direct stimulation of the medullary respiratory center causing hyperventilation) plus a concurrent anion gap metabolic acidosis (uncoupling of oxidative phosphorylation and accumulation of organic acids); tinnitus and hyperventilation are early clues, and severe toxicity progresses to cerebral edema and altered mental status.\n\nDiabetic ketoacidosis — anion gap metabolic acidosis overlaps, but has hyperglycemia and ketosis, lacks the early respiratory alkalosis/tinnitus of salicylate toxicity, and has a history of insulin non-adherence or new-onset diabetes rather than an ingestion.\n\nSepsis with lactic acidosis — anion gap acidosis overlaps, but has an infectious source and hemodynamic instability, not tinnitus or a specific overdose history.\n\nAcetaminophen overdose — can co-occur (combination products) but does not itself cause this mixed respiratory alkalosis/metabolic acidosis pattern or tinnitus; its toxicity is hepatic and appears hours-to-days later.\n\nMethanol/ethylene glycol toxicity — also cause an anion gap metabolic acidosis, but lack the early respiratory alkalosis phase and tinnitus, and instead feature visual disturbance (methanol) or oxalate crystalluria/renal injury (ethylene glycol) with an elevated osmolar gap.",
+
+    diagnostic_evaluation:
+      "Obtain a serum salicylate level (serial levels are warranted with chronic or sustained-release ingestion, since a single level can be misleading), an arterial or venous blood gas to characterize the mixed respiratory alkalosis/metabolic acidosis pattern, and a basic metabolic panel to calculate the anion gap. Check for coingestants, including an acetaminophen level, given frequent combination products. Monitor mental status closely, since worsening acidemia (as respiratory compensation fails, e.g., from fatigue or CNS depression by a coingestant) drives more salicylate into the brain (ion trapping) and precipitates neurologic deterioration and cerebral edema.",
+
+    management:
+      "Alkalinize the serum and urine with IV sodium bicarbonate — this promotes ionization of salicylate, trapping it in the plasma and enhancing renal elimination (urinary alkalinization), while also directly counteracting the metabolic acidosis and reducing salicylate entry into the CNS. Maintain adequate potassium replacement, since hypokalemia impairs the kidney's ability to alkalinize the urine (a hypokalemic kidney preferentially reabsorbs potassium over hydrogen ion, limiting urinary pH rise). Avoid interventions that worsen acidemia or blunt compensatory hyperventilation — if intubation is required, matching or exceeding the patient's spontaneous minute ventilation is critical, since inadequate ventilation after intubation can precipitate rapid, catastrophic acidemia. Hemodialysis is indicated for severe toxicity: markedly elevated levels, renal failure, refractory acidosis, pulmonary edema, or significant CNS effects (seizures, coma).",
+
+    first_order_prompt:
+      "Match this finding to its diagnosis: Tinnitus, hyperventilation, and a mixed respiratory alkalosis/anion gap metabolic acidosis after a large aspirin ingestion.",
+    first_order_answer:
+      "Salicylate (aspirin) toxicity.",
+
+    second_order_vignette:
+      "A 45-year-old man is brought to the emergency department after ingesting a large quantity of aspirin. He is confused and tachypneic. Arterial blood gas shows pH 7.18, PCO2 34 mmHg, HCO3- 12 mEq/L. Salicylate level is markedly elevated. He requires emergent intubation for airway protection.",
+    second_order_question:
+      "Which of the following is most important to ensure immediately after intubation in this patient?",
+    second_order_choices: JSON.stringify([
+      { label: "A", text: "Set the ventilator to match or exceed his pre-intubation minute ventilation", correct: true,
+        explanation: "Correct — this patient depends on compensatory hyperventilation to limit acidemia and CNS salicylate entry; under-ventilating him after intubation can cause rapid, severe acidemia and clinical deterioration." },
+      { label: "B", text: "Target a normal respiratory rate of 12-16/min regardless of his pre-intubation status", correct: false,
+        explanation: "A 'normal' rate would represent significant under-ventilation relative to his compensatory baseline, worsening acidemia and driving more salicylate into the CNS." },
+      { label: "C", text: "Withhold sodium bicarbonate until dialysis can be arranged", correct: false,
+        explanation: "Sodium bicarbonate should be continued or started promptly for alkalinization; it should not be withheld pending dialysis, which is reserved for the most severe cases." },
+      { label: "D", text: "Discontinue all IV fluids to avoid pulmonary edema", correct: false,
+        explanation: "Adequate IV fluids are still needed; the correct approach is careful monitoring for pulmonary edema, not blanket discontinuation of fluids." },
+      { label: "E", text: "Administer a nondepolarizing paralytic infusion as the first priority to prevent patient-ventilator dyssynchrony", correct: false,
+        explanation: "Ensuring adequate minute ventilation matched to this patient's compensatory needs is the priority; paralysis is not the first, most important step." },
+    ]),
+    second_order_answer: "A",
+    second_order_explanation:
+      "Salicylate-poisoned patients rely on marked compensatory hyperventilation to limit acidemia and reduce CNS salicylate entry (ion trapping worsens as pH falls). Intubation and mechanical ventilation are dangerous in this setting if the ventilator is not set to match or exceed the patient's own high pre-intubation minute ventilation, since even brief under-ventilation can precipitate severe acidemia, increased CNS salicylate levels, and rapid deterioration.",
+
+    flowchart_title: "Approach to Suspected Salicylate Toxicity",
+    flowchart: JSON.stringify([
+      { node: "Tinnitus + hyperventilation +/- altered mental status after an ingestion", branches: [
+        { label: "ABG shows mixed respiratory alkalosis + anion gap metabolic acidosis", next: "Confirm with a serum salicylate level" },
+        { label: "ABG shows a pure metabolic acidosis without respiratory alkalosis", next: "Reconsider another toxic ingestion (methanol, ethylene glycol)" },
+      ] },
+      { node: "Salicylate toxicity confirmed", branches: [
+        { label: "Mild-moderate severity, normal mental status", next: "IV sodium bicarbonate (urinary alkalinization); serial levels" },
+        { label: "Severe (renal failure, refractory acidosis, seizures, coma, pulmonary edema)", next: "Emergent hemodialysis" },
+      ] },
+      { node: "If intubation is required", branches: [
+        { label: "Airway protection needed", next: "Match or exceed pre-intubation minute ventilation; avoid worsening acidemia" },
+      ] },
+    ]),
+  },
 ];
 
 // ---------------------------------------------------------------------------

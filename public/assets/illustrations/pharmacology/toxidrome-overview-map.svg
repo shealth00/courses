@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="1000" height="900" fill="#faf8f4"/>
+  <text x="500" y="28" text-anchor="middle" font-size="21" font-weight="700" fill="#1c2430">Pharmacology &#8212; Toxidrome &amp; Adverse-Effect Overview</text>
+  <text x="500" y="47" text-anchor="middle" font-size="12" fill="#5b6472">Big-picture orientation map: presentations, causative drugs, and antidotes</text>
+
+  <!-- ================= trunk lines: center to branch nodes ================= -->
+  <g stroke="#3b5f8a" stroke-width="2.4" fill="none">
+    <line x1="500" y1="392" x2="330" y2="240"/>
+    <line x1="500" y1="392" x2="670" y2="240"/>
+    <line x1="440" y1="440" x2="205" y2="460"/>
+    <line x1="560" y1="440" x2="795" y2="460"/>
+    <line x1="500" y1="528" x2="500" y2="677"/>
+  </g>
+
+  <!-- ================= branch lines: branch node to detail leaf ================= -->
+  <g stroke="#c9a25a" stroke-width="1.8" fill="none">
+    <line x1="200" y1="206" x2="170" y2="240"/>
+    <line x1="800" y1="206" x2="830" y2="240"/>
+    <line x1="120" y1="483" x2="135" y2="540"/>
+    <line x1="880" y1="483" x2="865" y2="540"/>
+    <line x1="470" y1="723" x2="355" y2="790"/>
+    <line x1="530" y1="723" x2="645" y2="790"/>
+  </g>
+
+  <!-- ================= center node ================= -->
+  <circle cx="500" cy="460" r="72" fill="#1c2430"/>
+  <text x="500" y="452" text-anchor="middle" font-size="16" font-weight="700" fill="#faf8f4">PHARMACOLOGY</text>
+  <text x="500" y="470" text-anchor="middle" font-size="10.5" fill="#c9a25a">Toxidromes &amp;</text>
+  <text x="500" y="484" text-anchor="middle" font-size="10.5" fill="#c9a25a">Adverse Effects</text>
+
+  <!-- ================= branch nodes ================= -->
+  <g font-size="12" font-weight="700" fill="#faf8f4" text-anchor="middle">
+    <rect x="115" y="160" width="170" height="46" rx="10" fill="#3b5f8a"/>
+    <text x="200" y="178">Anticholinergic</text>
+    <text x="200" y="192">Toxicity</text>
+
+    <rect x="715" y="160" width="170" height="46" rx="10" fill="#3b5f8a"/>
+    <text x="800" y="178">Cholinergic</text>
+    <text x="800" y="192">Toxicity</text>
+
+    <rect x="35" y="437" width="170" height="46" rx="10" fill="#3b5f8a"/>
+    <text x="120" y="455">Sympathomimetic</text>
+    <text x="120" y="469">Toxicity</text>
+
+    <rect x="795" y="437" width="170" height="46" rx="10" fill="#3b5f8a"/>
+    <text x="880" y="455">Opioid</text>
+    <text x="880" y="469">Toxicity</text>
+
+    <rect x="415" y="677" width="170" height="46" rx="10" fill="#3b5f8a"/>
+    <text x="500" y="693" font-size="10.5">Serotonergic /</text>
+    <text x="500" y="707" font-size="10.5">Dopaminergic Toxicity</text>
+  </g>
+
+  <!-- ================= detail leaves ================= -->
+  <!-- Anticholinergic -->
+  <rect x="40" y="240" width="260" height="150" rx="8" fill="#ffffff" stroke="#c9a25a"/>
+  <text x="55" y="260" font-size="10.5" font-weight="700" fill="#3b5f8a">Causes</text>
+  <text x="55" y="274" font-size="9" fill="#5b6472">&#8226; Diphenhydramine / 1st-gen antihistamines</text>
+  <text x="55" y="288" font-size="9" fill="#5b6472">&#8226; Tricyclic antidepressants</text>
+  <text x="55" y="302" font-size="9" fill="#5b6472">&#8226; Atropine, scopolamine</text>
+  <text x="55" y="316" font-size="9" fill="#5b6472">&#8226; Jimsonweed (Datura)</text>
+  <text x="55" y="337" font-size="10.5" font-weight="700" fill="#b5472a">Antidote</text>
+  <text x="55" y="351" font-size="9" fill="#5b6472">&#8226; Physostigmine (severe cases)</text>
+  <text x="55" y="370" font-size="8" fill="#946a2b">Hot, dry, red; mydriasis; delirium; urinary retention</text>
+
+  <!-- Cholinergic -->
+  <rect x="700" y="240" width="260" height="150" rx="8" fill="#ffffff" stroke="#c9a25a"/>
+  <text x="715" y="260" font-size="10.5" font-weight="700" fill="#3b5f8a">Causes</text>
+  <text x="715" y="274" font-size="9" fill="#5b6472">&#8226; Organophosphate insecticides</text>
+  <text x="715" y="288" font-size="9" fill="#5b6472">&#8226; Nerve agents (sarin, VX)</text>
+  <text x="715" y="302" font-size="9" fill="#5b6472">&#8226; Physostigmine / pilocarpine excess</text>
+  <text x="715" y="323" font-size="10.5" font-weight="700" fill="#b5472a">Antidotes</text>
+  <text x="715" y="337" font-size="9" fill="#5b6472">&#8226; Atropine (muscarinic blockade)</text>
+  <text x="715" y="351" font-size="9" fill="#5b6472">&#8226; Pralidoxime (regenerates AChE)</text>
+  <text x="715" y="370" font-size="8" fill="#946a2b">SLUDGE + miosis, bradycardia, fasciculations</text>
+
+  <!-- Sympathomimetic -->
+  <rect x="10" y="540" width="250" height="170" rx="8" fill="#ffffff" stroke="#c9a25a"/>
+  <text x="25" y="560" font-size="10.5" font-weight="700" fill="#3b5f8a">Causes</text>
+  <text x="25" y="574" font-size="9" fill="#5b6472">&#8226; Cocaine</text>
+  <text x="25" y="588" font-size="9" fill="#5b6472">&#8226; Amphetamines / methamphetamine</text>
+  <text x="25" y="602" font-size="9" fill="#5b6472">&#8226; MDMA</text>
+  <text x="25" y="616" font-size="9" fill="#5b6472">&#8226; PCP</text>
+  <text x="25" y="637" font-size="10.5" font-weight="700" fill="#b5472a">Management</text>
+  <text x="25" y="651" font-size="9" fill="#5b6472">&#8226; Benzodiazepines (first-line)</text>
+  <text x="25" y="665" font-size="9" fill="#5b6472">&#8226; Avoid plain beta-blockers</text>
+  <text x="25" y="679" font-size="9" fill="#5b6472">(unopposed alpha-1 vasoconstriction)</text>
+  <text x="25" y="698" font-size="8" fill="#946a2b">Mydriasis + diaphoresis (vs. dry, anticholinergic)</text>
+
+  <!-- Opioid -->
+  <rect x="740" y="540" width="250" height="170" rx="8" fill="#ffffff" stroke="#c9a25a"/>
+  <text x="755" y="560" font-size="10.5" font-weight="700" fill="#3b5f8a">Overdose</text>
+  <text x="755" y="574" font-size="9" fill="#5b6472">&#8226; Heroin, fentanyl, morphine</text>
+  <text x="755" y="588" font-size="9" fill="#5b6472">&#8226; Miosis, resp. depression, sedation</text>
+  <text x="755" y="602" font-size="9" fill="#5b6472">&#8226; Antidote: naloxone (mu antagonist)</text>
+  <text x="755" y="623" font-size="10.5" font-weight="700" fill="#b5472a">Withdrawal</text>
+  <text x="755" y="637" font-size="9" fill="#5b6472">&#8226; Mydriasis, piloerection, diarrhea</text>
+  <text x="755" y="651" font-size="9" fill="#5b6472">&#8226; Treat: clonidine, buprenorphine</text>
+  <text x="755" y="665" font-size="9" fill="#5b6472">or methadone</text>
+  <text x="755" y="686" font-size="8" fill="#946a2b">Opposite pupil findings distinguish overdose vs. withdrawal</text>
+
+  <!-- Serotonin syndrome -->
+  <rect x="230" y="790" width="250" height="100" rx="8" fill="#ffffff" stroke="#c9a25a"/>
+  <text x="245" y="808" font-size="10.5" font-weight="700" fill="#3b5f8a">Serotonin Syndrome</text>
+  <text x="245" y="824" font-size="8.5" fill="#5b6472">&#8226; SSRI/SNRI + MAOI, tramadol, linezolid</text>
+  <text x="245" y="838" font-size="8.5" fill="#5b6472">&#8226; Clonus, hyperreflexia, agitation</text>
+  <text x="245" y="852" font-size="8.5" fill="#5b6472">&#8226; Antidote: cyproheptadine</text>
+  <text x="245" y="869" font-size="8" fill="#946a2b">Rapid onset (hours); hyperreflexia/clonus</text>
+
+  <!-- NMS -->
+  <rect x="520" y="790" width="250" height="100" rx="8" fill="#ffffff" stroke="#c9a25a"/>
+  <text x="535" y="808" font-size="10.5" font-weight="700" fill="#3b5f8a">Neuroleptic Malig. Syndrome</text>
+  <text x="535" y="824" font-size="8.5" fill="#5b6472">&#8226; Antipsychotics (D2 receptor block)</text>
+  <text x="535" y="838" font-size="8.5" fill="#5b6472">&#8226; Lead-pipe rigidity, hyporeflexia</text>
+  <text x="535" y="852" font-size="8.5" fill="#5b6472">&#8226; Treat: dantrolene, bromocriptine</text>
+  <text x="535" y="869" font-size="8" fill="#946a2b">Slower onset (days); rigidity/hyporeflexia</text>
+</svg>

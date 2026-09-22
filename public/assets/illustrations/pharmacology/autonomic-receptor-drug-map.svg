@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 820" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="1000" height="820" fill="#faf8f4"/>
+  <text x="500" y="24" text-anchor="middle" font-size="20" font-weight="700" fill="#1c2430">Autonomic Receptor &amp; Drug Class Map</text>
+  <text x="500" y="42" text-anchor="middle" font-size="12" fill="#5b6472">Receptor subtype &#8594; primary effect &#8594; agonist / antagonist example</text>
+
+  <!-- trunk lines -->
+  <g stroke="#3b5f8a" stroke-width="2.2" fill="none">
+    <line x1="500" y1="350" x2="500" y2="215"/>
+    <line x1="562" y1="385" x2="740" y2="270"/>
+    <line x1="562" y1="455" x2="740" y2="560"/>
+    <line x1="500" y1="490" x2="500" y2="625"/>
+    <line x1="438" y1="455" x2="260" y2="560"/>
+    <line x1="438" y1="385" x2="260" y2="270"/>
+  </g>
+
+  <!-- center node -->
+  <circle cx="500" cy="420" r="70" fill="#1c2430"/>
+  <text x="500" y="412" text-anchor="middle" font-size="13.5" font-weight="700" fill="#faf8f4">AUTONOMIC</text>
+  <text x="500" y="427" text-anchor="middle" font-size="13.5" font-weight="700" fill="#faf8f4">RECEPTORS</text>
+  <text x="500" y="443" text-anchor="middle" font-size="9.5" fill="#c9a25a">6 subtypes</text>
+
+  <!-- Alpha-1 (top) -->
+  <rect x="390" y="45" width="220" height="170" rx="8" fill="#ffffff" stroke="#c9a25a"/>
+  <text x="500" y="65" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b5472a">Alpha-1</text>
+  <text x="405" y="82" font-size="8.8" fill="#5b6472">Effect: vasoconstriction, mydriasis,</text>
+  <text x="405" y="95" font-size="8.8" fill="#5b6472">bladder sphincter contraction</text>
+  <text x="405" y="113" font-size="8.8" fill="#1c2430" font-weight="700">Agonist:</text>
+  <text x="470" y="113" font-size="8.8" fill="#5b6472">phenylephrine</text>
+  <text x="405" y="128" font-size="8.8" fill="#1c2430" font-weight="700">Antagonist:</text>
+  <text x="483" y="128" font-size="8.8" fill="#5b6472">prazosin, tamsulosin</text>
+  <text x="405" y="150" font-size="8.3" fill="#946a2b">Clinical: prazosin for BPH and</text>
+  <text x="405" y="163" font-size="8.3" fill="#946a2b">PTSD-related nightmares</text>
+  <text x="405" y="185" font-size="8.3" fill="#946a2b">Overdose (e.g. TCA): reflex tachycardia</text>
+  <text x="405" y="198" font-size="8.3" fill="#946a2b">from alpha-1 blockade component</text>
+
+  <!-- Beta-1 (upper right) -->
+  <rect x="641" y="190" width="220" height="170" rx="8" fill="#ffffff" stroke="#c9a25a"/>
+  <text x="751" y="210" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b5472a">Beta-1</text>
+  <text x="656" y="227" font-size="8.8" fill="#5b6472">Effect: increased HR &amp; contractility,</text>
+  <text x="656" y="240" font-size="8.8" fill="#5b6472">renin release from JG cells</text>
+  <text x="656" y="258" font-size="8.8" fill="#1c2430" font-weight="700">Agonist:</text>
+  <text x="721" y="258" font-size="8.8" fill="#5b6472">dobutamine</text>
+  <text x="656" y="273" font-size="8.8" fill="#1c2430" font-weight="700">Antagonist:</text>
+  <text x="734" y="273" font-size="8.8" fill="#5b6472">metoprolol (B1-selective)</text>
+  <text x="656" y="295" font-size="8.3" fill="#946a2b">Clinical: selective agents better</text>
+  <text x="656" y="308" font-size="8.3" fill="#946a2b">tolerated in reactive airway disease</text>
+  <text x="656" y="330" font-size="8.3" fill="#946a2b">(bronchial tone is beta-2, not beta-1)</text>
+
+  <!-- Beta-2 (lower right) -->
+  <rect x="641" y="480" width="220" height="170" rx="8" fill="#ffffff" stroke="#c9a25a"/>
+  <text x="751" y="500" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b5472a">Beta-2</text>
+  <text x="656" y="517" font-size="8.8" fill="#5b6472">Effect: bronchodilation, vasodilation,</text>
+  <text x="656" y="530" font-size="8.8" fill="#5b6472">uterine relaxation, glycogenolysis</text>
+  <text x="656" y="548" font-size="8.8" fill="#1c2430" font-weight="700">Agonist:</text>
+  <text x="721" y="548" font-size="8.8" fill="#5b6472">albuterol, terbutaline</text>
+  <text x="656" y="563" font-size="8.8" fill="#1c2430" font-weight="700">Antagonist:</text>
+  <text x="734" y="563" font-size="8.8" fill="#5b6472">propranolol (nonselective)</text>
+  <text x="656" y="585" font-size="8.3" fill="#946a2b">Clinical: nonselective beta-blockers</text>
+  <text x="656" y="598" font-size="8.3" fill="#946a2b">can precipitate bronchospasm in asthma</text>
+  <text x="656" y="620" font-size="8.3" fill="#946a2b">Terbutaline also used as a tocolytic</text>
+
+  <!-- Muscarinic (bottom) -->
+  <rect x="390" y="625" width="220" height="170" rx="8" fill="#ffffff" stroke="#c9a25a"/>
+  <text x="500" y="645" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b5472a">Muscarinic (M2/M3)</text>
+  <text x="405" y="662" font-size="8.8" fill="#5b6472">Effect: M2 slows SA/AV node;</text>
+  <text x="405" y="675" font-size="8.8" fill="#5b6472">M3 contracts smooth muscle, secretes</text>
+  <text x="405" y="693" font-size="8.8" fill="#1c2430" font-weight="700">Agonist:</text>
+  <text x="470" y="693" font-size="8.8" fill="#5b6472">bethanechol, pilocarpine</text>
+  <text x="405" y="708" font-size="8.8" fill="#1c2430" font-weight="700">Antagonist:</text>
+  <text x="483" y="708" font-size="8.8" fill="#5b6472">atropine, ipratropium</text>
+  <text x="405" y="730" font-size="8.3" fill="#946a2b">Clinical: atropine reverses cholinergic</text>
+  <text x="405" y="743" font-size="8.3" fill="#946a2b">toxicity (organophosphates); ipratropium</text>
+  <text x="405" y="756" font-size="8.3" fill="#946a2b">used inhaled for COPD/asthma</text>
+  <text x="405" y="778" font-size="8.3" fill="#946a2b">Bethanechol: postop/neurogenic retention</text>
+
+  <!-- Nicotinic (lower left) -->
+  <rect x="139" y="480" width="220" height="170" rx="8" fill="#ffffff" stroke="#c9a25a"/>
+  <text x="249" y="500" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b5472a">Nicotinic (Nm / Nn)</text>
+  <text x="154" y="517" font-size="8.8" fill="#5b6472">Effect: Nm = skeletal muscle end-plate;</text>
+  <text x="154" y="530" font-size="8.8" fill="#5b6472">Nn = autonomic ganglia (both limbs)</text>
+  <text x="154" y="548" font-size="8.8" fill="#1c2430" font-weight="700">Agonist:</text>
+  <text x="219" y="548" font-size="8.8" fill="#5b6472">nicotine</text>
+  <text x="154" y="563" font-size="8.8" fill="#1c2430" font-weight="700">Antagonist:</text>
+  <text x="232" y="563" font-size="8.8" fill="#5b6472">succinylcholine, rocuronium (Nm)</text>
+  <text x="154" y="585" font-size="8.3" fill="#946a2b">Clinical: NMJ blockers used for surgical</text>
+  <text x="154" y="598" font-size="8.3" fill="#946a2b">paralysis; ganglionic blockade drops</text>
+  <text x="154" y="611" font-size="8.3" fill="#946a2b">both sympathetic and parasympathetic tone</text>
+
+  <!-- Alpha-2 (upper left) -->
+  <rect x="139" y="190" width="220" height="170" rx="8" fill="#ffffff" stroke="#c9a25a"/>
+  <text x="249" y="210" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b5472a">Alpha-2</text>
+  <text x="154" y="227" font-size="8.8" fill="#5b6472">Effect: presynaptic negative feedback -</text>
+  <text x="154" y="240" font-size="8.8" fill="#5b6472">decreases NE &amp; insulin release, sedation</text>
+  <text x="154" y="258" font-size="8.8" fill="#1c2430" font-weight="700">Agonist:</text>
+  <text x="219" y="258" font-size="8.8" fill="#5b6472">clonidine, alpha-methyldopa</text>
+  <text x="154" y="273" font-size="8.8" fill="#1c2430" font-weight="700">Antagonist:</text>
+  <text x="232" y="273" font-size="8.8" fill="#5b6472">yohimbine</text>
+  <text x="154" y="295" font-size="8.3" fill="#946a2b">Clinical: clonidine treats opioid</text>
+  <text x="154" y="308" font-size="8.3" fill="#946a2b">withdrawal (blunts noradrenergic surge)</text>
+  <text x="154" y="330" font-size="8.3" fill="#946a2b">and resistant hypertension</text>
+</svg>

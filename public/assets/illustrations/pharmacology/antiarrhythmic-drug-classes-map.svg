@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 720" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="920" height="720" fill="#faf8f4"/>
+  <text x="460" y="24" text-anchor="middle" font-size="19" font-weight="700" fill="#1c2430">Antiarrhythmic Drug Classes (Vaughan-Williams)</text>
+  <text x="460" y="41" text-anchor="middle" font-size="11.5" fill="#5b6472">Class &#8594; ion channel/receptor target &#8594; example drugs &#8594; key toxicity</text>
+
+  <!-- trunk lines: central node to each class node -->
+  <g stroke="#3b5f8a" stroke-width="2.2" fill="none">
+    <line x1="460" y1="70" x2="105" y2="110"/>
+    <line x1="460" y1="70" x2="295" y2="110"/>
+    <line x1="460" y1="70" x2="485" y2="110"/>
+    <line x1="460" y1="70" x2="675" y2="110"/>
+    <line x1="460" y1="70" x2="845" y2="110"/>
+  </g>
+  <!-- branch lines: class node to its detail leaf -->
+  <g stroke="#c9a25a" stroke-width="1.8" fill="none">
+    <line x1="105" y1="150" x2="105" y2="190"/>
+    <line x1="295" y1="150" x2="295" y2="190"/>
+    <line x1="485" y1="150" x2="485" y2="190"/>
+    <line x1="675" y1="150" x2="675" y2="190"/>
+    <line x1="845" y1="150" x2="845" y2="190"/>
+  </g>
+
+  <!-- central node -->
+  <rect x="360" y="15" width="200" height="55" rx="10" fill="#1c2430"/>
+  <text x="460" y="36" text-anchor="middle" font-size="11.5" font-weight="700" fill="#faf8f4">ANTIARRHYTHMICS</text>
+  <text x="460" y="52" text-anchor="middle" font-size="9.5" fill="#c9a25a">(Vaughan-Williams)</text>
+
+  <!-- class nodes -->
+  <g font-size="11" font-weight="700" fill="#faf8f4" text-anchor="middle">
+    <rect x="35" y="110" width="140" height="40" rx="8" fill="#3b5f8a"/>
+    <text x="105" y="134">Class I</text>
+    <rect x="225" y="110" width="140" height="40" rx="8" fill="#3b5f8a"/>
+    <text x="295" y="134">Class II</text>
+    <rect x="415" y="110" width="140" height="40" rx="8" fill="#3b5f8a"/>
+    <text x="485" y="134">Class III</text>
+    <rect x="605" y="110" width="140" height="40" rx="8" fill="#3b5f8a"/>
+    <text x="675" y="134">Class IV</text>
+    <rect x="785" y="110" width="120" height="40" rx="8" fill="#3b5f8a"/>
+    <text x="845" y="134">Other</text>
+  </g>
+
+  <!-- Class I leaf: Na+ channel blockers, three subtypes -->
+  <rect x="15" y="190" width="180" height="500" rx="8" fill="#ffffff" stroke="#c9a25a"/>
+  <text x="30" y="209" font-size="10" font-weight="700" fill="#1c2430">Na+ channel blockers</text>
+
+  <text x="30" y="232" font-size="9.5" font-weight="700" fill="#b5472a">IA</text>
+  <text x="30" y="246" font-size="8" fill="#5b6472">quinidine, procainamide,</text>
+  <text x="30" y="257" font-size="8" fill="#5b6472">disopyramide</text>
+  <text x="30" y="272" font-size="8" fill="#5b6472">&#8226; Moderate block; prolongs</text>
+  <text x="30" y="283" font-size="8" fill="#5b6472">AP duration and QT</text>
+  <text x="30" y="298" font-size="8" fill="#946a2b">&#8226; Risk: torsades de pointes</text>
+  <text x="30" y="312" font-size="8" fill="#946a2b">&#8226; Procainamide: drug-induced</text>
+  <text x="30" y="323" font-size="8" fill="#946a2b">lupus-like syndrome</text>
+
+  <line x1="25" y1="340" x2="185" y2="340" stroke="#f0e6d4"/>
+
+  <text x="30" y="360" font-size="9.5" font-weight="700" fill="#b5472a">IB</text>
+  <text x="30" y="374" font-size="8" fill="#5b6472">lidocaine, mexiletine</text>
+  <text x="30" y="389" font-size="8" fill="#5b6472">&#8226; Weak block; shortens</text>
+  <text x="30" y="400" font-size="8" fill="#5b6472">AP duration</text>
+  <text x="30" y="415" font-size="8" fill="#946a2b">&#8226; Best for post-MI/ischemic</text>
+  <text x="30" y="426" font-size="8" fill="#946a2b">ventricular arrhythmia</text>
+  <text x="30" y="441" font-size="8" fill="#946a2b">&#8226; Least proarrhythmic of I</text>
+
+  <line x1="25" y1="458" x2="185" y2="458" stroke="#f0e6d4"/>
+
+  <text x="30" y="478" font-size="9.5" font-weight="700" fill="#b5472a">IC</text>
+  <text x="30" y="492" font-size="8" fill="#5b6472">flecainide, propafenone</text>
+  <text x="30" y="507" font-size="8" fill="#5b6472">&#8226; Strong block; no change</text>
+  <text x="30" y="518" font-size="8" fill="#5b6472">in AP duration</text>
+  <text x="30" y="533" font-size="8" fill="#946a2b">&#8226; Avoid post-MI/structural</text>
+  <text x="30" y="544" font-size="8" fill="#946a2b">heart disease (proarrhythmic)</text>
+  <text x="30" y="559" font-size="8" fill="#946a2b">&#8226; "IC" cases: use last, cautiously</text>
+
+  <text x="30" y="585" font-size="7.6" fill="#5b6472" font-style="italic">Mnemonic: "Queen Amy</text>
+  <text x="30" y="596" font-size="7.6" fill="#5b6472" font-style="italic">Proclaims Diso's Pyramid";</text>
+  <text x="30" y="607" font-size="7.6" fill="#5b6472" font-style="italic">"Lettuce Tomatoes Mayo";</text>
+  <text x="30" y="618" font-size="7.6" fill="#5b6472" font-style="italic">"Fries Please"</text>
+
+  <!-- Class II leaf: Beta-blockers -->
+  <rect x="205" y="190" width="180" height="230" rx="8" fill="#ffffff" stroke="#c9a25a"/>
+  <text x="220" y="209" font-size="10" font-weight="700" fill="#1c2430">Beta-blockers</text>
+  <text x="220" y="228" font-size="8" fill="#5b6472">&#8226; Decrease SA/AV nodal</text>
+  <text x="220" y="239" font-size="8" fill="#5b6472">automaticity &amp; conduction</text>
+  <text x="220" y="254" font-size="8" fill="#5b6472">&#8226; Examples: metoprolol,</text>
+  <text x="220" y="265" font-size="8" fill="#5b6472">esmolol, propranolol</text>
+  <text x="220" y="280" font-size="8" fill="#5b6472">&#8226; Use: rate control in Afib;</text>
+  <text x="220" y="291" font-size="8" fill="#5b6472">post-MI mortality benefit</text>
+  <text x="220" y="309" font-size="8" fill="#946a2b">&#8226; Toxicity: bradycardia,</text>
+  <text x="220" y="320" font-size="8" fill="#946a2b">bronchospasm (nonselective),</text>
+  <text x="220" y="331" font-size="8" fill="#946a2b">masked hypoglycemia</text>
+  <text x="220" y="349" font-size="8" fill="#946a2b">&#8226; Esmolol: ultra-short t1/2,</text>
+  <text x="220" y="360" font-size="8" fill="#946a2b">acute rate control</text>
+  <text x="220" y="378" font-size="7.6" fill="#5b6472" font-style="italic">Overdose: glucagon bypasses</text>
+  <text x="220" y="389" font-size="7.6" fill="#5b6472" font-style="italic">the blocked beta-receptor</text>
+
+  <!-- Class III leaf: K+ channel blockers -->
+  <rect x="395" y="190" width="180" height="260" rx="8" fill="#ffffff" stroke="#c9a25a"/>
+  <text x="410" y="209" font-size="10" font-weight="700" fill="#1c2430">K+ channel blockers</text>
+  <text x="410" y="228" font-size="8" fill="#5b6472">&#8226; Prolong repolarization</text>
+  <text x="410" y="239" font-size="8" fill="#5b6472">and the QT interval</text>
+  <text x="410" y="254" font-size="8" fill="#5b6472">&#8226; Examples: amiodarone,</text>
+  <text x="410" y="265" font-size="8" fill="#5b6472">sotalol, dofetilide, ibutilide</text>
+  <text x="410" y="280" font-size="8" fill="#5b6472">&#8226; Use: refractory ventricular</text>
+  <text x="410" y="291" font-size="8" fill="#5b6472">and atrial arrhythmias</text>
+  <text x="410" y="309" font-size="8" fill="#946a2b">&#8226; Torsades risk, esp. sotalol</text>
+  <text x="410" y="320" font-size="8" fill="#946a2b">and dofetilide</text>
+  <text x="410" y="335" font-size="8" fill="#946a2b">&#8226; Amiodarone: pulmonary</text>
+  <text x="410" y="346" font-size="8" fill="#946a2b">fibrosis, thyroid dysfunction,</text>
+  <text x="410" y="357" font-size="8" fill="#946a2b">corneal deposits, blue-gray</text>
+  <text x="410" y="368" font-size="8" fill="#946a2b">skin, hepatotoxicity</text>
+  <text x="410" y="386" font-size="7.6" fill="#5b6472" font-style="italic">Amiodarone also has Class</text>
+  <text x="410" y="397" font-size="7.6" fill="#5b6472" font-style="italic">I/II/IV-like properties</text>
+  <text x="410" y="415" font-size="7.6" fill="#5b6472" font-style="italic">Baseline + serial PFTs/LFTs/TFTs</text>
+  <text x="410" y="426" font-size="7.6" fill="#5b6472" font-style="italic">recommended on long-term use</text>
+
+  <!-- Class IV leaf: Ca2+ channel blockers -->
+  <rect x="585" y="190" width="180" height="230" rx="8" fill="#ffffff" stroke="#c9a25a"/>
+  <text x="600" y="209" font-size="10" font-weight="700" fill="#1c2430">Ca2+ channel blockers</text>
+  <text x="600" y="228" font-size="8" fill="#5b6472">&#8226; Decrease SA/AV nodal</text>
+  <text x="600" y="239" font-size="8" fill="#5b6472">conduction (non-DHP class)</text>
+  <text x="600" y="254" font-size="8" fill="#5b6472">&#8226; Examples: verapamil,</text>
+  <text x="600" y="265" font-size="8" fill="#5b6472">diltiazem</text>
+  <text x="600" y="280" font-size="8" fill="#5b6472">&#8226; Use: rate control in</text>
+  <text x="600" y="291" font-size="8" fill="#5b6472">Afib/AVNRT (SVT)</text>
+  <text x="600" y="309" font-size="8" fill="#946a2b">&#8226; Toxicity: bradycardia, AV</text>
+  <text x="600" y="320" font-size="8" fill="#946a2b">block, constipation (verapamil)</text>
+  <text x="600" y="335" font-size="8" fill="#946a2b">&#8226; Avoid combining with beta-</text>
+  <text x="600" y="346" font-size="8" fill="#946a2b">blockers (additive AV block)</text>
+  <text x="600" y="364" font-size="7.6" fill="#5b6472" font-style="italic">Contraindicated in WPW with</text>
+  <text x="600" y="375" font-size="7.6" fill="#5b6472" font-style="italic">preexcited atrial fibrillation</text>
+
+  <!-- Other leaf -->
+  <rect x="775" y="190" width="130" height="330" rx="8" fill="#ffffff" stroke="#c9a25a"/>
+  <text x="787" y="209" font-size="10" font-weight="700" fill="#1c2430">Other Agents</text>
+  <text x="787" y="228" font-size="8.4" font-weight="700" fill="#b5472a">Adenosine</text>
+  <text x="787" y="242" font-size="7.8" fill="#5b6472">Transient AV node</text>
+  <text x="787" y="253" font-size="7.8" fill="#5b6472">block; drug of choice</text>
+  <text x="787" y="264" font-size="7.8" fill="#5b6472">for acute SVT</text>
+  <text x="787" y="278" font-size="7.8" fill="#946a2b">Very short t1/2;</text>
+  <text x="787" y="289" font-size="7.8" fill="#946a2b">flushing, chest</text>
+  <text x="787" y="300" font-size="7.8" fill="#946a2b">tightness, brief</text>
+  <text x="787" y="311" font-size="7.8" fill="#946a2b">asystole/pause</text>
+
+  <text x="787" y="335" font-size="8.4" font-weight="700" fill="#b5472a">Digoxin</text>
+  <text x="787" y="349" font-size="7.8" fill="#5b6472">Increases vagal tone,</text>
+  <text x="787" y="360" font-size="7.8" fill="#5b6472">slows AV conduction</text>
+  <text x="787" y="374" font-size="7.8" fill="#946a2b">Toxicity: yellow-</text>
+  <text x="787" y="385" font-size="7.8" fill="#946a2b">green vision,</text>
+  <text x="787" y="396" font-size="7.8" fill="#946a2b">arrhythmia,</text>
+  <text x="787" y="407" font-size="7.8" fill="#946a2b">hyperkalemia (acute)</text>
+
+  <text x="787" y="431" font-size="8.4" font-weight="700" fill="#b5472a">Magnesium</text>
+  <text x="787" y="445" font-size="7.8" fill="#5b6472">Drug of choice for</text>
+  <text x="787" y="456" font-size="7.8" fill="#5b6472">torsades de pointes,</text>
+  <text x="787" y="467" font-size="7.8" fill="#5b6472">regardless of Mg level</text>
+
+  <text x="787" y="491" font-size="8.4" font-weight="700" fill="#b5472a">Digoxin immune Fab</text>
+  <text x="787" y="505" font-size="7.8" fill="#5b6472">Antidote for severe/</text>
+  <text x="787" y="516" font-size="7.8" fill="#5b6472">life-threatening</text>
+  <text x="787" y="527" font-size="7.8" fill="#5b6472">digoxin toxicity</text>
+</svg>
