@@ -1117,6 +1117,285 @@ const PATHOPHYSIOLOGY_TOPICS = [
       },
     ],
   },
+
+  // ===========================================================================
+  // Cluster — MSK / Derm / Heme
+  // ===========================================================================
+  {
+    slug: "joint-pain",
+    title: "Joint Pain",
+    system_tag: "MSK/Derm/Heme",
+    sort_order: 1,
+
+    big_picture:
+      "Start by splitting the presentation two ways: monoarticular versus polyarticular, and inflammatory (warmth, erythema, prolonged morning stiffness, elevated inflammatory markers) versus non-inflammatory/mechanical. Acute monoarticular joint pain with fever or an inability to bear weight is septic arthritis until proven otherwise — arthrocentesis with synovial fluid cell count, gram stain, and culture should not be delayed, since bacterial infection can destroy cartilage within days. Polyarticular, symmetric small-joint disease raises autoimmune causes (rheumatoid arthritis, SLE), while an asymmetric, lower-extremity, post-infectious pattern points toward the spondyloarthropathies. Crystal arthropathies (gout, CPPD) can mimic infection closely and are distinguished only by synovial fluid crystal analysis, so both are often pursued at once rather than sequentially. Age, tempo of onset, and systemic symptoms (fever, rash, mucosal ulcers) narrow things further before any lab test returns.",
+
+    exam_findings:
+      "Warmth, erythema, and effusion over the joint → inflammatory arthritis (infectious, crystal, or autoimmune)\nBony enlargement with Heberden's (DIP) and Bouchard's (PIP) nodes → osteoarthritis\nSymmetric small-joint (MCP/PIP/wrist) swelling with morning stiffness lasting over an hour → rheumatoid arthritis\nDactylitis (\"sausage digit\") → psoriatic or reactive arthritis\nNail pitting or onycholysis → psoriatic arthritis\nTophi over extensor surfaces or the ear helix → chronic tophaceous gout\nMalar rash and oral ulcers accompanying the arthritis → SLE\nConjunctivitis and urethritis alongside an asymmetric lower-extremity arthritis → reactive arthritis\nSacroiliac tenderness with reduced spinal flexion (Schober test) → axial spondyloarthropathy\nInability to bear weight, a single hot swollen joint, and fever → septic arthritis until excluded",
+
+    ddx: [
+      {
+        condition: "Septic arthritis",
+        key_features: "Acute monoarticular pain with fever, inability to bear weight, markedly restricted range of motion, elevated ESR/CRP and peripheral WBC, synovial fluid WBC typically >50,000/μL with neutrophil predominance and a positive gram stain or culture.",
+        mechanism: "Hematogenous seeding (or direct/contiguous spread) introduces bacteria — commonly Staphylococcus aureus, or Neisseria gonorrhoeae in young sexually active adults — into the normally sterile synovial space. Bacterial proliferation and the resulting neutrophilic response release proteolytic enzymes and cytokines that degrade cartilage matrix within days, making this a joint-destroying emergency rather than just a painful joint."
+      },
+      {
+        condition: "Gout",
+        key_features: "Rapid overnight onset of severe pain and swelling, classically at the first metatarsophalangeal joint (podagra); tophi in chronic disease; negatively birefringent, needle-shaped crystals on polarized microscopy of synovial fluid.",
+        mechanism: "Chronic hyperuricemia supersaturates synovial fluid, and monosodium urate crystallizes preferentially in cooler, less well-perfused peripheral joints. Resident macrophages phagocytose the crystals, which activate the NLRP3 inflammasome and drive IL-1β release, triggering an intense neutrophilic influx that produces the abrupt, severe inflammation."
+      },
+      {
+        condition: "Calcium pyrophosphate deposition disease (pseudogout)",
+        key_features: "Older patients, knee or wrist most commonly affected, chondrocalcinosis visible on plain radiographs, rhomboid-shaped, positively birefringent crystals on synovial fluid analysis.",
+        mechanism: "Calcium pyrophosphate crystals deposit within articular cartilage over years (associated with aging, hemochromatosis, and hyperparathyroidism); when crystals shed into the joint space they activate the same macrophage/NLRP3 inflammasome pathway as urate, producing an acute synovitis that can be clinically indistinguishable from gout without crystal analysis."
+      },
+      {
+        condition: "Rheumatoid arthritis",
+        key_features: "Symmetric polyarthritis of the MCP, PIP, and wrist joints (DIP spared), morning stiffness lasting over an hour that improves with activity, positive rheumatoid factor and anti-CCP antibodies, marginal erosions on imaging.",
+        mechanism: "Anti-CCP antibodies and immune complexes activate synovial fibroblasts and recruit T cells and macrophages that secrete TNF-α, IL-6, and IL-1. This drives proliferation of an invasive synovial pannus that progressively erodes articular cartilage and subchondral bone."
+      },
+      {
+        condition: "Osteoarthritis",
+        key_features: "Pain that worsens with joint use and improves with rest, brief morning stiffness under 30 minutes, Heberden's and Bouchard's nodes, joint space narrowing with osteophytes on imaging, and minimal systemic or laboratory abnormality.",
+        mechanism: "Mechanical loading over time outpaces chondrocyte repair capacity; matrix metalloproteinase activity degrades articular cartilage faster than it can be replaced, exposing subchondral bone, which responds with sclerosis and osteophyte formation, accompanied by only low-grade secondary synovial inflammation."
+      },
+      {
+        condition: "Reactive arthritis",
+        key_features: "Asymmetric oligoarthritis of the lower extremities arising one to four weeks after a gastrointestinal (Campylobacter, Salmonella, Shigella) or genitourinary (Chlamydia trachomatis) infection, often with conjunctivitis/uveitis, urethritis, and enthesitis; HLA-B27 association.",
+        mechanism: "An antecedent mucosal infection triggers an immune-mediated synovitis through molecular mimicry and persistent bacterial antigen deposition in the joint, without viable organisms typically recoverable by synovial fluid culture — an autoimmune/postinfectious process rather than direct joint infection."
+      },
+      {
+        condition: "SLE-associated arthritis",
+        key_features: "Symmetric, small-joint, often migratory arthritis that is typically nonerosive, accompanied by malar rash, photosensitivity, oral ulcers, and positive ANA/anti-dsDNA; a reducible, non-erosive deformity (Jaccoud arthropathy) can occur in longstanding disease.",
+        mechanism: "Immune complex deposition and complement activation produce inflammation of the synovium and periarticular ligaments/tendons, but — unlike rheumatoid arthritis — there is no invasive cartilage-eroding pannus, so joint damage (when present) comes from ligamentous laxity rather than bone erosion."
+      },
+      {
+        condition: "Psoriatic arthritis",
+        key_features: "Psoriasis (often with nail pitting or onycholysis), dactylitis, and DIP joint involvement, which distinguishes it from rheumatoid arthritis; asymmetric oligoarthritis or axial disease; \"pencil-in-cup\" deformity on imaging in advanced disease.",
+        mechanism: "IL-23/IL-17 axis activation drives Th17-mediated inflammation concentrated at entheses (tendon/ligament insertion sites) and synovium, simultaneously stimulating osteoclastic bone erosion and osteoblastic new bone formation (periostitis) — a combination of destruction and proliferation not seen in purely erosive arthritides."
+      }
+    ]
+  },
+  {
+    slug: "rash",
+    title: "Rash",
+    system_tag: "MSK/Derm/Heme",
+    sort_order: 2,
+
+    big_picture:
+      "Rash is one of the least specific presenting complaints in medicine, so the exam does most of the diagnostic work: morphology (macular, papular, vesicular, petechial/purpuric), distribution, and whether individual lesions blanch with pressure. The single most important branch point is blanching versus non-blanching — petechiae and purpura suggest a vascular or hematologic process (vasculitis, thrombocytopenia, DIC, meningococcemia) and, especially with fever, demand urgent evaluation. Mucosal involvement with skin sloughing or a positive Nikolsky sign signals a severe drug reaction (Stevens-Johnson syndrome/TEN) or staphylococcal scalded skin syndrome, both dermatologic emergencies. Chronicity and associated systemic symptoms then separate self-limited or purely cutaneous causes (contact dermatitis, urticaria, psoriasis) from infectious exanthems and systemic autoimmune or infectious disease.",
+
+    exam_findings:
+      "Lesions blanch fully with pressure → vasodilation/inflammation (urticaria, viral exanthem); non-blanching (petechiae/purpura) → vasculitis, thrombocytopenia, or DIC\nTarget lesions with dusky, necrotic centers → erythema multiforme/Stevens-Johnson-TEN spectrum\nGrouped vesicles on an erythematous base confined to one dermatome → herpes zoster\nKoplik spots on the buccal mucosa preceding a cephalocaudally spreading rash → measles\nMalar (\"butterfly\") rash sparing the nasolabial folds → SLE\nHerald patch followed by a \"Christmas tree\" truncal distribution → pityriasis rosea\nWell-demarcated plaques with silvery, micaceous scale on extensor surfaces → psoriasis\nHoney-colored crusting over superficial erosions → impetigo\nPositive Nikolsky sign (skin shears off with lateral pressure) → SJS/TEN or staphylococcal scalded skin syndrome\nPalpable purpura concentrated on dependent (gravity-affected) skin → small-vessel (leukocytoclastic) vasculitis",
+
+    ddx: [
+      {
+        condition: "Urticaria",
+        key_features: "Individual wheals that are intensely pruritic, blanch fully, and resolve within 24 hours (though new lesions continue to appear elsewhere); may coexist with angioedema; dermatographism can be elicited.",
+        mechanism: "Mast cell and basophil degranulation — IgE-mediated or through direct mast cell activation — releases histamine and other vasoactive mediators, producing dermal vasodilation and increased capillary permeability. Because the process is purely vascular, there is no epidermal change and lesions leave no residual mark."
+      },
+      {
+        condition: "Allergic contact dermatitis",
+        key_features: "Geographic or linear eruption matching the exact site of allergen contact (poison ivy, nickel, a new topical product), well-demarcated borders, vesiculation possible, onset 24–48 hours after re-exposure.",
+        mechanism: "A type IV (delayed) hypersensitivity reaction: allergen-specific T cells sensitized on first exposure release cytokines upon re-exposure that recruit inflammatory cells into the epidermis and dermis, producing spongiotic dermatitis — distinct from irritant contact dermatitis, which instead reflects direct chemical or physical disruption of the epidermal barrier without T-cell sensitization."
+      },
+      {
+        condition: "Psoriasis",
+        key_features: "Well-demarcated, erythematous plaques with thick silvery scale over extensor surfaces (elbows, knees) and the scalp, nail pitting, and pinpoint bleeding when scale is removed (Auspitz sign).",
+        mechanism: "IL-23/IL-17 axis-driven keratinocyte hyperproliferation shortens epidermal turnover time from roughly 28 days to 3–5 days. Keratinocytes are shed before they can fully mature and desquamate normally, producing the thick parakeratotic scale characteristic of the plaques."
+      },
+      {
+        condition: "Herpes zoster",
+        key_features: "Grouped vesicles on an erythematous base strictly confined to a single dermatome, does not cross the midline, often preceded or accompanied by neuropathic (burning) pain in that distribution.",
+        mechanism: "Reactivation of latent varicella-zoster virus within a dorsal root (or cranial nerve) ganglion allows the virus to replicate and travel anterogradely down the sensory axon to its corresponding dermatome, where direct viral cytopathic effect (ballooning degeneration of keratinocytes) produces the vesicles."
+      },
+      {
+        condition: "Stevens-Johnson syndrome / toxic epidermal necrolysis",
+        key_features: "Target or atypical target lesions progressing to mucosal erosions (oral, ocular, genital) and skin detachment, a positive Nikolsky sign, and body-surface-area involvement (<10% for SJS, >30% for TEN) following a new medication (or, for milder erythema multiforme, an HSV trigger).",
+        mechanism: "Drug- or infection-altered antigens presented on keratinocytes trigger a CD8+ cytotoxic T-lymphocyte response against the epidermis, releasing granzyme B, perforin, and Fas ligand that drive widespread keratinocyte apoptosis — producing full-thickness epidermal necrosis and detachment as the reaction becomes more severe."
+      },
+      {
+        condition: "IgA vasculitis (Henoch-Schönlein purpura) / leukocytoclastic vasculitis",
+        key_features: "Palpable purpura concentrated on dependent areas (lower extremities, buttocks); in IgA vasculitis, accompanied by arthralgias, colicky abdominal pain, and hematuria; biopsy shows perivascular IgA immune complex deposition.",
+        mechanism: "Circulating immune complexes deposit in postcapillary venule walls and activate complement, recruiting neutrophils whose degranulation (producing the nuclear debris called leukocytoclasis) damages the vessel wall itself and allows red blood cells to extravasate into the dermis — hence purpura that is palpable, not just discolored."
+      },
+      {
+        condition: "Secondary syphilis",
+        key_features: "Diffuse papulosquamous rash classically involving the palms and soles, condylomata lata, generalized lymphadenopathy, mucous patches, and a positive nontreponemal test (RPR/VDRL) confirmed by a treponemal test.",
+        mechanism: "Treponema pallidum disseminates hematogenously from the site of the primary chancre; the resulting rash reflects an immune-complex-mediated small-vessel vasculitis with a perivascular lymphocytic and plasma cell infiltrate in the dermis, rather than direct organism-mediated tissue destruction."
+      },
+      {
+        condition: "Measles (rubeola)",
+        key_features: "Prodrome of fever, cough, coryza, and conjunctivitis; Koplik spots on the buccal mucosa appearing just before the rash; an erythematous maculopapular eruption that begins at the hairline/face and spreads cephalocaudally, becoming confluent.",
+        mechanism: "Measles virus infects respiratory epithelium, then disseminates via lymphatics and infected monocytes; the rash itself is largely a cell-mediated (T-lymphocyte) immune response directed against virus-infected epidermal and endothelial cells, which is why the exanthem is delayed until the host immune response mounts — and why it can be blunted or absent in patients with impaired cellular immunity."
+      }
+    ]
+  },
+  {
+    slug: "lymphadenopathy",
+    title: "Lymphadenopathy",
+    system_tag: "MSK/Derm/Heme",
+    sort_order: 3,
+
+    big_picture:
+      "The key questions are localized versus generalized adenopathy, and whether the node's character is reassuring (soft, tender, mobile — favoring a reactive/infectious process) or concerning (firm or hard, fixed, matted, non-tender — favoring malignancy). Node location matters on its own: a left supraclavicular node (Virchow's node) should always prompt a search for an intra-abdominal or thoracic malignancy. Duration and accompanying systemic (\"B\") symptoms — fever, drenching night sweats, unintentional weight loss — shift concern toward lymphoma, leukemia, or a granulomatous infection like tuberculosis rather than a benign reactive process. A node that is larger than 2 cm, persists beyond four to six weeks without an identified infectious trigger, or continues to enlarge merits excisional biopsy rather than continued observation.",
+
+    exam_findings:
+      "Tender, soft, mobile node(s) → reactive/infectious lymphadenopathy\nFirm, fixed, matted, non-tender node(s) → malignancy (lymphoma or metastatic carcinoma)\nSupraclavicular node, especially left-sided (Virchow's node) → intra-abdominal or thoracic malignancy\nGeneralized adenopathy with splenomegaly and exudative pharyngitis → EBV/infectious mononucleosis\nPosterior cervical/occipital adenopathy with a fine pink rash → rubella\nUnilateral tender axillary or epitrochlear node after a cat scratch or bite → cat-scratch disease (Bartonella henselae)\nPainless, rubbery cervical or supraclavicular node with B symptoms → Hodgkin lymphoma\nGeneralized adenopathy with hepatosplenomegaly and cytopenias → leukemia\nBilateral hilar adenopathy on imaging with uveitis or erythema nodosum → sarcoidosis\nMatted, gradually enlarging node with a draining sinus tract → tuberculous lymphadenitis (scrofula)",
+
+    ddx: [
+      {
+        condition: "Reactive (viral) lymphadenopathy, e.g. EBV infectious mononucleosis",
+        key_features: "Tender, mobile, bilateral cervical nodes with exudative pharyngitis, fatigue, and splenomegaly; peripheral smear shows atypical lymphocytosis; positive heterophile antibody (monospot) test.",
+        mechanism: "Viral antigen exposure drives polyclonal proliferation of B and T lymphocytes within the node's germinal centers and paracortex as the immune system mounts a response, producing nodal enlargement from benign hyperplasia rather than any malignant infiltration."
+      },
+      {
+        condition: "Suppurative bacterial lymphadenitis",
+        key_features: "Unilateral, markedly tender, warm node with overlying erythema, sometimes fluctuant, typically following a local skin or pharyngeal infection with Streptococcus pyogenes or Staphylococcus aureus.",
+        mechanism: "Bacteria drain via afferent lymphatics into the regional node, provoking an intense neutrophilic response; neutrophil and bacterial byproducts can liquefy nodal tissue into a frank abscess if the infection is not controlled."
+      },
+      {
+        condition: "Cat-scratch disease (Bartonella henselae)",
+        key_features: "Unilateral, tender regional node (often axillary or epitrochlear) developing days to weeks after a cat scratch or bite, low-grade fever, occasional suppuration, history of feline exposure.",
+        mechanism: "Bartonella-infected macrophages and vascular endothelial cells provoke a granulomatous, stellate necrotizing lymphadenitis as the immune system attempts to wall off the intracellular organism, producing the characteristic necrotizing granulomas seen on biopsy."
+      },
+      {
+        condition: "Tuberculous lymphadenitis (scrofula)",
+        key_features: "Painless, gradually enlarging cervical node(s) that can become matted, fixed, and eventually form a draining sinus tract; constitutional symptoms (night sweats, weight loss); positive IGRA/PPD; caseating granulomas on biopsy.",
+        mechanism: "Mycobacteria disseminate to regional lymph nodes, where cell-mediated immunity organizes granulomas with central caseous necrosis in an attempt to contain the organism; over time the caseous material can liquefy and erode through the overlying skin."
+      },
+      {
+        condition: "Hodgkin lymphoma",
+        key_features: "Painless, firm, rubbery, non-tender cervical or supraclavicular node(s) that spread to contiguous nodal groups, B symptoms (fever, night sweats, weight loss), occasional alcohol-induced nodal pain, Reed-Sternberg cells on biopsy.",
+        mechanism: "Neoplastic Reed-Sternberg cells (derived from germinal-center B cells) secrete cytokines such as IL-5, IL-6, and TNF that recruit a massive reactive background of eosinophils, lymphocytes, plasma cells, and histiocytes — and this cytokine burden itself is what produces the systemic B symptoms."
+      },
+      {
+        condition: "Non-Hodgkin lymphoma",
+        key_features: "Painless nodal or extranodal enlargement that can be localized or generalized, growth rate varying with grade, B symptoms more common in aggressive subtypes, excisional biopsy showing a clonal lymphocyte population effacing normal architecture.",
+        mechanism: "Monoclonal proliferation of B or T lymphocytes arrested at a specific point in maturation, driven by an acquired genetic lesion (for example, the t(14;18) translocation upregulating BCL2 in follicular lymphoma, or t(8;14) activating MYC in Burkitt lymphoma), replaces the normal nodal architecture with malignant cells."
+      },
+      {
+        condition: "Metastatic carcinoma",
+        key_features: "Firm-to-hard, fixed, non-tender node, with location often predicting the primary site (left supraclavicular/Virchow node → gastrointestinal or other intra-abdominal primary; anterior cervical → head and neck primary); history and exam findings pointing to the primary tumor.",
+        mechanism: "Tumor cells shed from the primary lesion travel through afferent lymphatics and lodge in the first draining (\"sentinel\") node, where they proliferate and progressively efface the normal follicular and paracortical architecture."
+      },
+      {
+        condition: "Sarcoidosis",
+        key_features: "Bilateral hilar lymphadenopathy on chest imaging (often an incidental finding), peripheral adenopathy in some patients, erythema nodosum, uveitis, elevated serum ACE level, non-caseating granulomas on biopsy.",
+        mechanism: "An exaggerated, Th1-predominant cell-mediated immune response to an unidentified antigen forms non-caseating granulomas — aggregates of epithelioid histiocytes and multinucleated giant cells that wall off antigen without the central necrosis seen in tuberculosis — within lymph nodes and other organs."
+      }
+    ]
+  },
+  {
+    slug: "easy-bruising-bleeding",
+    title: "Easy Bruising / Bleeding",
+    system_tag: "MSK/Derm/Heme",
+    sort_order: 4,
+
+    big_picture:
+      "The physiology splits bleeding disorders into primary hemostasis (platelets and von Willebrand factor, which form the initial platelet plug) and secondary hemostasis (the coagulation cascade, which stabilizes that plug into a fibrin clot) — and the clinical pattern of bleeding usually tells you which is at fault. Primary hemostasis defects produce immediate mucocutaneous bleeding: petechiae, epistaxis, gingival bleeding, and bruising after only minor trauma. Secondary hemostasis defects instead produce delayed, deep bleeding — hemarthroses and intramuscular hematomas — because the initial platelet plug forms normally but is never stabilized. A new bleeding tendency accompanied by other cytopenias, fever, or bone pain raises marrow infiltration (leukemia); bleeding plus schistocytes, renal failure, and neurologic changes is a hematologic emergency (TTP/HUS) until proven otherwise. Medication review (anticoagulants, antiplatelet agents) and a basic panel (platelet count, PT, aPTT) triage the workup before more specialized testing is needed.",
+
+    exam_findings:
+      "Petechiae and mucosal bleeding (epistaxis, gum bleeding) with bruising after only minor trauma → primary hemostasis (platelet or von Willebrand) disorder\nHemarthrosis and deep intramuscular hematomas, delayed bleeding after surgery or trauma → coagulation factor deficiency\nPalpable purpura rather than flat, bland purpura → vasculitis rather than a simple platelet/coagulation defect\nBruising in unusual or well-protected sites, inconsistent with the reported mechanism → consider non-accidental trauma\nHyperextensible skin and joint hypermobility → a connective tissue disorder (e.g., Ehlers-Danlos syndrome)\nSplenomegaly with bruising and pallor → marrow infiltration or hypersplenism/sequestration\nBruising with fever and bone pain → acute leukemia\nEcchymoses confined to sun-damaged extensor forearms in an elderly patient, sparing mucosa → senile/actinic purpura (vascular fragility, not a hemostatic defect)\nNew medication (anticoagulant or antiplatelet agent) preceding the bleeding → drug-induced",
+
+    ddx: [
+      {
+        condition: "Immune thrombocytopenia (ITP)",
+        key_features: "Isolated thrombocytopenia with an otherwise normal CBC, petechiae, purpura, and mucosal bleeding, typically no splenomegaly, an otherwise well-appearing patient, often preceded by a viral illness in children.",
+        mechanism: "Autoantibodies form against platelet surface glycoproteins (commonly GPIIb/IIIa), opsonizing platelets for accelerated phagocytic destruction by splenic macrophages — peripheral destruction that outpaces the marrow's ability to compensate with increased production."
+      },
+      {
+        condition: "Von Willebrand disease",
+        key_features: "Mucocutaneous bleeding (epistaxis, menorrhagia, easy bruising), a positive family history, prolonged bleeding after dental extraction, a normal platelet count with abnormal platelet function testing, and low von Willebrand factor antigen/activity.",
+        mechanism: "Quantitative or qualitative deficiency of von Willebrand factor impairs platelet adhesion to exposed subendothelial collagen at sites of vascular injury, since vWF is the physical bridge between platelet GPIb and collagen; it also destabilizes circulating factor VIII, so both the platelet plug and (to a lesser extent) the coagulation cascade are impaired."
+      },
+      {
+        condition: "Hemophilia A or B",
+        key_features: "Male patient (X-linked inheritance), hemarthroses and deep muscle hematomas, delayed bleeding after trauma or surgery, an isolated prolonged aPTT with a normal PT, and low factor VIII (hemophilia A) or factor IX (hemophilia B) activity.",
+        mechanism: "Deficiency of a specific intrinsic-pathway clotting factor prevents adequate thrombin generation and fibrin clot stabilization at the site of injury; an initial platelet plug still forms but is friable and prone to rebleeding, especially at high-flow, mechanically stressed sites like joints."
+      },
+      {
+        condition: "Disseminated intravascular coagulation (DIC)",
+        key_features: "Bleeding from multiple sites simultaneously (IV lines, mucosa, surgical wounds) alongside microvascular thrombosis, in the setting of sepsis, trauma, malignancy, or an obstetric complication; low platelets, low fibrinogen, elevated D-dimer, prolonged PT/aPTT, and schistocytes on smear.",
+        mechanism: "Widespread tissue factor exposure triggers systemic activation of the coagulation cascade, generating innumerable microthrombi that consume platelets and clotting factors faster than the liver and marrow can replace them — so the net clinical picture is paradoxical bleeding despite a fundamentally hypercoagulable trigger."
+      },
+      {
+        condition: "Thrombotic thrombocytopenic purpura (TTP)",
+        key_features: "Thrombocytopenia with microangiopathic hemolytic anemia (schistocytes, elevated LDH, low haptoglobin), neurologic changes, renal dysfunction, and fever (the classic pentad, often incomplete); severely reduced ADAMTS13 activity.",
+        mechanism: "Deficiency (usually autoantibody-mediated, occasionally congenital) of ADAMTS13 — the protease that normally cleaves ultra-large von Willebrand factor multimers — allows these multimers to persist in circulation and spontaneously aggregate platelets throughout the microvasculature, consuming platelets and mechanically shearing red cells as they pass through the platelet-rich microthrombi."
+      },
+      {
+        condition: "Acute leukemia (marrow failure/infiltration)",
+        key_features: "Bruising and bleeding accompanied by fatigue (from anemia), fever or recurrent infection (from neutropenia), bone pain, hepatosplenomegaly, and blasts on peripheral smear or bone marrow biopsy.",
+        mechanism: "Malignant blast proliferation crowds out normal trilineage hematopoiesis within the marrow space, so thrombocytopenia here results from impaired platelet production rather than peripheral destruction or consumption."
+      },
+      {
+        condition: "Vitamin K deficiency or warfarin effect",
+        key_features: "Bruising or bleeding in a patient with malabsorption, poor nutrition, prolonged broad-spectrum antibiotic use, or vitamin K antagonist therapy; a prolonged PT/INR (with the aPTT normal or, later, also prolonged); correction with vitamin K administration unless underlying liver disease is also present.",
+        mechanism: "Vitamin K is a required cofactor for hepatic gamma-carboxylation of clotting factors II, VII, IX, and X (and proteins C and S); without adequate vitamin K — or when warfarin blocks its recycling — these factors are synthesized in normal quantity but are functionally inactive, impairing thrombin generation."
+      },
+      {
+        condition: "Senile (actinic) purpura",
+        key_features: "Ecchymoses confined to sun-damaged extensor forearms and the dorsal hands in elderly patients, sharp-edged but non-palpable, with a normal platelet count and normal coagulation studies, and no mucosal bleeding.",
+        mechanism: "Chronic UV-induced degeneration of dermal collagen and the perivascular connective tissue that normally cushions and supports cutaneous vessels leaves those vessels poorly supported, so trivial mechanical shear tears them and blood tracks visibly through the thinned, atrophic dermis — a vascular fragility phenomenon rather than any true hemostatic defect."
+      }
+    ]
+  },
+  {
+    slug: "unintentional-weight-loss",
+    title: "Unintentional Weight Loss",
+    system_tag: "MSK/Derm/Heme",
+    sort_order: 5,
+
+    big_picture:
+      "Unintentional weight loss (conventionally defined as more than 5% of body weight over 6–12 months) reflects one of four underlying mechanisms: decreased intake, malabsorption, increased metabolic demand, or increased losses — and identifying which is present narrows the differential considerably. In older adults it is one of the strongest independent predictors of a serious underlying organic disease, so age and any localizing symptom (dysphagia, a change in bowel habits, cough, night sweats) should raise the threshold for a thorough workup rather than reassurance. Preserved or increased appetite despite ongoing weight loss points toward a hypermetabolic state or a calorie-losing process (hyperthyroidism, uncontrolled diabetes, malabsorption), whereas true anorexia points toward malignancy, chronic infection, or a psychiatric cause. Even after a complete evaluation, a meaningful fraction of cases remain idiopathic — but those patients still need close longitudinal follow-up rather than having the workup declared closed.",
+
+    exam_findings:
+      "Cachexia with a palpable mass, organomegaly, or lymphadenopathy → malignancy\nTachycardia, warm moist skin, tremor, lid lag, and goiter → hyperthyroidism\nOral thrush, oral hairy leukoplakia, and generalized lymphadenopathy → HIV/AIDS\nAbdominal distension, steatorrhea, and glossitis → malabsorption (celiac disease, chronic pancreatitis)\nNight sweats, low-grade fever, and chronic cough → tuberculosis\nFlat affect and psychomotor slowing → major depressive disorder\nCognitive impairment, poor dentition, and social isolation → decreased intake from dementia, dysphagia, or food insecurity\nPeripheral edema with jugular venous distension → heart failure/cardiac cachexia\nHyperpigmentation with orthostatic hypotension → adrenal insufficiency\nFine tremor with hyperreflexia → thyrotoxicosis",
+
+    ddx: [
+      {
+        condition: "Malignancy (solid tumor, e.g. pancreatic, GI, or lung cancer)",
+        key_features: "Age over 50, symptoms pointing to the primary site (dysphagia, jaundice, hemoptysis, a change in bowel habits), a palpable mass, cachexia, elevated inflammatory markers, and a diagnostic mass or lesion on imaging/biopsy.",
+        mechanism: "Tumor cells and tumor-associated macrophages release proinflammatory cytokines (TNF-α, IL-6, IL-1) that both suppress hypothalamic appetite centers and directly activate the ubiquitin-proteasome pathway in skeletal muscle and lipolysis in adipose tissue — a systemic catabolic state (cancer cachexia) distinct from simple starvation, which is why nutritional supplementation alone rarely reverses it."
+      },
+      {
+        condition: "Hyperthyroidism (e.g., Graves disease)",
+        key_features: "Weight loss despite a normal or increased appetite, heat intolerance, palpitations, tremor, lid lag/stare, warm moist skin, a suppressed TSH with elevated free T4/T3.",
+        mechanism: "Excess thyroid hormone increases basal metabolic rate across virtually every tissue — upregulating Na+/K+-ATPase activity and mitochondrial uncoupling protein expression — so caloric expenditure outpaces intake even when intake is preserved or actually increased."
+      },
+      {
+        condition: "HIV/AIDS (untreated, advanced)",
+        key_features: "Weight loss with chronic diarrhea, oral thrush, generalized lymphadenopathy, recurrent opportunistic infections, a low CD4 count, and positive HIV antibody/RNA testing.",
+        mechanism: "Chronic immune activation and persistently elevated inflammatory cytokines drive a hypermetabolic catabolic state, compounded by anorexia from recurring opportunistic infections and true malabsorption from HIV enteropathy or GI pathogens — the combination is termed wasting syndrome once weight loss exceeds 10% of baseline."
+      },
+      {
+        condition: "Celiac disease (and other malabsorptive disorders)",
+        key_features: "Weight loss with chronic diarrhea or steatorrhea, bloating, iron-deficiency anemia, dermatitis herpetiformis, positive tissue transglutaminase IgA, and villous atrophy on duodenal biopsy.",
+        mechanism: "Gluten exposure triggers an autoimmune, T-cell-mediated destruction of small bowel villi that flattens the absorptive surface area, so macronutrients and micronutrients pass through the gut unabsorbed despite adequate dietary intake."
+      },
+      {
+        condition: "Major depressive disorder",
+        key_features: "Weight loss accompanying anhedonia, depressed mood, sleep disturbance, and poor concentration, with the patient often directly reporting decreased appetite; symptoms present most of the day for at least two weeks.",
+        mechanism: "Dysregulation of the hypothalamic-pituitary-adrenal axis and central monoaminergic signaling suppresses appetite-driving neural circuits, and behavioral withdrawal (reduced motivation to shop for or prepare food) compounds a true reduction in intake — a decreased-intake mechanism rather than a hypermetabolic one."
+      },
+      {
+        condition: "Tuberculosis (or another chronic granulomatous infection)",
+        key_features: "Weight loss with night sweats, low-grade fevers, and a chronic productive cough (if pulmonary), relevant risk factors (known exposure, incarceration, immunosuppression, travel to an endemic area), a positive IGRA/PPD, and acid-fast bacilli on sputum smear/culture.",
+        mechanism: "Sustained mycobacterial antigen exposure drives ongoing TNF-α and IFN-γ release from activated macrophages and T cells, producing a catabolic state similar to malignancy-associated cachexia, while granuloma formation itself consumes host energy and protein resources."
+      },
+      {
+        condition: "Uncontrolled diabetes mellitus",
+        key_features: "Weight loss with polyuria, polydipsia, and polyphagia (appetite often preserved or increased), glucosuria, and a markedly elevated glucose/HbA1c.",
+        mechanism: "Insulin deficiency or resistance prevents cellular glucose uptake, so despite hyperglycemia the body senses a starvation-like state and shifts toward lipolysis and proteolysis for fuel, while osmotic diuresis from glucosuria drives additional fluid and caloric loss directly through the urine."
+      },
+      {
+        condition: "Adrenal insufficiency (Addison disease)",
+        key_features: "Weight loss with fatigue, anorexia, nausea, orthostatic hypotension, hyperpigmentation (in primary disease), hyponatremia and hyperkalemia, and a low morning cortisol that fails to rise appropriately with ACTH stimulation.",
+        mechanism: "Cortisol deficiency impairs gluconeogenesis and blunts the normal stress-adaptive appetite and metabolic regulation, while concurrent mineralocorticoid deficiency (in primary adrenal disease) causes ongoing sodium and volume loss — together producing anorexia, GI symptoms, and progressive weight loss."
+      }
+    ]
+  },
 ];
 
 // ---------------------------------------------------------------------------
