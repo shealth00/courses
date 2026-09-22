@@ -3,6 +3,8 @@
 import { getSupabase } from './supabaseClient.js';
 import { mountViewer } from './viewer3d.js';
 import { mountQBank } from './qbank.js';
+import { mountFlashcards } from './flashcards.js';
+import { mountPathways } from './pathway.js';
 
 const appEl = document.getElementById('app');
 const navLinks = document.querySelectorAll('.topnav a');
@@ -35,6 +37,16 @@ async function router() {
   if (path === 'qbank') {
     setActiveNav('qbank');
     return mountQBank(appEl, rest);
+  }
+  if (path === 'flashcards') {
+    setActiveNav('flashcards');
+    const supabase = await getSupabase();
+    return mountFlashcards(appEl, supabase, rest);
+  }
+  if (path === 'pathways' || path === 'pathway') {
+    setActiveNav('pathways');
+    const supabase = await getSupabase();
+    return mountPathways(appEl, supabase, path === 'pathway' ? rest : []);
   }
 
   setActiveNav('catalog');

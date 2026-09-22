@@ -147,7 +147,7 @@ async function renderSession(appEl, supabase, attemptId) {
 
   const { data: choicesRaw } = await supabase
     .from('qbank_choices')
-    .select('id, question_id, label, choice_text, is_correct, sort_order')
+    .select('id, question_id, label, choice_text, is_correct, explanation, sort_order')
     .in('question_id', questions.map((q) => q.id))
     .order('sort_order', { ascending: true });
 
@@ -249,8 +249,9 @@ async function renderSession(appEl, supabase, attemptId) {
           .map((c) => {
             const classes = ['choice-row'];
             const isSelected = st.choiceId === c.id;
+            const revealed = tutorReveal || !!attempt.submitted_at;
             if (isSelected) classes.push('selected');
-            if (tutorReveal || attempt.submitted_at) {
+            if (revealed) {
               if (c.is_correct) classes.push('correct');
               else if (isSelected) classes.push('incorrect');
             }
@@ -259,6 +260,14 @@ async function renderSession(appEl, supabase, attemptId) {
               <span class="choice-label">${escapeHtml(c.label)}</span>
               <span>${escapeHtml(c.choice_text)}</span>
             </div>
+            ${
+              revealed && c.explanation
+                ? `<div class="choice-why ${c.is_correct ? 'why-correct' : 'why-wrong'}">
+                     <strong>${c.is_correct ? 'Why this is correct:' : `Why ${escapeHtml(c.label)} is wrong:`}</strong>
+                     ${escapeHtml(c.explanation)}
+                   </div>`
+                : ''
+            }
           `;
           })
           .join('')}
@@ -271,11 +280,33 @@ async function renderSession(appEl, supabase, attemptId) {
           <h4>Explanation</h4>
           <div class="explanation-text">${escapeHtml(q.explanation)}</div>
           ${q.references ? `<div class="references-text">${escapeHtml(q.references)}</div>` : ''}
+          <button class="exam-btn" id="btn-make-flashcard" style="margin-top:12px;">+ Create flashcard from this question</button>
         </div>
       `
           : ''
       }
     `;
+
+    if (tutorReveal) {
+      const flashBtn = mainEl.querySelector('#btn-make-flashcard');
+      if (flashBtn) {
+        flashBtn.addEventListener('click', async () => {
+          const correctChoice = choices.find((c) => c.is_correct);
+          const front = q.lead_in ? `${q.stem}\n\n${q.lead_in}` : q.stem;
+          const back = [
+            correctChoice ? `Correct answer: ${correctChoice.label}. ${correctChoice.choice_text}` : null,
+            q.explanation,
+            q.educational_objective ? `Educational objective: ${q.educational_objective}` : null,
+          ]
+            .filter(Boolean)
+            .join('\n\n');
+          const { createFlashcardFromQuestion } = await import('./flashcards.js');
+          await createFlashcardFromQuestion(supabase, { front, back, systemTag: q.system_tag, questionId: q.id });
+          flashBtn.textContent = 'Added to flashcards ✓';
+          flashBtn.disabled = true;
+        });
+      }
+    }
 
     mainEl.querySelectorAll('.choice-row').forEach((row) => {
       row.addEventListener('click', async () => {

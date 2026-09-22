@@ -152,6 +152,13 @@ body {
 .choice-row.correct .choice-label { border-color: var(--correct); color: var(--correct); }
 .choice-row.incorrect .choice-label { border-color: var(--incorrect); color: var(--incorrect); }
 
+.choice-why { margin: -6px 0 10px 32px; padding: 8px 12px; font-size: 12.5px; line-height: 1.5; border-radius: 6px; }
+.choice-why.why-correct { background: #eaf6ee; color: #2f6b41; }
+.choice-why.why-wrong { background: #fbeae6; color: #8a3a2a; }
+.choice-why strong { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 2px; }
+
+.exam-btn.incorrect-btn { border-color: var(--incorrect); color: var(--incorrect); }
+
 .explanation-panel { margin-top: 22px; padding: 18px; background: #f5f2ea; border-radius: 8px; border: 1px solid var(--line); }
 .explanation-panel h4 { margin: 0 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); }
 .edu-objective { font-size: 13px; font-weight: 600; margin-bottom: 10px; padding: 10px 12px; background: #fff; border-left: 3px solid var(--gold); }
@@ -187,3 +194,19 @@ body {
 .results-row { display: flex; justify-content: space-between; font-size: 13px; padding: 6px 0; border-bottom: 1px solid var(--line); }
 
 .empty-state { text-align: center; padding: 60px 20px; color: var(--ink-soft); font-size: 14px; }
+
+.pathway-shell { display: flex; gap: 28px; flex-wrap: wrap; }
+.pathway-flow { flex: 0 0 220px; display: flex; flex-direction: column; align-items: center; }
+.pathway-node {
+  width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; background: #fff;
+  display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 12.5px; text-align: left;
+}
+.pathway-node.current { border-color: var(--accent-blue); background: #eef3f9; font-weight: 600; }
+.pathway-node.past { opacity: 0.55; }
+.pathway-node-num {
+  flex: 0 0 20px; height: 20px; border-radius: 50%; background: var(--ink); color: #fff;
+  font-size: 10.5px; display: flex; align-items: center; justify-content: center;
+}
+.pathway-node.current .pathway-node-num { background: var(--accent-blue); }
+.pathway-arrow { color: var(--ink-soft); font-size: 14px; margin: 2px 0; }
+.pathway-detail { flex: 1 1 320px; min-width: 260px; padding: 20px; background: #f7f5f0; border-radius: 8px; border: 1px solid var(--line); }
