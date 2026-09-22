@@ -553,6 +553,761 @@ const CLINICAL_TOPICS = [
       },
     ]),
   },
+
+  // ===========================================================================
+  // Module 4 — Pathology
+  // ===========================================================================
+  {
+    module_number: 4,
+    module_title: 'Pathology',
+    key_submodule: 'Cellular Adaptations',
+    slug: 'barrett-esophagus-metaplasia',
+    title: 'Barrett Esophagus: Columnar Metaplasia from Chronic Reflux',
+    sort_order: 1,
+
+    hook_vignette:
+      'A 54-year-old man with a 15-year history of heartburn after meals, worse when lying down, treated intermittently with over-the-counter antacids, undergoes upper endoscopy for new dysphagia to solids. The endoscopist notes a salmon-colored, tongue-like extension of mucosa above the gastroesophageal junction, replacing the normal pale squamous lining.',
+
+    ddx_mapping:
+      'Reflux esophagitis without metaplasia — erythema/erosions on endoscopy, but biopsy shows intact squamous epithelium with no goblet cells.\n' +
+      'Eosinophilic esophagitis — younger patient, food impaction history, endoscopic rings/furrows, eosinophil-rich infiltrate rather than metaplastic columnar change.\n' +
+      "Esophageal adenocarcinoma — Barrett's most feared complication; distinguished by a mass lesion or invasion through the basement membrane, not simple metaplasia.\n" +
+      'Esophageal squamous cell carcinoma — different risk factor profile (smoking, alcohol), typically mid-esophageal, unrelated to Barrett change.\n' +
+      'Hiatal hernia — an anatomic finding that promotes reflux and may coexist with Barrett esophagus, but produces no epithelial change on its own.',
+
+    diagnostic_evaluation:
+      'Upper endoscopy shows salmon-colored mucosa extending at least 1 cm proximal to the gastroesophageal junction.\n' +
+      'Biopsy is required for diagnosis: intestinal-type columnar epithelium with goblet cells (intestinal metaplasia) replacing the normal stratified squamous epithelium.\n' +
+      'Alcian blue stain highlights the acidic mucin within goblet cells.\n' +
+      'Surveillance biopsies follow a four-quadrant protocol every 1-2 cm to detect dysplasia before progression to adenocarcinoma.',
+
+    management:
+      'Long-term proton pump inhibitor therapy to reduce acid-mediated injury and control reflux symptoms.\n' +
+      'Surveillance interval depends on dysplasia grade: no dysplasia — endoscopy every 3-5 years; low-grade dysplasia — endoscopic eradication therapy or surveillance every 6-12 months; high-grade dysplasia or intramucosal carcinoma — endoscopic eradication therapy (radiofrequency ablation or endoscopic mucosal resection).\n' +
+      'Lifestyle modification: weight loss, head-of-bed elevation, avoiding late meals.\n' +
+      'Antireflux surgery (fundoplication) in select patients with refractory symptoms despite medical therapy.',
+
+    first_order_prompt:
+      'What type of epithelial change defines Barrett esophagus, and what specific histologic feature confirms it?',
+    first_order_answer:
+      'Intestinal metaplasia — replacement of the normal stratified squamous epithelium of the distal esophagus with columnar epithelium containing goblet cells.',
+
+    second_order_vignette:
+      'A 61-year-old woman with known Barrett esophagus, previously stable on surveillance, returns for her scheduled endoscopy. Biopsies from the Barrett segment now show glands with nuclear stratification, hyperchromasia, and loss of normal architecture, but the changes remain confined above the basement membrane with no invasion into the lamina propria.',
+    second_order_question:
+      'Which of the following best describes this histologic finding, and what is the most appropriate next step?',
+    second_order_choices: JSON.stringify([
+      {
+        label: 'A',
+        text: 'Low-grade dysplasia; continue surveillance endoscopy in 3-5 years',
+        correct: false,
+        explanation:
+          'The description (marked nuclear atypia and architectural distortion confined to the epithelium) is more consistent with high-grade dysplasia, and even true low-grade dysplasia would not be managed with a 3-5 year interval.',
+      },
+      {
+        label: 'B',
+        text: 'High-grade dysplasia; endoscopic eradication therapy (radiofrequency ablation or endoscopic resection)',
+        correct: true,
+        explanation:
+          'Marked cytologic atypia and architectural distortion confined above the basement membrane define high-grade dysplasia, which carries a high risk of progression to invasive carcinoma and is treated with endoscopic eradication therapy.',
+      },
+      {
+        label: 'C',
+        text: 'Intramucosal adenocarcinoma; esophagectomy is mandatory',
+        correct: false,
+        explanation:
+          'Intramucosal carcinoma requires invasion into the lamina propria; the stem explicitly states no invasion beyond the basement membrane. Even intramucosal carcinoma without high-risk features is generally treated endoscopically, not with upfront esophagectomy.',
+      },
+      {
+        label: 'D',
+        text: 'Reflux esophagitis; increase PPI dose and rebiopsy in 8 weeks',
+        correct: false,
+        explanation:
+          'Esophagitis shows acute/chronic inflammation of intact squamous or metaplastic epithelium, not stratified, hyperchromatic glands with architectural distortion.',
+      },
+      {
+        label: 'E',
+        text: 'Normal Barrett mucosa; no change in management',
+        correct: false,
+        explanation:
+          'The description clearly shows dysplastic atypia (nuclear stratification, hyperchromasia, architectural loss), not simple, non-dysplastic intestinal metaplasia.',
+      },
+    ]),
+    second_order_answer: 'B',
+    second_order_explanation:
+      'Dysplasia in Barrett esophagus is graded on a spectrum from indefinite/low-grade to high-grade based on cytologic atypia and architectural distortion, all while confined by the basement membrane (no invasion, which would define carcinoma). High-grade dysplasia carries substantial risk of harboring or progressing to invasive adenocarcinoma, so current guidelines favor endoscopic eradication therapy (radiofrequency ablation or endoscopic mucosal resection) over continued surveillance — and over esophagectomy, which carries higher morbidity for disease that remains endoscopically treatable while confined to the mucosa.',
+
+    flowchart_title: 'Working Up Columnar-Lined Esophagus',
+    flowchart: JSON.stringify([
+      {
+        node: 'Chronic GERD patient undergoes upper endoscopy',
+        branches: [
+          {
+            label: 'Normal pale squamous mucosa',
+            next: 'No Barrett esophagus — continue reflux management',
+          },
+          {
+            label: 'Salmon-colored mucosa extending above the GE junction',
+            next: 'Biopsy the columnar-appearing segment',
+          },
+        ],
+      },
+      {
+        node: 'Biopsy of the columnar segment',
+        branches: [
+          {
+            label: 'Columnar epithelium without goblet cells',
+            next: 'Cardiac-type metaplasia only — not diagnostic of Barrett',
+          },
+          {
+            label: 'Columnar epithelium with goblet cells (intestinal metaplasia)',
+            next: 'Barrett esophagus confirmed — grade for dysplasia',
+          },
+        ],
+      },
+      {
+        node: 'Dysplasia grading on biopsy',
+        branches: [
+          {
+            label: 'No dysplasia',
+            next: 'Surveillance endoscopy every 3-5 years, continue PPI',
+          },
+          {
+            label: 'Low-grade dysplasia',
+            next: 'Endoscopic eradication therapy or surveillance every 6-12 months',
+          },
+          {
+            label: 'High-grade dysplasia / intramucosal carcinoma',
+            next: 'Endoscopic eradication therapy (RFA/EMR)',
+          },
+          {
+            label: 'Invasion beyond the lamina propria',
+            next: 'Invasive adenocarcinoma — oncologic staging and resection',
+          },
+        ],
+      },
+    ]),
+  },
+
+  {
+    module_number: 4,
+    module_title: 'Pathology',
+    key_submodule: 'Injury and Death',
+    slug: 'coagulative-necrosis-renal-infarction',
+    title: 'Coagulative Necrosis in Acute Renal Infarction',
+    sort_order: 2,
+
+    hook_vignette:
+      'A 68-year-old man with atrial fibrillation, subtherapeutic on his anticoagulant, presents with sudden-onset severe left flank pain, nausea, and gross hematuria. He is afebrile, and his abdominal exam is unremarkable aside from left costovertebral angle tenderness. Labs show a markedly elevated LDH out of proportion to other findings.',
+
+    ddx_mapping:
+      'Pyelonephritis — fever, pyuria, bacteriuria, and CVA tenderness, but gradual onset over days rather than sudden; imaging shows a striated nephrogram, not a wedge-shaped perfusion defect.\n' +
+      'Nephrolithiasis — colicky pain radiating to the groin with hematuria, but noncontrast CT shows a stone rather than a perfusion defect, and LDH is not characteristically elevated.\n' +
+      'Renal vein thrombosis — more indolent course, associated with nephrotic syndrome/hypercoagulable states, imaging shows venous rather than arterial occlusion.\n' +
+      'Renal cell carcinoma with hemorrhage — subacute presentation, possible palpable flank mass, imaging shows an enhancing mass rather than a non-enhancing wedge-shaped defect.',
+
+    diagnostic_evaluation:
+      'Contrast-enhanced CT shows a wedge-shaped, peripherally based, non-enhancing area of renal cortex/medulla with the apex pointing toward the hilum.\n' +
+      'Markedly elevated serum LDH is often the most sensitive early lab clue (from ischemic tissue breakdown), with only mild or delayed creatinine rise unless the infarct is bilateral or extensive.\n' +
+      'Workup for an embolic source: echocardiogram, rhythm monitoring for atrial fibrillation.\n' +
+      "On histology, the infarcted zone shows coagulative necrosis — a pale, firm, wedge-shaped area in which cellular and tissue architecture (glomerular and tubular silhouettes) are preserved for several days despite loss of nuclei, because ischemic acidosis denatures structural proteins along with the cell's own hydrolytic enzymes, delaying proteolytic digestion of the dead tissue.",
+
+    management:
+      'Anticoagulation (initially heparin, transitioned to a longer-term agent) to prevent further embolization and treat the underlying source (e.g., rate/rhythm control plus anticoagulation for atrial fibrillation).\n' +
+      'Pain control and blood pressure monitoring, given the risk of renin-mediated hypertension from the infarcted segment.\n' +
+      'Reperfusion therapy (catheter-directed thrombolysis or thrombectomy) is reserved for bilateral infarction, infarction of a solitary kidney, or very early presentation with a large territory at risk, given the narrow therapeutic window.\n' +
+      'Most segmental infarcts heal by fibrosis and cortical scarring rather than functional recovery; supportive monitoring of renal function follows.',
+
+    first_order_prompt:
+      'In an infarcted organ like the kidney, why does the basic architecture of dead cells remain visible under the microscope for several days before phagocytic cleanup, instead of dissolving immediately?',
+    first_order_answer:
+      "Coagulative necrosis: ischemia denatures both structural proteins and the cell's own hydrolytic enzymes, so proteolysis is delayed and the ghost outlines of cells and tissue architecture persist until inflammatory cells arrive to digest the debris.",
+
+    second_order_vignette:
+      'A 45-year-old woman with a history of infective endocarditis one week ago (now on antibiotics) develops abrupt severe left upper quadrant pain radiating to the left shoulder, along with low-grade fever. On exam she has left upper quadrant tenderness without rebound. CT abdomen shows a wedge-shaped, peripherally based hypoattenuating area in the spleen with an intact capsule.',
+    second_order_question:
+      'The area of splenic tissue seen on this CT scan is undergoing which pattern of necrosis, and what underlying process most likely produced it?',
+    second_order_choices: JSON.stringify([
+      {
+        label: 'A',
+        text: 'Liquefactive necrosis from a bacterial abscess',
+        correct: false,
+        explanation:
+          'Liquefactive necrosis produces a soft, pus-filled cavity from enzymatic digestion (classic for bacterial infection or brain infarcts), not the firm wedge-shaped defect described, and no discrete abscess cavity is described.',
+      },
+      {
+        label: 'B',
+        text: 'Caseous necrosis from disseminated tuberculosis',
+        correct: false,
+        explanation:
+          'Caseous necrosis produces a friable, cheese-like center within a granulomatous inflammatory reaction, classically from TB — not an acute wedge-shaped infarct in the setting of recent endocarditis.',
+      },
+      {
+        label: 'C',
+        text: 'Fat necrosis from acute pancreatitis',
+        correct: false,
+        explanation:
+          'Fat necrosis occurs in adipose tissue (peripancreatic fat, breast) via lipase-mediated saponification and is unrelated to splenic parenchymal infarction.',
+      },
+      {
+        label: 'D',
+        text: 'Coagulative necrosis from septic embolization to the spleen',
+        correct: true,
+        explanation:
+          'A vegetation-derived embolus lodging in the splenic artery produces a wedge-shaped ischemic infarct; the spleen, like the kidney and heart, undergoes coagulative rather than liquefactive necrosis regardless of the septic origin of the embolus.',
+      },
+      {
+        label: 'E',
+        text: 'Fibrinoid necrosis from an immune complex vasculitis',
+        correct: false,
+        explanation:
+          'Fibrinoid necrosis is a vascular wall lesion with bright pink fibrin-like deposits, seen in vasculitis or malignant hypertension — not a wedge-shaped end-organ infarct.',
+      },
+    ]),
+    second_order_answer: 'D',
+    second_order_explanation:
+      'Septic emboli from endocarditis vegetations lodge in end-arterial organs (spleen, kidney, brain) and cause wedge-shaped infarcts. Because the spleen, kidney, and heart have single end-arterial supply and comparatively low intrinsic enzyme content, they undergo coagulative necrosis even when the inciting embolus was septic — this contrasts with the brain, which undergoes liquefactive necrosis after infarction regardless of cause, due to its high lipid content and enzyme-rich glial response.',
+
+    flowchart_title: 'Necrosis Pattern by Tissue and Insult',
+    flowchart: JSON.stringify([
+      {
+        node: 'Sudden loss of blood supply to a solid organ (kidney, spleen, heart, or GI tissue outside the brain)',
+        branches: [
+          {
+            label: 'Arterial occlusion (embolic or thrombotic)',
+            next: 'Ischemic infarct — coagulative necrosis, architecture preserved',
+          },
+          {
+            label: 'Occlusion within CNS tissue',
+            next: 'Liquefactive necrosis (high lipid content, enzymatic autolysis)',
+          },
+        ],
+      },
+      {
+        node: 'Coagulative necrosis confirmed (wedge-shaped, pale, firm)',
+        branches: [
+          {
+            label: 'Source = cardiac mural thrombus or valvular vegetation',
+            next: 'Embolic infarct — anticoagulate, treat the source',
+          },
+          {
+            label: 'Source = local arterial thrombosis (e.g., ruptured atherosclerotic plaque)',
+            next: 'Thrombotic infarct — manage underlying vascular disease',
+          },
+        ],
+      },
+      {
+        node: 'Healing phase over days to weeks',
+        branches: [
+          {
+            label: 'Small/segmental infarct',
+            next: 'Organization and fibrous scar formation',
+          },
+          {
+            label: 'Large infarct in a critical organ',
+            next: 'Risk of organ dysfunction — consider revascularization if within window',
+          },
+        ],
+      },
+    ]),
+  },
+
+  {
+    module_number: 4,
+    module_title: 'Pathology',
+    key_submodule: 'Inflammation',
+    slug: 'acute-appendicitis-inflammation-cascade',
+    title: 'Acute Appendicitis: The Neutrophilic Acute Inflammatory Response',
+    sort_order: 3,
+
+    hook_vignette:
+      "A 19-year-old man presents with periumbilical pain that migrated to the right lower quadrant over 12 hours, now associated with anorexia, low-grade fever, and nausea. On exam he has focal tenderness and guarding at McBurney's point, with pain on passive extension of the right hip.",
+
+    ddx_mapping:
+      'Mesenteric lymphadenitis — often follows a viral URI, diffuse rather than focal tenderness, self-limited, common in children.\n' +
+      'Ovarian torsion or ruptured ovarian cyst — female patient, sudden severe pain, distinguished by pelvic exam and ultrasound.\n' +
+      'Ectopic pregnancy — must always be excluded with beta-hCG in a woman of reproductive age presenting with RLQ pain.\n' +
+      'Meckel diverticulitis — can mimic appendicitis exactly; often only distinguished at surgery or on a nuclear (Meckel) scan.\n' +
+      'Right-sided diverticulitis or Crohn disease — more insidious course, may have preceding GI symptoms, different distribution of inflammation on imaging.',
+
+    diagnostic_evaluation:
+      'Elevated WBC count with neutrophilic predominance reflects the acute inflammatory response.\n' +
+      'CT abdomen/pelvis (or ultrasound, preferred first-line in children and pregnant patients) shows a dilated, non-compressible appendix greater than 6 mm with wall thickening and periappendiceal fat stranding.\n' +
+      'On histology after appendectomy, neutrophilic infiltration of the muscularis propria is the defining diagnostic criterion (mucosal neutrophils alone are insufficient, since some are normally present in the lamina propria).\n' +
+      'This reflects the classic acute inflammatory cascade: luminal obstruction (often by a fecalith) triggers local mediator release (histamine, prostaglandins, leukotriene B4 as a neutrophil chemoattractant), causing vasodilation and increased vascular permeability, followed by neutrophil margination, selectin-mediated rolling, integrin-mediated firm adhesion, transmigration, and chemotaxis into the tissue.',
+
+    management:
+      'Prompt surgical appendectomy (laparoscopic preferred) remains first-line for most patients, with perioperative broad-spectrum antibiotics covering gram-negative rods and anaerobes.\n' +
+      'In select uncomplicated cases without a fecalith, antibiotics-first (non-operative) management is an accepted alternative, with a meaningful recurrence rate discussed with the patient.\n' +
+      'A well-formed periappendiceal abscess is typically managed with percutaneous drainage and antibiotics first, followed by interval appendectomy weeks later, since immediate surgery in a densely inflamed field carries higher complication risk.\n' +
+      'Untreated appendicitis risks perforation, peritonitis, and abscess formation.',
+
+    first_order_prompt:
+      'What is the sequence of events, from mediator release to tissue infiltration, that brings neutrophils into an acutely inflamed appendix?',
+    first_order_answer:
+      'Vasodilation and increased vascular permeability (histamine, prostaglandins) leading to neutrophil margination along the vessel wall, selectin-mediated rolling, integrin-mediated firm adhesion, transmigration through the endothelium, and chemotaxis along a gradient (e.g., leukotriene B4, bacterial products, complement C5a) into the inflamed tissue.',
+
+    second_order_vignette:
+      'A 7-year-old boy is brought to the emergency department with two days of fever and diffuse abdominal pain following a recent upper respiratory infection. Exam shows mild, poorly localized abdominal tenderness without rebound or guarding. Ultrasound shows a normal-caliber appendix but multiple enlarged mesenteric lymph nodes.',
+    second_order_question:
+      "Which of the following best explains this child's presentation?",
+    second_order_choices: JSON.stringify([
+      {
+        label: 'A',
+        text: 'Mesenteric lymphadenitis following a recent viral infection',
+        correct: true,
+        explanation:
+          'A common appendicitis mimic in children, typically following a viral URI, with reactive enlargement of mesenteric lymph nodes on ultrasound while the appendix itself remains normal.',
+      },
+      {
+        label: 'B',
+        text: 'Acute appendicitis with atypical presentation',
+        correct: false,
+        explanation:
+          'Ultrasound explicitly shows a normal-caliber appendix, arguing against appendicitis as the driver of this presentation.',
+      },
+      {
+        label: 'C',
+        text: 'Meckel diverticulitis',
+        correct: false,
+        explanation:
+          'Would also show a normal appendix, but classically presents with painless lower GI bleeding or a focally inflamed diverticulum on imaging, not enlarged mesenteric nodes following a preceding viral illness.',
+      },
+      {
+        label: 'D',
+        text: 'Crohn disease flare',
+        correct: false,
+        explanation:
+          'Crohn disease typically has a more chronic course with weight loss and diarrhea over weeks to months, not an acute two-day illness following a URI.',
+      },
+      {
+        label: 'E',
+        text: 'Yersinia enterocolitica ileitis',
+        correct: false,
+        explanation:
+          'Can also mimic appendicitis with mesenteric adenitis, but no exposure history (undercooked pork, unpasteurized milk) is given here to favor it over the far more common self-limited viral-associated lymphadenitis in a child after a URI.',
+      },
+    ]),
+    second_order_answer: 'A',
+    second_order_explanation:
+      'Mesenteric lymphadenitis is one of the most common appendicitis mimics in children, often following a viral upper respiratory infection, with reactive enlargement of mesenteric lymph nodes visible on ultrasound while the appendix itself remains normal in caliber. It is self-limited and managed supportively, in contrast to appendicitis, which requires surgical or antibiotic-first management.',
+
+    flowchart_title: 'RLQ Pain Diagnostic Pathway',
+    flowchart: JSON.stringify([
+      {
+        node: 'Patient with right lower quadrant pain',
+        branches: [
+          {
+            label: 'Female of reproductive age',
+            next: 'Obtain beta-hCG first to exclude ectopic pregnancy',
+          },
+          {
+            label: 'Male, or beta-hCG negative',
+            next: 'Proceed to imaging',
+          },
+        ],
+      },
+      {
+        node: 'Imaging (ultrasound or CT)',
+        branches: [
+          {
+            label: 'Dilated, non-compressible appendix >6mm with fat stranding',
+            next: 'Acute appendicitis — surgical/antibiotic management',
+          },
+          {
+            label: 'Normal appendix, enlarged mesenteric nodes, recent viral illness',
+            next: 'Mesenteric lymphadenitis — supportive care',
+          },
+          {
+            label: 'Adnexal mass or free fluid in a female patient',
+            next: 'Evaluate for ovarian torsion or ruptured cyst',
+          },
+        ],
+      },
+      {
+        node: 'If appendicitis is confirmed',
+        branches: [
+          {
+            label: 'Uncomplicated, no fecalith',
+            next: 'Appendectomy or antibiotics-first per shared decision-making',
+          },
+          {
+            label: 'Perforated with abscess',
+            next: 'Percutaneous drainage plus antibiotics, interval appendectomy later',
+          },
+        ],
+      },
+    ]),
+  },
+
+  {
+    module_number: 4,
+    module_title: 'Pathology',
+    key_submodule: 'Wound Healing',
+    slug: 'keloid-formation-wound-healing',
+    title: 'Keloid Formation: Excess Collagen Beyond the Wound Margin',
+    sort_order: 4,
+
+    hook_vignette:
+      'An 18-year-old woman of West African descent returns to clinic eight months after ear piercing, reporting a firm, raised, itchy nodule at the piercing site that has continued to grow beyond the original wound margins and now extends onto adjacent normal skin.',
+
+    ddx_mapping:
+      'Hypertrophic scar — raised and firm as well, but stays confined within the original wound boundary and tends to partially regress over 12-18 months, without the strong genetic/ethnic predisposition seen with keloids.\n' +
+      "Dermatofibroma — a firm papule not tied to a preceding wound, dimples inward with lateral compression (the 'dimple sign') rather than growing outward beyond a scar.\n" +
+      'Foreign body granuloma — history of retained suture or piercing material, granulomatous inflammation on biopsy rather than dense whorled collagen.\n' +
+      'Dermatofibrosarcoma protuberans (and other cutaneous sarcomas) — progressively enlarging, infiltrative mass not linked to a discrete wound; biopsy needed to exclude in an atypical or rapidly growing lesion.',
+
+    diagnostic_evaluation:
+      'Primarily a clinical diagnosis: a raised, firm, often pruritic or tender nodule/plaque extending beyond the original wound margins that does not regress over time.\n' +
+      'Biopsy, reserved for atypical presentations, shows thick, haphazardly arranged, hyalinized (glassy pink) collagen bundles in the dermis, in contrast to the more parallel, organized collagen bundles of a hypertrophic scar.\n' +
+      'Keloids result from excessive type III (and later type I) collagen deposition from a relative imbalance favoring fibroblast collagen synthesis over collagenase-mediated remodeling during the proliferative and remodeling phases of wound healing.\n' +
+      'Risk factors include darker skin pigmentation, family history, and wound location (ears, shoulders, upper chest, and jawline are especially prone).',
+
+    management:
+      'Intralesional corticosteroid injections (e.g., triamcinolone) are first-line, reducing fibroblast collagen synthesis and inflammation.\n' +
+      'Other options include silicone gel sheeting, pressure therapy, cryotherapy, and laser treatment.\n' +
+      'Surgical excision alone carries a high recurrence rate, often exceeding that of the original lesion, because the same fibroproliferative tendency reasserts itself; excision is generally combined with adjuvant intralesional steroids or radiotherapy to reduce recurrence.\n' +
+      'Patients should be counseled that keloids can recur even with optimal treatment; prevention (avoiding elective piercings/procedures in high-risk patients, using prophylactic silicone sheeting/pressure on new wounds in those with a prior keloid) is emphasized.',
+
+    first_order_prompt:
+      'What distinguishes a keloid from a hypertrophic scar in terms of both growth pattern and the underlying collagen abnormality?',
+    first_order_answer:
+      'A keloid grows beyond the original wound margins and does not regress, with disorganized, hyalinized collagen bundles, while a hypertrophic scar stays confined within the wound margins and tends to regress over time, with more organized, parallel collagen bundles.',
+
+    second_order_vignette:
+      'A 34-year-old man underwent emergency abdominal surgery six weeks ago. He now notes a raised, pink, firm scar along the incision line that is limited strictly to the width of the original surgical incision and has started to flatten slightly on its own over the past two weeks.',
+    second_order_question:
+      "Which of the following best characterizes this patient's scar and its expected course?",
+    second_order_choices: JSON.stringify([
+      {
+        label: 'A',
+        text: 'Keloid formation, requiring intralesional steroid injection',
+        correct: false,
+        explanation:
+          'The scar is confined to the original incision and is already beginning to regress spontaneously, which is not typical keloid behavior.',
+      },
+      {
+        label: 'B',
+        text: 'Wound dehiscence, requiring surgical revision',
+        correct: false,
+        explanation:
+          "Dehiscence refers to separation of a healing wound's edges, not a raised firm scar; nothing in the vignette suggests wound separation.",
+      },
+      {
+        label: 'C',
+        text: 'Atrophic scar from collagen deficiency',
+        correct: false,
+        explanation:
+          'Atrophic scars are depressed/sunken (e.g., acne scarring) from collagen loss — the opposite of this raised, firm scar.',
+      },
+      {
+        label: 'D',
+        text: 'Normal healing by primary intention with no distinct scar abnormality',
+        correct: false,
+        explanation:
+          'A raised, firm scar is not simply flat, unremarkable healing, even though it is a benign and self-limited process; it specifically describes a hypertrophic scar pattern.',
+      },
+      {
+        label: 'E',
+        text: 'Hypertrophic scar, likely to partially regress over the following months without specific intervention',
+        correct: true,
+        explanation:
+          'Confinement to the original wound margins plus early spontaneous regression are the defining features of a hypertrophic scar, generally managed conservatively.',
+      },
+    ]),
+    second_order_answer: 'E',
+    second_order_explanation:
+      'Hypertrophic scars remain confined to the original wound margin and characteristically show partial spontaneous regression over 12-18 months, so they are generally observed or treated conservatively (silicone sheeting, pressure) rather than with the aggressive intralesional therapy reserved for keloids, which extend beyond the wound and do not regress on their own.',
+
+    flowchart_title: 'Raised Scar Evaluation',
+    flowchart: JSON.stringify([
+      {
+        node: 'New raised, firm tissue at a healed wound site',
+        branches: [
+          {
+            label: 'Confined to original wound margins, may regress over time',
+            next: 'Hypertrophic scar',
+          },
+          {
+            label: 'Extends beyond original wound margins, does not regress',
+            next: 'Keloid',
+          },
+        ],
+      },
+      {
+        node: 'Keloid confirmed',
+        branches: [
+          {
+            label: 'First presentation',
+            next: 'Intralesional corticosteroid injection, silicone sheeting',
+          },
+          {
+            label: 'Recurrent after excision alone',
+            next: 'Excision plus adjuvant intralesional steroid or radiotherapy',
+          },
+        ],
+      },
+      {
+        node: 'High-risk patient (prior keloid, darker skin pigmentation, high-risk site)',
+        branches: [
+          {
+            label: 'Planning an elective procedure/piercing',
+            next: 'Counsel on risk, consider prophylactic silicone/pressure therapy',
+          },
+        ],
+      },
+    ]),
+  },
+
+  {
+    module_number: 4,
+    module_title: 'Pathology',
+    key_submodule: 'Intracellular Accumulations',
+    slug: 'alpha1-antitrypsin-deficiency-accumulation',
+    title: 'Alpha-1 Antitrypsin Deficiency: Misfolded Protein Accumulation in Hepatocytes',
+    sort_order: 5,
+
+    hook_vignette:
+      'A 44-year-old lifelong nonsmoker presents with progressive dyspnea and is found to have panacinar emphysema predominantly affecting the lung bases on CT — an unusual distribution and an unusually young age for emphysema. His history also includes cirrhosis diagnosed a decade earlier without an identified cause at the time.',
+
+    ddx_mapping:
+      'Smoking-related COPD/emphysema — centriacinar, upper-lobe predominant, older patient with a significant smoking history; the distribution and age here are reversed.\n' +
+      'Wilson disease — also causes liver disease at a young age, but distinguished by low ceruloplasmin, elevated urinary copper, Kayser-Fleischer rings, and neuropsychiatric symptoms, with no pulmonary component.\n' +
+      'Hereditary hemochromatosis — also causes early cirrhosis, but with skin bronzing, diabetes, and elevated ferritin/transferrin saturation, and no emphysema.\n' +
+      'Autoimmune hepatitis — elevated autoantibodies, interface hepatitis on biopsy, no pulmonary findings.',
+
+    diagnostic_evaluation:
+      'Serum alpha-1 antitrypsin level is low; PI (protease inhibitor) genotyping identifies the specific allele combination, with the PiZZ genotype causing the most severe disease.\n' +
+      'Liver biopsy shows PAS-positive, diastase-resistant eosinophilic globules within the endoplasmic reticulum of periportal hepatocytes, representing misfolded mutant AAT protein (the Z allele produces a protein that polymerizes and cannot be properly secreted) accumulating intracellularly instead of being exported into serum.\n' +
+      'This single mechanism explains both organs: liver damage from toxic intracellular accumulation, and lung damage from a lack of circulating AAT to inhibit neutrophil elastase, allowing unchecked proteolytic destruction of alveolar walls.\n' +
+      'Pulmonary function tests show an obstructive pattern with reduced DLCO; chest CT shows panacinar emphysema with basilar predominance, as opposed to the apical predominance of smoking-related emphysema.',
+
+    management:
+      'Smoking cessation counseling and avoidance is critical, since smoking dramatically accelerates emphysema in these patients.\n' +
+      'Intravenous augmentation therapy with pooled human AAT protein can slow the decline in lung function in appropriate candidates with demonstrated airflow obstruction.\n' +
+      'Standard COPD management (bronchodilators, pulmonary rehabilitation, vaccination) as adjuncts; lung transplantation for end-stage pulmonary disease.\n' +
+      "Liver disease is managed supportively — augmentation therapy does not help the liver, since the hepatic problem is intracellular accumulation of the toxic misfolded protein, not a lack of circulating protein — with liver transplantation curative for the liver disease and also normalizing serum AAT level, since the transplanted liver produces the normal genotype's protein.",
+
+    first_order_prompt:
+      'Why does alpha-1 antitrypsin deficiency damage the liver and lungs through two completely different mechanisms?',
+    first_order_answer:
+      'The mutant Z-allele protein misfolds, polymerizes, and accumulates intracellularly in the hepatocyte endoplasmic reticulum, causing direct hepatocyte injury and cirrhosis (a toxic gain-of-function/accumulation mechanism); because the misfolded protein cannot be secreted, serum AAT levels are low, leaving neutrophil elastase in the lung unopposed to progressively destroy alveolar walls (a loss-of-function mechanism) and cause panacinar emphysema.',
+
+    second_order_vignette:
+      'A 2-month-old infant presents with jaundice, pale stools, and dark urine. Liver biopsy reveals PAS-positive, diastase-resistant globules within periportal hepatocytes, and genetic testing confirms a PiZZ genotype.',
+    second_order_question:
+      "This infant's globules are composed primarily of which of the following?",
+    second_order_choices: JSON.stringify([
+      {
+        label: 'A',
+        text: 'Glycogen accumulated due to a glycogen storage disease',
+        correct: false,
+        explanation:
+          'Glycogen stains PAS-positive but is diastase-labile (digested by diastase pretreatment), unlike the diastase-resistant globules described here.',
+      },
+      {
+        label: 'B',
+        text: 'Accumulated unconjugated bilirubin within hepatocytes',
+        correct: false,
+        explanation:
+          'Bilirubin accumulation does not form PAS-positive, diastase-resistant globules and produces a different histologic and clinical picture.',
+      },
+      {
+        label: 'C',
+        text: 'Misfolded alpha-1 antitrypsin protein retained in the endoplasmic reticulum',
+        correct: true,
+        explanation:
+          'The PiZZ genotype produces mutant AAT protein that misfolds, polymerizes, and cannot be secreted, accumulating as PAS-positive, diastase-resistant globules in periportal hepatocytes — a classic cause of neonatal cholestasis.',
+      },
+      {
+        label: 'D',
+        text: 'Copper deposited due to defective biliary excretion',
+        correct: false,
+        explanation:
+          'Describes Wilson disease, which is exceedingly rare in infancy (it classically presents later in childhood/adolescence); copper is demonstrated with rhodanine stain, not PAS.',
+      },
+      {
+        label: 'E',
+        text: 'Amyloid protein deposition in the hepatic parenchyma',
+        correct: false,
+        explanation:
+          'Amyloid is demonstrated with Congo red and apple-green birefringence under polarized light, not PAS-diastase, and hepatic amyloidosis is not a neonatal presentation.',
+      },
+    ]),
+    second_order_answer: 'C',
+    second_order_explanation:
+      "In neonates, alpha-1 antitrypsin deficiency (PiZZ genotype) is an important cause of a neonatal cholestasis/'neonatal hepatitis' picture. PAS-positive, diastase-resistant globules in periportal hepatocytes are the pathognomonic histologic clue distinguishing it from other causes of neonatal cholestasis — the diastase pretreatment step is key, since it excludes glycogen (diastase-labile) as the cause of the PAS positivity.",
+
+    flowchart_title: 'PAS-Positive Hepatocyte Globules Workup',
+    flowchart: JSON.stringify([
+      {
+        node: 'Liver biopsy shows PAS-positive globules in hepatocytes',
+        branches: [
+          {
+            label: 'Diastase-labile (digested by diastase)',
+            next: 'Glycogen — consider a glycogen storage disease',
+          },
+          {
+            label: 'Diastase-resistant (persists after diastase)',
+            next: 'Alpha-1 antitrypsin deficiency — confirm with serum AAT level and PI genotyping',
+          },
+        ],
+      },
+      {
+        node: 'AAT deficiency confirmed',
+        branches: [
+          {
+            label: 'PiZZ genotype, pulmonary symptoms present',
+            next: 'Evaluate for panacinar, basilar-predominant emphysema; consider augmentation therapy',
+          },
+          {
+            label: 'Hepatic disease predominates (cirrhosis, neonatal cholestasis)',
+            next: 'Supportive management; liver transplant is curative if end-stage',
+          },
+        ],
+      },
+      {
+        node: 'Counsel patient/family',
+        branches: [
+          {
+            label: 'Any smoking history/exposure',
+            next: 'Strongly counsel cessation/avoidance — dramatically accelerates lung disease',
+          },
+          {
+            label: 'Family planning',
+            next: 'Offer genetic counseling given autosomal codominant inheritance',
+          },
+        ],
+      },
+    ]),
+  },
+
+  {
+    module_number: 4,
+    module_title: 'Pathology',
+    key_submodule: 'Neoplasia',
+    slug: 'papillary-thyroid-carcinoma-psammoma-bodies',
+    title: 'Papillary Thyroid Carcinoma: Psammoma Bodies and Orphan Annie Eye Nuclei',
+    sort_order: 6,
+
+    hook_vignette:
+      'A 32-year-old woman notices a painless nodule in her neck while applying makeup. On exam, a firm, non-tender nodule is palpated in the right thyroid lobe that moves with swallowing, and a palpable ipsilateral cervical lymph node is also noted. She has no history of head/neck radiation exposure and is clinically euthyroid.',
+
+    ddx_mapping:
+      'Follicular thyroid carcinoma — fine-needle aspiration cannot reliably distinguish follicular adenoma from carcinoma cytologically, since the distinguishing feature (capsular/vascular invasion) can only be assessed on the excised specimen; spreads hematogenously rather than to regional nodes, unlike papillary carcinoma.\n' +
+      'Medullary thyroid carcinoma — arises from parafollicular C cells, produces calcitonin, associated with MEN2 syndromes, often with diarrhea/flushing; amyloid stroma on histology rather than psammoma bodies.\n' +
+      'Anaplastic thyroid carcinoma — older patients, rapidly enlarging, highly aggressive, undifferentiated histology.\n' +
+      'Benign colloid/multinodular goiter — rubbery, often multiple nodules, uniform colloid-filled follicles without malignant nuclear atypia.',
+
+    diagnostic_evaluation:
+      "Fine-needle aspiration biopsy is first-line and is often diagnostic, since papillary carcinoma's distinctive nuclear features are visible on cytology alone.\n" +
+      "Classic findings: papillary architecture (finger-like projections with a fibrovascular core), 'Orphan Annie eye' nuclei (large nuclei with optically clear, empty-appearing chromatin), nuclear grooves, and psammoma bodies (concentrically laminated, calcified structures thought to represent dystrophic calcification of necrotic papillary tips).\n" +
+      'Psammoma bodies, while classic and highly suggestive, are not required for diagnosis and can also be seen in a minority of other tumors (e.g., serous ovarian tumors, meningioma).\n' +
+      'Thyroid ultrasound characterizes the nodule (hypoechoic, irregular margins, microcalcifications, increased vascularity raise suspicion) and guides biopsy. Diagnosis rests on nuclear features rather than invasion (unlike follicular carcinoma), so it is diagnosable on FNA alone.',
+
+    management:
+      'Surgical resection is the mainstay — lobectomy for small, low-risk, unifocal tumors, or total thyroidectomy for larger/higher-risk or multifocal disease, with central/lateral neck lymph node dissection if nodal involvement is confirmed.\n' +
+      'Radioactive iodine (I-131) ablation is used postoperatively in intermediate- to high-risk patients to destroy residual thyroid tissue and any iodine-avid metastatic disease, exploiting the fact that well-differentiated thyroid cancer retains normal follicular-cell iodine uptake.\n' +
+      'Lifelong levothyroxine replacement after thyroidectomy, often dosed to mildly suppress TSH in higher-risk patients, since TSH can stimulate residual tumor growth.\n' +
+      'Serum thyroglobulin serves as a surveillance tumor marker after thyroidectomy. Prognosis is excellent overall — this is the most common and most indolent thyroid cancer subtype — and cervical lymph node spread, while common, does not carry the same poor prognostic weight it would in most other carcinomas.',
+
+    first_order_prompt:
+      'What two classic nuclear/architectural histologic features, together with concentrically calcified laminated bodies, define papillary thyroid carcinoma?',
+    first_order_answer:
+      'Orphan Annie eye nuclei (optically clear, ground-glass chromatin) and nuclear grooves, often accompanied by psammoma bodies (laminated calcified structures) — diagnosis rests on these nuclear features rather than capsular/vascular invasion.',
+
+    second_order_vignette:
+      'A 58-year-old man presents with a thyroid nodule found incidentally on a CT scan obtained for an unrelated reason. Fine-needle aspiration is read as a follicular neoplasm; cytology cannot distinguish a benign process from carcinoma. He proceeds to diagnostic lobectomy, and the pathology report describes a well-encapsulated tumor composed of uniform follicles, with capsular invasion identified in two areas but no vascular invasion and no nuclear features of papillary carcinoma.',
+    second_order_question:
+      "What is the most likely diagnosis, and why couldn't fine-needle aspiration alone establish it?",
+    second_order_choices: JSON.stringify([
+      {
+        label: 'A',
+        text: 'Follicular adenoma; FNA is always sufficient to diagnose benign follicular lesions',
+        correct: false,
+        explanation:
+          'The pathology explicitly describes capsular invasion, the defining feature that makes this carcinoma rather than adenoma.',
+      },
+      {
+        label: 'B',
+        text: 'Papillary thyroid carcinoma, follicular variant; FNA missed the diagnostic nuclear features',
+        correct: false,
+        explanation:
+          'The pathology report specifically notes no nuclear features of papillary carcinoma; papillary carcinoma (including its follicular variant) is actually reliably diagnosable on FNA because of its nuclear features, unlike follicular carcinoma.',
+      },
+      {
+        label: 'C',
+        text: 'Medullary thyroid carcinoma; FNA cannot detect calcitonin production',
+        correct: false,
+        explanation:
+          'Nothing supports a C-cell origin tumor (no amyloid stroma, no calcitonin elevation mentioned), and medullary carcinoma has its own distinct cytologic appearance detectable on FNA.',
+      },
+      {
+        label: 'D',
+        text: 'Follicular carcinoma; FNA cannot assess capsular or vascular invasion, which can only be evaluated on the fully excised, sectioned specimen',
+        correct: true,
+        explanation:
+          'Follicular carcinoma is diagnosed solely by demonstrating capsular and/or vascular invasion, an architectural relationship invisible on FNA cytology, which samples only individual cells.',
+      },
+      {
+        label: 'E',
+        text: 'Anaplastic thyroid carcinoma; FNA cannot be performed on rapidly growing tumors',
+        correct: false,
+        explanation:
+          'Nothing suggests rapid growth or the markedly pleomorphic, undifferentiated histology of anaplastic carcinoma; this is an incidental, presumably slow-growing nodule.',
+      },
+    ]),
+    second_order_answer: 'D',
+    second_order_explanation:
+      "Follicular carcinoma is unique among common thyroid cancers in that its diagnosis depends entirely on demonstrating capsular and/or vascular invasion on histologic sections of the whole excised nodule — a feature architecturally invisible on FNA cytology, which only samples cells. This is why an FNA read of 'follicular neoplasm' is inherently indeterminate and requires diagnostic lobectomy, in contrast with papillary carcinoma, which is reliably diagnosed on FNA alone because its diagnostic features are nuclear and visible on individual cells.",
+
+    flowchart_title: 'Thyroid Nodule to Diagnosis',
+    flowchart: JSON.stringify([
+      {
+        node: 'Palpable/incidental thyroid nodule',
+        branches: [
+          {
+            label: 'Ultrasound suspicious features (hypoechoic, irregular, microcalcifications)',
+            next: 'Proceed to fine-needle aspiration',
+          },
+          {
+            label: 'Low-suspicion ultrasound features',
+            next: 'Observe with follow-up ultrasound',
+          },
+        ],
+      },
+      {
+        node: 'FNA cytology result',
+        branches: [
+          {
+            label: 'Orphan Annie eye nuclei, nuclear grooves, +/- psammoma bodies',
+            next: 'Papillary thyroid carcinoma — diagnostic on FNA',
+          },
+          {
+            label: 'Uniform follicular cells, invasion cannot be assessed',
+            next: "Indeterminate 'follicular neoplasm' — requires diagnostic lobectomy",
+          },
+          {
+            label: 'Amyloid stroma, cells of C-cell lineage',
+            next: 'Suspect medullary carcinoma — check serum calcitonin, screen for MEN2',
+          },
+        ],
+      },
+      {
+        node: 'Diagnostic lobectomy specimen (for indeterminate FNA)',
+        branches: [
+          {
+            label: 'Capsular and/or vascular invasion present',
+            next: 'Follicular carcinoma — completion thyroidectomy per risk stratification',
+          },
+          {
+            label: 'No invasion identified',
+            next: 'Follicular adenoma — benign, no further treatment',
+          },
+        ],
+      },
+    ]),
+  },
 ];
 
 // ---------------------------------------------------------------------------
