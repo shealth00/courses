@@ -7,6 +7,7 @@ import { mountFlashcards } from './flashcards.js';
 import { mountPathways } from './pathway.js';
 import { mountProgress } from './progress.js';
 import { mountAccount } from './account.js';
+import { mountTopics } from './topics.js';
 
 const appEl = document.getElementById('app');
 const navLinks = document.querySelectorAll('.topnav a');
@@ -92,6 +93,11 @@ async function router() {
     setActiveNav('account');
     const supabase = await getSupabase();
     return mountAccount(appEl, supabase);
+  }
+  if (path === 'topics' || path === 'topic') {
+    setActiveNav('topics');
+    const supabase = await getSupabase();
+    return mountTopics(appEl, supabase, path === 'topic' ? rest : []);
   }
 
   setActiveNav('catalog');
