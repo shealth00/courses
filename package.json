@@ -8,9 +8,12 @@
     "seed": "node supabase/seed.js"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.0.0",
+    "@supabase/supabase-js": "2.55.0",
     "express": "^4.19.2",
     "dotenv": "^16.4.5"
+  },
+  "overrides": {
+    "@supabase/storage-js": "2.78.0"
   },
   "engines": {
     "node": ">=18"
