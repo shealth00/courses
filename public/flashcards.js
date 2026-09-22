@@ -13,7 +13,17 @@ function escapeHtml(str) {
 
 const OWNER_KEY = 'usmle_flashcard_owner_id';
 
-function getOwnerId() {
+// Returns the signed-in user's auth.uid() when there's a session, otherwise
+// falls back to the existing anonymous localStorage uuid — same RLS-visible
+// owner_id either way (`owner_id = auth.uid()` once signed in, or the
+// anonymous "auth.uid() is null" branch), so nothing about the anonymous
+// flow changes for anyone who never signs in.
+async function getOwnerId(supabase) {
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (user) return user.id;
+
   let id = localStorage.getItem(OWNER_KEY);
   if (!id) {
     id = crypto.randomUUID();
@@ -58,7 +68,7 @@ function nextSchedule({ ease_factor, interval_days, repetitions }, rating) {
 // ---------------------------------------------------------------------------
 export async function createFlashcardFromQuestion(supabase, { front, back, systemTag, questionId }) {
   const { error } = await supabase.from('flashcards').insert({
-    owner_id: getOwnerId(),
+    owner_id: await getOwnerId(supabase),
     front,
     back,
     system_tag: systemTag || null,
@@ -81,7 +91,7 @@ export async function mountFlashcards(appEl, supabase, routeParts) {
 // ---------------------------------------------------------------------------
 async function renderDeckHome(appEl, supabase) {
   appEl.innerHTML = `<div class="empty-state">Loading flashcards&hellip;</div>`;
-  const ownerId = getOwnerId();
+  const ownerId = await getOwnerId(supabase);
 
   const { data: cards, error } = await supabase
     .from('flashcards')
@@ -195,7 +205,7 @@ function cardRow(card) {
 // ---------------------------------------------------------------------------
 async function renderStudySession(appEl, supabase) {
   appEl.innerHTML = `<div class="empty-state">Loading study session&hellip;</div>`;
-  const ownerId = getOwnerId();
+  const ownerId = await getOwnerId(supabase);
 
   const { data: due, error } = await supabase
     .from('flashcards')
@@ -287,7 +297,7 @@ async function renderStudySession(appEl, supabase) {
 // ---------------------------------------------------------------------------
 async function renderShortQuiz(appEl, supabase) {
   appEl.innerHTML = `<div class="empty-state">Loading short quiz&hellip;</div>`;
-  const ownerId = getOwnerId();
+  const ownerId = await getOwnerId(supabase);
 
   const { data: all, error } = await supabase.from('flashcards').select('id, front, back').eq('owner_id', ownerId);
 
