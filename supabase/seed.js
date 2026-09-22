@@ -56,6 +56,8 @@ const MODULES = [
     summary: 'Gametogenesis, pelvic anatomy, embryologic folding, congenital malformation atlas.' },
   { course: 'step2ck', slug: 'step2-clinical', title: 'Clinical & Surgical Correlation', accent_color: '#c9a25a', sort_order: 11,
     summary: 'Surgical approach diagrams, imaging correlation, procedural step sequences.' },
+  { course: 'step1', slug: 'microbiology', title: 'Microbiology', accent_color: '#5a8a6e', sort_order: 12,
+    summary: 'Bacteriology, virology, mycology, and parasitology — pathogen identification, virulence mechanisms, and antimicrobial targets.' },
 ];
 
 // Full 2D + 3D plate catalog per module, extracted from the original

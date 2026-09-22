@@ -83,6 +83,7 @@ export async function createFlashcardFromQuestion(supabase, { front, back, syste
 export async function mountFlashcards(appEl, supabase, routeParts) {
   if (routeParts[0] === 'study') return renderStudySession(appEl, supabase);
   if (routeParts[0] === 'quiz') return renderShortQuiz(appEl, supabase);
+  if (routeParts[0] === 'reference') return renderReferenceBrowser(appEl, supabase);
   return renderDeckHome(appEl, supabase);
 }
 
@@ -125,6 +126,11 @@ async function renderDeckHome(appEl, supabase) {
         <p>5 random cards, quick self-graded recall check. Doesn't affect the review schedule.</p>
         <button class="start-btn" id="btn-quiz" ${cards.length === 0 ? 'disabled' : ''}>Start short quiz</button>
       </div>
+      <div class="block-card">
+        <h3>Reference decks</h3>
+        <p>Curated differential-diagnosis cards by system — browse freely, or add any to your own deck.</p>
+        <button class="start-btn" id="btn-reference">Browse reference decks</button>
+      </div>
     </div>
 
     <div class="section-label">Create a flashcard</div>
@@ -149,6 +155,9 @@ async function renderDeckHome(appEl, supabase) {
   });
   appEl.querySelector('#btn-quiz').addEventListener('click', () => {
     window.location.hash = '#/flashcards/quiz';
+  });
+  appEl.querySelector('#btn-reference').addEventListener('click', () => {
+    window.location.hash = '#/flashcards/reference';
   });
 
   appEl.querySelector('#create-form').addEventListener('submit', async (e) => {
@@ -196,6 +205,103 @@ function cardRow(card) {
         </div>
         <button data-delete-card="${card.id}" class="viewer-close" aria-label="Delete" style="flex:none;">&times;</button>
       </div>
+    </div>
+  `;
+}
+
+// ---------------------------------------------------------------------------
+// Reference decks: curated public cards (is_reference = true), browsable by
+// anyone, grouped by system tag. Read-only study (flip to see the back) —
+// these don't carry personal SM-2 state; "Add to my deck" copies a card into
+// the viewer's own deck (a fresh personal row) if they want it in their SRS
+// queue.
+// ---------------------------------------------------------------------------
+async function renderReferenceBrowser(appEl, supabase) {
+  appEl.innerHTML = `<div class="empty-state">Loading reference decks&hellip;</div>`;
+
+  const { data: cards, error } = await supabase
+    .from('flashcards')
+    .select('id, front, back, system_tag')
+    .eq('is_reference', true)
+    .order('system_tag', { ascending: true });
+
+  if (error) {
+    appEl.innerHTML = `<div class="empty-state">Could not load reference decks.</div>`;
+    console.error(error);
+    return;
+  }
+
+  if (!cards || cards.length === 0) {
+    appEl.innerHTML = `
+      <a class="back-link" href="#/flashcards">&larr; Flashcards</a>
+      <div class="empty-state">No reference cards yet.</div>
+    `;
+    return;
+  }
+
+  const bySystem = {};
+  cards.forEach((c) => {
+    const tag = c.system_tag || 'General';
+    (bySystem[tag] ??= []).push(c);
+  });
+
+  appEl.innerHTML = `
+    <a class="back-link" href="#/flashcards">&larr; Flashcards</a>
+    <h1 class="serif" style="font-size:26px;margin:0 0 4px;">Reference Decks</h1>
+    <p style="color:var(--ink-soft);font-size:13.5px;max-width:640px;margin-bottom:20px;">
+      Curated differential-diagnosis cards, organized by system. Click a card to flip it; "Add to my deck"
+      copies it into your own spaced-repetition queue.
+    </p>
+    ${Object.entries(bySystem)
+      .map(
+        ([tag, tagCards]) => `
+      <div class="section-label">${escapeHtml(tag)} &middot; ${tagCards.length} card${tagCards.length === 1 ? '' : 's'}</div>
+      <div class="block-list" style="margin-bottom:24px;">
+        ${tagCards.map((c) => referenceCardHtml(c)).join('')}
+      </div>
+    `
+      )
+      .join('')}
+  `;
+
+  appEl.querySelectorAll('[data-flip-card]').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('[data-add-card]')) return;
+      const back = card.querySelector('[data-card-back]');
+      back.style.display = back.style.display === 'none' ? 'block' : 'none';
+    });
+  });
+
+  appEl.querySelectorAll('[data-add-card]').forEach((btn) => {
+    btn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const ownerId = await getOwnerId(supabase);
+      const card = cards.find((c) => c.id === btn.dataset.addCard);
+      if (!card) return;
+      const { error: insErr } = await supabase.from('flashcards').insert({
+        owner_id: ownerId,
+        front: card.front,
+        back: card.back,
+        system_tag: card.system_tag,
+        is_reference: false,
+      });
+      if (insErr) {
+        console.error(insErr);
+        alert('Could not add this card to your deck.');
+        return;
+      }
+      btn.textContent = 'Added ✓';
+      btn.disabled = true;
+    });
+  });
+}
+
+function referenceCardHtml(card) {
+  return `
+    <div class="block-card" data-flip-card style="cursor:pointer;">
+      <p style="margin:0;font-weight:600;">${escapeHtml(card.front)}</p>
+      <div data-card-back style="display:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);white-space:pre-line;font-size:13px;">${escapeHtml(card.back)}</div>
+      <button data-add-card="${card.id}" class="start-btn" style="margin-top:12px;width:auto;padding:6px 12px;font-size:12px;">Add to my deck</button>
     </div>
   `;
 }

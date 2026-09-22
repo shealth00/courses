@@ -13,11 +13,12 @@ create extension if not exists "pgcrypto";
 -- ---------------------------------------------------------------------------
 create table if not exists flashcards (
   id                 uuid primary key default gen_random_uuid(),
-  owner_id           uuid not null,  -- anonymous browser identity (localStorage) or auth.uid() once signed in
+  owner_id           uuid,  -- anonymous browser identity (localStorage) or auth.uid(); null only for is_reference rows
   front              text not null,
   back               text not null,
   system_tag         text,
   source_question_id uuid references qbank_questions(id) on delete set null,
+  is_reference       boolean not null default false,  -- curated public card (DDx/signs-symptoms decks) vs. a personal card
   ease_factor        real not null default 2.5,
   interval_days      real not null default 0,
   repetitions        int not null default 0,
@@ -55,9 +56,21 @@ alter table flashcard_reviews enable row level security;
 -- are open, since RLS has no session to check a client-supplied owner_id
 -- against. The unguessable uuid stored in the client's localStorage is the
 -- practical access boundary, same as an anonymous qbank attempt id.
+-- Reference rows (is_reference = true, owner_id null) are curator-authored
+-- public content — readable by everyone, never client-writable (the check
+-- clause forbids ever inserting/updating a row as is_reference = true from
+-- the client; those are only written via direct DB access, same trust
+-- model as illustrations/qbank content).
 create policy "Manage own flashcards" on flashcards
-  for all using (auth.uid() is null or owner_id = auth.uid())
-  with check (auth.uid() is null or owner_id = auth.uid());
+  for all using (
+    is_reference = true
+    or auth.uid() is null
+    or owner_id = auth.uid()
+  )
+  with check (
+    is_reference = false
+    and (auth.uid() is null or owner_id = auth.uid())
+  );
 
 create policy "Manage own flashcard reviews" on flashcard_reviews
   for all using (
