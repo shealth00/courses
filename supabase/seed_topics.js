@@ -1240,6 +1240,387 @@ const CLINICAL_TOPICS = [
     ]),
   },
 
+  {
+    module_number: 2,
+    module_title: 'Immunology',
+    key_submodule: 'Primary Immunodeficiencies',
+    slug: 'selective-iga-deficiency',
+    title: 'Selective IgA Deficiency',
+    sort_order: 5,
+
+    hook_vignette:
+      'A 19-year-old college student is evaluated for recurrent sinus infections (four episodes in the past year) and two bouts of unexplained watery diarrhea that resolved with metronidazole; stool studies at the time grew Giardia lamblia. She reports that during a prior hospitalization for an appendectomy, she developed sudden facial flushing, wheezing, and hypotension partway through a blood transfusion, which was stopped immediately. She has otherwise been generally healthy.',
+
+    ddx_mapping:
+      'Selective IgA deficiency vs. common variable immunodeficiency (CVID): IgA deficiency shows an ISOLATED low/absent serum IgA with normal IgG and IgM, and most patients are asymptomatic; CVID shows low IgG plus low IgA and/or IgM (not isolated), with B cells present but failing to mature into plasma cells, and a higher rate of granulomatous disease, autoimmunity, and lymphoma.\n' +
+      'Selective IgA deficiency vs. X-linked agammaglobulinemia: XLA shows ALL immunoglobulin isotypes low with absent B cells, presents in infancy, and affects only males; IgA deficiency can present at any age and B cells are normal.\n' +
+      'Selective IgA deficiency vs. normal population variation: a single mildly low IgA value in an otherwise healthy adult without recurrent infections or a prior reaction history, with normal IgG/IgM, may simply reflect assay/individual variability rather than clinically significant deficiency — repeat testing and clinical correlation matter.\n' +
+      'Selective IgA deficiency vs. secondary IgA deficiency: certain medications (e.g., antiepileptics, sulfasalazine) and conditions can transiently lower IgA; a thorough medication history helps distinguish a secondary, potentially reversible cause from the primary (usually lifelong) disorder.',
+
+    diagnostic_evaluation:
+      'Quantitative serum immunoglobulins showing low or undetectable IgA with normal IgG and IgM, confirming an isolated pattern (distinguishing it from CVID).\n' +
+      'If gastrointestinal symptoms or malabsorption are present, use an IgG-based celiac serology panel (e.g., IgG-deamidated gliadin peptide) rather than the standard IgA-based tissue transglutaminase antibody test, which is unreliable in a patient who cannot make IgA in the first place.\n' +
+      'No B- or T-cell flow cytometry abnormality is expected — a normal lymphocyte flow panel helps distinguish this from XLA or SCID.\n' +
+      'In any patient with a history concerning for an anaphylactoid reaction to blood products or IVIG, test for anti-IgA antibodies before any future transfusion or immunoglobulin administration is planned.',
+
+    management:
+      'Most patients require no specific treatment beyond prompt management of infections as they arise; routine antibiotic prophylaxis is not indicated unless infections are frequent or severe.\n' +
+      'IVIG is NOT indicated for isolated IgA deficiency itself, and standard IVIG is relatively contraindicated in a patient with known anti-IgA antibodies and a prior reaction, since it still contains IgA and can trigger anaphylaxis; reserve immunoglobulin replacement for patients whose antibody deficiency broadens over time (evolving toward a CVID-like picture) with recurrent serious infection.\n' +
+      'For a patient with a history of a transfusion or IVIG reaction, use washed or IgA-depleted red blood cell products, and an IgA-depleted immunoglobulin preparation if IVIG ever becomes necessary.\n' +
+      'Screen for and monitor associated autoimmune disease (celiac disease, systemic lupus erythematosus, rheumatoid arthritis), which occur at increased frequency, and note that IgA deficiency can co-occur with CVID within the same family, so relatives with recurrent infections may warrant their own immunoglobulin screening.',
+
+    first_order_prompt:
+      'A patient\'s immunoglobulin panel shows an isolated, markedly low IgA with normal IgG and IgM. What is the diagnosis, and what precaution should be flagged before any future blood transfusion or IVIG administration?',
+    first_order_answer:
+      'Selective IgA deficiency; flag the chart for a risk of anaphylactic transfusion/IVIG reaction from anti-IgA antibodies, and use washed or IgA-depleted blood products (and an IgA-depleted immunoglobulin preparation if IVIG is ever needed) if any reaction history is present.',
+
+    second_order_vignette:
+      'A 26-year-old man with a history of recurrent sinusitis and one prior episode of anaphylaxis during a platelet transfusion presents for elective surgery expected to require blood transfusion. Preoperative immunoglobulin studies confirm undetectable IgA with normal IgG and IgM.',
+    second_order_question:
+      'Which of the following is the most appropriate step to reduce this patient\'s risk during the planned transfusion?',
+    second_order_choices: JSON.stringify([
+      {
+        label: 'A',
+        text: 'Administer standard packed red blood cells with premedication (diphenhydramine and acetaminophen) only',
+        correct: false,
+        explanation:
+          'Premedication reduces the risk of typical febrile/allergic transfusion reactions but does not address anti-IgA-antibody-mediated anaphylaxis, which requires an IgA-free product rather than premedication alone.',
+      },
+      {
+        label: 'B',
+        text: 'Use washed or IgA-depleted blood products for the transfusion',
+        correct: true,
+        explanation:
+          'Correct. Removing donor plasma IgA (by washing cellular components or using IgA-depleted products) eliminates the antigen that anti-IgA antibodies react against, preventing anaphylaxis in a sensitized patient.',
+      },
+      {
+        label: 'C',
+        text: 'Administer prophylactic standard IVIG before the transfusion',
+        correct: false,
+        explanation:
+          'Standard IVIG itself contains IgA and could trigger the same anaphylactic reaction in a patient with anti-IgA antibodies; it does not prevent a transfusion reaction here.',
+      },
+      {
+        label: 'D',
+        text: 'Proceed with a standard transfusion, since the prior reaction was most likely unrelated',
+        correct: false,
+        explanation:
+          'A clear reaction history in a patient now confirmed to have selective IgA deficiency is a well-established risk factor that should not be dismissed.',
+      },
+      {
+        label: 'E',
+        text: 'Delay surgery indefinitely until anti-IgA antibody titers become undetectable',
+        correct: false,
+        explanation:
+          'Anti-IgA antibodies do not reliably disappear over time, and delaying necessary surgery indefinitely is impractical; using appropriately prepared (washed/IgA-depleted) products allows safe, timely transfusion instead.',
+      },
+    ]),
+    second_order_answer: 'B',
+    second_order_explanation:
+      'A patient with selective IgA deficiency and a prior anaphylactoid reaction to a blood product most likely has anti-IgA antibodies, which react against donor IgA present in standard blood components and immunoglobulin preparations. The appropriate mitigation is to remove that antigen from the product itself — washed red cells/platelets or IgA-depleted preparations — rather than relying on premedication, avoiding transfusion altogether, or using standard IVIG (which contains the same triggering antigen).',
+
+    flowchart_title: 'Evaluating IgA Deficiency and Transfusion Risk',
+    flowchart: JSON.stringify([
+      {
+        node: 'Recurrent sinopulmonary/GI infections OR an unexplained anaphylactoid transfusion reaction',
+        branches: [
+          {
+            label: 'Isolated low IgA, normal IgG/IgM',
+            next: 'Selective IgA deficiency',
+          },
+          {
+            label: 'Low IgG plus low IgA and/or IgM, B cells present',
+            next: 'Common variable immunodeficiency',
+          },
+          {
+            label: 'All isotypes low, absent B cells, infancy onset',
+            next: 'X-linked agammaglobulinemia',
+          },
+        ],
+      },
+      {
+        node: 'Confirmed selective IgA deficiency — assess reaction history',
+        branches: [
+          {
+            label: 'History of anaphylaxis with a blood product or IVIG',
+            next: 'Anti-IgA antibodies likely — use washed/IgA-depleted products; avoid standard IVIG',
+          },
+          {
+            label: 'No prior reaction, asymptomatic',
+            next: 'No specific treatment needed; routine blood products acceptable',
+          },
+        ],
+      },
+      {
+        node: 'Associated conditions to screen for',
+        branches: [
+          {
+            label: 'Gastrointestinal symptoms',
+            next: 'Use IgG-based celiac serology, not the standard IgA-based test',
+          },
+          {
+            label: 'New autoimmune symptoms',
+            next: 'Evaluate for SLE/other autoimmune disease; monitor for evolution toward a CVID-like picture',
+          },
+        ],
+      },
+    ]),
+  },
+
+  {
+    module_number: 2,
+    module_title: 'Immunology',
+    key_submodule: 'Phagocyte Disorders',
+    slug: 'chediak-higashi-syndrome',
+    title: 'Chediak-Higashi Syndrome',
+    sort_order: 6,
+
+    hook_vignette:
+      'A 2-year-old boy is brought in for evaluation of recurrent skin abscesses and two episodes of pneumonia since infancy. His parents note that his hair has an unusual silvery-blond sheen despite both parents having dark hair, and his skin is lighter than his siblings\'. On examination he has mild gait unsteadiness and decreased sensation in his feet. A complete blood count shows mild thrombocytopenia, and a peripheral smear is ordered.',
+
+    ddx_mapping:
+      'Chediak-Higashi syndrome vs. Griscelli syndrome: both cause partial albinism with possible immune dysfunction, but Chediak-Higashi shows giant cytoplasmic granules in leukocytes on peripheral smear (essentially pathognomonic), from a LYST mutation impairing phagolysosome fusion, while Griscelli syndrome (RAB27A or MYO5A mutations affecting melanosome/lytic granule transport) does NOT show giant granules.\n' +
+      'Chediak-Higashi syndrome vs. Hermansky-Pudlak syndrome: Hermansky-Pudlak causes albinism plus a bleeding tendency (platelet storage pool defect) and pulmonary fibrosis, but no giant granules and infection is not a prominent feature, unlike Chediak-Higashi.\n' +
+      'Chediak-Higashi syndrome vs. chronic granulomatous disease: CGD causes recurrent infection with catalase-positive organisms and granuloma formation from a NADPH oxidase defect (confirmed by a negative NBT/DHR test), but no albinism and no giant granules.\n' +
+      'Chediak-Higashi syndrome vs. leukocyte adhesion deficiency: LAD causes recurrent infection WITHOUT pus formation (impaired neutrophil adhesion/extravasation) and delayed umbilical cord separation, with normal pigmentation, distinct from the albinism and giant-granule findings here.',
+
+    diagnostic_evaluation:
+      'Peripheral blood smear showing giant cytoplasmic granules in neutrophils, lymphocytes, and other granule-containing cells — the key diagnostic clue.\n' +
+      'Genetic testing confirming a mutation in LYST (lysosomal trafficking regulator gene).\n' +
+      'Hair shaft microscopy showing clumped, irregular melanin distribution, distinct from the fine, evenly distributed pigment of normal hair or the pattern seen in Griscelli syndrome.\n' +
+      'CBC often shows mild thrombocytopenia and variable neutropenia; monitor closely for the accelerated (lymphoproliferative/hemophagocytic) phase — fever, hepatosplenomegaly, pancytopenia, and markedly elevated ferritin — which is life-threatening, can occur at any point in childhood, and is often triggered by a viral infection (commonly EBV).',
+
+    management:
+      'Aggressive, prompt treatment of bacterial infections as they arise.\n' +
+      'The only curative therapy for the underlying immune defect is allogeneic hematopoietic stem cell transplantation, ideally performed before the accelerated phase develops; HSCT corrects the hematologic/immunologic manifestations but does not reverse the neurologic or pigmentary changes, which reflect non-hematopoietic cell involvement as well.\n' +
+      'If the accelerated (hemophagocytic lymphohistiocytosis-like) phase develops, treat per HLH-directed protocols (e.g., etoposide-based chemo-immunotherapy with corticosteroids) as a bridge to transplant.\n' +
+      'Genetic counseling for the family, given autosomal recessive inheritance (25% recurrence risk for future pregnancies).',
+
+    first_order_prompt:
+      'What peripheral blood smear finding is essentially pathognomonic for Chediak-Higashi syndrome, and what gene is mutated?',
+    first_order_answer:
+      'Giant cytoplasmic granules within neutrophils and other leukocytes; caused by mutation in LYST (lysosomal trafficking regulator gene), which impairs microtubule-dependent phagolysosome fusion.',
+
+    second_order_vignette:
+      'A 4-year-old girl with known Chediak-Higashi syndrome, previously stable on prophylactic antibiotics, presents with two weeks of high fever and is found to have hepatosplenomegaly. Labs reveal pancytopenia with a ferritin of 15,000 ng/mL, and a bone marrow biopsy shows hemophagocytosis.',
+    second_order_question:
+      'Which of the following best describes this patient\'s current presentation and the most appropriate next step?',
+    second_order_choices: JSON.stringify([
+      {
+        label: 'A',
+        text: 'A typical pyogenic bacterial infection; begin broader-spectrum antibiotics alone',
+        correct: false,
+        explanation:
+          'The combination of hepatosplenomegaly, pancytopenia, extreme hyperferritinemia, and hemophagocytosis on marrow biopsy indicates the accelerated/HLH-like phase of the disease, not a routine bacterial infection.',
+      },
+      {
+        label: 'B',
+        text: 'The accelerated (hemophagocytic lymphohistiocytosis-like) phase of Chediak-Higashi syndrome; initiate HLH-directed therapy (e.g., etoposide-based, per HLH protocol) as a bridge to transplant',
+        correct: true,
+        explanation:
+          'Correct. Fever, hepatosplenomegaly, pancytopenia, markedly elevated ferritin, and hemophagocytosis together define the accelerated phase, a life-threatening complication of Chediak-Higashi syndrome requiring urgent HLH-directed therapy and expedited transplant planning.',
+      },
+      {
+        label: 'C',
+        text: 'Expected disease progression requiring only supportive care and observation',
+        correct: false,
+        explanation:
+          'The untreated accelerated phase is rapidly fatal; active HLH-directed therapy, not observation alone, is required.',
+      },
+      {
+        label: 'D',
+        text: 'A transfusion reaction related to platelet dense granule dysfunction',
+        correct: false,
+        explanation:
+          'This presentation (fever, hepatosplenomegaly, pancytopenia, hemophagocytosis) is not a transfusion reaction and is unrelated to any transfusion event in this vignette.',
+      },
+      {
+        label: 'E',
+        text: 'Relapse of an underlying leukemia requiring induction chemotherapy',
+        correct: false,
+        explanation:
+          'No primary malignancy is described; this presentation is the HLH-like accelerated phase specific to Chediak-Higashi syndrome, treated with HLH-directed therapy rather than leukemia induction chemotherapy.',
+      },
+    ]),
+    second_order_answer: 'B',
+    second_order_explanation:
+      'In a child with known Chediak-Higashi syndrome, the new onset of fever, hepatosplenomegaly, pancytopenia, markedly elevated ferritin, and hemophagocytosis on bone marrow biopsy defines the accelerated phase — an HLH-like lymphoproliferative complication that is rapidly fatal without treatment. Management requires urgent HLH-directed chemo-immunotherapy (e.g., etoposide and corticosteroids) to control the hyperinflammatory state, serving as a bridge to the only potentially curative therapy, allogeneic hematopoietic stem cell transplantation.',
+
+    flowchart_title: 'Recognizing and Managing Chediak-Higashi Syndrome',
+    flowchart: JSON.stringify([
+      {
+        node: 'Partial albinism plus recurrent pyogenic infections',
+        branches: [
+          {
+            label: 'Giant granules on peripheral smear',
+            next: 'Chediak-Higashi syndrome — confirm LYST mutation',
+          },
+          {
+            label: 'No giant granules; RAB27A/MYO5A mutation',
+            next: 'Griscelli syndrome',
+          },
+          {
+            label: 'Albinism plus bleeding and pulmonary fibrosis, no giant granules',
+            next: 'Hermansky-Pudlak syndrome',
+          },
+        ],
+      },
+      {
+        node: 'Confirmed Chediak-Higashi syndrome — assess for the accelerated phase',
+        branches: [
+          {
+            label: 'Fever, hepatosplenomegaly, pancytopenia, very high ferritin, hemophagocytosis on marrow',
+            next: 'Accelerated (HLH-like) phase — start HLH-directed therapy urgently',
+          },
+          {
+            label: 'Stable, no HLH features',
+            next: 'Continue infection prophylaxis; plan HSCT before an accelerated phase can develop',
+          },
+        ],
+      },
+      {
+        node: 'Definitive therapy',
+        branches: [
+          {
+            label: 'HSCT performed',
+            next: 'Corrects the hematologic/immune defect (neurologic and pigmentary changes persist)',
+          },
+          {
+            label: 'HSCT not yet performed or unavailable',
+            next: 'High risk of a fatal accelerated phase; aggressive infection control and close monitoring',
+          },
+        ],
+      },
+    ]),
+  },
+
+  {
+    module_number: 2,
+    module_title: 'Immunology',
+    key_submodule: 'Primary Immunodeficiencies',
+    slug: 'wiskott-aldrich-syndrome',
+    title: 'Wiskott-Aldrich Syndrome',
+    sort_order: 7,
+
+    hook_vignette:
+      'A 10-month-old boy is brought in for evaluation of a diffuse eczematous rash present since 6 weeks of age, several episodes of bloody stools, and easy bruising with prolonged bleeding after a heel-stick. He has also had two episodes of otitis media. A CBC reveals a platelet count of 38,000/mm3, and the peripheral smear is notable for unusually small platelets.',
+
+    ddx_mapping:
+      'Wiskott-Aldrich syndrome vs. immune thrombocytopenic purpura (ITP): Wiskott-Aldrich shows the classic triad of eczema, thrombocytopenia with SMALL platelets (low mean platelet volume), and recurrent infections, in a boy (X-linked recessive); ITP causes isolated thrombocytopenia with NORMAL-TO-LARGE platelets, no eczema, and no recurrent-infection pattern, typically following a viral illness in an otherwise well toddler.\n' +
+      'Wiskott-Aldrich syndrome vs. eczema with secondary skin infection: eczema and staphylococcal skin infection are common in the general pediatric population, but a normal platelet count and the absence of bloody stools or a systemic infection pattern argue against Wiskott-Aldrich.\n' +
+      'Wiskott-Aldrich syndrome vs. hyper-IgM syndrome or other combined immunodeficiencies: recurrent infections are seen in both, but hyper-IgM syndrome is distinguished by its immunoglobulin pattern (elevated IgM with low IgG/IgA/IgE) rather than thrombocytopenia with small platelets and eczema.\n' +
+      'Wiskott-Aldrich syndrome vs. X-linked agammaglobulinemia: XLA causes panhypogammaglobulinemia with absent B cells but no thrombocytopenia or eczema, a distinct laboratory and clinical picture from Wiskott-Aldrich.',
+
+    diagnostic_evaluation:
+      'CBC with peripheral smear showing thrombocytopenia with characteristically SMALL platelets (low mean platelet volume) — the key distinguishing laboratory clue versus ITP.\n' +
+      'Immunoglobulin panel often shows low IgM, normal-to-elevated IgA, and elevated IgE, with a poor antibody response to polysaccharide (e.g., pneumococcal) vaccine antigens despite a normal response to protein antigens.\n' +
+      'Flow cytometry can show reduced or absent WASp (WAS protein) expression in lymphocytes.\n' +
+      'Genetic testing confirms a mutation in the WAS gene (Xp11.23); family history often reveals affected maternal male relatives, consistent with X-linked recessive inheritance.',
+
+    management:
+      'Supportive care for eczema (topical emollients and corticosteroids) and for bleeding episodes (platelet transfusion when clinically significant).\n' +
+      'Prompt antibiotic treatment of infections, with consideration of prophylactic antibiotics or IVIG for patients with frequent or severe recurrent infection.\n' +
+      'Splenectomy can improve the thrombocytopenia but increases the risk of overwhelming infection with encapsulated organisms, so it is used selectively and requires lifelong antibiotic prophylaxis if performed.\n' +
+      'The only curative therapy is allogeneic hematopoietic stem cell transplantation, ideally from a matched sibling donor early in life, which corrects the hematologic and immunologic defects; without transplant, patients remain at long-term risk for severe bleeding, infection, autoimmune disease, and lymphoma.',
+
+    first_order_prompt:
+      'What three findings make up the classic triad of Wiskott-Aldrich syndrome, and what is the key laboratory clue that distinguishes its thrombocytopenia from ITP?',
+    first_order_answer:
+      'Eczema, thrombocytopenia, and recurrent infections; the key distinguishing laboratory clue is small platelets (low mean platelet volume) on peripheral smear, versus the normal-to-large platelets typically seen in ITP.',
+
+    second_order_vignette:
+      'A 14-month-old boy with a history of eczema and recurrent otitis media is found to have a platelet count of 42,000/mm3 with small platelets on smear. Genetic testing confirms a WAS gene mutation. His parents ask about long-term treatment options.',
+    second_order_question:
+      'Which of the following is the only currently curative therapy for this condition?',
+    second_order_choices: JSON.stringify([
+      {
+        label: 'A',
+        text: 'Lifelong IVIG replacement therapy',
+        correct: false,
+        explanation:
+          'IVIG can reduce infection frequency by supplying passive antibody, but it does not correct the underlying platelet or T-cell defect and is supportive rather than curative.',
+      },
+      {
+        label: 'B',
+        text: 'Splenectomy',
+        correct: false,
+        explanation:
+          'Splenectomy can improve the platelet count but increases the risk of overwhelming infection and does not address the underlying immunodeficiency; it is not curative.',
+      },
+      {
+        label: 'C',
+        text: 'Allogeneic hematopoietic stem cell transplantation from a matched donor',
+        correct: true,
+        explanation:
+          'Correct. Replacing the defective hematopoietic stem cell compartment with donor cells is the only therapy that corrects both the immunologic and hematologic defects of Wiskott-Aldrich syndrome, ideally performed early before complications accrue.',
+      },
+      {
+        label: 'D',
+        text: 'Chronic prophylactic antibiotics alone',
+        correct: false,
+        explanation:
+          'Reduces the frequency and severity of infections but does not correct the underlying disease process.',
+      },
+      {
+        label: 'E',
+        text: 'Regular platelet transfusions',
+        correct: false,
+        explanation:
+          'Addresses bleeding episodes acutely but is not a long-term or curative strategy, and carries a risk of alloimmunization with repeated use.',
+      },
+    ]),
+    second_order_answer: 'C',
+    second_order_explanation:
+      'Wiskott-Aldrich syndrome results from a defect intrinsic to hematopoietic stem cells and their progeny (WASp is required for actin cytoskeletal reorganization across platelets, lymphocytes, and other blood cell lineages), so only replacing that stem cell compartment — via allogeneic hematopoietic stem cell transplantation from a matched donor — can correct the underlying disease. All other options manage individual complications (infection, bleeding) without addressing the root cause, so patients who do not undergo transplant remain at cumulative long-term risk for severe bleeding, infection, autoimmune disease, and lymphoma.',
+
+    flowchart_title: 'Working Up Eczema, Thrombocytopenia, and Infection in an Infant Boy',
+    flowchart: JSON.stringify([
+      {
+        node: 'Eczema plus thrombocytopenia plus recurrent infections in an infant boy',
+        branches: [
+          {
+            label: 'Platelets small (low MPV), X-linked family history',
+            next: 'Wiskott-Aldrich syndrome — confirm WAS gene mutation',
+          },
+          {
+            label: 'Platelets normal/large, no eczema or infection pattern',
+            next: 'Consider ITP instead',
+          },
+          {
+            label: 'No thrombocytopenia, isolated eczema plus skin infection',
+            next: 'Atopic dermatitis with secondary infection',
+          },
+        ],
+      },
+      {
+        node: 'Confirmed Wiskott-Aldrich syndrome — assess donor availability',
+        branches: [
+          {
+            label: 'Matched sibling or unrelated donor available',
+            next: 'Proceed to allogeneic HSCT early, before complications accrue',
+          },
+          {
+            label: 'No donor yet identified, or mild disease',
+            next: 'Supportive care: antibiotic prophylaxis, IVIG, manage bleeding/eczema; continue donor search',
+          },
+        ],
+      },
+      {
+        node: 'Long-term risks if untreated',
+        branches: [
+          {
+            label: 'Severe bleeding episode',
+            next: 'Platelet transfusion; consider splenectomy with lifelong antibiotic prophylaxis if recurrent',
+          },
+          {
+            label: 'Development of autoimmune disease or lymphoma',
+            next: 'Manage per specific complication; reinforces the importance of early transplant',
+          },
+        ],
+      },
+    ]),
+  },
+
   // ===========================================================================
   // Module 4 — Pathology
   // ===========================================================================

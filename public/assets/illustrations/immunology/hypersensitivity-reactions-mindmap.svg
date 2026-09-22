@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="1000" height="800" fill="#faf8f4"/>
+  <text x="500" y="30" text-anchor="middle" font-size="21" font-weight="700" fill="#1c2430">Hypersensitivity Reactions, Types I&#8211;IV</text>
+  <text x="500" y="49" text-anchor="middle" font-size="12" fill="#5b6472">Gell-Coombs classification: mechanism and timing branch to classic examples</text>
+
+  <!-- ============================== CONNECTORS ============================== -->
+  <g stroke="#b5472a" stroke-width="2.2" fill="none"><line x1="500" y1="400" x2="500" y2="210"/></g>
+  <g stroke="#3b5f8a" stroke-width="2.2" fill="none"><line x1="500" y1="400" x2="690" y2="400"/></g>
+  <g stroke="#946a2b" stroke-width="2.2" fill="none"><line x1="500" y1="400" x2="500" y2="590"/></g>
+  <g stroke="#5b6472" stroke-width="2.2" fill="none"><line x1="500" y1="400" x2="310" y2="400"/></g>
+
+  <!-- Type I branch -> leaves -->
+  <g stroke="#b5472a" stroke-width="1.3" opacity="0.7" fill="none">
+    <line x1="500" y1="210" x2="643" y2="92"/>
+    <line x1="500" y1="210" x2="356" y2="92"/>
+  </g>
+  <!-- Type II branch -> leaves -->
+  <g stroke="#3b5f8a" stroke-width="1.3" opacity="0.7" fill="none">
+    <line x1="690" y1="400" x2="808" y2="256"/>
+    <line x1="690" y1="400" x2="808" y2="544"/>
+  </g>
+  <!-- Type III branch -> leaves -->
+  <g stroke="#946a2b" stroke-width="1.3" opacity="0.7" fill="none">
+    <line x1="500" y1="590" x2="356" y2="708"/>
+    <line x1="500" y1="590" x2="644" y2="708"/>
+  </g>
+  <!-- Type IV branch -> leaves -->
+  <g stroke="#5b6472" stroke-width="1.3" opacity="0.7" fill="none">
+    <line x1="310" y1="400" x2="192" y2="256"/>
+    <line x1="310" y1="400" x2="192" y2="544"/>
+  </g>
+
+  <!-- ============================== CENTER HUB ============================== -->
+  <circle cx="500" cy="400" r="66" fill="#1c2430"/>
+  <circle cx="500" cy="400" r="60" fill="none" stroke="#faf8f4" stroke-width="1.5" opacity="0.5"/>
+  <text x="500" y="396" text-anchor="middle" font-size="14.5" font-weight="700" fill="#faf8f4">Hypersensitivity</text>
+  <text x="500" y="413" text-anchor="middle" font-size="14.5" font-weight="700" fill="#faf8f4">Reactions</text>
+
+  <!-- ============================== BRANCH NODES ============================== -->
+  <rect x="410" y="180" width="180" height="50" rx="10" fill="#b5472a"/>
+  <text x="500" y="201" text-anchor="middle" font-size="12.5" font-weight="700" fill="#faf8f4">Type I</text>
+  <text x="500" y="217" text-anchor="middle" font-size="10.5" fill="#faf8f4">Immediate (IgE)</text>
+
+  <rect x="600" y="375" width="180" height="50" rx="10" fill="#3b5f8a"/>
+  <text x="690" y="396" text-anchor="middle" font-size="12.5" font-weight="700" fill="#faf8f4">Type II</text>
+  <text x="690" y="412" text-anchor="middle" font-size="10.5" fill="#faf8f4">Cytotoxic (Ab)</text>
+
+  <rect x="410" y="565" width="180" height="50" rx="10" fill="#946a2b"/>
+  <text x="500" y="586" text-anchor="middle" font-size="12.5" font-weight="700" fill="#faf8f4">Type III</text>
+  <text x="500" y="602" text-anchor="middle" font-size="10.5" fill="#faf8f4">Immune Complex</text>
+
+  <rect x="220" y="375" width="180" height="50" rx="10" fill="#5b6472"/>
+  <text x="310" y="396" text-anchor="middle" font-size="12.5" font-weight="700" fill="#faf8f4">Type IV</text>
+  <text x="310" y="412" text-anchor="middle" font-size="10.5" fill="#faf8f4">Delayed (T-cell)</text>
+
+  <!-- ============================== LEAVES: Type I ============================== -->
+  <g>
+    <rect x="551" y="20" width="184" height="72" rx="8" fill="#ffffff" stroke="#b5472a" stroke-width="1.4"/>
+    <text x="643" y="40" text-anchor="middle" font-size="11.5" font-weight="700" fill="#b5472a">Mechanism</text>
+    <text x="643" y="57" text-anchor="middle" font-size="9.5" fill="#1c2430">Preformed IgE cross-links</text>
+    <text x="643" y="70" text-anchor="middle" font-size="9.5" fill="#1c2430">Fc&#949;RI on mast cells/basophils</text>
+    <text x="643" y="83" text-anchor="middle" font-size="9.5" fill="#1c2430">&#8594; degranulation, minutes</text>
+  </g>
+  <g>
+    <rect x="264" y="20" width="184" height="72" rx="8" fill="#ffffff" stroke="#b5472a" stroke-width="1.4"/>
+    <text x="356" y="40" text-anchor="middle" font-size="11.5" font-weight="700" fill="#b5472a">Classic Examples</text>
+    <text x="356" y="57" text-anchor="middle" font-size="9.5" fill="#1c2430">Anaphylaxis, urticaria,</text>
+    <text x="356" y="70" text-anchor="middle" font-size="9.5" fill="#1c2430">allergic rhinitis/asthma,</text>
+    <text x="356" y="83" text-anchor="middle" font-size="9.5" fill="#1c2430">atopic dermatitis</text>
+  </g>
+
+  <!-- ============================== LEAVES: Type II ============================== -->
+  <g>
+    <rect x="716" y="184" width="184" height="72" rx="8" fill="#ffffff" stroke="#3b5f8a" stroke-width="1.4"/>
+    <text x="808" y="204" text-anchor="middle" font-size="11.5" font-weight="700" fill="#3b5f8a">Mechanism</text>
+    <text x="808" y="221" text-anchor="middle" font-size="9.5" fill="#1c2430">IgG/IgM bind fixed cell-</text>
+    <text x="808" y="234" text-anchor="middle" font-size="9.5" fill="#1c2430">surface/matrix antigen &#8594;</text>
+    <text x="808" y="247" text-anchor="middle" font-size="9.5" fill="#1c2430">complement/ADCC lysis</text>
+  </g>
+  <g>
+    <rect x="716" y="472" width="184" height="72" rx="8" fill="#ffffff" stroke="#3b5f8a" stroke-width="1.4"/>
+    <text x="808" y="492" text-anchor="middle" font-size="11.5" font-weight="700" fill="#3b5f8a">Classic Examples</text>
+    <text x="808" y="509" text-anchor="middle" font-size="9.5" fill="#1c2430">AHTR, Goodpasture,</text>
+    <text x="808" y="522" text-anchor="middle" font-size="9.5" fill="#1c2430">myasthenia gravis,</text>
+    <text x="808" y="535" text-anchor="middle" font-size="9.5" fill="#1c2430">Graves disease</text>
+  </g>
+
+  <!-- ============================== LEAVES: Type III ============================== -->
+  <g>
+    <rect x="264" y="672" width="184" height="72" rx="8" fill="#ffffff" stroke="#946a2b" stroke-width="1.4"/>
+    <text x="356" y="692" text-anchor="middle" font-size="11.5" font-weight="700" fill="#946a2b">Mechanism</text>
+    <text x="356" y="709" text-anchor="middle" font-size="9.5" fill="#1c2430">Circulating Ag-Ab complexes</text>
+    <text x="356" y="722" text-anchor="middle" font-size="9.5" fill="#1c2430">deposit in tissue &#8594;</text>
+    <text x="356" y="735" text-anchor="middle" font-size="9.5" fill="#1c2430">complement, neutrophils</text>
+  </g>
+  <g>
+    <rect x="552" y="672" width="184" height="72" rx="8" fill="#ffffff" stroke="#946a2b" stroke-width="1.4"/>
+    <text x="644" y="692" text-anchor="middle" font-size="11.5" font-weight="700" fill="#946a2b">Classic Examples</text>
+    <text x="644" y="709" text-anchor="middle" font-size="9.5" fill="#1c2430">SLE, serum sickness,</text>
+    <text x="644" y="722" text-anchor="middle" font-size="9.5" fill="#1c2430">poststreptococcal GN,</text>
+    <text x="644" y="735" text-anchor="middle" font-size="9.5" fill="#1c2430">Arthus reaction</text>
+  </g>
+
+  <!-- ============================== LEAVES: Type IV ============================== -->
+  <g>
+    <rect x="100" y="184" width="184" height="72" rx="8" fill="#ffffff" stroke="#5b6472" stroke-width="1.4"/>
+    <text x="192" y="204" text-anchor="middle" font-size="11.5" font-weight="700" fill="#5b6472">Mechanism</text>
+    <text x="192" y="221" text-anchor="middle" font-size="9.5" fill="#1c2430">Sensitized Th1/CTLs release</text>
+    <text x="192" y="234" text-anchor="middle" font-size="9.5" fill="#1c2430">cytokines or direct cytotoxicity</text>
+    <text x="192" y="247" text-anchor="middle" font-size="9.5" fill="#1c2430">24&#8211;72 hours, no antibody</text>
+  </g>
+  <g>
+    <rect x="100" y="472" width="184" height="72" rx="8" fill="#ffffff" stroke="#5b6472" stroke-width="1.4"/>
+    <text x="192" y="492" text-anchor="middle" font-size="11.5" font-weight="700" fill="#5b6472">Classic Examples</text>
+    <text x="192" y="509" text-anchor="middle" font-size="9.5" fill="#1c2430">PPD/TB skin test,</text>
+    <text x="192" y="522" text-anchor="middle" font-size="9.5" fill="#1c2430">contact dermatitis,</text>
+    <text x="192" y="535" text-anchor="middle" font-size="9.5" fill="#1c2430">acute transplant rejection</text>
+  </g>
+</svg>
