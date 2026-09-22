@@ -41,6 +41,19 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
+// Resolve a stored path to a servable URL. A path starting with "/" or a
+// protocol is a real asset shipped with the app itself (under public/assets/)
+// and used as-is; anything else is treated as a Supabase Storage bucket
+// path, resolved the old way. This lets illustrations rows point at either
+// source with no schema change — most of the real content ships as static
+// files in the repo (see public/assets/), while the Storage buckets remain
+// available for anyone who prefers uploading through Supabase directly.
+function resolveAssetUrl(path, bucket, supabase) {
+  if (!path) return null;
+  if (path.startsWith('/') || /^https?:\/\//.test(path)) return path;
+  return supabase.storage.from(bucket).getPublicUrl(path).data.publicUrl;
+}
+
 // ---------------------------------------------------------------------------
 // Router
 // ---------------------------------------------------------------------------
@@ -180,8 +193,8 @@ async function renderModule(moduleSlug) {
 
   const withUrls = (illustrations || []).map((row) => ({
     ...row,
-    image_url: row.storage_path ? supabase.storage.from('illustrations').getPublicUrl(row.storage_path).data.publicUrl : null,
-    model_url: row.model_path ? supabase.storage.from('models-3d').getPublicUrl(row.model_path).data.publicUrl : null,
+    image_url: resolveAssetUrl(row.storage_path, 'illustrations', supabase),
+    model_url: resolveAssetUrl(row.model_path, 'models-3d', supabase),
   }));
 
   const twoD = withUrls.filter((p) => p.kind === '2d');
