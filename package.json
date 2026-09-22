@@ -7,14 +7,11 @@
     "start": "node server.js",
     "seed": "node supabase/seed.js"
   },
-  ""dependencies": {
-  "@supabase/supabase-js": "2.55.0",
-  "@supabase/storage-js": "2.78.0",
-  "express": "^4.19.2",
-  "dotenv": "^16.4.5"
-},
-  "overrides": {
-    "@supabase/storage-js": "2.78.0"
+  "dependencies": {
+    "@supabase/supabase-js": "2.55.0",
+    "@supabase/storage-js": "2.78.0",
+    "express": "^4.19.2",
+    "dotenv": "^16.4.5"
   },
   "engines": {
     "node": ">=18"
