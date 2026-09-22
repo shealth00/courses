@@ -4849,6 +4849,629 @@ const CLINICAL_TOPICS = [
       ]},
     ]),
   },
+  // ===========================================================================
+  // Module 12 — Neurology and Special Senses
+  // ===========================================================================
+  {
+    module_number: 12,
+    module_title: 'Neurology and Special Senses',
+    key_submodule: 'Headache',
+    slug: 'subarachnoid-hemorrhage',
+    title: 'Subarachnoid Hemorrhage',
+    sort_order: 1,
+
+    hook_vignette: `A 52-year-old woman with poorly controlled hypertension is gardening when she suddenly clutches her head and collapses, describing the worst headache of her life reaching maximum intensity within seconds. She is nauseated, photophobic, and has a stiff neck on exam; there is no focal weakness, but she is somnolent and difficult to arouse.`,
+
+    ddx_mapping: `Thunderclap headache (peak intensity in under a minute) is the discriminating feature that separates subarachnoid hemorrhage from nearly every headache mimic.
+Migraine: builds over 20-60 minutes, unilateral/throbbing, aura or photophobia present, but never truly instantaneous; the patient usually has a prior personal history of similar (less severe) headaches.
+Bacterial meningitis: fever, neck stiffness, and headache are shared with SAH, but onset is over hours and photophobia/nuchal rigidity develop alongside progressive fever rather than exploding at a single moment.
+Cerebral venous sinus thrombosis: subacute headache worsening over days, often with papilledema and seizures, in a hypercoagulable patient (postpartum, oral contraceptives) — not an instantaneous peak.
+Reversible cerebral vasoconstriction syndrome: recurrent thunderclap headaches over days to weeks, often triggered by Valsalva or vasoactive substances, with normal initial CT — distinguished from SAH by angiography showing reversible "string of beads" vasospasm without blood on initial imaging.
+Primary (benign) thunderclap headache: a diagnosis of exclusion only after a negative CT and LP have ruled out aneurysmal rupture.`,
+
+    diagnostic_evaluation: `Noncontrast head CT within 6 hours of symptom onset is more than 95% sensitive for subarachnoid blood and is the first step; it may show hyperdensity in the basal cisterns, sylvian fissures, or interhemispheric fissure.
+If CT is negative but clinical suspicion remains (especially beyond 6 hours), lumbar puncture is mandatory: look for xanthochromia (yellow discoloration of centrifuged CSF from bilirubin breakdown), which distinguishes true SAH from a traumatic tap — a traumatic tap shows decreasing red cell counts between tubes 1 and 4, while true SAH does not clear.
+Once SAH is confirmed, CT angiography (or catheter angiography) is obtained to localize a ruptured aneurysm, most commonly at the anterior communicating artery, before definitive treatment.
+ECG and troponin are checked because SAH can trigger a catecholamine surge producing diffuse T-wave inversions ("cerebral T waves") and neurogenic stunned myocardium, which can be mistaken for an acute coronary syndrome.`,
+
+    management: `Secure the airway/circulation and control blood pressure (typically keeping systolic pressure below roughly 160 mmHg) to reduce rebleeding risk before the aneurysm is secured.
+Nimodipine is started for every SAH patient regardless of aneurysm location — it reduces delayed cerebral ischemia from vasospasm (a mortality benefit) even though it does not meaningfully lower blood pressure at the doses used.
+Definitive treatment of the ruptured aneurysm is either endovascular coiling or surgical clipping, generally performed within 24-72 hours to prevent rebleeding, with the choice driven by aneurysm location/morphology and center expertise.
+Patients are monitored in a neuro-ICU for vasospasm (via serial transcranial Dopplers and neuro checks), typically days 3-14 after the bleed, and for hydrocephalus (which may need an external ventricular drain) from blood obstructing CSF outflow.`,
+
+    first_order_prompt: `What CSF finding distinguishes true subarachnoid hemorrhage from a traumatic lumbar puncture?`,
+    first_order_answer: `Xanthochromia (yellow discoloration from RBC breakdown products) — true SAH does not show a decreasing red cell count between the first and last collection tubes, unlike a traumatic tap.`,
+
+    second_order_vignette: `A 61-year-old man with a history of autosomal dominant polycystic kidney disease presents to the emergency department 2 hours after the sudden onset of the worst headache of his life while lifting weights. He is awake but complains of neck stiffness and vomits once in the ED. Noncontrast CT of the head is negative for hemorrhage.`,
+    second_order_question: `Which of the following is the most appropriate next step in management?`,
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'Reassure the patient and discharge with outpatient follow-up', correct: false, explanation: `A negative CT within 6 hours markedly lowers but does not eliminate the probability of SAH, especially with this presentation and ADPKD's association with berry aneurysms; discharge without further workup risks missing a rupture.` },
+      { label: 'B', text: 'Perform a lumbar puncture to assess for xanthochromia', correct: true, explanation: `With a compelling thunderclap presentation and a negative CT, LP looking for xanthochromia (or persistent RBCs across tubes) is the next step to rule out SAH, particularly since this patient's ADPKD confers an elevated baseline risk of berry aneurysms.` },
+      { label: 'C', text: 'Start empiric antibiotics for presumed bacterial meningitis', correct: false, explanation: `Nothing in the vignette (fever, altered mentation over hours) points to meningitis, and the instantaneous thunderclap onset argues strongly against an infectious cause; empiric antibiotics are not indicated here.` },
+      { label: 'D', text: 'Obtain an MRI of the cervical spine', correct: false, explanation: `Cervical spine imaging addresses structural neck pathology, not the intracranial process suggested by thunderclap headache; it does not evaluate for subarachnoid blood.` },
+      { label: 'E', text: 'Administer sumatriptan for presumed migraine', correct: false, explanation: `This patient lacks a prior migraine history, and treating an unexplained thunderclap headache as migraine without first excluding SAH would be dangerous — triptans are also relatively contraindicated in suspected vascular catastrophe.` },
+    ]),
+    second_order_answer: 'B',
+    second_order_explanation: `ADPKD carries a well-known association with intracranial (berry) aneurysms, and this patient's thunderclap headache pattern is classic for aneurysmal rupture. A noncontrast CT is highly sensitive but not perfect, particularly if performed later after onset or if the bleed is small; when clinical suspicion remains high after a negative CT, lumbar puncture to look for xanthochromia (which appears several hours after bleeding as CSF bilirubin accumulates) is the required next step before the patient can be safely reassured. If the LP is also negative, an unruptured aneurysm workup (CTA/MRA) may still be considered given the ADPKD association.`,
+
+    flowchart_title: 'Thunderclap Headache Workup',
+    flowchart: JSON.stringify([
+      { node: "Sudden-onset, maximal-intensity headache ('worst of life')", branches: [
+        { label: 'Onset over minutes-to-hours with fever/meningismus', next: 'Consider bacterial meningitis — LP + empiric antibiotics' },
+        { label: 'True thunderclap (peak <1 min)', next: 'Obtain noncontrast head CT' },
+      ] },
+      { node: 'Noncontrast head CT', branches: [
+        { label: 'Positive for subarachnoid blood', next: 'CT angiography to localize aneurysm' },
+        { label: 'Negative, <6 hrs from onset, high suspicion persists', next: 'Lumbar puncture for xanthochromia' },
+      ] },
+      { node: 'Lumbar puncture result', branches: [
+        { label: 'Xanthochromia present / RBCs non-clearing', next: 'Treat as SAH — CT angiography, neurosurgery consult' },
+        { label: 'Clear CSF, RBCs clear between tubes', next: 'SAH excluded — consider primary thunderclap headache or RCVS' },
+      ] },
+      { node: 'Confirmed ruptured aneurysm', branches: [
+        { label: 'Amenable to endovascular approach', next: 'Coiling + nimodipine + neuro-ICU monitoring for vasospasm' },
+        { label: 'Wide-necked / complex morphology', next: 'Surgical clipping + nimodipine + neuro-ICU monitoring' },
+      ] },
+    ]),
+  },
+  {
+    module_number: 12,
+    module_title: 'Neurology and Special Senses',
+    key_submodule: 'Brain Tumors',
+    slug: 'glioblastoma-multiforme',
+    title: 'Glioblastoma Multiforme',
+    sort_order: 2,
+
+    hook_vignette: `A 64-year-old right-handed man develops progressively worsening headaches over three weeks, worse in the morning and with coughing, accompanied by new-onset expressive word-finding difficulty and mild right-hand clumsiness noticed by his wife. His wife also reports that yesterday he had a brief episode of unresponsiveness with rhythmic jerking of his right arm.`,
+
+    ddx_mapping: `The combination of a subacute focal neurologic deficit, a new seizure, and morning headache worsened by Valsalva (all pointing to a mass lesion with raised intracranial pressure) narrows the differential mainly to primary brain tumor vs. metastasis vs. abscess vs. demyelinating lesion.
+Glioblastoma (WHO grade 4 astrocytoma): typically a single, irregular, ring-enhancing mass with central necrosis that often crosses the corpus callosum ("butterfly glioma"), in a patient usually over age 50 with no other primary cancer known.
+Metastatic disease: also ring-enhancing but classically multiple lesions at the gray-white junction, in a patient with a known primary malignancy (lung, breast, melanoma, renal, GI) — a solitary lesion without a known primary favors a primary glial tumor.
+Brain abscess: also ring-enhancing, but the rim is typically thinner and smoother, restricted diffusion on DWI/ADC is characteristic of pus, and there's usually a source (endocarditis, sinusitis, dental infection, immunosuppression) with fever.
+Meningioma: extra-axial (arises from dura, displaces rather than infiltrates brain), homogeneously enhancing, often with a dural tail, and grows slowly — typically presents with seizures or focal deficits evolving over months to years rather than weeks.
+Tumefactive demyelinating lesion (MS variant): can mimic a tumor on imaging with an incomplete ("open") ring of enhancement in a younger patient, often with a history of other neurologic episodes.`,
+
+    diagnostic_evaluation: `MRI brain with and without gadolinium contrast is the key study: glioblastoma classically shows an irregular, thick, and often heterogeneous ring of enhancement surrounding a necrotic core, with substantial surrounding vasogenic edema and frequent crossing of the corpus callosum.
+Definitive diagnosis requires tissue via stereotactic biopsy or surgical resection. Histology shows a highly cellular, pleomorphic astrocytic tumor with pseudopalisading necrosis (tumor cells lined up in a palisade around necrotic zones) and microvascular/endothelial proliferation — the features that distinguish grade 4 glioblastoma from lower-grade astrocytomas.
+Molecular testing is now essential to WHO classification: IDH-wildtype status defines primary (de novo) glioblastoma (worse prognosis, typical in older adults), versus IDH-mutant tumors (better prognosis, often arising from a lower-grade astrocytoma in younger patients). MGMT promoter methylation status is also checked because it predicts a better response to temozolomide chemotherapy.`,
+
+    management: `Maximal safe surgical resection is the first step, both to relieve mass effect/reduce tumor burden and to obtain tissue for diagnosis; complete resection is rarely curative because glioblastoma infiltrates diffusely beyond the visible tumor margin.
+Adjuvant treatment follows the Stupp protocol: concurrent radiotherapy with daily temozolomide, followed by six cycles of maintenance temozolomide.
+Dexamethasone is used perioperatively to reduce vasogenic edema and mass effect; levetiracetam or another antiepileptic is given if the patient has had a seizure.
+Despite treatment, glioblastoma has a poor prognosis (median survival roughly 12-15 months), and recurrence is essentially universal — tumor-treating fields (alternating electric field therapy) and bevacizumab are used in some patients for recurrent or refractory disease. Goals-of-care and quality-of-life discussions should begin early.`,
+
+    first_order_prompt: `What histologic finding is characteristic of glioblastoma and distinguishes it from lower-grade astrocytomas?`,
+    first_order_answer: `Pseudopalisading necrosis (tumor cells arranged in a palisade around necrotic foci) with microvascular/endothelial proliferation.`,
+
+    second_order_vignette: `A 58-year-old woman with no significant past medical history presents with three weeks of progressively worsening left-sided weakness and a single generalized tonic-clonic seizure. MRI brain shows a large, irregular, heterogeneously enhancing right frontal mass with a necrotic center and extensive surrounding edema, crossing the genu of the corpus callosum. Biopsy is performed.`,
+    second_order_question: `Which histologic finding would confirm this is a grade 4 glioblastoma rather than a lower-grade diffuse astrocytoma?`,
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'Psammoma bodies', correct: false, explanation: `Psammoma bodies (laminated calcific whorls) are characteristic of meningioma and papillary thyroid carcinoma, not glioblastoma.` },
+      { label: 'B', text: 'Pseudopalisading necrosis with microvascular proliferation', correct: true, explanation: `This is the defining histologic feature that upgrades a diffuse astrocytoma to WHO grade 4 glioblastoma — necrosis surrounded by densely packed, palisading tumor nuclei, along with glomeruloid endothelial proliferation reflecting the tumor's aggressive angiogenesis.` },
+      { label: 'C', text: 'Rosenthal fibers and eosinophilic granular bodies', correct: false, explanation: `These are characteristic of pilocytic astrocytoma, a WHO grade 1 tumor typically seen in children, often in the cerebellum — a much more indolent lesion than glioblastoma.` },
+      { label: 'D', text: 'Perivascular pseudorosettes', correct: false, explanation: `Perivascular pseudorosettes (tumor cells radially arranged around a central vessel) are characteristic of ependymoma, not glioblastoma.` },
+      { label: 'E', text: 'Call-Exner bodies', correct: false, explanation: `Call-Exner bodies are seen in granulosa cell tumors of the ovary, an unrelated entity.` },
+    ]),
+    second_order_answer: 'B',
+    second_order_explanation: `Glioblastoma (WHO grade 4 diffuse glioma) is defined histologically by necrosis (often with pseudopalisading tumor cells surrounding it) and/or microvascular proliferation superimposed on the diffusely infiltrating astrocytic tumor pattern seen in lower-grade gliomas. These features reflect the tumor's aggressive growth outstripping its blood supply and its potent angiogenic signaling, and are what separates it from grade 2-3 diffuse astrocytomas on biopsy, independent of molecular (IDH) status.`,
+
+    flowchart_title: 'Adult Enhancing Brain Mass Workup',
+    flowchart: JSON.stringify([
+      { node: 'New focal deficit + seizure + morning headache', branches: [
+        { label: 'MRI shows single lesion crossing corpus callosum, ring-enhancing with necrosis', next: 'Favor primary glioma — biopsy/resection' },
+        { label: 'MRI shows multiple lesions at gray-white junction', next: 'Favor metastatic disease — search for primary (CT chest/abd/pelvis)' },
+      ] },
+      { node: 'Single ring-enhancing lesion, primary unknown', branches: [
+        { label: 'Thin smooth rim, restricted diffusion, fever/source', next: 'Favor abscess — treat as infection, consider aspiration' },
+        { label: 'Irregular thick rim, necrotic core, vasogenic edema', next: 'Favor high-grade glioma — tissue diagnosis needed' },
+      ] },
+      { node: 'Biopsy/resection histology', branches: [
+        { label: 'Pseudopalisading necrosis + microvascular proliferation', next: 'Glioblastoma, WHO grade 4' },
+        { label: 'Diffusely infiltrating without necrosis/microvascular proliferation', next: 'Lower-grade diffuse astrocytoma (grade 2-3) — check IDH status' },
+      ] },
+      { node: 'Confirmed glioblastoma', branches: [
+        { label: 'Standard management', next: 'Maximal safe resection → Stupp protocol (RT + temozolomide)' },
+        { label: 'MGMT promoter methylated', next: 'Better predicted response to temozolomide' },
+      ] },
+    ]),
+  },
+  {
+    module_number: 12,
+    module_title: 'Neurology and Special Senses',
+    key_submodule: 'Weakness',
+    slug: 'guillain-barre-syndrome',
+    title: 'Guillain-Barré Syndrome',
+    sort_order: 3,
+
+    hook_vignette: `A 29-year-old man presents with two days of progressive, symmetric weakness that began in his feet and has now ascended to involve his thighs, making it hard to climb stairs. He reports a diarrheal illness with foul-smelling, watery stools about two weeks earlier. On exam he has symmetric distal-to-proximal weakness and absent deep tendon reflexes throughout, with only mild distal sensory changes.`,
+
+    ddx_mapping: `The key pattern is ascending, symmetric, areflexic weakness following an antecedent infection — this points strongly toward Guillain-Barré syndrome (an acute inflammatory demyelinating polyradiculoneuropathy) over its mimics.
+Myasthenia gravis: weakness is typically fatigable and fluctuating, prominently affects extraocular/bulbar muscles first (ptosis, diplopia, dysphagia) before limbs, and reflexes are preserved — unlike the fixed, ascending, areflexic pattern of GBS.
+Transverse myelitis: also causes bilateral leg weakness, but there is usually a clear sensory level on exam and early bowel/bladder dysfunction, with an upper motor neuron pattern rather than the flaccid, areflexic lower motor neuron pattern of GBS.
+Botulism: also causes descending flaccid paralysis with early bulbar/autonomic involvement (diplopia, dysarthria, dry mouth) and normal sensation, associated with improperly canned food or wound contamination, distinguished by a presynaptic neuromuscular junction block rather than demyelination.
+Hypokalemic periodic paralysis: episodic weakness associated with a low serum potassium, often triggered by carbohydrate load or exercise, without a preceding infectious trigger or sensory findings, and resolves with potassium repletion.
+Tick paralysis: ascending flaccid paralysis resembling GBS, but CSF protein is normal (no albuminocytologic dissociation) and it resolves rapidly after the tick is removed.`,
+
+    diagnostic_evaluation: `The diagnosis is primarily clinical, supported by:
+Lumbar puncture showing albuminocytologic dissociation — markedly elevated CSF protein with a normal white cell count — which typically appears after the first week of symptoms (can be normal early in the illness).
+Nerve conduction studies/EMG showing demyelinating features: prolonged distal latencies, conduction block, and slowed conduction velocities, consistent with acute inflammatory demyelinating polyradiculoneuropathy (the classic Western variant); an axonal variant (AMAN) can also occur, often linked to prior Campylobacter jejuni infection with anti-GM1 antibodies.
+Serologic/stool testing may identify the antecedent trigger (Campylobacter jejuni is the most commonly implicated organism via molecular mimicry against peripheral nerve gangliosides), though this doesn't change acute management.
+All patients require close monitoring of respiratory function with serial forced vital capacity (FVC) and negative inspiratory force (NIF) measurements — the danger in GBS is progression to diaphragmatic weakness and respiratory failure, not just limb weakness, so bedside spirometry (not just pulse oximetry) is essential.`,
+
+    management: `Admit for monitoring given the risk of rapid progression to respiratory failure and autonomic instability (labile blood pressure, arrhythmias); intubate electively if FVC falls below roughly 15-20 mL/kg or NIF weakens significantly, rather than waiting for hypoxia to develop.
+Disease-modifying treatment is either IVIG or plasma exchange (plasmapheresis) — both have equivalent efficacy and are not typically combined; the choice depends on availability and patient factors (e.g., IVIG is often preferred given easier administration and fewer hemodynamic effects).
+Corticosteroids are NOT effective in GBS and should not be used — this is a key distinction from many other inflammatory neurologic diseases.
+Supportive care includes DVT prophylaxis (immobile patients), pain control (neuropathic pain is common), and early physical therapy; most patients recover over weeks to months, though a minority have residual weakness and a small percentage relapse or plateau requiring further treatment (CIDP if weakness continues progressing beyond 8 weeks).`,
+
+    first_order_prompt: `What CSF finding is classically seen in Guillain-Barré syndrome, and roughly when does it appear?`,
+    first_order_answer: `Albuminocytologic dissociation — elevated CSF protein with a normal white blood cell count — typically emerging after the first week of illness.`,
+
+    second_order_vignette: `A 45-year-old woman presents 10 days after an upper respiratory illness with two days of ascending numbness and weakness, now unable to stand from a chair without assistance. Vital signs show a heart rate that fluctuates between 55 and 130 bpm over the exam. Deep tendon reflexes are absent in both lower extremities. Forced vital capacity is 18 mL/kg.`,
+    second_order_question: `Which of the following is the most appropriate immediate next step?`,
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'Begin high-dose intravenous corticosteroids', correct: false, explanation: `Corticosteroids have been studied in GBS and shown no benefit — unlike in many other autoimmune/inflammatory neurologic conditions, they are not part of standard therapy here.` },
+      { label: 'B', text: 'Admit to a monitored unit with serial respiratory function testing and initiate IVIG or plasmapheresis', correct: true, explanation: `This patient has autonomic instability (fluctuating heart rate) and a borderline FVC, both markers of a GBS patient at risk for rapid deterioration; she needs close monitoring (ideally ICU-level) plus disease-modifying therapy with IVIG or plasma exchange, initiated as early as possible.` },
+      { label: 'C', text: 'Discharge with outpatient neurology follow-up in one week', correct: false, explanation: `This ascending, progressive weakness with autonomic instability and a low-normal FVC represents a medical emergency requiring inpatient monitoring — outpatient follow-up risks a fatal delay if she progresses to respiratory failure.` },
+      { label: 'D', text: 'Obtain an MRI of the lumbar spine to evaluate for cauda equina syndrome', correct: false, explanation: `Cauda equina typically presents with saddle anesthesia, bowel/bladder dysfunction, and often asymmetric findings/back pain, not symmetric ascending weakness with autonomic dysfunction following a preceding infection; the clinical picture here fits GBS far better.` },
+      { label: 'E', text: 'Start pyridostigmine for presumed myasthenic crisis', correct: false, explanation: `Pyridostigmine treats myasthenia gravis, which causes fatigable, fluctuating weakness with preserved reflexes and prominent ocular/bulbar involvement — not the fixed ascending, areflexic weakness with autonomic instability seen here.` },
+    ]),
+    second_order_answer: 'B',
+    second_order_explanation: `This patient's ascending weakness, areflexia, antecedent infection, and — critically — autonomic instability (wide swings in heart rate) plus a marginal FVC identify her as a high-risk GBS patient who needs immediate admission to a monitored setting (ideally ICU) with serial pulmonary function testing to catch impending respiratory failure before it becomes an emergency, along with prompt initiation of IVIG or plasma exchange to shorten the disease course.`,
+
+    flowchart_title: 'Ascending Weakness Evaluation',
+    flowchart: JSON.stringify([
+      { node: 'Progressive, symmetric ascending weakness', branches: [
+        { label: 'Preserved reflexes, fatigable, ocular/bulbar predominant', next: 'Consider myasthenia gravis — acetylcholine receptor antibodies, EMG' },
+        { label: 'Absent/reduced reflexes, recent GI or respiratory infection', next: 'Consider Guillain-Barré syndrome' },
+      ] },
+      { node: 'Suspected GBS — confirm diagnosis', branches: [
+        { label: 'LP after first week: high protein, normal WBC', next: 'Albuminocytologic dissociation supports GBS' },
+        { label: 'NCS/EMG shows demyelinating pattern', next: 'Supports AIDP variant of GBS' },
+      ] },
+      { node: 'Assess respiratory and autonomic status', branches: [
+        { label: 'FVC <15-20 mL/kg or falling rapidly', next: 'Elective intubation, ICU admission' },
+        { label: 'Autonomic instability (BP/HR swings)', next: 'Continuous cardiac monitoring' },
+      ] },
+      { node: 'Disease-modifying treatment', branches: [
+        { label: 'Available access', next: 'IVIG' },
+        { label: 'Alternative / IVIG contraindicated', next: 'Plasmapheresis' },
+        { label: 'Not indicated', next: 'Corticosteroids — no proven benefit, avoid' },
+      ] },
+    ]),
+  },
+  {
+    module_number: 12,
+    module_title: 'Neurology and Special Senses',
+    key_submodule: 'Sensory Abnormalities',
+    slug: 'subacute-combined-degeneration',
+    title: 'Subacute Combined Degeneration (Vitamin B12 Deficiency)',
+    sort_order: 4,
+
+    hook_vignette: `A 68-year-old woman with a history of autoimmune gastritis presents with several months of progressive gait unsteadiness and tingling in her feet and hands. On exam she has diminished vibration and proprioception in the toes, a positive Romberg sign, hyperreflexic patellar reflexes but absent ankle jerks, and an upgoing plantar response bilaterally. She also reports irritability and mild memory difficulty.`,
+
+    ddx_mapping: `The combination of impaired proprioception/vibration sense (dorsal column) with upper motor neuron signs (hyperreflexia, upgoing plantar response) plus a peripheral neuropathy (absent ankle jerks) in the same patient is a very specific pattern that should immediately suggest vitamin B12 deficiency causing subacute combined degeneration, rather than a pure peripheral neuropathy or a pure myelopathy.
+Diabetic peripheral neuropathy: a symmetric, length-dependent, purely peripheral sensory neuropathy (stocking-glove pattern) — it does NOT produce upper motor neuron signs like hyperreflexia or an upgoing plantar response, because it doesn't affect the spinal cord.
+Tabes dorsalis (tertiary neurosyphilis): also damages the dorsal columns (impaired vibration/proprioception, positive Romberg, areflexia) but classically spares the corticospinal tracts, so reflexes are diminished/absent rather than the mixed picture of hyper- and hypo-reflexia seen in B12 deficiency; look for Argyll Robertson pupils and a history of syphilis.
+Copper deficiency myelopathy: can mimic subacute combined degeneration almost exactly (identical dorsal column plus corticospinal findings), classically seen after bariatric surgery or excessive zinc ingestion (zinc induces copper deficiency) — differentiated by serum copper/ceruloplasmin levels with a normal B12.
+Multiple sclerosis: can cause combined sensory and motor deficits, but typically has a relapsing-remitting course in a younger patient with lesions disseminated in time and space on MRI, rather than the steady subacute progression and symmetric dorsal column pattern of B12 deficiency.`,
+
+    diagnostic_evaluation: `Serum vitamin B12 level is the first test, though it can be falsely normal in early deficiency — serum methylmalonic acid (MMA) and homocysteine are more sensitive and both are elevated in true B12 deficiency (homocysteine alone is also elevated in folate deficiency, but MMA is elevated specifically in B12 deficiency, which helps distinguish the two).
+CBC with peripheral smear may show a macrocytic anemia with hypersegmented neutrophils, though neurologic disease can precede hematologic changes and can occur even with a normal MCV, so a normal CBC does not rule out the diagnosis.
+Because this patient's B12 deficiency is due to autoimmune gastritis (pernicious anemia), intrinsic factor antibodies and/or parietal cell antibodies should be checked to confirm the underlying cause — autoimmune destruction of gastric parietal cells impairs production of intrinsic factor, which is required for terminal ileal B12 absorption.
+MRI of the spinal cord (if obtained) may show T2 hyperintensity in the dorsal columns, classically described as an "inverted V" or "rabbit ears" sign on axial imaging, reflecting posterior column demyelination.`,
+
+    management: `Treat with parenteral (intramuscular) vitamin B12 replacement, especially when malabsorption (as in pernicious anemia) is the cause, since oral replacement may not be reliably absorbed; high-dose oral B12 can be used in some cases once intrinsic factor-independent absorption is established.
+Neurologic improvement can be substantial if treatment starts early, but deficits present for a long time (often described as beyond several months) may be only partially reversible or permanent — this is why early recognition matters.
+Critically, folate should never be given alone to a patient with unrecognized B12 deficiency: folate replacement can correct the megaloblastic anemia and mask the hematologic clue to B12 deficiency while the neurologic damage continues to progress silently — so B12 status must always be checked and treated before or alongside folate.
+Because the underlying cause here is pernicious anemia, these patients need lifelong B12 supplementation (the intrinsic factor deficiency does not resolve) and should be monitored, as pernicious anemia also carries an increased risk of gastric cancer/carcinoid, warranting consideration of surveillance.`,
+
+    first_order_prompt: `Which two spinal cord tracts are affected in subacute combined degeneration, producing its combined sensory-and-motor exam pattern?`,
+    first_order_answer: `The dorsal (posterior) columns (impaired vibration/proprioception, positive Romberg) and the lateral corticospinal tracts (upper motor neuron signs — hyperreflexia, spasticity, upgoing plantar response), plus a peripheral neuropathy component.`,
+
+    second_order_vignette: `A 74-year-old man who underwent a Roux-en-Y gastric bypass three years ago presents with six months of progressive difficulty walking and numbness in his feet. Exam reveals loss of vibration sense in the toes bilaterally, brisk knee reflexes, absent ankle reflexes, and bilateral upgoing plantar responses. Serum vitamin B12 level is within the low-normal range.`,
+    second_order_question: `Which additional laboratory test is most likely to confirm the diagnosis despite the normal-appearing B12 level?`,
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'Serum methylmalonic acid', correct: true, explanation: `Serum B12 can be falsely "normal" in early or borderline deficiency; methylmalonic acid (a substrate that accumulates when the B12-dependent enzyme methylmalonyl-CoA mutase is impaired) is a more sensitive marker and would be elevated in true B12 deficiency, fitting this patient's post-bariatric malabsorption risk and classic combined dorsal column/corticospinal exam.` },
+      { label: 'B', text: 'Serum ferritin', correct: false, explanation: `Iron deficiency causes a microcytic anemia and fatigue, not this combined sensory-motor neurologic syndrome; it would not explain or confirm this presentation.` },
+      { label: 'C', text: 'Thyroid-stimulating hormone', correct: false, explanation: `Hypothyroidism can cause a peripheral neuropathy and cognitive slowing but does not produce the specific dorsal column plus corticospinal tract pattern described here.` },
+      { label: 'D', text: 'Anti-nuclear antibody', correct: false, explanation: `ANA screens for systemic autoimmune disease (like lupus) and is nonspecific; it would not confirm a nutritional myelopathy in this clinical context.` },
+      { label: 'E', text: 'Serum lead level', correct: false, explanation: `Lead toxicity classically causes a motor-predominant peripheral neuropathy (wrist/foot drop) and microcytic anemia with basophilic stippling, not this combined dorsal column/corticospinal picture, and there's no exposure history given.` },
+    ]),
+    second_order_answer: 'A',
+    second_order_explanation: `Roux-en-Y gastric bypass bypasses the stomach and duodenum, impairing intrinsic factor-mediated B12 absorption and predisposing to deficiency over years as body stores deplete. Serum B12 alone is an imperfect test and can sit in a falsely reassuring low-normal range; methylmalonic acid (and homocysteine) rise before or independent of a clearly low serum B12 level and are the appropriate confirmatory tests when clinical suspicion (as here, with the classic combined dorsal column and corticospinal exam) is high despite a normal-appearing B12.`,
+
+    flowchart_title: 'Combined Sensory-Motor Neuropathy Evaluation',
+    flowchart: JSON.stringify([
+      { node: 'Impaired vibration/proprioception + upper motor neuron signs', branches: [
+        { label: 'Absent reflexes throughout, pupils affected (Argyll Robertson)', next: 'Consider pure dorsal column process — check syphilis serologies (tabes dorsalis)' },
+        { label: 'Mixed hyper-/hypo-reflexia (dorsal column + corticospinal)', next: 'Suspect subacute combined degeneration' },
+      ] },
+      { node: 'Suspected B12 deficiency — initial testing', branches: [
+        { label: 'Serum B12 clearly low', next: 'Confirms diagnosis — proceed to cause workup' },
+        { label: 'Serum B12 normal/borderline but suspicion high', next: 'Check methylmalonic acid and homocysteine' },
+      ] },
+      { node: 'Identify the underlying cause', branches: [
+        { label: 'Positive intrinsic factor / parietal cell antibodies', next: 'Pernicious anemia (autoimmune gastritis)' },
+        { label: 'History of bariatric surgery or terminal ileal disease', next: 'Malabsorptive B12 deficiency' },
+        { label: 'Normal B12/MMA but low ceruloplasmin', next: 'Consider copper deficiency myelopathy instead' },
+      ] },
+      { node: 'Treatment', branches: [
+        { label: 'Malabsorption present', next: 'Parenteral (IM) B12 replacement, lifelong' },
+        { label: 'Concurrent low folate', next: 'Replace B12 first/alongside — never folate alone' },
+      ] },
+    ]),
+  },
+  {
+    module_number: 12,
+    module_title: 'Neurology and Special Senses',
+    key_submodule: 'Altered Mental Status',
+    slug: 'wernicke-encephalopathy',
+    title: 'Wernicke Encephalopathy',
+    sort_order: 5,
+
+    hook_vignette: `A 47-year-old man with a long history of heavy alcohol use is brought to the emergency department by his family for three days of confusion after not eating much and drinking heavily over the past week. On exam he is disoriented to time and place, has a wide-based, unsteady gait, and has impaired horizontal eye movements with nystagmus bilaterally.`,
+
+    ddx_mapping: `The classic triad of encephalopathy (confusion), ataxia, and ophthalmoplegia/nystagmus in a malnourished or alcohol-use patient is highly specific for Wernicke encephalopathy, though the full triad is present in only a minority of cases — a high index of suspicion is needed in any at-risk patient with even one of these findings.
+Alcohol withdrawal delirium (delirium tremens): also causes confusion in a patient with heavy alcohol use, but is accompanied by autonomic hyperactivity (tachycardia, hypertension, diaphoresis, fever), tremor, and often hallucinations, typically 48-96 hours after the last drink — it lacks the specific ataxia/ophthalmoplegia pairing of Wernicke's and is identified largely by its timing relative to cessation of drinking.
+Hepatic encephalopathy: confusion with asterixis in a patient with cirrhosis/liver failure and an elevated ammonia level, without the specific eye movement abnormalities of Wernicke's.
+Alcoholic intoxication itself: causes ataxia and confusion acutely, but resolves as blood alcohol clears and does not typically cause sustained ophthalmoplegia; if confusion/ataxia persist beyond expected intoxication, Wernicke's must be considered.
+Hypoglycemia: can cause acute confusion and even ataxia in an alcoholic patient (impaired gluconeogenesis), checked immediately with fingerstick glucose, but does not cause ophthalmoplegia and resolves rapidly with glucose administration.
+Critically, if IV glucose is given to a thiamine-deficient patient before thiamine is replaced, it can precipitate or worsen Wernicke encephalopathy by consuming the little remaining thiamine as a cofactor for glucose metabolism — thiamine must be given first or simultaneously.`,
+
+    diagnostic_evaluation: `Wernicke encephalopathy is a clinical diagnosis — do not wait for confirmatory testing before treating, since delayed treatment risks irreversible brain injury.
+Thiamine (vitamin B1) level can be sent but usually returns after the window for empiric treatment; it is not required to initiate therapy.
+MRI brain, if obtained, may show characteristic T2/FLAIR hyperintensity in the mammillary bodies, medial thalami, and periaqueductal gray matter, supporting the diagnosis but not required for it.
+Associated labs to check include glucose (avoid unopposed glucose administration), electrolytes (refeeding-risk patients), and liver function, since chronic alcohol use commonly coexists with other nutritional and hepatic derangements that need concurrent management.`,
+
+    management: `Immediate empiric high-dose IV thiamine (before or simultaneously with any glucose-containing fluids) is the cornerstone of treatment — this is a clinical emergency, and thiamine is inexpensive and essentially risk-free, so treatment should never be withheld pending labs.
+Ophthalmoplegia and ataxia typically improve within days of thiamine repletion, but confusion may take longer to resolve and can leave residual cognitive impairment.
+If untreated (or treated too late), Wernicke encephalopathy can progress to Korsakoff syndrome — a chronic amnestic disorder with anterograde and retrograde amnesia and confabulation, caused by damage to the mammillary bodies and related circuits; Korsakoff syndrome's memory deficits are often only partially reversible even with thiamine.
+Longer-term management addresses the underlying alcohol use disorder (counseling, consideration of pharmacotherapy) and ensures ongoing nutritional supplementation, since these patients remain at risk for recurrent thiamine deficiency.`,
+
+    first_order_prompt: `What is the classic clinical triad of Wernicke encephalopathy?`,
+    first_order_answer: `Confusion (encephalopathy), ataxia, and ophthalmoplegia/nystagmus — though all three are present together in only a minority of patients.`,
+
+    second_order_vignette: `A 55-year-old woman with a history of alcohol use disorder is brought to the emergency department after several days of poor oral intake. She is found to be hypoglycemic (glucose 48 mg/dL) and confused, and the resident orders IV dextrose to be given immediately, planning to check a thiamine level afterward and treat if low.`,
+    second_order_question: `What is the most significant risk of this management plan?`,
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'The dextrose will cause acute hepatic failure', correct: false, explanation: `IV dextrose does not directly precipitate hepatic failure; this is not the primary concern in a thiamine-deficient patient.` },
+      { label: 'B', text: 'Administering glucose before thiamine may precipitate or worsen Wernicke encephalopathy', correct: true, explanation: `Thiamine is a required cofactor for glucose metabolism (pyruvate dehydrogenase, alpha-ketoglutarate dehydrogenase, transketolase); giving a glucose load to a thiamine-depleted patient can consume remaining thiamine stores and precipitate or worsen Wernicke encephalopathy, so thiamine should be given before or together with glucose-containing fluids in any at-risk patient.` },
+      { label: 'C', text: 'Waiting for the thiamine level will unnecessarily delay treatment of her hypoglycemia', correct: false, explanation: `Hypoglycemia itself is being treated promptly with dextrose in this plan; the danger is not delayed glucose treatment but the sequence in which glucose and thiamine are given relative to each other.` },
+      { label: 'D', text: 'IV dextrose is contraindicated in all patients with alcohol use disorder', correct: false, explanation: `Dextrose is not contraindicated in alcohol use disorder generally — it is specifically the timing relative to thiamine replacement in a potentially thiamine-deficient patient that matters, not an absolute contraindication to glucose.` },
+      { label: 'E', text: 'Thiamine levels are unreliable and should never be checked', correct: false, explanation: `The real point is not that thiamine levels are unreliable, but that treatment for suspected Wernicke encephalopathy should never wait for lab confirmation — thiamine should be given empirically before or with glucose regardless of whether a level is sent.` },
+    ]),
+    second_order_answer: 'B',
+    second_order_explanation: `This patient, with alcohol use disorder and poor intake, is at high risk for subclinical thiamine deficiency. Thiamine pyrophosphate is a cofactor in glucose metabolism, and administering a glucose load without first (or simultaneously) replacing thiamine can acutely deplete remaining thiamine reserves and trigger or worsen Wernicke encephalopathy. The correct approach is to give thiamine before or at the same time as dextrose in any patient at risk, rather than treating hypoglycemia first and checking thiamine status afterward.`,
+
+    flowchart_title: 'Suspected Wernicke Encephalopathy in an At-Risk Patient',
+    flowchart: JSON.stringify([
+      { node: 'Confusion in a patient with alcohol use disorder / malnutrition', branches: [
+        { label: 'Autonomic hyperactivity, tremor, timing tied to cessation of drinking', next: 'Consider alcohol withdrawal / delirium tremens' },
+        { label: 'Ataxia and/or ophthalmoplegia present', next: 'Treat empirically as Wernicke encephalopathy' },
+      ] },
+      { node: 'Before any glucose-containing fluids', branches: [
+        { label: 'Thiamine deficiency risk present', next: 'Give IV thiamine first or simultaneously with glucose' },
+        { label: 'Glucose given first without thiamine', next: 'Risk of precipitating/worsening Wernicke encephalopathy' },
+      ] },
+      { node: 'Response to thiamine repletion', branches: [
+        { label: 'Treated promptly', next: 'Ataxia/ophthalmoplegia typically improve within days' },
+        { label: 'Delayed or untreated', next: 'Risk of progression to Korsakoff syndrome' },
+      ] },
+      { node: 'Korsakoff syndrome develops', branches: [
+        { label: 'Anterograde and retrograde amnesia, confabulation', next: 'Often only partially reversible despite thiamine' },
+        { label: 'Started early, aggressively treated', next: 'Best chance of meaningful cognitive recovery' },
+      ] },
+    ]),
+  },
+  {
+    module_number: 12,
+    module_title: 'Neurology and Special Senses',
+    key_submodule: 'Movement Disorders',
+    slug: 'parkinsons-disease',
+    title: "Parkinson's Disease",
+    sort_order: 6,
+
+    hook_vignette: `A 68-year-old retired accountant is brought in by his daughter, who has noticed over the past year that he walks with a stooped posture and shuffling steps, has a soft, monotone voice, and has developed a resting tremor in his right hand that lessens when he reaches for his coffee cup. He also reports a diminished sense of smell over several years and occasionally acts out his dreams during sleep.`,
+
+    ddx_mapping: `The combination of asymmetric resting tremor, bradykinesia, rigidity, and postural instability, developing gradually and preceded by nonmotor prodromal features (anosmia, REM sleep behavior disorder, constipation), is classic for idiopathic Parkinson's disease and helps separate it from its main mimics.
+Essential tremor: a bilateral, symmetric action/postural tremor (worse with movement or sustained posture, better at rest) — essentially the opposite pattern from Parkinson's resting tremor — often improves with alcohol and has a family history; it does not cause bradykinesia or rigidity.
+Drug-induced parkinsonism: caused by dopamine-receptor-blocking agents (typical antipsychotics, metoclopramide), typically symmetric in onset and temporally linked to starting the offending drug, improving after the drug is stopped — always check the medication list before diagnosing idiopathic Parkinson's disease.
+Multiple system atrophy: parkinsonism plus early, prominent autonomic failure (orthostatic hypotension, urinary dysfunction) and/or cerebellar signs, with a poor/absent response to levodopa — a red flag distinguishing it from idiopathic Parkinson's disease.
+Progressive supranuclear palsy: parkinsonism with early, prominent postural instability/falls and a characteristic vertical (especially downward) gaze palsy, also with a poor levodopa response.
+Normal pressure hydrocephalus: the classic triad of gait disturbance ("magnetic" broad-based gait), urinary incontinence, and cognitive decline — gait apraxia rather than a true parkinsonian shuffle, and no resting tremor.`,
+
+    diagnostic_evaluation: `Parkinson's disease remains primarily a clinical diagnosis based on the cardinal features — bradykinesia plus at least one of resting tremor, rigidity, or postural instability — along with supportive features (asymmetric onset, excellent and sustained response to levodopa, presence of nonmotor prodromal symptoms).
+Neuroimaging (MRI brain) is typically obtained not to confirm Parkinson's disease itself but to exclude structural mimics (normal pressure hydrocephalus, vascular parkinsonism, structural lesions).
+DaTscan (dopamine transporter SPECT imaging) can help distinguish Parkinson's disease/other degenerative parkinsonian syndromes (all of which show reduced striatal dopamine transporter uptake) from essential tremor or drug-induced parkinsonism (which have normal DaTscan uptake), though it cannot distinguish idiopathic Parkinson's disease from the atypical parkinsonian syndromes (MSA, PSP) from each other.
+A trial of levodopa with a robust, sustained motor improvement is itself considered strong supportive evidence for idiopathic Parkinson's disease, since atypical parkinsonian syndromes characteristically respond poorly.`,
+
+    management: `Levodopa/carbidopa remains the most effective symptomatic therapy for the motor symptoms of Parkinson's disease; carbidopa is a peripheral decarboxylase inhibitor that prevents peripheral conversion of levodopa to dopamine, reducing peripheral side effects (nausea) and increasing the amount of levodopa reaching the brain.
+In younger patients, or to delay levodopa-related motor complications (dyskinesias, motor fluctuations/"wearing off"), a dopamine agonist (e.g., pramipexole, ropinirole) or an MAO-B inhibitor (e.g., selegiline) may be used first or as an adjunct, though dopamine agonists carry a notable risk of impulse control disorders (compulsive gambling, hypersexuality) that patients and families should be counseled about.
+As disease progresses and levodopa-related motor fluctuations become disabling, deep brain stimulation (typically targeting the subthalamic nucleus or globus pallidus interna) can be considered in appropriately selected patients who still have a good levodopa response.
+Nonmotor symptoms need active management too: orthostatic hypotension, constipation, depression, and cognitive decline (Parkinson's disease dementia typically emerges late, distinguishing it in timing from dementia with Lewy bodies, where cognitive decline precedes or closely coincides with parkinsonism) all require attention as part of comprehensive care, along with physical/occupational therapy for gait and fall prevention.`,
+
+    first_order_prompt: `What is the underlying neuropathologic hallmark of idiopathic Parkinson's disease, and where does the earliest, most clinically relevant degeneration occur?`,
+    first_order_answer: `Loss of dopaminergic neurons in the substantia nigra pars compacta, with intracellular Lewy bodies (alpha-synuclein aggregates) — degeneration of the nigrostriatal pathway produces the classic motor features.`,
+
+    second_order_vignette: `A 71-year-old man presents with a 2-year history of slowness of movement and rigidity. His wife notes that over the past 8 months he has had several unexplained falls backward and has increasing trouble looking down when walking down stairs. His tremor has never been prominent, and a trial of levodopa produced minimal improvement in his symptoms.`,
+    second_order_question: `Which diagnosis best explains this presentation?`,
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: "Idiopathic Parkinson's disease", correct: false, explanation: `Idiopathic Parkinson's disease typically features a prominent asymmetric resting tremor and a robust, sustained response to levodopa — neither of which this patient has, making idiopathic Parkinson's disease less likely than an atypical parkinsonian syndrome.` },
+      { label: 'B', text: 'Progressive supranuclear palsy', correct: true, explanation: `Early, prominent postural instability with falls (particularly backward falls), a vertical (especially downward) gaze palsy causing difficulty looking down stairs, minimal tremor, and poor levodopa responsiveness are the classic features distinguishing progressive supranuclear palsy from idiopathic Parkinson's disease.` },
+      { label: 'C', text: 'Essential tremor', correct: false, explanation: `Essential tremor causes a bilateral action/postural tremor without bradykinesia, rigidity, falls, or gaze abnormalities — this patient's presentation is dominated by rigidity, falls, and a gaze palsy, not tremor.` },
+      { label: 'D', text: 'Normal pressure hydrocephalus', correct: false, explanation: `NPH causes a magnetic, apraxic gait with urinary incontinence and cognitive decline, but does not classically cause a vertical gaze palsy, which is the specific localizing clue here.` },
+      { label: 'E', text: 'Drug-induced parkinsonism', correct: false, explanation: `There is no history given of a dopamine-blocking medication, and drug-induced parkinsonism does not produce a supranuclear gaze palsy; it also typically improves after stopping the offending agent.` },
+    ]),
+    second_order_answer: 'B',
+    second_order_explanation: `The vertical (particularly downward) supranuclear gaze palsy combined with early prominent postural instability/falls and poor levodopa response is the classic triad pointing to progressive supranuclear palsy, one of the atypical parkinsonian ("Parkinson-plus") syndromes. Recognizing these red-flag features (early falls, poor levodopa response, gaze palsy, or in MSA's case, early autonomic/cerebellar involvement) is what separates the atypical syndromes from idiopathic Parkinson's disease on the exam and in practice, since prognosis and levodopa responsiveness differ substantially.`,
+
+    flowchart_title: 'Parkinsonism Evaluation',
+    flowchart: JSON.stringify([
+      { node: 'Bradykinesia + rigidity and/or resting tremor', branches: [
+        { label: 'Symmetric onset, recent dopamine-blocking drug started', next: 'Drug-induced parkinsonism — stop offending agent' },
+        { label: 'Asymmetric onset, prodromal anosmia/REM sleep behavior disorder', next: "Favor idiopathic Parkinson's disease" },
+      ] },
+      { node: 'Red flags for atypical parkinsonism', branches: [
+        { label: 'Early falls + vertical gaze palsy', next: 'Progressive supranuclear palsy' },
+        { label: 'Early autonomic failure and/or cerebellar signs', next: 'Multiple system atrophy' },
+        { label: 'None present, good levodopa response', next: "Supports idiopathic Parkinson's disease" },
+      ] },
+      { node: 'Levodopa trial response', branches: [
+        { label: 'Robust, sustained improvement', next: "Strongly supports idiopathic Parkinson's disease" },
+        { label: 'Minimal/poor response', next: 'Reconsider atypical parkinsonian syndrome or alternate diagnosis' },
+      ] },
+      { node: "Management of confirmed Parkinson's disease", branches: [
+        { label: 'Motor symptoms limiting function', next: 'Levodopa/carbidopa (± dopamine agonist/MAO-B inhibitor)' },
+        { label: 'Disabling motor fluctuations despite medication', next: 'Consider deep brain stimulation' },
+      ] },
+    ]),
+  },
+  {
+    module_number: 12,
+    module_title: 'Neurology and Special Senses',
+    key_submodule: 'Ataxia',
+    slug: 'friedreich-ataxia',
+    title: 'Friedreich Ataxia',
+    sort_order: 7,
+
+    hook_vignette: `A 12-year-old boy is brought to clinic because of progressive clumsiness and frequent falls over the past year, along with slurred speech that his teachers have noticed. Exam reveals a wide-based, ataxic gait, dysarthria, absent ankle and knee reflexes, but bilateral upgoing plantar responses, along with pes cavus (high-arched feet) and mild kyphoscoliosis. His echocardiogram is ordered given a murmur heard on exam.`,
+
+    ddx_mapping: `Progressive ataxia beginning in childhood/adolescence with the combination of absent reflexes (peripheral neuropathy) plus extensor plantar responses (corticospinal tract involvement), skeletal changes (pes cavus, scoliosis), and cardiac involvement is the classic pattern of Friedreich ataxia, distinguishing it from other causes of ataxia.
+Ataxia-telangiectasia: also presents in childhood with progressive ataxia, but is distinguished by oculocutaneous telangiectasias (appearing later, often by age 4-6), recurrent sinopulmonary infections (IgA deficiency), an elevated alpha-fetoprotein, and a markedly increased risk of lymphoma/leukemia and radiosensitivity — not the cardiomyopathy/pes cavus pattern of Friedreich ataxia.
+Vitamin E deficiency: can produce a nearly identical phenotype to Friedreich ataxia (posterior column and peripheral nerve involvement, areflexia, ataxia) due to shared oxidative-stress-related pathophysiology, but is distinguished by a low serum vitamin E level and a history of fat malabsorption (e.g., cystic fibrosis, abetalipoproteinemia) rather than a genetic trinucleotide repeat.
+Multiple sclerosis: can cause ataxia in a similar age range, but typically has a relapsing-remitting course with other disseminated CNS lesions on MRI (optic neuritis, sensory symptoms in different distributions over time) rather than a steady, symmetric progression with peripheral areflexia and skeletal/cardiac findings.
+Spinocerebellar ataxias (autosomal dominant, various types): typically present later (adulthood) with a positive family history in each generation (autosomal dominant inheritance) versus Friedreich ataxia's autosomal recessive pattern (often with unaffected, non-consanguineous-appearing parents).`,
+
+    diagnostic_evaluation: `Genetic testing is diagnostic: Friedreich ataxia is caused by a GAA trinucleotide repeat expansion in the FXN gene (encoding frataxin, a mitochondrial iron-binding protein important for iron-sulfur cluster assembly), inherited in an autosomal recessive pattern; longer repeat expansions generally correlate with earlier onset and more severe disease.
+Nerve conduction studies show a sensory axonal neuropathy with reduced or absent sensory nerve action potentials, reflecting dorsal root ganglion degeneration, while motor conduction is relatively preserved early on.
+MRI of the spine/brain may show atrophy of the cervical spinal cord and cerebellum, though imaging is supportive rather than diagnostic.
+Because cardiomyopathy (typically hypertrophic, sometimes progressing to dilated) is a leading cause of death in Friedreich ataxia, echocardiography and ECG should be obtained at diagnosis and monitored regularly; diabetes mellitus (from pancreatic involvement) should also be screened for periodically.`,
+
+    management: `There is no cure; management is supportive and multidisciplinary — physical and occupational therapy to maintain mobility and function, bracing or orthopedic surgery for progressive scoliosis or pes cavus deformity as needed, and speech therapy for dysarthria/dysphagia.
+Regular cardiology follow-up is essential given the high risk and severity of cardiomyopathy, which along with respiratory complications from scoliosis is a major cause of early mortality; heart failure is managed per standard cardiomyopathy protocols when it develops.
+Diabetes screening and management are needed given the risk of impaired glucose regulation from pancreatic beta-cell involvement.
+Omaveloxolone, an Nrf2 activator, is an FDA-approved disease-modifying therapy for Friedreich ataxia (improving mitochondrial function/reducing oxidative stress) — a newer option that reflects growing understanding of the frataxin-related oxidative stress pathophysiology; genetic counseling should also be offered to the family given the autosomal recessive inheritance pattern.`,
+
+    first_order_prompt: `What is the genetic defect underlying Friedreich ataxia, and what protein does it affect?`,
+    first_order_answer: `An autosomal recessive GAA trinucleotide repeat expansion in the FXN gene, reducing frataxin — a mitochondrial protein required for iron-sulfur cluster assembly.`,
+
+    second_order_vignette: `A 16-year-old girl with a 3-year history of progressive gait ataxia and dysarthria is noted on routine exam to have absent deep tendon reflexes in both lower extremities, bilateral extensor plantar responses, and pes cavus. Her parents are healthy and unrelated, with no family history of neurologic disease. An echocardiogram reveals asymmetric septal hypertrophy.`,
+    second_order_question: `A mutation in which gene is most likely responsible for this patient's presentation?`,
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'FXN', correct: true, explanation: `This is the classic triad of Friedreich ataxia — ataxia with areflexia (peripheral neuropathy) plus extensor plantar responses (corticospinal involvement), pes cavus, and hypertrophic cardiomyopathy — caused by a GAA repeat expansion in FXN reducing frataxin, inherited in an autosomal recessive pattern consistent with unaffected, unrelated parents.` },
+      { label: 'B', text: 'ATM', correct: false, explanation: `ATM mutations cause ataxia-telangiectasia, which would be expected to show telangiectasias, recurrent infections, and elevated alpha-fetoprotein rather than the cardiomyopathy and pes cavus described here.` },
+      { label: 'C', text: 'HTT', correct: false, explanation: `HTT (huntingtin) CAG repeat expansions cause Huntington disease, an autosomal dominant chorea/cognitive disorder presenting in adulthood, not a childhood ataxic syndrome with areflexia and cardiomyopathy.` },
+      { label: 'D', text: 'SMN1', correct: false, explanation: `SMN1 mutations cause spinal muscular atrophy, a lower motor neuron disease causing weakness and areflexia without ataxia, cardiomyopathy, or extensor plantar responses.` },
+      { label: 'E', text: 'PMP22', correct: false, explanation: `PMP22 duplication causes Charcot-Marie-Tooth disease type 1A, a peripheral neuropathy with distal weakness and areflexia, but it does not cause ataxia, extensor plantar responses, or cardiomyopathy.` },
+    ]),
+    second_order_answer: 'A',
+    second_order_explanation: `The combination of childhood-onset progressive ataxia, sensory neuropathy with areflexia, extensor plantar responses (corticospinal tract involvement), skeletal findings (pes cavus), and hypertrophic cardiomyopathy in a patient with unaffected, unrelated parents (fitting autosomal recessive inheritance) is the classic presentation of Friedreich ataxia, caused by a GAA trinucleotide repeat expansion in the FXN gene that reduces frataxin expression and impairs mitochondrial iron-sulfur cluster assembly, leading to oxidative damage in neurons and cardiomyocytes.`,
+
+    flowchart_title: 'Childhood/Adolescent Progressive Ataxia Workup',
+    flowchart: JSON.stringify([
+      { node: 'Progressive ataxia with onset in childhood/adolescence', branches: [
+        { label: 'Telangiectasias, recurrent infections, elevated AFP', next: 'Consider ataxia-telangiectasia — ATM testing' },
+        { label: 'Areflexia + extensor plantar responses + pes cavus', next: 'Consider Friedreich ataxia' },
+      ] },
+      { node: 'Suspected Friedreich ataxia — confirm cause', branches: [
+        { label: 'History of fat malabsorption, low serum vitamin E', next: 'Consider vitamin E deficiency ataxia instead' },
+        { label: 'No malabsorption history, normal vitamin E', next: 'Proceed to genetic testing for FXN GAA repeat expansion' },
+      ] },
+      { node: 'FXN GAA repeat expansion confirmed', branches: [
+        { label: 'Baseline workup', next: 'Echocardiogram/ECG + diabetes screening at diagnosis' },
+        { label: 'Ongoing care', next: 'Multidisciplinary supportive management + omaveloxolone' },
+      ] },
+      { node: 'Surveillance for complications', branches: [
+        { label: 'Hypertrophic cardiomyopathy develops', next: 'Cardiology management, monitor for progression to heart failure' },
+        { label: 'Progressive scoliosis', next: 'Orthopedic bracing/surgery as needed' },
+      ] },
+    ]),
+  },
+  {
+    module_number: 12,
+    module_title: 'Neurology and Special Senses',
+    key_submodule: 'Seizures',
+    slug: 'temporal-lobe-epilepsy',
+    title: 'Temporal Lobe Epilepsy (Mesial Temporal Sclerosis)',
+    sort_order: 8,
+
+    hook_vignette: `A 26-year-old woman has recurrent episodes, several times a month, in which she reports a rising epigastric sensation and an intense feeling of déjà vu, followed by staring, lip-smacking, and unresponsiveness lasting about a minute, with no memory of the event afterward. She has a history of a prolonged febrile seizure at age 3.`,
+
+    ddx_mapping: `A focal aura (epigastric rising sensation, déjà vu) followed by impaired awareness with automatisms (lip-smacking, staring) is classic for a focal seizure with impaired awareness arising from the temporal lobe, and the childhood history of prolonged febrile seizure is a well-established risk factor for mesial temporal sclerosis.
+Absence seizures: brief (a few seconds), abrupt-onset staring spells without a preceding aura and without postictal confusion, typically in children, with a 3-Hz spike-and-wave pattern on EEG — distinguished from temporal lobe seizures by the lack of an aura, absence of automatisms, and much shorter duration.
+Psychogenic nonepileptic seizures (PNES): can mimic focal seizures with altered awareness, but events often have variable/atypical semiology (asynchronous limb movements, pelvic thrusting, eyes closed and resistant to opening, waxing-waning course, longer duration), occur preferentially in front of witnesses, and are not associated with abnormal ictal EEG findings — video EEG monitoring is the gold standard to distinguish PNES from true epilepsy.
+Syncope (including convulsive syncope): typically has a clear provoking trigger (prolonged standing, pain, emotional stress) with a brief prodrome of lightheadedness/graying vision, rapid recovery without prolonged postictal confusion, and any jerking movements are brief and follow the loss of consciousness rather than an aura preceding it.
+Panic attack: can share the epigastric rising sensation and derealization/déjà vu-like feelings, but typically lasts longer (many minutes), is accompanied by prominent autonomic symptoms (palpitations, sweating, hyperventilation) without loss of awareness or automatisms, and there is no postictal confusion.`,
+
+    diagnostic_evaluation: `EEG (ideally including sleep-deprived or video EEG monitoring to capture an event) is the key test, looking for interictal epileptiform discharges (spikes or sharp waves) localized over the anterior/mid temporal region, and ictal rhythmic temporal theta activity during a captured seizure.
+MRI brain with epilepsy protocol (thin cuts through the hippocampus) is essential to look for mesial temporal sclerosis — hippocampal atrophy with increased T2/FLAIR signal, often with loss of the normal internal hippocampal architecture — the most common structural lesion underlying temporal lobe epilepsy, frequently related to a remote history of prolonged febrile seizures in childhood.
+Neuropsychological testing can help lateralize temporal lobe dysfunction (verbal memory deficits with dominant/left temporal involvement, visuospatial memory deficits with nondominant/right temporal involvement) and is often used as part of presurgical evaluation.
+A careful description of the aura and automatisms from the patient and witnesses remains central to localization even before any testing, since the specific aura (epigastric rising sensation, fear, déjà vu/jamais vu, olfactory hallucination) is a strong clinical localizer to the mesial temporal structures.`,
+
+    management: `Antiseizure medications are first-line: options effective for focal seizures include levetiracetam, lamotrigine, carbamazepine, and oxcarbazepine, chosen based on side-effect profile, comorbidities, and (in women of childbearing age) teratogenicity considerations (valproate is generally avoided given its higher teratogenic risk).
+About a third of patients with temporal lobe epilepsy due to mesial temporal sclerosis have seizures that are drug-resistant (failing two appropriately chosen and dosed antiseizure medications) — this is an important threshold, as continuing to try more medications indefinitely delays consideration of surgery, which has strong evidence of benefit in this specific population.
+For drug-resistant temporal lobe epilepsy with a clearly localized unilateral mesial temporal sclerosis lesion, anterior temporal lobectomy (or selective amygdalohippocampectomy) offers a high likelihood of seizure freedom and is supported by randomized trial evidence — surgical referral should not be delayed once drug resistance is established.
+Patients should also receive standard seizure safety counseling (driving restrictions per local law, medication adherence, avoiding known triggers like sleep deprivation and alcohol) and, for those not surgical candidates, alternatives like vagus nerve stimulation or responsive neurostimulation may be considered.`,
+
+    first_order_prompt: `What structural brain finding on MRI is classically responsible for drug-resistant temporal lobe epilepsy, and what childhood risk factor is it associated with?`,
+    first_order_answer: `Mesial temporal (hippocampal) sclerosis — hippocampal atrophy with T2/FLAIR hyperintensity — associated with a history of prolonged childhood febrile seizures.`,
+
+    second_order_vignette: `A 34-year-old man has had episodes for the past two years, occurring roughly weekly, that begin with an intense feeling of fear and a rising sensation in his stomach, after which witnesses report he stares blankly, repeatedly picks at his shirt, and does not respond to his name for about 90 seconds; he is confused and tired for several minutes afterward and has no memory of the event. Trials of levetiracetam and then lamotrigine at adequate doses have not controlled his seizures. MRI shows left hippocampal atrophy with increased T2 signal.`,
+    second_order_question: `Which of the following is the most appropriate next step in management?`,
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'Add a third antiseizure medication and reassess in 6 months', correct: false, explanation: `This patient already meets criteria for drug-resistant epilepsy (failure of two appropriately chosen and dosed antiseizure medications), and continuing to cycle through more drugs has a low likelihood of achieving seizure freedom while delaying a treatment (surgery) that could be curative for his clearly localized lesion.` },
+      { label: 'B', text: 'Refer for presurgical evaluation for possible anterior temporal lobectomy', correct: true, explanation: `This patient has drug-resistant temporal lobe epilepsy (failed two adequate antiseizure medication trials) with a clearly lateralized structural lesion (left mesial temporal sclerosis) on MRI concordant with his semiology — this is the classic profile for which epilepsy surgery offers a high chance of seizure freedom, and guidelines support prompt referral rather than further medication trials.` },
+      { label: 'C', text: 'Begin video EEG monitoring only to confirm this is epilepsy, then discharge', correct: false, explanation: `While video EEG is part of presurgical workup, simply confirming the diagnosis and discharging without addressing his drug-resistant status and surgical candidacy fails to act on the actionable finding here — he needs referral toward definitive treatment, not just diagnostic confirmation.` },
+      { label: 'D', text: 'Start a ketogenic diet as first-line treatment', correct: false, explanation: `Ketogenic diet is used mainly in pediatric drug-resistant epilepsy or as an adjunct when surgery isn't feasible/desired — it is not the preferred next step for an adult with a clearly localized, surgically resectable lesion.` },
+      { label: 'E', text: 'Reassure him that temporal lobe epilepsy resolves spontaneously in adulthood and continue current therapy', correct: false, explanation: `Temporal lobe epilepsy due to mesial temporal sclerosis does not typically remit spontaneously, and this reassurance is inaccurate and would delay appropriate escalation of care.` },
+    ]),
+    second_order_answer: 'B',
+    second_order_explanation: `This patient meets the standard definition of drug-resistant epilepsy (failure of two appropriately chosen and adequately dosed antiseizure medications), and has a clearly lateralizing lesion (left mesial temporal sclerosis) that is concordant with his seizure semiology (epigastric aura, automatisms, impaired awareness). This is precisely the population in which randomized controlled trial data show anterior temporal lobectomy produces substantially better seizure freedom rates than continued medical therapy, so timely referral for presurgical evaluation (video EEG monitoring, neuropsychological testing, and confirmation of localization) is the appropriate next step rather than further medication trials.`,
+
+    flowchart_title: 'Focal Seizure with Impaired Awareness Workup',
+    flowchart: JSON.stringify([
+      { node: 'Episodic aura + staring + automatisms + postictal confusion', branches: [
+        { label: 'Brief (seconds), no aura, no automatisms, child', next: 'Consider absence seizures — EEG for 3-Hz spike-wave' },
+        { label: 'Aura (epigastric/déjà vu) + automatisms + amnesia for event', next: 'Consider temporal lobe epilepsy' },
+      ] },
+      { node: 'Suspected temporal lobe epilepsy — confirm', branches: [
+        { label: 'Atypical semiology, normal ictal EEG on video monitoring', next: 'Consider psychogenic nonepileptic seizures' },
+        { label: 'Interictal temporal spikes / ictal temporal rhythmic activity', next: 'MRI epilepsy protocol' },
+      ] },
+      { node: 'MRI epilepsy protocol', branches: [
+        { label: 'Hippocampal atrophy + T2/FLAIR hyperintensity', next: 'Mesial temporal sclerosis confirmed' },
+        { label: 'No structural lesion identified', next: 'Nonlesional focal epilepsy — antiseizure medication trial' },
+      ] },
+      { node: 'Treatment course', branches: [
+        { label: 'Seizures controlled on 1st or 2nd medication', next: 'Continue antiseizure medication' },
+        { label: 'Failed 2 adequate medication trials (drug-resistant)', next: 'Refer for presurgical evaluation / anterior temporal lobectomy' },
+      ] },
+    ]),
+  },
+  {
+    module_number: 12,
+    module_title: 'Neurology and Special Senses',
+    key_submodule: 'Ophthalmology',
+    slug: 'pituitary-adenoma-bitemporal-hemianopia',
+    title: 'Pituitary Adenoma and Bitemporal Hemianopia',
+    sort_order: 9,
+
+    hook_vignette: `A 45-year-old woman presents with several months of headaches and progressive difficulty with peripheral vision, having bumped into objects and people at the edges of her vision on both sides. She also reports irregular menstrual periods and unexpected milky nipple discharge despite not breastfeeding. Visual field testing reveals loss of the outer (temporal) visual fields bilaterally, with central vision preserved.`,
+
+    ddx_mapping: `Localizing a visual field defect starts with a simple anatomic rule: lesions anterior to the optic chiasm cause monocular deficits, lesions AT the chiasm cause bitemporal deficits, and lesions posterior to the chiasm (optic tract, radiations, occipital cortex) cause homonymous (same-side) deficits in both eyes — this patient's bilateral temporal field loss localizes precisely to the optic chiasm.
+Optic neuritis: causes monocular vision loss (central scotoma), pain with eye movement, and an afferent pupillary defect in one eye — a pre-chiasmal, unilateral pattern, not the bilateral temporal pattern seen here, and typically associated with multiple sclerosis in a younger patient.
+Occipital lobe stroke (posterior cerebral artery territory): causes a homonymous hemianopia (loss of the same side of the visual field in both eyes), often with macular sparing (due to dual blood supply to the occipital pole) — a fundamentally different pattern (posterior to the chiasm) than the bitemporal loss described here.
+Optic tract lesion: also produces a homonymous field defect (incongruous, i.e., not identical in shape between the two eyes), located just posterior to the chiasm — again distinct from bitemporal loss.
+Craniopharyngioma: can also compress the optic chiasm from above (arising from Rathke's pouch remnants) producing a similar bitemporal hemianopia, but classically occurs in a bimodal age distribution (children and older adults) with suprasellar calcifications on imaging, distinguishing it radiographically from a pituitary adenoma even though the visual field pattern can look identical.
+The key overall teaching point: this patient's bilateral, symmetric temporal field loss with preserved central and nasal fields is essentially diagnostic of a chiasmal lesion, most commonly a pituitary macroadenoma compressing the chiasm from below, which pinches the crossing nasal retinal fibers (which carry temporal field information) first.`,
+
+    diagnostic_evaluation: `Formal automated visual field testing (perimetry) confirms and maps the bitemporal hemianopia, typically denser superiorly initially (since the inferior chiasmal fibers, carrying superior field information, are compressed first by a pituitary mass growing upward from below) before progressing to complete quadrant/hemifield loss.
+MRI brain with pituitary protocol (dedicated thin-cut sequences through the sella) is the definitive imaging study, looking for a pituitary mass and assessing the degree of suprasellar extension and optic chiasm compression.
+A full pituitary hormone panel should be obtained: prolactin (this patient's galactorrhea and menstrual irregularity suggest a prolactinoma, though a very large nonfunctioning adenoma can also modestly elevate prolactin via "stalk effect" by compressing the pituitary stalk and disrupting dopamine's tonic inhibition of prolactin — a markedly elevated prolactin level, however, favors a true prolactin-secreting tumor over stalk effect), along with IGF-1 (acromegaly), cortisol/ACTH (Cushing disease), and TSH/free T4, since pituitary masses can be either hormonally active (functioning) or silent (nonfunctioning) and each has different implications for both symptoms and treatment.
+Formal ophthalmologic exam, including visual acuity and fundoscopy (to assess for optic disc pallor from chronic compression), rounds out the evaluation and helps establish a baseline to track treatment response.`,
+
+    management: `Treatment depends heavily on tumor type: if this is a prolactinoma (confirmed by a markedly elevated prolactin level appropriate to tumor size), first-line treatment is a dopamine agonist (cabergoline preferred over bromocriptine for efficacy and tolerability) — this is unusual among pituitary tumors in that medical therapy alone, rather than surgery, is first-line and often shrinks the tumor enough to relieve chiasmal compression and restore vision.
+For other functioning or nonfunctioning macroadenomas causing visual field compromise, or for a prolactinoma that fails to respond adequately to dopamine agonist therapy, transsphenoidal surgical resection is the standard approach, chosen because it avoids external incisions and has a strong track record for pituitary lesions.
+Visual field defects from chiasmal compression can improve substantially after decompression (medical or surgical), especially if treated before permanent optic nerve damage (optic atrophy) sets in — this is why prompt diagnosis and treatment matter for visual prognosis, not just for controlling the mass itself.
+Postoperative or ongoing endocrine monitoring is essential, since pituitary surgery can cause new hormone deficiencies (hypopituitarism, sometimes including transient or permanent diabetes insipidus from posterior pituitary/stalk disruption) that need to be screened for and treated with hormone replacement as needed.`,
+
+    first_order_prompt: `What is the classic visual field defect caused by a pituitary adenoma compressing the optic chiasm, and which retinal fibers does this reflect?`,
+    first_order_answer: `Bitemporal hemianopia — from compression of the crossing nasal retinal fibers at the optic chiasm, which carry information from the temporal visual fields.`,
+
+    second_order_vignette: `A 52-year-old man presents with 6 months of headache and new difficulty seeing objects to the outer edges of his vision on both sides while driving. Visual field testing confirms a bitemporal hemianopia, denser in the superior quadrants. MRI reveals a 2.5 cm pituitary mass with suprasellar extension abutting the optic chiasm. Serum prolactin is 38 ng/mL (mildly elevated; upper limit of normal ~20 ng/mL), and all other pituitary hormone levels are normal.`,
+    second_order_question: `Which of the following best explains this patient's mild prolactin elevation, and what is the most appropriate next step?`,
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'This represents a true prolactinoma; start cabergoline', correct: false, explanation: `A prolactin level this mildly elevated in the setting of a large (2.5 cm) macroadenoma is more consistent with "stalk effect" from pituitary stalk compression than a true prolactin-secreting tumor, which typically causes prolactin levels rising into the hundreds or thousands in proportion to tumor size; treating this as a prolactinoma with medication alone risks leaving a compressive, likely nonfunctioning mass untreated.` },
+      { label: 'B', text: 'This is stalk effect from mass compression disrupting dopaminergic inhibition; the mass is likely a nonfunctioning adenoma requiring transsphenoidal surgery given chiasmal compression', correct: true, explanation: `A large pituitary mass compressing the pituitary stalk disrupts the normal tonic dopaminergic inhibition of prolactin secretion, causing a mild-to-moderate ("stalk effect") prolactin elevation (usually less than 100-150 ng/mL) that is disproportionately low relative to the tumor's size — this pattern, combined with symptomatic chiasmal compression, points to a nonfunctioning macroadenoma that needs surgical decompression rather than dopamine agonist therapy alone.` },
+      { label: 'C', text: 'Prolactin elevation is a normal, expected finding of no clinical significance in any pituitary mass and needs no further action', correct: false, explanation: `Prolactin elevation always requires interpretation in the context of the mass — it can mean a true prolactinoma (managed medically) or stalk effect from a nonfunctioning tumor (usually managed surgically when symptomatic); it is never something to simply disregard.` },
+      { label: 'D', text: 'The mass is a craniopharyngioma and prolactin elevation is unrelated', correct: false, explanation: `While craniopharyngioma is on the differential for a sellar/suprasellar mass, nothing here (patient's age, absence of suprasellar calcifications noted) specifically points to it over a pituitary adenoma, and the prolactin elevation is directly relevant to characterizing the pituitary lesion itself, not an incidental unrelated finding.` },
+      { label: 'E', text: 'Recommend observation alone with repeat imaging in one year', correct: false, explanation: `This patient has symptomatic chiasmal compression (progressive visual field loss) from a large mass — observation alone is inappropriate when there is an active, symptomatic mass effect on the optic apparatus; timely intervention is needed to prevent permanent vision loss.` },
+    ]),
+    second_order_answer: 'B',
+    second_order_explanation: `The key teaching point is that not every prolactin elevation in the setting of a pituitary mass means a prolactinoma. A mild-to-moderate prolactin rise disproportionate to a large tumor's size classically reflects "stalk effect" — compression of the pituitary stalk impairs delivery of hypothalamic dopamine, which normally tonically suppresses lactotroph prolactin secretion, so prolactin rises modestly regardless of the tumor's actual secretory type. This distinction matters clinically: a true prolactinoma is treated first with a dopamine agonist, while a nonfunctioning macroadenoma causing stalk effect and symptomatic chiasmal compression (as in this patient, with progressive bitemporal visual field loss) is generally treated with transsphenoidal surgical decompression.`,
+
+    flowchart_title: 'Visual Field Defect Localization',
+    flowchart: JSON.stringify([
+      { node: 'Visual field defect pattern', branches: [
+        { label: 'Monocular loss, pain with eye movement', next: 'Pre-chiasmal — optic neuritis or other optic nerve lesion' },
+        { label: 'Bitemporal loss, both eyes', next: 'Chiasmal lesion — pituitary adenoma or craniopharyngioma' },
+        { label: 'Homonymous loss, same side both eyes', next: 'Post-chiasmal — optic tract, radiations, or occipital cortex lesion' },
+      ] },
+      { node: 'Confirmed chiasmal (bitemporal) defect', branches: [
+        { label: 'Suprasellar calcifications, bimodal age (child/older adult)', next: 'Favor craniopharyngioma' },
+        { label: 'Sellar mass, no calcification', next: 'Favor pituitary adenoma — obtain full hormone panel' },
+      ] },
+      { node: 'Prolactin level relative to tumor size', branches: [
+        { label: 'Markedly elevated, proportional to size', next: 'True prolactinoma — first-line dopamine agonist' },
+        { label: 'Mildly elevated, disproportionate to a large mass', next: 'Stalk effect — likely nonfunctioning adenoma' },
+      ] },
+      { node: 'Symptomatic chiasmal compression present', branches: [
+        { label: 'Prolactinoma responsive to medical therapy', next: 'Continue dopamine agonist, monitor vision/imaging' },
+        { label: 'Nonfunctioning adenoma or medical therapy failure', next: 'Transsphenoidal surgical resection' },
+      ] },
+    ]),
+  },
+  {
+    module_number: 12,
+    module_title: 'Neurology and Special Senses',
+    key_submodule: 'Otolaryngology',
+    slug: 'benign-paroxysmal-positional-vertigo',
+    title: 'Benign Paroxysmal Positional Vertigo',
+    sort_order: 10,
+
+    hook_vignette: `A 58-year-old woman presents with recurrent episodes of intense spinning sensation lasting less than a minute, consistently triggered by rolling over in bed or looking up to reach a high shelf. Between episodes she feels completely normal, and she denies hearing loss, tinnitus, weakness, or double vision.`,
+
+    ddx_mapping: `The single most useful discriminator between peripheral (inner ear) and central (brainstem/cerebellar) vertigo is the HINTS exam (Head Impulse, Nystagmus, Test of Skew) when a patient has acute, continuous vertigo with nystagmus — but this patient's brief, positional, recurrent pattern without any accompanying neurologic or auditory symptoms is itself already classic for benign paroxysmal positional vertigo (BPPV).
+BPPV: brief (seconds to about a minute) episodes of vertigo specifically triggered by changes in head position relative to gravity (rolling over, looking up, bending down), due to displaced otoconia (canaliths) in the semicircular canals (most commonly the posterior canal) stimulating the cupula inappropriately; no hearing loss, tinnitus, or focal neurologic symptoms.
+Vestibular neuritis (or labyrinthitis if hearing is also involved): continuous, severe vertigo lasting days, not triggered specifically by position (though movement worsens it), often following a viral illness, with a unidirectional horizontal nystagmus and an abnormal (positive) head impulse test — the sustained, non-episodic pattern differs from BPPV's brief, positional attacks.
+Ménière disease: episodic vertigo lasting minutes to hours (longer than BPPV), classically with the triad of vertigo, fluctuating sensorineural hearing loss, and tinnitus/aural fullness — the auditory symptoms are the key differentiator from BPPV.
+Central (posterior circulation stroke/TIA) vertigo: should be suspected when vertigo is accompanied by other brainstem/cerebellar signs (dysarthria, diplopia, ataxia disproportionate to the vertigo, limb weakness/numbness) or in a patient with vascular risk factors and acute continuous vertigo; a normal head impulse test paired with direction-changing nystagmus or skew deviation (the pattern making up a concerning HINTS exam) should raise suspicion for a central cause even when the patient otherwise looks well, and warrants MRI (with diffusion-weighted imaging, since even MRI can be falsely negative for a small posterior fossa stroke in the first 24-48 hours).`,
+
+    diagnostic_evaluation: `The Dix-Hallpike maneuver is both diagnostic and the classic bedside test for posterior canal BPPV (the most common variant): the patient is moved rapidly from sitting to supine with the head turned 45 degrees to one side and extended slightly off the table edge; a positive test reproduces the vertigo and shows a brief (under a minute), fatigable, upbeating and torsional nystagmus with a short latency after the position change.
+A supine roll test is used instead when horizontal (lateral) canal BPPV is suspected (nystagmus is horizontal rather than torsional).
+No imaging is required for a straightforward positional-only presentation with a classic Dix-Hallpike response and no red-flag features (no hearing loss, no other neurologic findings) — this is a clinical diagnosis.
+Red flags that should prompt further workup (MRI with attention to the posterior fossa, and possibly a formal HINTS exam by a trained clinician) include vertigo that is continuous rather than positional/episodic, new hearing loss, other neurologic symptoms (diplopia, dysarthria, limb ataxia, weakness/numbness), severe headache, or significant vascular risk factors in an older patient — any of these should make a clinician reconsider central causes before assuming BPPV.`,
+
+    management: `Canalith repositioning maneuvers are both diagnostic and therapeutic: the Epley maneuver (for posterior canal BPPV) sequentially repositions the displaced otoconia out of the semicircular canal and back into the utricle, often relieving symptoms after just one or a few treatments, and can be taught to patients for at-home repetition (modified Epley/Semont maneuvers) if symptoms recur.
+Vestibular suppressant medications (meclizine, benzodiazepines) are generally discouraged as primary therapy for BPPV — they only provide symptomatic relief and can actually impair the central vestibular compensation that helps resolve symptoms long-term, so they're reserved for brief use in patients with significant associated nausea rather than as ongoing treatment.
+BPPV commonly recurs, and patients should be counseled about this and taught to self-perform repositioning maneuvers if symptoms return, rather than needing to return to a clinician for each episode.
+If a central cause is suspected instead (based on red flags noted above), immediate neuroimaging and neurology consultation take priority over any peripheral vertigo treatment, since a missed posterior circulation stroke carries far greater morbidity than a delayed BPPV diagnosis.`,
+
+    first_order_prompt: `What bedside maneuver both diagnoses and treats posterior canal BPPV, respectively?`,
+    first_order_answer: `The Dix-Hallpike maneuver is used to diagnose it (reproducing vertigo with characteristic upbeating/torsional nystagmus), and the Epley maneuver is used to treat it (repositioning the otoconia out of the semicircular canal).`,
+
+    second_order_vignette: `A 67-year-old man with hypertension and type 2 diabetes presents with 6 hours of continuous vertigo, mild unsteadiness when walking, and difficulty forming words. He denies hearing loss. On exam he has dysarthria and mild left-sided limb dysmetria on finger-to-nose testing. His symptoms are present even at rest and are not specifically triggered by head position.`,
+    second_order_question: `Which of the following features in this patient should raise the most concern for a central (rather than peripheral) cause of vertigo?`,
+    second_order_choices: JSON.stringify([
+      { label: 'A', text: 'Absence of hearing loss', correct: false, explanation: `Absence of hearing loss doesn't distinguish central from peripheral vertigo well by itself — many peripheral causes (including BPPV and vestibular neuritis) also lack hearing loss; it is not the key red flag here.` },
+      { label: 'B', text: 'Continuous vertigo at rest with dysarthria and limb dysmetria', correct: true, explanation: `Vertigo that is continuous rather than triggered by position, combined with other brainstem/cerebellar signs (dysarthria, limb dysmetria/ataxia) in a patient with vascular risk factors (hypertension, diabetes), is the classic red-flag pattern for a posterior circulation (cerebellar/brainstem) stroke or TIA and should prompt urgent neuroimaging rather than a peripheral vertigo workup.` },
+      { label: 'C', text: 'Patient age over 60', correct: false, explanation: `While advancing age is a nonspecific risk factor for vascular disease, it alone is not what identifies this presentation as central vertigo — the specific combination of continuous vertigo with brainstem/cerebellar signs is the true red flag.` },
+      { label: 'D', text: 'Presence of vertigo itself', correct: false, explanation: `Vertigo alone is a nonspecific symptom seen in both peripheral and central disease; it is the accompanying findings (continuous course, dysarthria, dysmetria) that localize this to a central process, not vertigo in isolation.` },
+      { label: 'E', text: 'Mild nausea associated with the episode', correct: false, explanation: `Nausea commonly accompanies both peripheral and central vertigo and does not help distinguish between them; it is not a red flag for a central cause.` },
+    ]),
+    second_order_answer: 'B',
+    second_order_explanation: `This patient's presentation — continuous (not positional) vertigo accompanied by dysarthria and limb dysmetria in a patient with significant vascular risk factors — is the classic red-flag pattern for a posterior circulation (vertebrobasilar) stroke or TIA affecting the cerebellum/brainstem, not benign peripheral vertigo. This warrants urgent MRI with diffusion-weighted imaging (recognizing it can still be falsely negative early) and neurology involvement, in contrast to the brief, position-triggered, isolated vertigo without other neurologic signs that characterizes BPPV.`,
+
+    flowchart_title: 'Vertigo: Peripheral vs Central Localization',
+    flowchart: JSON.stringify([
+      { node: 'Patient presents with vertigo', branches: [
+        { label: 'Brief episodes, triggered strictly by head position change', next: 'Suspect BPPV — perform Dix-Hallpike maneuver' },
+        { label: 'Continuous vertigo, not positionally triggered', next: 'Assess for peripheral vs central cause' },
+      ] },
+      { node: 'Continuous vertigo — check for red flags', branches: [
+        { label: 'Other brainstem/cerebellar signs (dysarthria, dysmetria, weakness) or vascular risk factors', next: 'Concerning for central (posterior circulation) cause — urgent MRI' },
+        { label: 'Recent viral illness, unidirectional nystagmus, abnormal head impulse test, no other neuro signs', next: 'Favor vestibular neuritis/labyrinthitis' },
+      ] },
+      { node: 'Dix-Hallpike result', branches: [
+        { label: 'Positive: brief upbeating/torsional nystagmus reproducing vertigo', next: 'Confirms posterior canal BPPV' },
+        { label: 'Negative, but horizontal canal BPPV suspected', next: 'Perform supine roll test instead' },
+      ] },
+      { node: 'Confirmed BPPV', branches: [
+        { label: 'Standard treatment', next: 'Epley maneuver (canalith repositioning)' },
+        { label: 'Recurrent symptoms', next: 'Teach self-repositioning maneuvers; avoid chronic vestibular suppressants' },
+      ] },
+    ]),
+  },
 ];
 
 // ---------------------------------------------------------------------------
