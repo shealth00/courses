@@ -1995,6 +1995,936 @@ const CLINICAL_TOPICS = [
     ]),
   },
   // ===========================================================================
+  // Module 3 — Microbiology
+  // ===========================================================================
+  {
+    module_number: 3,
+    module_title: "Microbiology",
+    key_submodule: "CNS Infections",
+    slug: "bacterial-meningitis-streptococcus-pneumoniae",
+    title: "Acute Bacterial Meningitis (Streptococcus pneumoniae)",
+    sort_order: 1,
+
+    hook_vignette:
+      "A 34-year-old woman presents to the emergency department with 12 hours of high fever, severe headache, and neck stiffness. Her husband reports she has become confused and unusually drowsy over the past two hours. On exam she winces and flexes her hips when her neck is passively flexed.",
+
+    ddx_mapping:
+      "Acute bacterial meningitis (classically S. pneumoniae in adults) evolves over hours and produces a triad of fever, neck stiffness, and altered mental status, often with photophobia and a markedly toxic appearance; CSF is turbid with a high neutrophil count.\nViral (aseptic) meningitis has a similar triad but a milder, more indolent course over 1-2 days, patients are less toxic-appearing and often remain alert and oriented, and CSF shows a lymphocytic pleocytosis with normal glucose.\nHerpes simplex encephalitis presents with fever plus prominent behavioral change, focal neurologic deficits, or seizures (temporal lobe involvement) rather than isolated meningismus, and CSF PCR for HSV is diagnostic; neck stiffness is often less pronounced than in bacterial meningitis.\nSubarachnoid hemorrhage causes a sudden 'thunderclap' headache reaching maximal intensity within seconds and can also produce neck stiffness and photophobia, but fever is absent or delayed and noncontrast head CT (followed by lumbar puncture if CT is negative) establishes the diagnosis rather than a septic CSF profile.\nBrain abscess presents more subacutely with headache, fever, and focal deficits (matching the abscess location) and lumbar puncture is often deferred because of the risk of herniation with a mass lesion; imaging (contrast MRI/CT) showing a ring-enhancing lesion distinguishes it from diffuse meningeal infection.",
+
+    diagnostic_evaluation:
+      "Blood cultures should be drawn immediately, before or simultaneously with any imaging, and empiric antibiotics should not be delayed for either imaging or lumbar puncture in a patient without contraindications.\nCT head before lumbar puncture is reserved for patients with papilledema, focal neurologic deficits, new seizure, altered consciousness, or immunocompromise, to rule out a mass effect that would risk herniation with LP.\nLumbar puncture in bacterial meningitis classically shows an opening pressure >180 mmH2O, WBC count often >1,000/mm3 with neutrophil predominance, glucose <40 mg/dL (or CSF:serum glucose ratio <0.4), and protein >150 mg/dL.\nCSF Gram stain and culture identify the organism; for S. pneumoniae, Gram-positive diplococci are seen on Gram stain, and CSF/blood PCR panels can speed identification when culture is pending.",
+
+    management:
+      "Empiric therapy in adults is started immediately (ideally within 30-60 minutes of presentation) with IV vancomycin plus a third-generation cephalosporin (ceftriaxone or cefotaxime) to cover resistant pneumococcus, plus dexamethasone given just before or with the first antibiotic dose (dexamethasone reduces neurologic complications and mortality specifically in pneumococcal meningitis, and should be discontinued if the organism turns out not to be S. pneumoniae).\nAdd ampicillin empirically in patients >50 years, alcoholic, or otherwise immunocompromised to cover Listeria monocytogenes, which is not covered by cephalosporins.\nOnce culture and susceptibility confirm penicillin-susceptible S. pneumoniae, therapy can be narrowed to penicillin G or ampicillin; total duration is typically 10-14 days.\nClose contacts require chemoprophylaxis only for meningococcal meningitis (rifampin, ciprofloxacin, or ceftriaxone), not for pneumococcal meningitis, since S. pneumoniae is not transmitted by the same droplet/close-contact risk profile that drives meningococcal prophylaxis.",
+
+    first_order_prompt:
+      "What is the single most common cause of community-acquired bacterial meningitis in immunocompetent adults?",
+    first_order_answer:
+      "Streptococcus pneumoniae (a Gram-positive, catalase-negative, alpha-hemolytic diplococcus).",
+
+    second_order_vignette:
+      "A 58-year-old man with a history of alcohol use disorder is brought to the emergency department after being found confused at home. His temperature is 39.4°C (102.9°F), blood pressure 100/62 mmHg, and heart rate 118/min. He is somnolent but arousable, and passive neck flexion produces pain and involuntary hip flexion. A noncontrast CT of the head shows no mass effect or midline shift.",
+    second_order_question:
+      "Which of the following is the most appropriate next step in management?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Draw blood cultures, then perform lumbar puncture, and start IV vancomycin, ceftriaxone, ampicillin, and dexamethasone immediately after the LP without waiting for CSF results",
+        "correct": true,
+        "explanation": "Correct. CT already excluded a mass lesion, so LP should proceed without further imaging delay; empiric antibiotics (including ampicillin for Listeria coverage given his age and alcohol use) plus dexamethasone should start immediately after CSF is obtained rather than waiting for results, since delayed antibiotics increase mortality."
+      },
+      {
+        "label": "B",
+        "text": "Withhold antibiotics until CSF Gram stain and culture results are finalized, to avoid partially treating the infection before it is identified",
+        "correct": false,
+        "explanation": "Incorrect. Delaying antibiotics for culture confirmation increases the risk of neurologic complications and death; empiric therapy should start immediately after (or with) the LP."
+      },
+      {
+        "label": "C",
+        "text": "Obtain an MRI of the brain before proceeding with lumbar puncture, given the patient's altered mental status",
+        "correct": false,
+        "explanation": "Incorrect. A noncontrast CT has already excluded a mass effect; an additional MRI only delays LP and antibiotics without added safety benefit here."
+      },
+      {
+        "label": "D",
+        "text": "Start ceftriaxone monotherapy and defer vancomycin and ampicillin until an organism is identified",
+        "correct": false,
+        "explanation": "Incorrect. Empiric therapy must be broad from the start: vancomycin for resistant pneumococcus and ampicillin for Listeria (given his age >50 and alcohol use), not narrowed pending culture."
+      },
+      {
+        "label": "E",
+        "text": "Administer dexamethasone only if CSF Gram stain reveals Gram-positive diplococci",
+        "correct": false,
+        "explanation": "Incorrect. Dexamethasone should be given empirically with or just before the first antibiotic dose, before the organism is confirmed, and discontinued later if the organism turns out not to be S. pneumoniae."
+      }
+    ]),
+    second_order_answer: "A",
+    second_order_explanation:
+      "This patient's presentation (fever, altered mental status, meningismus) in the setting of alcohol use disorder and age >50 raises specific concern for Listeria monocytogenes in addition to the more common S. pneumoniae and Neisseria meningitidis, so empiric therapy must include ampicillin alongside vancomycin (for resistant pneumococcus) and a third-generation cephalosporin (for pneumococcus/meningococcus). Because his CT already excluded a mass lesion, lumbar puncture should proceed without further imaging delay, and antibiotics (plus dexamethasone, ideally given with or just before the first antibiotic dose) should be started immediately after CSF is obtained rather than waiting for culture results — every hour of delay in antibiotic administration in bacterial meningitis is associated with increased mortality.",
+
+    flowchart_title: "Approach to Suspected Bacterial Meningitis",
+    flowchart: JSON.stringify([
+      {
+        "node": "Adult with fever, headache, neck stiffness ± altered mental status",
+        "branches": [
+          {
+            "label": "Papilledema, focal deficit, new seizure, or immunocompromise present",
+            "next": "Obtain blood cultures → CT head before LP"
+          },
+          {
+            "label": "None of the above red flags present",
+            "next": "Obtain blood cultures → proceed directly to LP"
+          }
+        ]
+      },
+      {
+        "node": "CT head (if obtained)",
+        "branches": [
+          {
+            "label": "Mass effect / shift present",
+            "next": "Defer LP; start empiric antibiotics + dexamethasone immediately"
+          },
+          {
+            "label": "No mass effect",
+            "next": "Proceed to LP without further delay"
+          }
+        ]
+      },
+      {
+        "node": "Lumbar puncture",
+        "branches": [
+          {
+            "label": "Neutrophilic pleocytosis, glucose <40, protein >150",
+            "next": "Start empiric vancomycin + ceftriaxone (+ampicillin if age >50/immunocompromised) + dexamethasone"
+          },
+          {
+            "label": "Lymphocytic pleocytosis, normal glucose",
+            "next": "Consider viral meningitis/encephalitis; add acyclovir if HSV encephalitis suspected"
+          }
+        ]
+      },
+      {
+        "node": "CSF Gram stain / culture results",
+        "branches": [
+          {
+            "label": "Gram-positive diplococci, penicillin-susceptible",
+            "next": "Narrow to penicillin G or ampicillin; continue dexamethasone; treat 10-14 days"
+          },
+          {
+            "label": "Organism other than S. pneumoniae",
+            "next": "Discontinue dexamethasone; tailor antibiotics to organism/susceptibility"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 3,
+    module_title: "Microbiology",
+    key_submodule: "Pulmonary Infections",
+    slug: "community-acquired-pneumonia-streptococcus-pneumoniae",
+    title: "Community-Acquired Pneumonia (Streptococcus pneumoniae)",
+    sort_order: 2,
+
+    hook_vignette:
+      "A 62-year-old man with type 2 diabetes presents with three days of fever, shaking chills, a productive cough with rust-colored sputum, and right-sided pleuritic chest pain. He appears ill and tachypneic, and lung auscultation over the right lower lobe reveals bronchial breath sounds with crackles and dullness to percussion.",
+
+    ddx_mapping:
+      "Typical (classic/lobar) pneumonia from Streptococcus pneumoniae presents acutely over 1-3 days with high fever, rigors, a productive cough with rust-colored or purulent sputum, pleuritic chest pain, and a lobar consolidation on chest x-ray; sputum Gram stain shows Gram-positive diplococci with abundant neutrophils.\nAtypical pneumonia (Mycoplasma pneumoniae) has a more gradual onset over days to a week with a dry, nonproductive cough, low-grade fever, and symptoms often 'out of proportion' to the relatively unremarkable exam findings ('walking pneumonia'); chest x-ray tends to show patchy, diffuse interstitial infiltrates rather than a dense lobar consolidation, and it occurs more often in younger patients, often in clusters (dormitories, military barracks).\nLegionella pneumonia should be suspected when pneumonia is accompanied by prominent GI symptoms (diarrhea, abdominal pain), relative bradycardia for the degree of fever, hyponatremia, and a history of exposure to contaminated water sources (cooling towers, hot tubs); diagnosis is via urine antigen testing, since it does not reliably grow on standard sputum culture media.\nViral pneumonia (influenza, and others) typically follows or accompanies upper respiratory prodrome symptoms (myalgias, coryza) and can be distinguished with a rapid viral PCR panel; secondary bacterial pneumonia (often S. pneumoniae or S. aureus) should be suspected if symptoms worsen after initial improvement.\nPulmonary tuberculosis presents more subacutely to chronically (weeks to months) with low-grade fever, night sweats, weight loss, and hemoptysis, typically with upper-lobe cavitary infiltrates on imaging, and requires acid-fast staining/culture or NAAT rather than routine sputum Gram stain/culture.",
+
+    diagnostic_evaluation:
+      "Chest x-ray (or CT if x-ray is equivocal) is required to confirm the diagnosis and typically shows a lobar or segmental consolidation with air bronchograms in classic pneumococcal pneumonia.\nSputum Gram stain and culture (good-quality sample, <10 squamous epithelial cells and >25 neutrophils per low-power field) can identify the organism, though yield is imperfect; blood cultures should be obtained in hospitalized patients before antibiotics.\nUrine antigen tests are available for both S. pneumoniae and Legionella and can rapidly support the diagnosis even after antibiotics have been started.\nSeverity/disposition scoring (CURB-65 or the Pneumonia Severity Index) using confusion, BUN, respiratory rate, blood pressure, and age helps decide between outpatient management, hospital ward admission, or ICU-level care.",
+
+    management:
+      "Outpatient treatment for a previously healthy adult without comorbidities is typically amoxicillin or, if atypical coverage is also desired, a macrolide (azithromycin) or doxycycline; patients with comorbidities (diabetes, chronic heart/lung/liver/renal disease) typically receive a respiratory fluoroquinolone (e.g., levofloxacin) or a beta-lactam plus a macrolide.\nInpatient (non-ICU) therapy is typically a beta-lactam (ceftriaxone) plus a macrolide, or a respiratory fluoroquinolone alone, to cover both typical and atypical organisms.\nICU-level severe CAP requires a beta-lactam plus either a macrolide or a respiratory fluoroquinolone, with additional coverage for Pseudomonas or MRSA added if specific risk factors (structural lung disease, recent hospitalization/antibiotics, prior isolation of these organisms) are present.\nPneumococcal conjugate and polysaccharide vaccines are recommended for prevention in age-eligible adults and those with qualifying comorbidities, and smoking cessation should be addressed as a modifiable risk factor.",
+
+    first_order_prompt:
+      "What is the classic sputum Gram stain finding in typical (pneumococcal) community-acquired pneumonia?",
+    first_order_answer:
+      "Gram-positive, lancet-shaped diplococci (Streptococcus pneumoniae) with numerous neutrophils on a good-quality sputum sample.",
+
+    second_order_vignette:
+      "A previously healthy 24-year-old college student living in a dormitory presents with five days of low-grade fever, malaise, and a persistent dry cough. He says he still went to most of his classes because he 'didn't feel that sick.' Chest x-ray shows patchy, diffuse interstitial infiltrates in both lower lung fields without a discrete lobar consolidation. His roommate has similar symptoms.",
+    second_order_question:
+      "Which organism is most likely responsible for this presentation?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Streptococcus pneumoniae",
+        "correct": false,
+        "explanation": "Incorrect. S. pneumoniae typically causes an acute, toxic-appearing lobar pneumonia with a productive cough, not this gradual, mild illness with patchy infiltrates."
+      },
+      {
+        "label": "B",
+        "text": "Mycoplasma pneumoniae",
+        "correct": true,
+        "explanation": "Correct. A young patient in a dormitory cluster with a gradual onset, dry cough, and symptoms 'out of proportion' to a mild exam and diffuse patchy infiltrates is the classic picture of atypical ('walking') pneumonia due to Mycoplasma."
+      },
+      {
+        "label": "C",
+        "text": "Legionella pneumophila",
+        "correct": false,
+        "explanation": "Incorrect. Legionella typically causes more severe illness with GI symptoms, hyponatremia, and relative bradycardia, and is linked to a contaminated water source rather than person-to-person dormitory spread."
+      },
+      {
+        "label": "D",
+        "text": "Klebsiella pneumoniae",
+        "correct": false,
+        "explanation": "Incorrect. Klebsiella classically affects alcoholics/diabetics with a necrotizing lobar pneumonia and thick, blood-tinged (\"currant jelly\") sputum, not a mild outbreak among young dormitory residents."
+      },
+      {
+        "label": "E",
+        "text": "Pneumocystis jirovecii",
+        "correct": false,
+        "explanation": "Incorrect. PJP occurs in immunocompromised hosts (e.g., HIV with a low CD4 count), not a previously healthy young adult."
+      }
+    ]),
+    second_order_answer: "B",
+    second_order_explanation:
+      "This vignette is a classic description of atypical ('walking') pneumonia due to Mycoplasma pneumoniae: a young, otherwise healthy patient with a gradual onset of mild constitutional symptoms and a dry cough who remains functional despite illness, occurring in a cluster among people in close contact (dormitories, military barracks), with chest imaging showing diffuse patchy interstitial infiltrates rather than a dense lobar consolidation. Mycoplasma lacks a cell wall, so beta-lactams are ineffective; treatment is with a macrolide, doxycycline, or a respiratory fluoroquinolone.",
+
+    flowchart_title: "Community-Acquired Pneumonia: Typical vs Atypical",
+    flowchart: JSON.stringify([
+      {
+        "node": "Adult with cough, fever, and abnormal chest imaging",
+        "branches": [
+          {
+            "label": "Acute onset, high fever/rigors, productive rust-colored sputum, lobar consolidation",
+            "next": "Suspect typical CAP (S. pneumoniae)"
+          },
+          {
+            "label": "Gradual onset, dry cough, mild symptoms, diffuse patchy infiltrates",
+            "next": "Suspect atypical CAP (Mycoplasma/Chlamydophila)"
+          }
+        ]
+      },
+      {
+        "node": "Additional clues",
+        "branches": [
+          {
+            "label": "GI symptoms, hyponatremia, relative bradycardia, water-source exposure",
+            "next": "Consider Legionella; send urine antigen"
+          },
+          {
+            "label": "Alcoholic/diabetic, currant-jelly sputum, bulging fissure on imaging",
+            "next": "Consider Klebsiella pneumoniae"
+          }
+        ]
+      },
+      {
+        "node": "Assess severity (CURB-65 / clinical judgment)",
+        "branches": [
+          {
+            "label": "Low risk, no comorbidities",
+            "next": "Outpatient: amoxicillin, or macrolide/doxycycline"
+          },
+          {
+            "label": "Comorbidities or moderate severity, ward admission",
+            "next": "Inpatient: beta-lactam + macrolide, or respiratory fluoroquinolone"
+          },
+          {
+            "label": "Severe/ICU criteria met",
+            "next": "Beta-lactam + macrolide or fluoroquinolone; add MRSA/Pseudomonas coverage if risk factors"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 3,
+    module_title: "Microbiology",
+    key_submodule: "Endocarditis",
+    slug: "subacute-infective-endocarditis-viridans-streptococci",
+    title: "Subacute Infective Endocarditis (Viridans Streptococci)",
+    sort_order: 3,
+
+    hook_vignette:
+      "A 45-year-old man with a history of rheumatic heart disease and a known mitral valve murmur presents with three weeks of low-grade fevers, night sweats, fatigue, and a 4-kg weight loss. He recently had a dental extraction without antibiotic prophylaxis. On exam he has a new holosystolic murmur at the apex, tender nodules on his fingertips, and small hemorrhages under his nail beds.",
+
+    ddx_mapping:
+      "Subacute infective endocarditis (classically viridans group streptococci, e.g., Streptococcus sanguinis/mutans) develops over weeks on a previously damaged or abnormal valve (rheumatic heart disease, mitral valve prolapse, bicuspid aortic valve) following a bacteremic event such as a dental procedure, and presents with low-grade constitutional symptoms plus immune-complex phenomena (Osler nodes, Roth spots, glomerulonephritis) and embolic phenomena (Janeway lesions, splinter hemorrhages).\nAcute infective endocarditis (classically Staphylococcus aureus) instead affects normal or damaged valves, often in IV drug users (typically right-sided, tricuspid valve) or hospitalized patients with indwelling catheters, and progresses rapidly over days with high fevers, a more fulminant course, and a higher risk of valve destruction and septic emboli.\nRheumatic fever/rheumatic heart disease recurrence should be considered when there is a history of prior rheumatic fever and new migratory polyarthritis, carditis, chorea, or subcutaneous nodules following a recent streptococcal pharyngitis, distinguished from endocarditis by the Jones criteria and absence of a persistently positive blood culture.\nMarantic (nonbacterial thrombotic) endocarditis occurs in the setting of malignancy or a hypercoagulable state, produces sterile vegetations, and blood cultures remain negative despite similar valvular findings on echocardiography.\nAtrial myxoma can mimic endocarditis with constitutional symptoms, embolic phenomena, and a new murmur, but blood cultures are negative and echocardiography identifies a discrete intracardiac mass rather than a vegetation associated with infection.",
+
+    diagnostic_evaluation:
+      "Diagnosis uses the modified Duke criteria, combining major criteria (two or more positive blood cultures with a typical endocarditis organism, and echocardiographic evidence of endocardial involvement such as a vegetation, abscess, or new valvular regurgitation) with minor criteria (predisposing heart condition or IV drug use, fever ≥38°C, vascular phenomena, immunologic phenomena, and microbiologic evidence not meeting major criteria).\nThree sets of blood cultures from separate venipuncture sites, drawn before starting antibiotics, are essential, since subacute endocarditis produces continuous, low-grade bacteremia that is reliably captured this way.\nTransthoracic echocardiography (TTE) is the initial imaging study; transesophageal echocardiography (TEE) is more sensitive and is used when TTE is nondiagnostic, when a prosthetic valve is present, or when clinical suspicion remains high despite a negative TTE.\nSupporting labs may show a normocytic anemia of chronic disease, elevated inflammatory markers (ESR/CRP), and microscopic hematuria or red cell casts if immune-complex glomerulonephritis has developed.",
+
+    management:
+      "Empiric therapy pending culture results in a subacute presentation with a native valve typically targets streptococci and staphylococci (e.g., vancomycin plus ceftriaxone), then is narrowed once an organism and susceptibilities are known; penicillin-susceptible viridans streptococcal endocarditis is classically treated with IV penicillin G or ceftriaxone for four weeks, sometimes combined with gentamicin for a shorter synergistic course to shorten total treatment duration in uncomplicated cases.\nSurgical valve repair or replacement is indicated for refractory heart failure from valve destruction, uncontrolled infection (perivalvular abscess, persistent bacteremia despite appropriate antibiotics, fungal or highly resistant organisms), or recurrent large emboli despite antibiotics.\nAntibiotic prophylaxis before dental procedures involving gingival manipulation is reserved for the highest-risk patients: prosthetic heart valves, prior infective endocarditis, certain unrepaired or recently repaired congenital heart disease, and cardiac transplant recipients with valvulopathy — a single dose of amoxicillin (or clindamycin/azithromycin if penicillin-allergic) is given before the procedure.\nSerial blood cultures are repeated during therapy to confirm clearance of bacteremia, and patients are monitored for embolic and immune-complex complications throughout the treatment course.",
+
+    first_order_prompt:
+      "What organism classically causes subacute infective endocarditis on a previously damaged heart valve following a dental procedure?",
+    first_order_answer:
+      "Viridans group streptococci (e.g., Streptococcus sanguinis, S. mutans) — alpha-hemolytic, optochin-resistant streptococci that are part of normal oral flora.",
+
+    second_order_vignette:
+      "A 29-year-old man with a history of intravenous heroin use presents with five days of high fever, chills, and pleuritic chest pain. He appears acutely ill. Cardiac exam reveals a new murmur best heard at the left lower sternal border that increases with inspiration. Chest x-ray shows multiple bilateral peripheral nodular opacities, some with cavitation.",
+    second_order_question:
+      "Which of the following best describes the expected findings and most likely causative organism in this patient?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Aortic valve vegetation with viridans streptococci, following a recent dental procedure",
+        "correct": false,
+        "explanation": "Incorrect. This is the wrong valve and organism for an IV drug user with an acute presentation; there is no dental exposure history here."
+      },
+      {
+        "label": "B",
+        "text": "Tricuspid valve vegetation with Staphylococcus aureus, with septic pulmonary emboli explaining the cavitary lung nodules",
+        "correct": true,
+        "explanation": "Correct. IV drug use is the classic risk factor for right-sided (tricuspid) endocarditis, most often from S. aureus; septic emboli travel to the lungs and produce multiple, sometimes cavitating, nodular opacities, and the murmur that increases with inspiration (Carvallo sign) localizes to the tricuspid valve."
+      },
+      {
+        "label": "C",
+        "text": "Mitral valve vegetation with Enterococcus faecalis, following a recent urinary catheterization",
+        "correct": false,
+        "explanation": "Incorrect. There is no catheterization history, and enterococcal endocarditis does not explain this acute right-sided picture with septic pulmonary emboli."
+      },
+      {
+        "label": "D",
+        "text": "Sterile mitral valve vegetation (marantic endocarditis) related to an undiagnosed malignancy",
+        "correct": false,
+        "explanation": "Incorrect. This patient has an acute febrile illness with a clear IV drug use risk factor and imaging consistent with septic emboli, not a sterile marantic process."
+      },
+      {
+        "label": "E",
+        "text": "Pulmonic valve vegetation with Candida albicans, related to long-term parenteral nutrition",
+        "correct": false,
+        "explanation": "Incorrect. There is no history of parenteral nutrition or central line exposure, and S. aureus in an IV drug user is far more classic than fungal endocarditis here."
+      }
+    ]),
+    second_order_answer: "B",
+    second_order_explanation:
+      "IV drug use is the classic risk factor for right-sided (tricuspid valve) infective endocarditis, most commonly caused by Staphylococcus aureus, which can rapidly infect even a structurally normal valve. Septic emboli from a tricuspid vegetation travel through the right heart into the pulmonary circulation, producing the multiple, often cavitating, peripheral nodular lung opacities seen on this patient's chest x-ray (rather than the systemic embolic phenomena — Janeway lesions, splinter hemorrhages, Osler nodes — seen with left-sided endocarditis). The tricuspid regurgitant murmur at the left lower sternal border that increases with inspiration (Carvallo's sign) further supports right-sided valve involvement.",
+
+    flowchart_title: "Suspected Infective Endocarditis Workup",
+    flowchart: JSON.stringify([
+      {
+        "node": "Fever + new murmur ± embolic/immunologic signs",
+        "branches": [
+          {
+            "label": "IV drug use, acute high fevers, right-sided murmur",
+            "next": "Suspect acute right-sided IE (S. aureus, tricuspid valve)"
+          },
+          {
+            "label": "Known valve disease, subacute course, recent dental/GI/GU procedure",
+            "next": "Suspect subacute left-sided IE (viridans strep, enterococcus)"
+          }
+        ]
+      },
+      {
+        "node": "Obtain 3 sets of blood cultures from separate sites before antibiotics",
+        "branches": [
+          {
+            "label": "Two or more positive sets with typical organism",
+            "next": "Major Duke blood-culture criterion met"
+          },
+          {
+            "label": "Cultures negative/atypical organism",
+            "next": "Consider fastidious organisms (HACEK), prior antibiotic exposure, or noninfective mimic"
+          }
+        ]
+      },
+      {
+        "node": "Echocardiography",
+        "branches": [
+          {
+            "label": "TTE shows vegetation/abscess/new regurgitation",
+            "next": "Major imaging criterion met; confirm Duke diagnosis"
+          },
+          {
+            "label": "TTE negative but suspicion remains high (or prosthetic valve)",
+            "next": "Proceed to TEE"
+          }
+        ]
+      },
+      {
+        "node": "Definitive management",
+        "branches": [
+          {
+            "label": "Organism identified, susceptible, no complications",
+            "next": "Pathogen-directed IV antibiotics (e.g., penicillin/ceftriaxone ± gentamicin for viridans strep) x4-6 weeks"
+          },
+          {
+            "label": "Refractory heart failure, uncontrolled infection, or recurrent emboli",
+            "next": "Refer for surgical valve repair/replacement"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 3,
+    module_title: "Microbiology",
+    key_submodule: "Infectious Arthritis",
+    slug: "disseminated-gonococcal-infection",
+    title: "Disseminated Gonococcal Infection",
+    sort_order: 4,
+
+    hook_vignette:
+      "A 22-year-old sexually active woman presents with three days of migratory joint pain that has settled into her right wrist and left knee, along with several painless pustules on an erythematous base scattered over her hands and forearms. She reports no vaginal discharge but has had two new sexual partners in the past two months and inconsistent condom use.",
+
+    ddx_mapping:
+      "Disseminated gonococcal infection (DGI) classically presents in one of two overlapping patterns: a triad of migratory polyarthralgia/tenosynovitis, dermatitis (painless pustules/vesicopustules on an erythematous base), and fever without a single markedly swollen joint (the 'arthritis-dermatitis syndrome'), or a purulent monoarticular/oligoarticular septic arthritis (most often knee, wrist, or ankle) without the classic skin lesions; synovial fluid Gram stain/culture is often negative in the arthritis-dermatitis pattern but positive in the purulent monoarticular pattern.\nNongonococcal septic arthritis (most commonly Staphylococcus aureus, also streptococci and Gram-negative rods in older/immunocompromised patients) presents as a single acutely hot, swollen, exquisitely painful joint with a markedly elevated synovial WBC count and a positive Gram stain/culture much more consistently than gonococcal arthritis, and lacks the skin/tenosynovitis findings of DGI.\n(Formerly Reiter syndrome) Reactive arthritis, triggered by a preceding GI or genitourinary infection (Chlamydia, Campylobacter, Salmonella, Shigella, Yersinia), presents with asymmetric oligoarthritis, conjunctivitis/uveitis, and urethritis, but synovial fluid cultures are sterile since it is a post-infectious immune phenomenon rather than direct joint infection.\nAcute rheumatic fever presents with migratory polyarthritis of large joints following streptococcal pharyngitis, but is accompanied by carditis, chorea, erythema marginatum, and subcutaneous nodules (Jones criteria) rather than the pustular skin lesions of DGI, and synovial fluid is sterile.\nCrystal arthropathies (gout, pseudogout) cause acute monoarticular pain and swelling but typically lack fever/systemic toxicity and skin pustules, and are distinguished definitively by synovial fluid polarized microscopy showing negatively birefringent urate crystals (gout) or positively birefringent/weakly birefringent rhomboid calcium pyrophosphate crystals (pseudogout).",
+
+    diagnostic_evaluation:
+      "Synovial fluid aspiration is essential in any suspected septic joint: cell count, Gram stain, culture, and crystal analysis; in DGI-associated purulent arthritis, synovial WBC is typically markedly elevated (often >50,000/mm3) with neutrophil predominance, though Gram stain/culture positivity is lower for gonococcus than for other septic arthritis organisms because Neisseria gonorrhoeae is fastidious.\nNucleic acid amplification testing (NAAT) of urine, and/or cervical, urethral, rectal, or pharyngeal swabs (based on sexual exposure history) has much higher sensitivity than culture for detecting the primary mucosal gonococcal infection that seeded the disseminated disease.\nBlood cultures and skin lesion cultures/NAAT can also be obtained, though yield from blood is generally low; because gonococcus requires special media (Thayer-Martin) to grow, the microbiology lab should be alerted when gonococcal infection is suspected.\nAll patients diagnosed with gonorrhea should be tested for other sexually transmitted infections, including chlamydia (frequent coinfection), HIV, and syphilis.",
+
+    management:
+      "Empiric treatment for suspected DGI is IV ceftriaxone, continued until clinical improvement (typically 24-48 hours), followed by transition to an oral agent to complete at least a 7-day total course; because chlamydial coinfection is common, empiric treatment for chlamydia (doxycycline) is also given unless it has been specifically excluded by testing.\nDrainage of a purulent joint effusion (needle aspiration, and surgical washout for larger or difficult-to-access joints such as the hip) is part of management for the septic-arthritis pattern of DGI, similar to management of nongonococcal septic arthritis.\nBecause fluoroquinolone resistance in N. gonorrhoeae is now widespread, ceftriaxone-based regimens are preferred, and azithromycin is no longer routinely recommended as dual therapy given rising macrolide resistance; treatment should follow current local/CDC guidance given evolving resistance patterns.\nSexual partners from the preceding 60 days should be notified and treated (expedited partner therapy where permitted), and patients should abstain from sexual activity until therapy is completed and symptoms have resolved in both partners.",
+
+    first_order_prompt:
+      "What are the two classic clinical patterns of disseminated gonococcal infection?",
+    first_order_answer:
+      "(1) Arthritis-dermatitis syndrome — migratory polyarthralgia/tenosynovitis, painless pustular skin lesions, and fever, with often-negative joint cultures; and (2) purulent gonococcal septic arthritis — a single hot, swollen joint (often knee, wrist, or ankle) without the classic skin lesions, with a higher yield on synovial fluid Gram stain/culture.",
+
+    second_order_vignette:
+      "A 34-year-old man presents with two days of an acutely swollen, red, exquisitely tender right knee and fever to 38.9°C (102°F). He denies any recent sexual activity and has no skin lesions. He has a history of psoriasis but no other medical problems. Arthrocentesis yields cloudy synovial fluid with a WBC count of 85,000/mm3 (90% neutrophils), and Gram stain shows Gram-positive cocci in clusters.",
+    second_order_question:
+      "Which of the following is the most likely causative organism?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Neisseria gonorrhoeae",
+        "correct": false,
+        "explanation": "Incorrect. N. gonorrhoeae is a Gram-negative diplococcus, inconsistent with the Gram-positive cocci in clusters seen here, and this patient lacks the sexual-exposure history and skin findings typical of DGI."
+      },
+      {
+        "label": "B",
+        "text": "Staphylococcus aureus",
+        "correct": true,
+        "explanation": "Correct. Gram-positive cocci in clusters with an acute, monoarticular, markedly neutrophilic septic arthritis is classic for S. aureus, the most common cause of nongonococcal septic arthritis overall, including in patients with skin conditions like psoriasis."
+      },
+      {
+        "label": "C",
+        "text": "Streptococcus pyogenes",
+        "correct": false,
+        "explanation": "Incorrect. Streptococci appear as Gram-positive cocci in chains on Gram stain, not clusters."
+      },
+      {
+        "label": "D",
+        "text": "Borrelia burgdorferi",
+        "correct": false,
+        "explanation": "Incorrect. Lyme arthritis is typically a less acutely inflammatory, more indolent monoarthritis without this degree of purulence, and Borrelia does not appear as Gram-positive cocci or grow easily on routine culture."
+      },
+      {
+        "label": "E",
+        "text": "Kingella kingae",
+        "correct": false,
+        "explanation": "Incorrect. Kingella classically affects young children, not an adult, and is a Gram-negative coccobacillus, not Gram-positive cocci in clusters."
+      }
+    ]),
+    second_order_answer: "B",
+    second_order_explanation:
+      "An acutely hot, swollen, single joint with a markedly elevated, neutrophil-predominant synovial WBC count and Gram-positive cocci in clusters on Gram stain is classic for nongonococcal septic arthritis due to Staphylococcus aureus, the most common cause of septic arthritis overall in adults, including those with risk factors such as psoriasis (skin breakdown), diabetes, or prosthetic joints. This contrasts with gonococcal septic arthritis, which would show Gram-negative diplococci (often not seen at all on Gram stain given the fastidious nature of N. gonorrhoeae) in a sexually active patient, sometimes with associated tenosynovitis or pustular skin lesions.",
+
+    flowchart_title: "Acute Monoarticular/Migratory Joint Pain with Fever",
+    flowchart: JSON.stringify([
+      {
+        "node": "Sexually active patient with migratory arthralgia/tenosynovitis, fever, ± pustular skin lesions",
+        "branches": [
+          {
+            "label": "Classic triad present, joint cultures often negative",
+            "next": "Arthritis-dermatitis syndrome (disseminated gonococcal infection)"
+          },
+          {
+            "label": "Single hot, purulent joint without skin lesions",
+            "next": "Gonococcal septic arthritis (culture on Thayer-Martin media)"
+          }
+        ]
+      },
+      {
+        "node": "Non-sexual-exposure-pattern acute monoarthritis",
+        "branches": [
+          {
+            "label": "Gram-positive cocci in clusters on synovial Gram stain",
+            "next": "Staphylococcus aureus septic arthritis"
+          },
+          {
+            "label": "No organism seen; crystals on polarized microscopy",
+            "next": "Gout (negatively birefringent) or pseudogout (positively birefringent)"
+          }
+        ]
+      },
+      {
+        "node": "Preceding GI/GU infection, asymmetric oligoarthritis, sterile joint fluid",
+        "branches": [
+          {
+            "label": "Conjunctivitis/uveitis and urethritis also present",
+            "next": "Reactive arthritis"
+          },
+          {
+            "label": "Recent Streptococcal pharyngitis, migratory large-joint arthritis, carditis",
+            "next": "Acute rheumatic fever"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 3,
+    module_title: "Microbiology",
+    key_submodule: "Sore Throat",
+    slug: "group-a-streptococcal-pharyngitis",
+    title: "Group A Streptococcal Pharyngitis",
+    sort_order: 5,
+
+    hook_vignette:
+      "An 8-year-old boy is brought in by his mother with one day of sudden-onset sore throat, fever to 38.9°C (102°F), and pain with swallowing. He has no cough or rhinorrhea. On exam he has tonsillar exudates, tender anterior cervical lymphadenopathy, and a fine, sandpaper-textured erythematous rash on his trunk.",
+
+    ddx_mapping:
+      "Group A streptococcal (Streptococcus pyogenes) pharyngitis presents with sudden-onset sore throat, fever, tonsillar exudates, and tender anterior cervical lymphadenopathy, classically without cough, rhinorrhea, or conjunctivitis; when accompanied by a diffuse sandpaper-like erythematous rash with circumoral pallor and a strawberry tongue, it defines scarlet fever, caused by an erythrogenic-toxin-producing strain. The Centor criteria (fever, tonsillar exudates, tender anterior cervical adenopathy, absence of cough) estimate the pretest probability of GAS.\nViral pharyngitis (most common overall cause of sore throat, from rhinovirus, adenovirus, coronavirus, etc.) typically features a more gradual onset with accompanying cough, rhinorrhea, conjunctivitis, and hoarseness — Centor-negative features that argue against GAS and against the need for testing/antibiotics.\nInfectious mononucleosis (Epstein-Barr virus) presents in adolescents/young adults with severe sore throat, exudative tonsillitis that can look identical to GAS on exam, but is distinguished by prominent posterior cervical (and generalized) lymphadenopathy, marked fatigue, splenomegaly, and a classic (though not universal) diffuse maculopapular rash if amoxicillin/ampicillin is mistakenly given; heterophile antibody (Monospot) testing or EBV-specific serology confirms the diagnosis, and peripheral smear shows atypical lymphocytes.\nPeritonsillar abscess is a suppurative complication that should be suspected when unilateral throat pain worsens despite initial treatment, with trismus, a muffled 'hot potato' voice, uvular deviation away from the affected side, and asymmetric tonsillar bulging on exam — this is a surgical emergency requiring drainage, distinct from uncomplicated pharyngitis.\nAcute HIV seroconversion can also present with pharyngitis plus fever, lymphadenopathy, and a diffuse rash, and should be considered when there is a relevant exposure history and the presentation doesn't fit cleanly with GAS or EBV; HIV RNA/antigen testing is used since antibody tests may still be negative in the acute window.",
+
+    diagnostic_evaluation:
+      "Rapid antigen detection testing (RADT) for GAS on a throat swab gives results within minutes and has high specificity but imperfect sensitivity; a throat culture is the gold standard and should be sent to confirm a negative RADT in children/adolescents (where false-negative RADT risk and complication risk from missed GAS are both higher), though this back-up culture is often not required in low-risk adults given a negative RADT.\nTesting (and treatment) is generally reserved for patients meeting Centor-based criteria (e.g., 3-4 points) to avoid over-testing/over-treating viral pharyngitis, since GAS pharyngitis is often self-limited and antibiotics mainly shorten symptom duration modestly while their main value is preventing suppurative and nonsuppurative complications.\nWhen mononucleosis is suspected instead, a heterophile antibody (Monospot) test and CBC with differential (looking for atypical lymphocytes and relative lymphocytosis) are the key studies; Monospot sensitivity is lower in the first week of illness and in young children, so EBV-specific serology (VCA IgM) can be used if clinical suspicion remains high despite a negative Monospot.\nAntistreptolysin O (ASO) titers are not useful for diagnosing acute pharyngitis but can retrospectively confirm a preceding GAS infection when evaluating suspected poststreptococcal sequelae (rheumatic fever, glomerulonephritis).",
+
+    management:
+      "First-line treatment for confirmed GAS pharyngitis is oral penicillin V or amoxicillin for 10 days (amoxicillin is often preferred in children for better taste/dosing); for penicillin-allergic patients, options include a first-generation cephalosporin (if the allergy is not severe), or azithromycin/clindamycin where local macrolide resistance rates are acceptable.\nA full 10-day course (even though symptoms often improve within a few days) is important specifically to prevent acute rheumatic fever; treatment does not reliably prevent poststreptococcal glomerulonephritis, but is still given for symptom relief, reducing contagious period, and preventing suppurative complications.\nSupportive care (analgesics/antipyretics, hydration, throat lozenges) is appropriate for both GAS and viral pharyngitis; antibiotics should not be given for viral pharyngitis.\nSuppurative complications (peritonsillar or retropharyngeal abscess, otitis media, sinusitis) require imaging/drainage and broader antibiotic coverage as indicated by the specific complication; patients with GAS pharyngitis can generally return to school/work/activities after 24 hours of antibiotics once afebrile.",
+
+    first_order_prompt:
+      "What clinical/exam finding, if present, argues AGAINST group A streptococcal pharyngitis and favors a viral etiology?",
+    first_order_answer:
+      "Cough (along with rhinorrhea and conjunctivitis) — one of the four Centor criteria is specifically the ABSENCE of cough; its presence lowers the pretest probability of GAS and favors a viral cause.",
+
+    second_order_vignette:
+      "A 19-year-old college student presents with five days of severe sore throat and fatigue so profound she has been unable to attend classes. Exam reveals exudative tonsillitis, prominent posterior cervical and generalized lymphadenopathy, and mild splenomegaly on abdominal palpation. A rapid strep test performed by student health is negative. Two days ago, before this visit, she was empirically started on amoxicillin by an urgent care clinic for presumed bacterial pharyngitis, and this morning she developed a diffuse, itchy maculopapular rash over her trunk and extremities.",
+    second_order_question:
+      "Which of the following best explains this patient's rash?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "A true IgE-mediated penicillin allergy",
+        "correct": false,
+        "explanation": "Incorrect. The classic amoxicillin/ampicillin-associated rash occurring during acute Epstein-Barr virus infection is not a true IgE-mediated allergic reaction."
+      },
+      {
+        "label": "B",
+        "text": "A nonallergic, immune-complex-mediated exanthem that occurs when aminopenicillins are given during acute Epstein-Barr virus infection",
+        "correct": true,
+        "explanation": "Correct. This patient's picture (severe pharyngitis, profound fatigue, posterior cervical/generalized adenopathy, splenomegaly, negative rapid strep test) is classic mononucleosis, and the diffuse rash after amoxicillin is the well-described EBV-amoxicillin rash — a non-IgE-mediated reaction, not a true allergy."
+      },
+      {
+        "label": "C",
+        "text": "Scarlet fever from an erythrogenic-toxin-producing group A Streptococcus co-infection",
+        "correct": false,
+        "explanation": "Incorrect. Her rapid strep test was negative, and her overall presentation (posterior cervical adenopathy, splenomegaly, profound fatigue) fits mononucleosis, not scarlet fever."
+      },
+      {
+        "label": "D",
+        "text": "Disseminated gonococcal infection",
+        "correct": false,
+        "explanation": "Incorrect. No joint findings or relevant sexual exposure history are described, and this does not explain the temporal link to starting amoxicillin."
+      },
+      {
+        "label": "E",
+        "text": "A normal expected side effect of amoxicillin unrelated to her underlying illness",
+        "correct": false,
+        "explanation": "Incorrect. This specific rash is strongly linked to giving aminopenicillins during acute EBV infection, not a generic amoxicillin side effect seen at this rate in other patients."
+      }
+    ]),
+    second_order_answer: "B",
+    second_order_explanation:
+      "This patient's clinical picture — severe pharyngitis, marked fatigue, posterior cervical/generalized lymphadenopathy, and splenomegaly, with a negative rapid strep test — is classic for infectious mononucleosis due to Epstein-Barr virus, which can mimic GAS pharyngitis on throat exam alone. A well-described phenomenon is the development of a diffuse maculopapular rash in patients with acute EBV infection who are given amoxicillin or ampicillin; this is not a true penicillin allergy but rather a transient, non-IgE-mediated reaction thought to relate to the immune dysregulation of acute EBV infection, and it does not predict future reactions to penicillins outside of active EBV infection. This case also illustrates why empiric antibiotics for pharyngitis without confirmatory testing can cause diagnostic confusion; confirming mononucleosis with a Monospot test or EBV serology is appropriate here.",
+
+    flowchart_title: "Evaluating Acute Sore Throat",
+    flowchart: JSON.stringify([
+      {
+        "node": "Patient with acute sore throat",
+        "branches": [
+          {
+            "label": "Cough, rhinorrhea, conjunctivitis present (Centor-negative features)",
+            "next": "Favor viral pharyngitis; supportive care, no antibiotics"
+          },
+          {
+            "label": "Fever, tonsillar exudate, tender anterior cervical nodes, no cough (Centor-positive)",
+            "next": "Test for group A Streptococcus (RADT ± culture)"
+          }
+        ]
+      },
+      {
+        "node": "Rapid antigen test for GAS",
+        "branches": [
+          {
+            "label": "Positive",
+            "next": "Treat with penicillin V or amoxicillin x10 days"
+          },
+          {
+            "label": "Negative (especially in child/adolescent)",
+            "next": "Back-up throat culture; treat if positive"
+          }
+        ]
+      },
+      {
+        "node": "Atypical features: profound fatigue, posterior cervical nodes, splenomegaly",
+        "branches": [
+          {
+            "label": "Present",
+            "next": "Suspect infectious mononucleosis; send Monospot/EBV serology, avoid amoxicillin/ampicillin empirically"
+          },
+          {
+            "label": "Absent",
+            "next": "Continue standard GAS/viral pathway"
+          }
+        ]
+      },
+      {
+        "node": "Red flags: unilateral pain worsening, trismus, muffled voice, uvular deviation",
+        "branches": [
+          {
+            "label": "Present",
+            "next": "Suspect peritonsillar abscess; urgent ENT evaluation/drainage"
+          },
+          {
+            "label": "Absent",
+            "next": "Continue outpatient management"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 3,
+    module_title: "Microbiology",
+    key_submodule: "HIV/AIDS Opportunistic Infections",
+    slug: "pneumocystis-jirovecii-pneumonia",
+    title: "Pneumocystis jirovecii Pneumonia (PJP)",
+    sort_order: 6,
+
+    hook_vignette:
+      "A 36-year-old man with HIV infection, who has not been taking antiretroviral therapy for the past year, presents with three weeks of progressively worsening dry cough and exertional dyspnea, along with low-grade fevers and unintentional weight loss. He appears mildly tachypneic at rest, and his oxygen saturation drops from 96% to 88% with ambulation. His most recent CD4 count, checked six months ago, was 140 cells/mm3.",
+
+    ddx_mapping:
+      "Pneumocystis jirovecii pneumonia (PJP) classically occurs in HIV-infected patients with a CD4 count <200 cells/mm3 (or <14%) who are not on antiretroviral therapy or PJP prophylaxis, and presents subacutely over weeks with a dry cough, progressive exertional dyspnea, low-grade fever, and a characteristic finding of hypoxemia/desaturation that is disproportionate to a relatively clear-sounding lung exam and even a near-normal-appearing chest x-ray early in the disease; classic chest imaging later shows diffuse, bilateral, symmetric ground-glass or interstitial infiltrates.\nBacterial community-acquired pneumonia (still the most common cause of pneumonia even in HIV-positive patients, occurring across the CD4 spectrum) presents more acutely (days, not weeks) with a productive cough, higher fever, and often a focal lobar consolidation on imaging rather than diffuse bilateral ground-glass infiltrates.\nPulmonary tuberculosis can occur at any CD4 count in HIV-infected patients (though disseminated/atypical presentations become more common at lower CD4 counts) and should be suspected with a subacute course, night sweats, hemoptysis, and upper-lobe infiltrates or cavitation, particularly with relevant exposure history; it requires airborne isolation and AFB smear/culture or NAAT, distinct from PJP's diffuse pattern.\nCMV pneumonitis is a distinctly lower-CD4 (<50 cells/mm3) opportunistic infection, often coexisting with other CMV end-organ disease (retinitis, colitis), and is distinguished on bronchoalveolar lavage by characteristic cytomegalic cells with intranuclear/intracytoplasmic inclusions rather than the cystic forms seen with PJP.\nKaposi sarcoma with pulmonary involvement can also cause dyspnea and abnormal chest imaging in advanced HIV, but is typically accompanied by characteristic violaceous cutaneous/mucosal lesions and nodular (rather than diffuse ground-glass) pulmonary infiltrates, with bronchoscopy showing characteristic reddish-purple endobronchial lesions.",
+
+    diagnostic_evaluation:
+      "Chest x-ray classically shows diffuse, bilateral, symmetric interstitial or ground-glass infiltrates radiating from the hila, though it can be normal early in the disease course; high-resolution CT is more sensitive and shows ground-glass opacities even when the chest x-ray is unremarkable.\nAn elevated serum (1→3)-beta-D-glucan is a sensitive (though not specific) supportive marker, since Pneumocystis has beta-D-glucan in its cell wall; a markedly elevated LDH is also a nonspecific but classic supportive lab finding correlating with the degree of lung injury.\nDefinitive diagnosis requires visualizing the organism, most often via induced sputum or bronchoalveolar lavage with methenamine silver, Giemsa, or direct fluorescent antibody staining showing characteristic cystic or trophic forms — sputum/BAL PCR is also increasingly used given higher sensitivity, though it cannot distinguish colonization from true infection as reliably as staining in some contexts.\nArterial blood gas helps grade severity: an A-a gradient ≥35 mmHg or a room-air PaO2 <70 mmHg defines moderate-to-severe disease, which changes management by adding adjunctive corticosteroids.",
+
+    management:
+      "First-line treatment is trimethoprim-sulfamethoxazole (TMP-SMX) for 21 days, typically IV for more severe disease and transitioning to oral as the patient improves; for patients with a sulfa allergy or intolerance, alternatives include IV pentamidine, clindamycin plus primaquine, atovaquone (for mild-moderate disease), or dapsone plus TMP.\nAdjunctive corticosteroids (typically prednisone, tapered over about three weeks) are started as early as possible (within 72 hours) in moderate-to-severe disease (A-a gradient ≥35 mmHg or PaO2 <70 mmHg on room air), since they reduce the risk of respiratory failure and death from the inflammatory response that follows initial organism killing.\nPrimary/secondary prophylaxis with TMP-SMX (or an alternative such as dapsone, atovaquone, or aerosolized pentamidine if sulfa-intolerant) is indicated for any HIV-infected patient with a CD4 count <200 cells/mm3 (or a prior AIDS-defining illness, or CD4 <14%), and can be discontinued once antiretroviral therapy has raised the CD4 count above 200 cells/mm3 for at least three months.\nAntiretroviral therapy is typically started within about two weeks of beginning PJP treatment (rather than delayed), since earlier ART initiation in most opportunistic infections (with the notable exception of active untreated cryptococcal or tuberculous meningitis, where ART is delayed to avoid IRIS-related mortality) improves outcomes.",
+
+    first_order_prompt:
+      "At what CD4 count threshold should prophylaxis against Pneumocystis jirovecii pneumonia be started in an HIV-infected patient?",
+    first_order_answer:
+      "CD4 count <200 cells/mm3 (or CD4 <14%, or a prior AIDS-defining illness) — first-line prophylaxis is trimethoprim-sulfamethoxazole.",
+
+    second_order_vignette:
+      "A 41-year-old woman with AIDS (last known CD4 count 60 cells/mm3, not on antiretroviral therapy or any prophylaxis) presents with two weeks of dry cough and worsening dyspnea. Room-air arterial blood gas shows a PaO2 of 58 mmHg and an elevated A-a gradient. Chest CT shows diffuse bilateral ground-glass opacities. Bronchoalveolar lavage with methenamine silver stain confirms Pneumocystis jirovecii pneumonia. She has a documented history of a severe anaphylactic reaction to sulfa drugs.",
+    second_order_question:
+      "In addition to an alternative first-line antibiotic regimen, which of the following should also be included in this patient's initial management?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Adjunctive corticosteroids, started promptly, because her room-air PaO2 is below 70 mmHg",
+        "correct": true,
+        "explanation": "Correct. She meets criteria for moderate-to-severe PJP (PaO2 <70 mmHg, elevated A-a gradient), so adjunctive corticosteroids should be started as early as possible (ideally within 72 hours) regardless of which antimicrobial regimen is used, to reduce the risk of respiratory failure and death."
+      },
+      {
+        "label": "B",
+        "text": "Delay of antiretroviral therapy until PJP treatment is fully completed in three weeks",
+        "correct": false,
+        "explanation": "Incorrect. ART is generally started within about two weeks of starting PJP treatment, not delayed to full completion; PJP is not one of the opportunistic infections where early ART is specifically avoided."
+      },
+      {
+        "label": "C",
+        "text": "Desensitization to sulfa drugs so that TMP-SMX can still be used as first-line therapy",
+        "correct": false,
+        "explanation": "Incorrect. With a history of anaphylaxis to sulfa drugs, an alternative agent (e.g., IV pentamidine, clindamycin-primaquine) should be used rather than attempting desensitization/rechallenge with TMP-SMX in this acute severe setting."
+      },
+      {
+        "label": "D",
+        "text": "Withholding corticosteroids to avoid worsening her immunosuppression",
+        "correct": false,
+        "explanation": "Incorrect. Corticosteroids are specifically indicated here given her hypoxemia, and this benefit outweighs the theoretical immunosuppression concern in treated PJP."
+      },
+      {
+        "label": "E",
+        "text": "Empiric addition of antituberculous therapy given her low CD4 count",
+        "correct": false,
+        "explanation": "Incorrect. There is no clinical or radiographic evidence supporting tuberculosis here (diffuse ground-glass rather than cavitary/upper-lobe disease, and the organism is already confirmed as Pneumocystis), so empiric TB therapy is not indicated without supporting evidence."
+      }
+    ]),
+    second_order_answer: "A",
+    second_order_explanation:
+      "This patient meets criteria for moderate-to-severe PJP (room-air PaO2 <70 mmHg and an elevated A-a gradient), so adjunctive corticosteroids should be started as early as possible — ideally within 72 hours of starting anti-Pneumocystis therapy — regardless of which antimicrobial regimen is used, since they reduce the risk of respiratory failure and death from the inflammatory response to organism killing. Because of her sulfa anaphylaxis history, IV pentamidine or clindamycin plus primaquine would be reasonable alternatives to TMP-SMX. Antiretroviral therapy should generally still be started within about two weeks of beginning PJP treatment rather than delayed to completion, since PJP is not one of the opportunistic infections (unlike active cryptococcal or tuberculous meningitis) where early ART is specifically avoided.",
+
+    flowchart_title: "Dyspnea and Hypoxia in an HIV-Positive Patient",
+    flowchart: JSON.stringify([
+      {
+        "node": "HIV-positive patient with subacute dyspnea, dry cough, low-grade fever",
+        "branches": [
+          {
+            "label": "CD4 <200, no prophylaxis, diffuse bilateral ground-glass infiltrates",
+            "next": "Suspect PJP; obtain induced sputum/BAL stain or PCR, LDH, (1→3)-beta-D-glucan"
+          },
+          {
+            "label": "Focal lobar consolidation, acute productive cough",
+            "next": "Suspect bacterial CAP; treat per standard CAP guidelines"
+          }
+        ]
+      },
+      {
+        "node": "Suspected PJP - assess severity via room-air ABG",
+        "branches": [
+          {
+            "label": "PaO2 <70 mmHg or A-a gradient ≥35 mmHg",
+            "next": "Moderate-severe: TMP-SMX + adjunctive corticosteroids (start within 72h)"
+          },
+          {
+            "label": "PaO2 ≥70 mmHg, A-a gradient <35 mmHg",
+            "next": "Mild disease: TMP-SMX (or atovaquone) alone, no steroids needed"
+          }
+        ]
+      },
+      {
+        "node": "Sulfa allergy present?",
+        "branches": [
+          {
+            "label": "Yes (especially severe/anaphylactic)",
+            "next": "Use IV pentamidine or clindamycin + primaquine instead of TMP-SMX"
+          },
+          {
+            "label": "No",
+            "next": "TMP-SMX remains first-line"
+          }
+        ]
+      },
+      {
+        "node": "After acute PJP treatment initiated",
+        "branches": [
+          {
+            "label": "CD4 remains <200 or prior AIDS-defining illness",
+            "next": "Continue/start TMP-SMX secondary prophylaxis; start ART within ~2 weeks"
+          },
+          {
+            "label": "CD4 rises >200 for ≥3 months on ART",
+            "next": "Prophylaxis can be safely discontinued"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 3,
+    module_title: "Microbiology",
+    key_submodule: "Dysuria",
+    slug: "uncomplicated-cystitis-e-coli",
+    title: "Uncomplicated Cystitis (Escherichia coli)",
+    sort_order: 7,
+
+    hook_vignette:
+      "A 27-year-old otherwise healthy, nonpregnant woman presents with one day of burning with urination, urinary frequency, and urgency. She denies fever, chills, flank pain, or vaginal discharge. She has no history of urinary tract abnormalities and is currently sexually active.",
+
+    ddx_mapping:
+      "Uncomplicated cystitis (most commonly Escherichia coli, followed by Staphylococcus saprophyticus and Klebsiella pneumoniae) presents with dysuria, urinary frequency/urgency, and suprapubic discomfort, without fever, flank pain, nausea/vomiting, or systemic toxicity, in a healthy, nonpregnant woman with a structurally/functionally normal urinary tract.\nAcute pyelonephritis presents with the same lower urinary tract symptoms plus fever, chills, flank pain, and costovertebral angle tenderness, reflecting upper urinary tract (renal) involvement, and requires a longer antibiotic course and sometimes imaging/hospitalization depending on severity.\nVaginitis/cervicitis (Candida, bacterial vaginosis, or sexually transmitted Chlamydia/gonorrhea) can cause external dysuria (pain as urine passes over inflamed labia) rather than the internal, throughout-the-stream dysuria of cystitis, and is typically accompanied by vaginal discharge, odor, itching, or pelvic/cervical motion tenderness on exam rather than isolated urinary frequency/urgency.\nUrethritis (from Chlamydia trachomatis or Neisseria gonorrhoeae) causes dysuria, often with mucopurulent urethral discharge, and should be suspected especially in younger sexually active patients with new/multiple partners; urinalysis may show pyuria without a positive standard urine culture (since these organisms don't grow on routine culture media), prompting NAAT testing.\nInterstitial cystitis (bladder pain syndrome) is a chronic, noninfectious condition with urinary frequency/urgency and bladder/pelvic pain, distinguished from acute infectious cystitis by a negative urine culture and a more chronic/relapsing course, often requiring cystoscopy and other criteria to diagnose after infection has been excluded.",
+
+    diagnostic_evaluation:
+      "In an otherwise healthy, nonpregnant woman with classic symptoms (dysuria, frequency, urgency, without vaginal discharge/irritation) and no complicating factors, the diagnosis of uncomplicated cystitis can often be made clinically, without urinalysis or culture, given the very high pretest probability.\nWhen testing is done, urinalysis typically shows pyuria (WBCs) and bacteriuria, often with positive leukocyte esterase and nitrites (nitrites specifically suggest a nitrate-reducing organism such as E. coli); urine culture is not routinely needed for a first, uncomplicated episode but should be obtained for recurrent infections, treatment failure, pregnancy, suspected pyelonephritis, or other complicating factors (male sex, indwelling catheter, urologic abnormality, immunosuppression, recent instrumentation).\nA urine culture growing ≥10^5 CFU/mL of a single uropathogen (or a lower threshold, ~10^2-10^3 CFU/mL, in a symptomatic patient with a compatible urinalysis) confirms the diagnosis and identifies susceptibilities when culture is obtained.\nPregnancy testing should be considered in any woman of reproductive age with urinary symptoms, both because pregnancy changes the complicated/uncomplicated categorization and because it changes antibiotic choice.",
+
+    management:
+      "First-line antibiotic options for uncomplicated cystitis include nitrofurantoin for 5 days, trimethoprim-sulfamethoxazole for 3 days (if local E. coli resistance is <20%), or fosfomycin as a single dose; fluoroquinolones are effective but generally reserved as second-line given resistance concerns and their broader side-effect profile.\nSymptomatic therapy with a urinary analgesic (phenazopyridine) can be added short-term for dysuria relief but does not treat the underlying infection and should not be continued beyond a couple of days (it can mask ongoing symptoms and stains urine/other fluids orange).\nPregnant patients require different antibiotic choices (e.g., nitrofurantoin, cephalexin, or amoxicillin-clavulanate depending on trimester/local practice, avoiding sulfa near term and avoiding fluoroquinolones and tetracyclines throughout pregnancy) and should always have a urine culture sent, since even asymptomatic bacteriuria is treated in pregnancy given its association with pyelonephritis and preterm labor.\nRecurrent uncomplicated cystitis (≥2 infections in 6 months or ≥3 in a year) can be managed with patient-initiated self-treatment at symptom onset, postcoital prophylaxis if temporally related to intercourse, or continuous low-dose prophylaxis, alongside behavioral counseling (adequate hydration, voiding after intercourse).",
+
+    first_order_prompt:
+      "What is the most common causative organism of uncomplicated cystitis in otherwise healthy women?",
+    first_order_answer:
+      "Escherichia coli (accounting for roughly 75-90% of cases), followed by Staphylococcus saprophyticus and Klebsiella pneumoniae.",
+
+    second_order_vignette:
+      "A 30-year-old woman at 22 weeks of pregnancy presents with two days of dysuria and urinary frequency. She denies fever, flank pain, or nausea. Vital signs are normal. Urinalysis shows 20-30 WBCs/hpf, positive leukocyte esterase, and positive nitrites. Urine culture is pending.",
+    second_order_question:
+      "Which of the following is the most appropriate next step in management?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Start empiric nitrofurantoin while awaiting urine culture results",
+        "correct": true,
+        "explanation": "Correct. Symptomatic cystitis in pregnancy should be treated empirically without waiting for culture confirmation, given the elevated risk of ascending infection; nitrofurantoin is a reasonable first-line choice away from term, while a culture is still sent to confirm the organism/susceptibilities."
+      },
+      {
+        "label": "B",
+        "text": "Withhold antibiotics until the urine culture confirms growth of a specific organism",
+        "correct": false,
+        "explanation": "Incorrect. Treatment should not be delayed for symptomatic cystitis in pregnancy given the risk of ascending infection/pyelonephritis."
+      },
+      {
+        "label": "C",
+        "text": "Start empiric ciprofloxacin, a highly effective first-line option for cystitis",
+        "correct": false,
+        "explanation": "Incorrect. Fluoroquinolones are avoided throughout pregnancy due to concerns about fetal cartilage/musculoskeletal toxicity."
+      },
+      {
+        "label": "D",
+        "text": "Reassure the patient that these findings are expected in pregnancy and no treatment is needed",
+        "correct": false,
+        "explanation": "Incorrect. Symptomatic cystitis (and even asymptomatic bacteriuria) is treated in pregnancy given the elevated risk of progression to pyelonephritis and adverse pregnancy outcomes."
+      },
+      {
+        "label": "E",
+        "text": "Start empiric trimethoprim-sulfamethoxazole, which is safe throughout all trimesters of pregnancy",
+        "correct": false,
+        "explanation": "Incorrect. TMP-SMX carries specific risks (folate antagonism/neural tube concerns in the first trimester, kernicterus risk near term) and is generally avoided at those times, making it a less universally \"safe\" choice than this answer claims."
+      }
+    ]),
+    second_order_answer: "A",
+    second_order_explanation:
+      "This patient has symptomatic cystitis in pregnancy, which should always be treated with empiric antibiotics rather than awaiting culture confirmation, because untreated urinary tract infection in pregnancy carries an elevated risk of ascending to pyelonephritis and is associated with adverse outcomes such as preterm labor. Nitrofurantoin (avoided only very close to term, due to a theoretical neonatal hemolysis risk) or a beta-lactam such as cephalexin are reasonable first-line choices in pregnancy; fluoroquinolones are avoided throughout pregnancy, and trimethoprim-sulfamethoxazole carries specific trimester-dependent risks. A urine culture should still be sent in pregnancy (even though empiric treatment starts immediately) to confirm the organism and susceptibilities, and because even asymptomatic bacteriuria warrants treatment in this population.",
+
+    flowchart_title: "Approach to Dysuria in a Woman",
+    flowchart: JSON.stringify([
+      {
+        "node": "Dysuria in a nonpregnant woman",
+        "branches": [
+          {
+            "label": "Frequency/urgency, no vaginal discharge, no fever/flank pain",
+            "next": "Classic uncomplicated cystitis; treat empirically ± UA"
+          },
+          {
+            "label": "Vaginal discharge/itching/odor present",
+            "next": "Consider vaginitis/cervicitis; exam ± NAAT for STIs"
+          },
+          {
+            "label": "Fever, flank pain, CVA tenderness",
+            "next": "Consider pyelonephritis; send urine culture, treat accordingly"
+          }
+        ]
+      },
+      {
+        "node": "Complicating factors present?",
+        "branches": [
+          {
+            "label": "Pregnancy, male sex, recurrent infection, urologic abnormality, catheter",
+            "next": "Treat as complicated UTI; always send urine culture"
+          },
+          {
+            "label": "None (healthy, nonpregnant woman)",
+            "next": "Uncomplicated cystitis pathway; culture not required for first episode"
+          }
+        ]
+      },
+      {
+        "node": "Empiric antibiotic choice",
+        "branches": [
+          {
+            "label": "Not pregnant, no contraindication",
+            "next": "Nitrofurantoin x5d, TMP-SMX x3d, or fosfomycin x1 dose"
+          },
+          {
+            "label": "Pregnant",
+            "next": "Nitrofurantoin or cephalexin (avoid fluoroquinolones; avoid TMP-SMX/sulfa near term/1st trimester)"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 3,
+    module_title: "Microbiology",
+    key_submodule: "Infectious Diarrhea",
+    slug: "enterohemorrhagic-e-coli-o157h7",
+    title: "Enterohemorrhagic E. coli (EHEC O157:H7) Infection",
+    sort_order: 8,
+
+    hook_vignette:
+      "A 6-year-old girl develops crampy abdominal pain and watery diarrhea three days after eating undercooked ground beef at a family barbecue. Over the next day the diarrhea becomes grossly bloody, though she remains afebrile. Her parents are told at urgent care not to give her any antidiarrheal or antibiotic medication and to watch closely for decreased urine output.",
+
+    ddx_mapping:
+      "Enterohemorrhagic E. coli (EHEC, classically serotype O157:H7) causes a noninflammatory-appearing prodrome of watery diarrhea and cramping that progresses to grossly bloody diarrhea over 1-3 days, typically without high fever, following ingestion of undercooked ground beef, unpasteurized milk/juice, or contaminated produce; its Shiga toxin, once absorbed, can cause hemolytic uremic syndrome (HUS) roughly 5-10 days after symptom onset, particularly in young children, making avoidance of antibiotics and antimotility agents critical since both increase toxin release and HUS risk.\nShigella causes an inflammatory (dysenteric) diarrhea with high fever, tenesmus, and small-volume bloody, mucoid stools, often with more prominent systemic toxicity/abdominal pain than EHEC and a lower infectious dose (person-to-person spread common); unlike EHEC, antibiotics (e.g., azithromycin or a fluoroquinolone) are indicated for shigellosis to shorten illness and limit spread.\nCampylobacter jejuni, typically from undercooked poultry or unpasteurized milk, causes an inflammatory diarrhea (often bloody) with fever and severe abdominal pain that can mimic appendicitis, and is the infectious diarrhea most classically associated with subsequent Guillain-Barré syndrome (as well as reactive arthritis); it is usually self-limited, with antibiotics (azithromycin) reserved for severe or prolonged cases.\nSalmonella (non-typhoidal) causes inflammatory diarrhea, often with fever, following exposure to poultry, eggs, or reptiles, is usually self-limited in healthy hosts (antibiotics are generally avoided as they can prolong carriage, except in infants, the elderly, or immunocompromised/bacteremic patients), and does not carry the same HUS association that EHEC does (though it can rarely occur).\nClostridioides difficile colitis should be suspected with watery-to-bloody diarrhea developing during or after antibiotic exposure (especially clindamycin, fluoroquinolones, cephalosporins), diagnosed by stool toxin/PCR testing rather than the food-exposure history that points toward EHEC.",
+
+    diagnostic_evaluation:
+      "Stool culture with specific request for sorbitol-MacConkey agar (or equivalent) is used to distinguish O157:H7, which characteristically does not ferment sorbitol, from most other (sorbitol-fermenting) E. coli strains; stool PCR/multiplex GI panels for Shiga toxin genes (stx1/stx2) are increasingly used and can also detect non-O157 Shiga toxin-producing strains that sorbitol-MacConkey screening would miss.\nA CBC, peripheral smear, basic metabolic panel, and LDH/haptoglobin should be monitored closely (even before overt renal failure develops) in any child with suspected EHEC, to catch the earliest laboratory signs of hemolytic uremic syndrome: microangiopathic hemolytic anemia (schistocytes on smear, low haptoglobin, elevated LDH), thrombocytopenia, and rising creatinine.\nStool studies should also be sent for routine bacterial culture (to evaluate for Shigella, Salmonella, Campylobacter) and, if there is recent antibiotic exposure, C. difficile toxin/PCR, since the differential for bloody diarrhea is broad and exposure history alone is not always sufficient to narrow it.\nBlood cultures are not routinely useful for uncomplicated EHEC gastroenteritis (it is not typically a bacteremic illness) but should be considered if the patient appears systemically ill or if an alternative invasive pathogen (e.g., Salmonella bacteremia) is being considered.",
+
+    management:
+      "Management of EHEC infection is primarily supportive: aggressive isotonic IV fluid hydration (some evidence supports this specifically reducing the risk/severity of subsequent HUS by maintaining renal perfusion), electrolyte monitoring/correction, and close monitoring of renal function and hematologic parameters for early signs of HUS.\nAntibiotics are specifically avoided in suspected or confirmed EHEC infection, because killing the bacteria can trigger a burst release of preformed Shiga toxin, increasing the risk of developing HUS; antimotility agents (e.g., loperamide) are likewise avoided, as they can prolong toxin exposure/absorption in the gut.\nIf hemolytic uremic syndrome develops (thrombocytopenia, microangiopathic hemolytic anemia, acute kidney injury), management shifts to supportive care for HUS: careful fluid/electrolyte management, blood product transfusion as needed (red cells for symptomatic anemia; platelet transfusion is generally avoided unless active bleeding or a procedure is planned, since it may worsen microthrombosis), and renal replacement therapy (dialysis) if renal failure is severe; most children recover renal function, though some develop chronic kidney disease.\nPrevention centers on food safety: thoroughly cooking ground beef to an internal temperature that kills the organism, avoiding unpasteurized dairy/juice, and careful hand hygiene, particularly around young children and petting zoos/farm animal exposure, which are also recognized transmission routes.",
+
+    first_order_prompt:
+      "Why are antibiotics and antimotility agents specifically avoided in suspected enterohemorrhagic E. coli (EHEC) infection?",
+    first_order_answer:
+      "Because both can increase the risk of hemolytic uremic syndrome — antibiotics by killing bacteria and triggering a surge release of preformed Shiga toxin, and antimotility agents by prolonging gut transit time and toxin absorption.",
+
+    second_order_vignette:
+      "A 4-year-old boy is brought to the emergency department eight days after an episode of bloody diarrhea that has since resolved. His parents report he now appears pale, lethargic, and has not urinated in over 12 hours. Exam reveals scattered petechiae and mild periorbital edema. Labs show hemoglobin 7.2 g/dL, platelet count 38,000/mm3, creatinine 2.4 mg/dL (baseline unknown but presumed normal), and peripheral smear shows numerous schistocytes.",
+    second_order_question:
+      "Which of the following is the most appropriate next step in this patient's management?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Platelet transfusion to correct the severe thrombocytopenia before it causes spontaneous bleeding",
+        "correct": false,
+        "explanation": "Incorrect. Platelet transfusion is generally avoided in HUS unless there is active significant bleeding or an invasive procedure is planned, since transfused platelets may worsen ongoing microvascular thrombosis."
+      },
+      {
+        "label": "B",
+        "text": "Supportive care with careful fluid/electrolyte management, red cell transfusion for symptomatic anemia, and evaluation for renal replacement therapy",
+        "correct": true,
+        "explanation": "Correct. This triad of microangiopathic hemolytic anemia, thrombocytopenia, and acute kidney injury about a week after bloody diarrhea is classic postdiarrheal HUS, which is managed supportively — fluids/electrolytes, red cell transfusion as needed, and dialysis if renal failure is significant."
+      },
+      {
+        "label": "C",
+        "text": "Empiric IV ciprofloxacin to treat the presumed ongoing bacterial infection",
+        "correct": false,
+        "explanation": "Incorrect. Antibiotics are avoided in EHEC-associated illness and HUS, and there is no indication for antibiotics at this post-diarrheal HUS stage."
+      },
+      {
+        "label": "D",
+        "text": "Plasma exchange (plasmapheresis) as first-line therapy, as used in thrombotic thrombocytopenic purpura",
+        "correct": false,
+        "explanation": "Incorrect. Plasma exchange is the treatment for TTP (typically from ADAMTS13 deficiency), not for typical Shiga toxin-mediated HUS, which is managed supportively."
+      },
+      {
+        "label": "E",
+        "text": "Reassurance and outpatient follow-up, since his diarrhea has already resolved and this is likely a separate unrelated process",
+        "correct": false,
+        "explanation": "Incorrect. This presentation is classic for HUS following EHEC infection and requires urgent inpatient management, not outpatient reassurance."
+      }
+    ]),
+    second_order_answer: "B",
+    second_order_explanation:
+      "This child's triad of microangiopathic hemolytic anemia (anemia with schistocytes), thrombocytopenia, and acute kidney injury, occurring roughly a week after an episode of bloody diarrhea, is the classic presentation of hemolytic uremic syndrome following EHEC (Shiga toxin-producing E. coli) infection. Management is supportive: careful fluid and electrolyte management, transfusion of red cells for symptomatic anemia, and renal replacement therapy (dialysis) if renal failure is significant. Platelet transfusion is generally withheld unless there is active bleeding or an invasive procedure is needed, because transfused platelets can be consumed in ongoing microthrombosis and may theoretically worsen the process. Plasma exchange is reserved for atypical HUS or TTP, not typical postdiarrheal Shiga-toxin-mediated HUS.",
+
+    flowchart_title: "Bloody Diarrhea Evaluation and EHEC/HUS Recognition",
+    flowchart: JSON.stringify([
+      {
+        "node": "Patient with diarrhea after a food/exposure history",
+        "branches": [
+          {
+            "label": "Undercooked ground beef/unpasteurized dairy, watery→bloody, afebrile",
+            "next": "Suspect EHEC O157:H7; send stool culture (sorbitol-MacConkey) + Shiga toxin PCR"
+          },
+          {
+            "label": "High fever, tenesmus, small-volume bloody stool",
+            "next": "Suspect Shigella; treat with antibiotics (azithromycin/fluoroquinolone)"
+          },
+          {
+            "label": "Undercooked poultry, fever, severe cramping mimicking appendicitis",
+            "next": "Suspect Campylobacter jejuni; consider antibiotics only if severe/prolonged"
+          }
+        ]
+      },
+      {
+        "node": "EHEC suspected/confirmed",
+        "branches": [
+          {
+            "label": "Uncomplicated gastroenteritis",
+            "next": "Supportive IV hydration; explicitly avoid antibiotics and antimotility agents"
+          },
+          {
+            "label": "5-10 days later: pallor, decreased urine output, petechiae",
+            "next": "Evaluate for hemolytic uremic syndrome (CBC/smear, LDH, haptoglobin, creatinine)"
+          }
+        ]
+      },
+      {
+        "node": "HUS labs (schistocytes, thrombocytopenia, rising creatinine)",
+        "branches": [
+          {
+            "label": "Confirmed HUS",
+            "next": "Supportive care: fluids/electrolytes, RBC transfusion PRN, dialysis if severe AKI; avoid platelet transfusion unless bleeding"
+          },
+          {
+            "label": "Labs normal, no HUS developing",
+            "next": "Continue supportive monitoring through recovery"
+          }
+        ]
+      }
+    ]),
+  },
   // Module 13 — Psychiatry
   // ===========================================================================
   {
