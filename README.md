@@ -187,15 +187,25 @@ The QBank models UWorld's exam interface. Current implementation:
   rollup)
 - Anonymous attempts by default — the attempt id in the URL hash is the
   access token for that run; no login required to take a block
+- **Highlighting** — select text in the question stem, click the popup to
+  mark it (`<mark>`-style background); click a highlight to remove it.
+  Session-only (in-memory, resets on reload) — purely a frontend feature,
+  no schema change
+- **Strike-through** — a "Strike" control on each answer choice visually
+  eliminates it (UWorld's "eliminate this choice"), independent of actually
+  selecting that choice; doesn't affect scoring. Session-only, same as
+  highlighting
+- **Lab values reference panel** — a "Lab values" button in the exam
+  footer opens a static, filterable table of normal ranges (CBC, BMP,
+  LFTs, ABG, coagulation, and a few more), independent of any one question
 
 **Planned / not yet built** (the UWorld feature set to grow into)
-- **Highlighting / strike-through** on the question stem and choices —
-  pure frontend feature, no schema change needed; would persist per-user
-  per-question if attempts are tied to an authenticated account
+- **Persisting highlighting/strike-through across reloads** — currently
+  session-only (in-memory); would need a small per-question UI-state table
+  (owner_id-scoped, same RLS pattern as `flashcards`) once worth the schema
+  change, or auth-backed attempts if scoping to a logged-in account instead
 - **Notes** — a personal free-text note attached to a question, scoped to
   the user, not the attempt
-- **Lab values reference panel** — a static/searchable normal-ranges
-  sidebar, independent of any one question
 - **Unused-question tracking** — excluding previously-answered questions
   from a new custom block; needs a per-user "seen" set, which in turn
   needs authenticated (not anonymous) attempts
