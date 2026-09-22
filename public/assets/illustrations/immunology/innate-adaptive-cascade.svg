@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="24" text-anchor="middle" font-size="19" font-weight="700" fill="#1c2430">Innate &#8594; Adaptive Immune Cascade</text>
+  <text x="400" y="42" text-anchor="middle" font-size="11.5" fill="#5b6472">From pathogen encounter to antigen presentation and T/B cell activation</text>
+
+  <defs>
+    <marker id="arr-ia" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#1c2430"/>
+    </marker>
+  </defs>
+
+  <!-- step 1 -->
+  <rect x="20" y="70" width="130" height="60" rx="8" fill="#1c2430"/>
+  <text x="85" y="94" text-anchor="middle" font-size="10.5" font-weight="700" fill="#faf8f4">Pathogen</text>
+  <text x="85" y="108" text-anchor="middle" font-size="10.5" font-weight="700" fill="#faf8f4">breach</text>
+  <text x="85" y="122" text-anchor="middle" font-size="8" fill="#faf8f4">skin/mucosal barrier</text>
+  <line x1="150" y1="100" x2="185" y2="100" stroke="#1c2430" stroke-width="2.2" marker-end="url(#arr-ia)"/>
+
+  <!-- step 2 -->
+  <rect x="190" y="70" width="150" height="60" rx="8" fill="#3b5f8a"/>
+  <text x="265" y="90" text-anchor="middle" font-size="10" font-weight="700" fill="#faf8f4">Innate recognition</text>
+  <text x="265" y="104" text-anchor="middle" font-size="8" fill="#faf8f4">PRRs (TLRs) bind PAMPs</text>
+  <text x="265" y="116" text-anchor="middle" font-size="8" fill="#faf8f4">on macrophages/DCs</text>
+  <line x1="340" y1="100" x2="375" y2="100" stroke="#1c2430" stroke-width="2.2" marker-end="url(#arr-ia)"/>
+
+  <!-- step 3 -->
+  <rect x="380" y="70" width="150" height="60" rx="8" fill="#3b5f8a"/>
+  <text x="455" y="90" text-anchor="middle" font-size="10" font-weight="700" fill="#faf8f4">Phagocytosis +</text>
+  <text x="455" y="104" text-anchor="middle" font-size="10" font-weight="700" fill="#faf8f4">cytokine release</text>
+  <text x="455" y="117" text-anchor="middle" font-size="8" fill="#faf8f4">IL-1, TNF, IL-6, chemokines</text>
+  <line x1="455" y1="130" x2="455" y2="165" stroke="#1c2430" stroke-width="2.2" marker-end="url(#arr-ia)"/>
+
+  <!-- step 4: dendritic cell migration -->
+  <rect x="360" y="167" width="190" height="60" rx="8" fill="#c9a25a"/>
+  <text x="455" y="188" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">Dendritic cell matures,</text>
+  <text x="455" y="201" text-anchor="middle" font-size="10" font-weight="700" fill="#1c2430">migrates to lymph node</text>
+  <text x="455" y="214" text-anchor="middle" font-size="8" fill="#1c2430">upregulates MHC II, B7 costim.</text>
+  <line x1="455" y1="227" x2="455" y2="260" stroke="#1c2430" stroke-width="2.2" marker-end="url(#arr-ia)"/>
+
+  <!-- step 5: antigen presentation -->
+  <rect x="340" y="262" width="230" height="65" rx="8" fill="#c9a25a"/>
+  <text x="455" y="284" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1c2430">Antigen presentation</text>
+  <text x="455" y="298" text-anchor="middle" font-size="8" fill="#1c2430">MHC II + peptide &#8594; TCR (signal 1)</text>
+  <text x="455" y="310" text-anchor="middle" font-size="8" fill="#1c2430">B7 &#8594; CD28 (signal 2, costimulation)</text>
+  <text x="455" y="321" text-anchor="middle" font-size="8" fill="#1c2430">no signal 2 &#8594; anergy</text>
+
+  <!-- Branch to Th cell activation -->
+  <line x1="410" y1="327" x2="280" y2="360" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-ia)"/>
+  <line x1="500" y1="327" x2="620" y2="360" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-ia)"/>
+
+  <!-- T cell branch -->
+  <rect x="130" y="362" width="220" height="90" rx="8" fill="#2f7d4f"/>
+  <text x="240" y="382" text-anchor="middle" font-size="10.5" font-weight="700" fill="#faf8f4">CD4 T-cell activation</text>
+  <text x="240" y="397" text-anchor="middle" font-size="8" fill="#faf8f4">differentiates by cytokine milieu</text>
+  <text x="240" y="410" text-anchor="middle" font-size="8" fill="#faf8f4">into Th1/Th2/Th17/Treg</text>
+  <text x="240" y="424" text-anchor="middle" font-size="8" fill="#faf8f4">helps B cells (CD40L-CD40) and</text>
+  <text x="240" y="436" font-size="8" text-anchor="middle" fill="#faf8f4">licenses CD8 cytotoxic T cells</text>
+
+  <!-- B cell branch -->
+  <rect x="530" y="362" width="220" height="90" rx="8" fill="#b5472a"/>
+  <text x="640" y="382" text-anchor="middle" font-size="10.5" font-weight="700" fill="#faf8f4">B-cell activation</text>
+  <text x="640" y="397" text-anchor="middle" font-size="8" fill="#faf8f4">BCR binds native antigen +</text>
+  <text x="640" y="410" text-anchor="middle" font-size="8" fill="#faf8f4">Th-cell help (CD40L, cytokines)</text>
+  <text x="640" y="424" text-anchor="middle" font-size="8" fill="#faf8f4">&#8594; class switching, affinity</text>
+  <text x="640" y="436" text-anchor="middle" font-size="8" fill="#faf8f4">maturation, plasma/memory cells</text>
+
+  <!-- CD8 pathway note -->
+  <rect x="20" y="167" width="150" height="120" rx="8" fill="#dde6f0" stroke="#3b5f8a" stroke-width="1.5"/>
+  <text x="95" y="187" text-anchor="middle" font-size="9.5" font-weight="700" fill="#3b5f8a">MHC I / CD8 route</text>
+  <text x="35" y="205" font-size="8" fill="#1c2430">Any nucleated cell presents</text>
+  <text x="35" y="217" font-size="8" fill="#1c2430">endogenous (viral/tumor)</text>
+  <text x="35" y="229" font-size="8" fill="#1c2430">peptide via MHC I</text>
+  <text x="35" y="247" font-size="8" fill="#1c2430">CD8 T cell recognizes +</text>
+  <text x="35" y="259" font-size="8" fill="#1c2430">licensing from CD4 help</text>
+  <text x="35" y="277" font-size="8" fill="#1c2430">&#8594; perforin/granzyme killing</text>
+
+  <!-- footer -->
+  <rect x="30" y="462" width="0" height="0"/>
+</svg>

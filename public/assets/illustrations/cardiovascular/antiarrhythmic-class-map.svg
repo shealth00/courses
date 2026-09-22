@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#1c2430">Vaughan-Williams Antiarrhythmic Classes</text>
+  <text x="400" y="49" text-anchor="middle" font-size="12.5" fill="#5b6472">Cardiac action potential with each class's site of action</text>
+
+  <!-- axes -->
+  <line x1="80" y1="420" x2="80" y2="90" stroke="#1c2430" stroke-width="2"/>
+  <line x1="80" y1="420" x2="740" y2="420" stroke="#1c2430" stroke-width="2"/>
+  <text x="410" y="460" text-anchor="middle" font-size="13" fill="#1c2430">Time (ms)</text>
+  <text x="30" y="255" text-anchor="middle" font-size="13" fill="#1c2430" transform="rotate(-90 30 255)">Membrane potential (mV)</text>
+  <text x="60" y="130" font-size="10" fill="#5b6472" text-anchor="end">+20</text>
+  <text x="60" y="300" font-size="10" fill="#5b6472" text-anchor="end">-70</text>
+  <text x="60" y="405" font-size="10" fill="#5b6472" text-anchor="end">-90</text>
+
+  <!-- ventricular action potential phases 0-4 -->
+  <path d="M100 300
+           L 140 300
+           L 165 130
+           L 200 150
+           C 260 175, 340 180, 400 220
+           C 440 250, 460 280, 480 300
+           L 540 300
+           L 700 300"
+        fill="none" stroke="#1c2430" stroke-width="3"/>
+
+  <!-- phase labels -->
+  <text x="150" y="120" font-size="12" fill="#1c2430">0</text>
+  <text x="205" y="145" font-size="12" fill="#1c2430">1</text>
+  <text x="330" y="170" font-size="12" fill="#1c2430">2 (plateau)</text>
+  <text x="455" y="290" font-size="12" fill="#1c2430">3</text>
+  <text x="600" y="312" font-size="12" fill="#1c2430">4</text>
+
+  <!-- Class I: Na+ channel blockers acting at phase 0 upstroke -->
+  <rect x="120" y="105" width="70" height="30" fill="none" stroke="#b5472a" stroke-width="2" rx="4"/>
+  <text x="155" y="97" text-anchor="middle" font-size="12" font-weight="700" fill="#b5472a">Class I</text>
+  <text x="155" y="160" text-anchor="middle" font-size="9.5" fill="#b5472a">&#8595; Na&#8314; influx (phase 0)</text>
+  <text x="155" y="172" text-anchor="middle" font-size="9" fill="#5b6472">IA quinidine &#183; IB lidocaine &#183; IC flecainide</text>
+
+  <!-- Class II: beta blockers act on phase 4 / SA-AV node -->
+  <rect x="560" y="285" width="130" height="26" fill="none" stroke="#3b5f8a" stroke-width="2" rx="4"/>
+  <text x="625" y="340" text-anchor="middle" font-size="12" font-weight="700" fill="#3b5f8a">Class II</text>
+  <text x="625" y="356" text-anchor="middle" font-size="9.5" fill="#3b5f8a">&#946;-blockers &#8211; &#8595; phase 4</text>
+  <text x="625" y="370" text-anchor="middle" font-size="9" fill="#5b6472">slope, SA/AV node automaticity</text>
+
+  <!-- Class III: K+ channel blockers prolong phase 3 / repolarization -->
+  <rect x="395" y="215" width="95" height="90" fill="none" stroke="#2f7d4f" stroke-width="2" rx="4" stroke-dasharray="6 4"/>
+  <text x="442" y="212" text-anchor="middle" font-size="12" font-weight="700" fill="#2f7d4f">Class III</text>
+  <text x="308" y="440" text-anchor="middle" font-size="9.5" fill="#2f7d4f">K&#8314; blockers &#8211; &#8593; APD / QT</text>
+  <text x="308" y="453" text-anchor="middle" font-size="9" fill="#5b6472">amiodarone &#183; sotalol &#183; ibutilide</text>
+
+  <!-- Class IV: Ca2+ channel blockers act at plateau / nodal tissue -->
+  <rect x="230" y="150" width="130" height="55" fill="none" stroke="#c9a25a" stroke-width="2" rx="4"/>
+  <text x="500" y="440" text-anchor="middle" font-size="9.5" fill="#946a2b">Class IV: Ca&#178;&#8314; blockers (verapamil,</text>
+  <text x="500" y="453" text-anchor="middle" font-size="9" fill="#5b6472">diltiazem) &#8211; &#8595; phase 2 &amp; AV nodal conduction</text>
+  <text x="295" y="143" text-anchor="middle" font-size="12" font-weight="700" fill="#946a2b">Class IV</text>
+
+  <!-- Adenosine / digoxin note -->
+  <rect x="560" y="70" width="180" height="46" fill="#ffffff" stroke="#c9a25a" rx="6"/>
+  <text x="572" y="88" font-size="10.5" font-weight="700" fill="#1c2430">Other AV-nodal agents</text>
+  <text x="572" y="102" font-size="9.5" fill="#5b6472">Adenosine (&#8593;K&#8314; efflux, &#8595;cAMP)</text>
+  <text x="572" y="113" font-size="9.5" fill="#5b6472">Digoxin (vagal tone &#8593;)</text>
+</svg>

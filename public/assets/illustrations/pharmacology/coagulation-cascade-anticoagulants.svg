@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="24" text-anchor="middle" font-size="19" font-weight="700" fill="#1c2430">Coagulation Cascade &amp; Anticoagulant Targets</text>
+  <text x="400" y="42" text-anchor="middle" font-size="11.5" fill="#5b6472">Intrinsic and extrinsic pathways converging on the common pathway</text>
+
+  <defs>
+    <marker id="arr-cc" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+      <path d="M0,0 L6,2.5 L0,5 Z" fill="#1c2430"/>
+    </marker>
+  </defs>
+
+  <!-- Intrinsic pathway (left) -->
+  <text x="150" y="70" text-anchor="middle" font-size="11.5" font-weight="700" fill="#3b5f8a">Intrinsic pathway</text>
+  <text x="150" y="83" text-anchor="middle" font-size="8.5" fill="#5b6472">(subendothelial collagen contact)</text>
+  <rect x="90" y="93" width="120" height="28" rx="5" fill="#3b5f8a"/>
+  <text x="150" y="112" text-anchor="middle" font-size="10.5" fill="#faf8f4" font-weight="700">XII &#8594; XIIa</text>
+  <line x1="150" y1="121" x2="150" y2="148" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-cc)"/>
+  <rect x="90" y="150" width="120" height="28" rx="5" fill="#3b5f8a"/>
+  <text x="150" y="169" text-anchor="middle" font-size="10.5" fill="#faf8f4" font-weight="700">XI &#8594; XIa</text>
+  <line x1="150" y1="178" x2="150" y2="205" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-cc)"/>
+  <rect x="90" y="207" width="120" height="28" rx="5" fill="#3b5f8a"/>
+  <text x="150" y="226" text-anchor="middle" font-size="10.5" fill="#faf8f4" font-weight="700">IX &#8594; IXa (+VIIIa)</text>
+  <text x="90" y="255" font-size="8.5" fill="#5b6472">PTT measures this pathway</text>
+
+  <!-- Extrinsic pathway (right) -->
+  <text x="650" y="70" text-anchor="middle" font-size="11.5" font-weight="700" fill="#b5472a">Extrinsic pathway</text>
+  <text x="650" y="83" text-anchor="middle" font-size="8.5" fill="#5b6472">(tissue factor release)</text>
+  <rect x="590" y="93" width="120" height="28" rx="5" fill="#b5472a"/>
+  <text x="650" y="112" text-anchor="middle" font-size="10.5" fill="#faf8f4" font-weight="700">Tissue factor</text>
+  <line x1="650" y1="121" x2="650" y2="148" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-cc)"/>
+  <rect x="590" y="150" width="120" height="28" rx="5" fill="#b5472a"/>
+  <text x="650" y="169" text-anchor="middle" font-size="10.5" fill="#faf8f4" font-weight="700">VII &#8594; VIIa</text>
+  <text x="590" y="255" text-anchor="end" font-size="8.5" fill="#5b6472">PT/INR measures this pathway</text>
+
+  <!-- Converge to X -->
+  <line x1="150" y1="235" x2="330" y2="280" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-cc)"/>
+  <line x1="650" y1="178" x2="450" y2="280" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-cc)"/>
+
+  <!-- Common pathway -->
+  <rect x="330" y="282" width="140" height="30" rx="6" fill="#1c2430"/>
+  <text x="400" y="302" text-anchor="middle" font-size="11" font-weight="700" fill="#faf8f4">X &#8594; Xa (+Va)</text>
+  <line x1="400" y1="312" x2="400" y2="340" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-cc)"/>
+  <rect x="300" y="342" width="200" height="30" rx="6" fill="#1c2430"/>
+  <text x="400" y="362" text-anchor="middle" font-size="11" font-weight="700" fill="#faf8f4">Prothrombin (II) &#8594; Thrombin (IIa)</text>
+  <line x1="400" y1="372" x2="400" y2="400" stroke="#1c2430" stroke-width="2" marker-end="url(#arr-cc)"/>
+  <rect x="290" y="402" width="220" height="30" rx="6" fill="#1c2430"/>
+  <text x="400" y="422" text-anchor="middle" font-size="11" font-weight="700" fill="#faf8f4">Fibrinogen (I) &#8594; Fibrin, cross-linked (XIIIa)</text>
+
+  <!-- Drug annotations -->
+  <rect x="530" y="200" width="230" height="26" rx="4" fill="#2f7d4f"/>
+  <text x="645" y="217" text-anchor="middle" font-size="9.5" font-weight="700" fill="#faf8f4">Heparin/LMWH &#8594; potentiate antithrombin</text>
+  <path d="M540 226 L400 300" stroke="#2f7d4f" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <path d="M540 226 L470 300" stroke="#2f7d4f" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="530" y="240" font-size="8" fill="#5b6472">(antithrombin inhibits IIa &amp; Xa; LMWH mainly Xa)</text>
+
+  <rect x="40" y="290" width="220" height="26" rx="4" fill="#946a2b"/>
+  <text x="150" y="307" text-anchor="middle" font-size="9.5" font-weight="700" fill="#faf8f4">Warfarin &#8594; &#8595; vit-K-dependent II,VII,IX,X + protein C/S</text>
+  <line x1="150" y1="316" x2="330" y2="295" stroke="#946a2b" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <rect x="40" y="345" width="220" height="26" rx="4" fill="#c9a25a"/>
+  <text x="150" y="362" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1c2430">Direct Xa inhibitors (-xaban)</text>
+  <line x1="150" y1="345" x2="330" y2="300" stroke="#946a2b" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <rect x="530" y="345" width="220" height="26" rx="4" fill="#b5472a"/>
+  <text x="640" y="362" text-anchor="middle" font-size="9.5" font-weight="700" fill="#faf8f4">Dabigatran &#8212; direct IIa (thrombin) inhibitor</text>
+  <line x1="600" y1="345" x2="470" y2="358" stroke="#b5472a" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- footnote -->
+  <rect x="30" y="440" width="740" height="45" fill="#ffffff" stroke="#c9a25a" stroke-width="1.2" rx="6"/>
+  <text x="45" y="458" font-size="9.5" fill="#5b6472">Protein C/S (vitamin K&#8211;dependent) inactivate Va/VIIIa &#8212; warfarin's early transient hypercoagulable state (protein C has the shortest half-life) risks skin necrosis; bridge with heparin.</text>
+  <text x="45" y="473" font-size="9.5" fill="#5b6472">tPA/alteplase converts plasminogen &#8594; plasmin, which degrades fibrin (fibrinolysis) &#8212; a separate, downstream target from the cascade shown above.</text>
+</svg>

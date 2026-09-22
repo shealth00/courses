@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#1c2430">Cardiac Conduction System</text>
+  <text x="400" y="49" text-anchor="middle" font-size="12.5" fill="#5b6472">Sequence and conduction velocity of the pacemaker/conduction pathway</text>
+
+  <defs>
+    <marker id="arrow-cs" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#1c2430"/>
+    </marker>
+  </defs>
+
+  <!-- flow boxes -->
+  <g font-size="13" font-weight="700" text-anchor="middle">
+    <rect x="40" y="150" width="110" height="56" rx="8" fill="#3b5f8a"/>
+    <text x="95" y="174" fill="#faf8f4">SA node</text>
+    <text x="95" y="192" font-size="10" font-weight="400" fill="#faf8f4">pacemaker, 60&#8211;100/min</text>
+
+    <rect x="200" y="150" width="110" height="56" rx="8" fill="#3b5f8a"/>
+    <text x="255" y="174" fill="#faf8f4">Atria</text>
+    <text x="255" y="192" font-size="10" font-weight="400" fill="#faf8f4">internodal tracts</text>
+
+    <rect x="360" y="150" width="110" height="56" rx="8" fill="#c9a25a"/>
+    <text x="415" y="174" fill="#1c2430">AV node</text>
+    <text x="415" y="192" font-size="10" font-weight="400" fill="#1c2430">40&#8211;60/min, delay</text>
+
+    <rect x="520" y="150" width="110" height="56" rx="8" fill="#b5472a"/>
+    <text x="575" y="174" fill="#faf8f4">Bundle of His</text>
+    <text x="575" y="192" font-size="10" font-weight="400" fill="#faf8f4">L &amp; R bundle branches</text>
+
+    <rect x="680" y="150" width="100" height="56" rx="8" fill="#2f7d4f"/>
+    <text x="730" y="174" fill="#faf8f4">Purkinje</text>
+    <text x="730" y="192" font-size="10" font-weight="400" fill="#faf8f4">20&#8211;40/min</text>
+  </g>
+
+  <!-- arrows -->
+  <line x1="150" y1="178" x2="196" y2="178" stroke="#1c2430" stroke-width="2.5" marker-end="url(#arrow-cs)"/>
+  <line x1="310" y1="178" x2="356" y2="178" stroke="#1c2430" stroke-width="2.5" marker-end="url(#arrow-cs)"/>
+  <line x1="470" y1="178" x2="516" y2="178" stroke="#1c2430" stroke-width="2.5" marker-end="url(#arrow-cs)"/>
+  <line x1="630" y1="178" x2="676" y2="178" stroke="#1c2430" stroke-width="2.5" marker-end="url(#arrow-cs)"/>
+
+  <!-- conduction velocity bars -->
+  <text x="60" y="245" font-size="12" font-weight="700" fill="#1c2430">Conduction velocity</text>
+  <g font-size="10.5" fill="#5b6472">
+    <text x="60" y="270">Atrial muscle</text>
+    <rect x="180" y="258" width="60" height="12" fill="#3b5f8a"/>
+    <text x="248" y="270">~1 m/s</text>
+
+    <text x="60" y="292">AV node (slowest &#8211; rate-limiting)</text>
+    <rect x="280" y="280" width="12" height="12" fill="#c9a25a"/>
+    <text x="300" y="292">~0.05 m/s</text>
+
+    <text x="60" y="314">His-Purkinje (fastest)</text>
+    <rect x="230" y="302" width="220" height="12" fill="#2f7d4f"/>
+    <text x="458" y="314">~2&#8211;4 m/s</text>
+
+    <text x="60" y="336">Ventricular muscle</text>
+    <rect x="200" y="324" width="90" height="12" fill="#b5472a"/>
+    <text x="298" y="336">~0.3&#8211;1 m/s</text>
+  </g>
+
+  <!-- diagram of heart silhouette with pathway -->
+  <g transform="translate(60,360)">
+    <ellipse cx="150" cy="60" rx="150" ry="70" fill="#ffffff" stroke="#c9a25a" stroke-width="1.5"/>
+    <circle cx="60" cy="35" r="7" fill="#3b5f8a"/>
+    <text x="72" y="30" font-size="9.5" fill="#1c2430">SA node (right atrium)</text>
+    <circle cx="130" cy="65" r="6" fill="#c9a25a"/>
+    <text x="142" y="60" font-size="9.5" fill="#1c2430">AV node (interatrial septum)</text>
+    <path d="M130 65 L 160 95" stroke="#b5472a" stroke-width="2" fill="none"/>
+    <path d="M160 95 L 120 115 M160 95 L 210 115" stroke="#b5472a" stroke-width="2" fill="none"/>
+    <text x="90" y="128" font-size="9.5" fill="#1c2430">L bundle branch</text>
+    <text x="215" y="128" font-size="9.5" fill="#1c2430">R bundle branch</text>
+    <path d="M120 115 Q100 128 95 128 M210 115 Q230 128 235 128" stroke="#2f7d4f" stroke-width="1.5" fill="none"/>
+    <text x="330" y="45" font-size="9.5" fill="#5b6472">Purkinje network fans</text>
+    <text x="330" y="58" font-size="9.5" fill="#5b6472">out through ventricular</text>
+    <text x="330" y="71" font-size="9.5" fill="#5b6472">endocardium (apex &#8594; base)</text>
+  </g>
+</svg>

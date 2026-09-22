@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="24" text-anchor="middle" font-size="19" font-weight="700" fill="#1c2430">Hypersensitivity Reactions, Types I&#8211;IV</text>
+  <text x="400" y="42" text-anchor="middle" font-size="11.5" fill="#5b6472">Gell-Coombs classification: mechanism and classic example per type</text>
+
+  <!-- 4 panels -->
+  <g>
+    <rect x="20" y="60" width="185" height="330" rx="8" fill="#ffffff" stroke="#b5472a" stroke-width="1.5"/>
+    <rect x="20" y="60" width="185" height="28" rx="8" fill="#b5472a"/>
+    <text x="112" y="79" text-anchor="middle" font-size="11" font-weight="700" fill="#faf8f4">Type I &#8212; Immediate</text>
+    <!-- icon: mast cell degranulation -->
+    <circle cx="112" cy="130" r="18" fill="#f0d9c9" stroke="#b5472a" stroke-width="1.5"/>
+    <circle cx="85" cy="110" r="4" fill="#b5472a"/>
+    <circle cx="140" cy="105" r="4" fill="#b5472a"/>
+    <circle cx="95" cy="155" r="4" fill="#b5472a"/>
+    <circle cx="130" cy="155" r="4" fill="#b5472a"/>
+    <path d="M100 118 L90 108 M124 118 L134 105" stroke="#b5472a" stroke-width="1.5"/>
+    <text x="35" y="185" font-size="8.5" fill="#1c2430">IgE cross-links FcεRI on</text>
+    <text x="35" y="198" font-size="8.5" fill="#1c2430">mast cells/basophils</text>
+    <text x="35" y="211" font-size="8.5" fill="#1c2430">&#8594; degranulation (histamine)</text>
+    <text x="35" y="224" font-size="8.5" fill="#1c2430">Pre-formed Ab, minutes</text>
+    <rect x="35" y="245" width="150" height="55" rx="5" fill="#f7ded5"/>
+    <text x="112" y="262" text-anchor="middle" font-size="9" font-weight="700" fill="#b5472a">Classic example</text>
+    <text x="112" y="277" text-anchor="middle" font-size="8.5" fill="#1c2430">Anaphylaxis, allergic</text>
+    <text x="112" y="290" text-anchor="middle" font-size="8.5" fill="#1c2430">rhinitis, asthma, atopy</text>
+  </g>
+
+  <g>
+    <rect x="215" y="60" width="185" height="330" rx="8" fill="#ffffff" stroke="#3b5f8a" stroke-width="1.5"/>
+    <rect x="215" y="60" width="185" height="28" rx="8" fill="#3b5f8a"/>
+    <text x="307" y="79" text-anchor="middle" font-size="11" font-weight="700" fill="#faf8f4">Type II &#8212; Cytotoxic</text>
+    <!-- icon: antibody bound to cell surface, complement -->
+    <circle cx="307" cy="135" r="20" fill="#dde6f0" stroke="#3b5f8a" stroke-width="1.5"/>
+    <path d="M287 120 l-15 -10 M327 120 l15 -10" stroke="#3b5f8a" stroke-width="2"/>
+    <text x="230" y="185" font-size="8.5" fill="#1c2430">IgG/IgM bind cell-surface</text>
+    <text x="230" y="198" font-size="8.5" fill="#1c2430">or matrix antigen &#8594;</text>
+    <text x="230" y="211" font-size="8.5" fill="#1c2430">complement/ADCC/phagocytosis</text>
+    <text x="230" y="224" font-size="8.5" fill="#1c2430">Ab-mediated cell destruction</text>
+    <rect x="230" y="245" width="150" height="70" rx="5" fill="#dde6f0"/>
+    <text x="307" y="262" text-anchor="middle" font-size="9" font-weight="700" fill="#3b5f8a">Classic example</text>
+    <text x="307" y="277" text-anchor="middle" font-size="8.5" fill="#1c2430">Hemolytic disease of</text>
+    <text x="307" y="290" text-anchor="middle" font-size="8.5" fill="#1c2430">newborn, Goodpasture,</text>
+    <text x="307" y="303" text-anchor="middle" font-size="8.5" fill="#1c2430">transfusion reaction</text>
+  </g>
+
+  <g>
+    <rect x="410" y="60" width="185" height="330" rx="8" fill="#ffffff" stroke="#c9a25a" stroke-width="1.5"/>
+    <rect x="410" y="60" width="185" height="28" rx="8" fill="#c9a25a"/>
+    <text x="502" y="79" text-anchor="middle" font-size="11" font-weight="700" fill="#1c2430">Type III &#8212; Immune Complex</text>
+    <!-- icon: immune complex deposited on vessel wall -->
+    <line x1="440" y1="150" x2="560" y2="150" stroke="#946a2b" stroke-width="8"/>
+    <circle cx="470" cy="140" r="5" fill="#c9a25a" stroke="#946a2b"/>
+    <circle cx="500" cy="140" r="5" fill="#c9a25a" stroke="#946a2b"/>
+    <circle cx="530" cy="140" r="5" fill="#c9a25a" stroke="#946a2b"/>
+    <text x="425" y="185" font-size="8.5" fill="#1c2430">Antigen-antibody complexes</text>
+    <text x="425" y="198" font-size="8.5" fill="#1c2430">deposit in vessels/tissue &#8594;</text>
+    <text x="425" y="211" font-size="8.5" fill="#1c2430">complement activation &#8594;</text>
+    <text x="425" y="224" font-size="8.5" fill="#1c2430">neutrophilic vasculitis</text>
+    <rect x="425" y="245" width="150" height="70" rx="5" fill="#f3ead3"/>
+    <text x="502" y="262" text-anchor="middle" font-size="9" font-weight="700" fill="#946a2b">Classic example</text>
+    <text x="502" y="277" text-anchor="middle" font-size="8.5" fill="#1c2430">Serum sickness, SLE,</text>
+    <text x="502" y="290" text-anchor="middle" font-size="8.5" fill="#1c2430">post-strep GN, Arthus</text>
+    <text x="502" y="303" text-anchor="middle" font-size="8.5" fill="#1c2430">reaction</text>
+  </g>
+
+  <g>
+    <rect x="605" y="60" width="175" height="330" rx="8" fill="#ffffff" stroke="#2f7d4f" stroke-width="1.5"/>
+    <rect x="605" y="60" width="175" height="28" rx="8" fill="#2f7d4f"/>
+    <text x="692" y="79" text-anchor="middle" font-size="11" font-weight="700" fill="#faf8f4">Type IV &#8212; Delayed (T-cell)</text>
+    <!-- icon: T cell + macrophage -->
+    <circle cx="670" cy="140" r="15" fill="#e2ecdf" stroke="#2f7d4f" stroke-width="1.5"/>
+    <circle cx="715" cy="140" r="18" fill="#c9dfc9" stroke="#2f7d4f" stroke-width="1.5"/>
+    <text x="620" y="185" font-size="8.5" fill="#1c2430">Sensitized T cells (no</text>
+    <text x="620" y="198" font-size="8.5" fill="#1c2430">antibody) &#8594; cytokines</text>
+    <text x="620" y="211" font-size="8.5" fill="#1c2430">activate macrophages, or</text>
+    <text x="620" y="224" font-size="8.5" fill="#1c2430">direct CD8 cytotoxicity</text>
+    <text x="620" y="237" font-size="8.5" fill="#1c2430">24-72h onset</text>
+    <rect x="620" y="255" width="145" height="70" rx="5" fill="#e2ecdf"/>
+    <text x="692" y="272" text-anchor="middle" font-size="9" font-weight="700" fill="#2f7d4f">Classic example</text>
+    <text x="692" y="287" text-anchor="middle" font-size="8.5" fill="#1c2430">TB skin test (PPD),</text>
+    <text x="692" y="300" text-anchor="middle" font-size="8.5" fill="#1c2430">contact dermatitis</text>
+    <text x="692" y="313" text-anchor="middle" font-size="8.5" fill="#1c2430">(poison ivy), transplant rejection</text>
+  </g>
+
+  <!-- mnemonic footer -->
+  <rect x="20" y="405" width="760" height="75" fill="#ffffff" stroke="#c9a25a" stroke-width="1.2" rx="8"/>
+  <text x="35" y="425" font-size="10" font-weight="700" fill="#1c2430">Mnemonic: ACID &#8212; type I=Anaphylactic/Atopic, II=Cytotoxic, III=Immune complex, IV=Delayed (cell-mediated)</text>
+  <text x="35" y="442" font-size="9.5" fill="#5b6472">Types I-III are antibody-mediated (fast, minutes-hours); Type IV is cell-mediated (slow, 1-3 days) &#8212; no antibody involved.</text>
+  <text x="35" y="459" font-size="9.5" fill="#5b6472">Type II subtypes: cytotoxic (cell lysis, e.g. autoimmune hemolytic anemia), or receptor-mediated without lysis (Graves', myasthenia gravis).</text>
+</svg>

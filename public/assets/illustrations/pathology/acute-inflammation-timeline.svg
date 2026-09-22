@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="26" text-anchor="middle" font-size="20" font-weight="700" fill="#1c2430">Acute Inflammation Timeline</text>
+  <text x="400" y="45" text-anchor="middle" font-size="12.5" fill="#5b6472">Cellular sequence and mediators, from injury to resolution</text>
+
+  <!-- timeline -->
+  <line x1="80" y1="250" x2="740" y2="250" stroke="#1c2430" stroke-width="2.5"/>
+  <path d="M740 250 l-12 -6 v12 z" fill="#1c2430"/>
+  <g font-size="10" fill="#5b6472" text-anchor="middle">
+    <text x="80" y="270">0 h</text>
+    <text x="230" y="270">6&#8211;24 h</text>
+    <text x="410" y="270">24&#8211;48 h</text>
+    <text x="600" y="270">48&#8211;96 h</text>
+    <text x="720" y="270">days&#8211;wks</text>
+  </g>
+
+  <!-- vascular phase -->
+  <rect x="80" y="90" width="130" height="60" rx="8" fill="#c9a25a"/>
+  <text x="145" y="112" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1c2430">Vascular phase</text>
+  <text x="145" y="127" text-anchor="middle" font-size="8.5" fill="#1c2430">transient vasoconstriction &#8594;</text>
+  <text x="145" y="139" text-anchor="middle" font-size="8.5" fill="#1c2430">vasodilation, &#8593; permeability</text>
+  <line x1="145" y1="150" x2="145" y2="243" stroke="#c9a25a" stroke-width="2"/>
+
+  <!-- neutrophil phase -->
+  <circle cx="230" cy="200" r="16" fill="#946a2b"/>
+  <circle cx="255" cy="190" r="14" fill="#946a2b"/>
+  <rect x="185" y="90" width="150" height="70" rx="8" fill="#ffffff" stroke="#946a2b" stroke-width="1.8"/>
+  <text x="260" y="108" text-anchor="middle" font-size="10.5" font-weight="700" fill="#946a2b">Neutrophils (0-48h)</text>
+  <text x="260" y="124" text-anchor="middle" font-size="8" fill="#1c2430">margination &#8594; rolling (selectins)</text>
+  <text x="260" y="137" text-anchor="middle" font-size="8" fill="#1c2430">&#8594; adhesion (integrins/ICAM)</text>
+  <text x="260" y="150" text-anchor="middle" font-size="8" fill="#1c2430">&#8594; transmigration &#8594; chemotaxis</text>
+  <line x1="260" y1="160" x2="260" y2="243" stroke="#946a2b" stroke-width="2"/>
+
+  <!-- macrophage phase -->
+  <circle cx="410" cy="195" r="20" fill="#3b5f8a"/>
+  <rect x="335" y="90" width="180" height="70" rx="8" fill="#ffffff" stroke="#3b5f8a" stroke-width="1.8"/>
+  <text x="425" y="108" text-anchor="middle" font-size="10.5" font-weight="700" fill="#3b5f8a">Macrophages (48h+)</text>
+  <text x="425" y="124" text-anchor="middle" font-size="8" fill="#1c2430">phagocytose debris &amp; neutrophils</text>
+  <text x="425" y="137" text-anchor="middle" font-size="8" fill="#1c2430">release cytokines (IL-1, TNF, IL-6)</text>
+  <text x="425" y="150" text-anchor="middle" font-size="8" fill="#1c2430">orchestrate repair hand-off</text>
+  <line x1="425" y1="160" x2="425" y2="243" stroke="#3b5f8a" stroke-width="2"/>
+
+  <!-- resolution/chronic phase -->
+  <rect x="530" y="90" width="200" height="70" rx="8" fill="#ffffff" stroke="#2f7d4f" stroke-width="1.8"/>
+  <text x="630" y="108" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2f7d4f">Resolution or chronicity</text>
+  <text x="630" y="124" text-anchor="middle" font-size="8" fill="#1c2430">resolved: mediator clearance,</text>
+  <text x="630" y="137" text-anchor="middle" font-size="8" fill="#1c2430">macrophage efferocytosis</text>
+  <text x="630" y="150" text-anchor="middle" font-size="8" fill="#1c2430">unresolved: lymphocytes/plasma</text>
+  <line x1="630" y1="160" x2="630" y2="243" stroke="#2f7d4f" stroke-width="2"/>
+
+  <!-- Mediator call-outs below timeline -->
+  <g font-size="9">
+    <rect x="80" y="290" width="150" height="70" rx="6" fill="#f7ded5" stroke="#b5472a"/>
+    <text x="90" y="306" font-weight="700" fill="#b5472a">Vasoactive</text>
+    <text x="90" y="320" fill="#1c2430">Histamine (mast cells)</text>
+    <text x="90" y="333" fill="#1c2430">Bradykinin, C3a/C5a</text>
+    <text x="90" y="346" fill="#1c2430">Prostaglandins (vasodilate)</text>
+
+    <rect x="245" y="290" width="150" height="70" rx="6" fill="#f0e8d6" stroke="#946a2b"/>
+    <text x="255" y="306" font-weight="700" fill="#946a2b">Chemotactic</text>
+    <text x="255" y="320" fill="#1c2430">IL-8/CXCL8, LTB4</text>
+    <text x="255" y="333" fill="#1c2430">C5a, bacterial products</text>
+    <text x="255" y="346" fill="#1c2430">(fMLP-like peptides)</text>
+
+    <rect x="410" y="290" width="150" height="70" rx="6" fill="#dde6f0" stroke="#3b5f8a"/>
+    <text x="420" y="306" font-weight="700" fill="#3b5f8a">Pyrogens/systemic</text>
+    <text x="420" y="320" fill="#1c2430">IL-1, IL-6, TNF-&#945;</text>
+    <text x="420" y="333" fill="#1c2430">&#8594; fever (hypothalamus),</text>
+    <text x="420" y="346" fill="#1c2430">acute phase reactants (liver)</text>
+
+    <rect x="575" y="290" width="155" height="70" rx="6" fill="#e2ecdf" stroke="#2f7d4f"/>
+    <text x="585" y="306" font-weight="700" fill="#2f7d4f">Pain/tissue damage</text>
+    <text x="585" y="320" fill="#1c2430">Bradykinin, PGE2 (pain)</text>
+    <text x="585" y="333" fill="#1c2430">Lysosomal enzymes,</text>
+    <text x="585" y="346" fill="#1c2430">ROS (neutrophil/macrophage)</text>
+  </g>
+
+  <!-- footer note -->
+  <rect x="30" y="395" width="740" height="55" fill="#ffffff" stroke="#c9a25a" stroke-width="1.2" rx="8"/>
+  <text x="45" y="415" font-size="9.5" fill="#5b6472">Neutrophils dominate the first 24-48h (short-lived, ~1-2 day lifespan) then are replaced by monocyte-derived macrophages, which persist and direct the transition to repair.</text>
+  <text x="45" y="432" font-size="9.5" fill="#5b6472">Persistent stimulus (infection, autoimmune, foreign body) &#8594; chronic inflammation: lymphocytes, plasma cells, granuloma formation instead of resolution.</text>
+</svg>

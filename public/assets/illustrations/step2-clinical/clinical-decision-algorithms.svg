@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="800" height="500" fill="#faf8f4"/>
+  <text x="400" y="22" text-anchor="middle" font-size="18" font-weight="700" fill="#1c2430">Clinical Decision Algorithms</text>
+  <text x="400" y="39" text-anchor="middle" font-size="11" fill="#5b6472">Chest pain &#183; Acute abdomen &#183; Altered mental status &#8212; initial workup branch points</text>
+
+  <defs>
+    <marker id="arr-alg" markerWidth="7" markerHeight="7" refX="5" refY="2.2" orient="auto">
+      <path d="M0,0 L5,2.2 L0,4.4 Z" fill="#5b6472"/>
+    </marker>
+  </defs>
+
+  <!-- Chest pain column -->
+  <text x="140" y="60" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b5472a">Chest pain</text>
+  <rect x="65" y="68" width="150" height="30" rx="6" fill="#1c2430"/>
+  <text x="140" y="88" text-anchor="middle" font-size="9" fill="#faf8f4">ECG + troponin + CXR</text>
+  <line x1="140" y1="98" x2="140" y2="122" stroke="#5b6472" marker-end="url(#arr-alg)"/>
+
+  <rect x="60" y="124" width="80" height="34" rx="5" fill="#b5472a"/>
+  <text x="100" y="138" text-anchor="middle" font-size="8" fill="#faf8f4" font-weight="700">STEMI</text>
+  <text x="100" y="150" text-anchor="middle" font-size="7" fill="#faf8f4">ST elevation</text>
+  <text x="100" y="172" text-anchor="middle" font-size="7.5" fill="#1c2430">&#8594; cath lab, PCI &lt;90min</text>
+
+  <rect x="145" y="124" width="80" height="34" rx="5" fill="#c9a25a"/>
+  <text x="185" y="138" text-anchor="middle" font-size="8" fill="#1c2430" font-weight="700">NSTEMI/UA</text>
+  <text x="185" y="150" text-anchor="middle" font-size="7" fill="#1c2430">&#8593;troponin, no STE</text>
+  <text x="185" y="172" text-anchor="middle" font-size="7.5" fill="#1c2430">&#8594; anticoag, risk-stratify</text>
+  <line x1="140" y1="98" x2="100" y2="122" stroke="#5b6472" marker-end="url(#arr-alg)"/>
+  <line x1="140" y1="98" x2="185" y2="122" stroke="#5b6472" marker-end="url(#arr-alg)"/>
+
+  <text x="140" y="195" text-anchor="middle" font-size="8" fill="#5b6472">if ECG/troponin negative, consider:</text>
+  <rect x="35" y="200" width="70" height="40" rx="5" fill="#3b5f8a"/>
+  <text x="70" y="215" text-anchor="middle" font-size="7" fill="#faf8f4" font-weight="700">Aortic dissection</text>
+  <text x="70" y="227" text-anchor="middle" font-size="6.5" fill="#faf8f4">tearing pain, unequal</text>
+  <text x="70" y="236" text-anchor="middle" font-size="6.5" fill="#faf8f4">pulses/BP &#8594; CT angio</text>
+
+  <rect x="110" y="200" width="65" height="40" rx="5" fill="#2f7d4f"/>
+  <text x="142" y="215" text-anchor="middle" font-size="7" fill="#faf8f4" font-weight="700">PE</text>
+  <text x="142" y="227" text-anchor="middle" font-size="6.5" fill="#faf8f4">Wells score &#8594;</text>
+  <text x="142" y="236" text-anchor="middle" font-size="6.5" fill="#faf8f4">D-dimer/CTA</text>
+
+  <rect x="180" y="200" width="65" height="40" rx="5" fill="#946a2b"/>
+  <text x="212" y="215" text-anchor="middle" font-size="7" fill="#faf8f4" font-weight="700">Others</text>
+  <text x="212" y="227" text-anchor="middle" font-size="6.5" fill="#faf8f4">pericarditis, GERD,</text>
+  <text x="212" y="236" text-anchor="middle" font-size="6.5" fill="#faf8f4">costochondritis, PTX</text>
+
+  <!-- divider -->
+  <line x1="270" y1="55" x2="270" y2="480" stroke="#c9a25a" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="530" y1="55" x2="530" y2="480" stroke="#c9a25a" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- Acute abdomen column -->
+  <text x="400" y="60" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3b5f8a">Acute abdomen</text>
+  <rect x="325" y="68" width="150" height="30" rx="6" fill="#1c2430"/>
+  <text x="400" y="88" text-anchor="middle" font-size="9" fill="#faf8f4">Localize pain + labs + imaging</text>
+  <line x1="400" y1="98" x2="400" y2="122" stroke="#5b6472" marker-end="url(#arr-alg)"/>
+
+  <rect x="290" y="124" width="90" height="46" rx="5" fill="#b5472a"/>
+  <text x="335" y="138" text-anchor="middle" font-size="8" fill="#faf8f4" font-weight="700">RLQ &#8594; appendicitis</text>
+  <text x="335" y="150" text-anchor="middle" font-size="7" fill="#faf8f4">McBurney's, rebound</text>
+  <text x="335" y="161" text-anchor="middle" font-size="7" fill="#faf8f4">&#8594; CT / surgery</text>
+  <line x1="400" y1="98" x2="335" y2="122" stroke="#5b6472" marker-end="url(#arr-alg)"/>
+
+  <rect x="390" y="124" width="90" height="46" rx="5" fill="#c9a25a"/>
+  <text x="435" y="138" text-anchor="middle" font-size="8" fill="#1c2430" font-weight="700">RUQ &#8594; biliary</text>
+  <text x="435" y="150" text-anchor="middle" font-size="7" fill="#1c2430">Murphy's sign</text>
+  <text x="435" y="161" text-anchor="middle" font-size="7" fill="#1c2430">&#8594; RUQ US</text>
+  <line x1="400" y1="98" x2="435" y2="122" stroke="#5b6472" marker-end="url(#arr-alg)"/>
+
+  <rect x="325" y="180" width="90" height="46" rx="5" fill="#2f7d4f"/>
+  <text x="370" y="194" text-anchor="middle" font-size="8" fill="#faf8f4" font-weight="700">LLQ &#8594; diverticulitis</text>
+  <text x="370" y="206" text-anchor="middle" font-size="7" fill="#faf8f4">fever, &#8593;WBC</text>
+  <text x="370" y="217" text-anchor="middle" font-size="7" fill="#faf8f4">&#8594; CT abd/pelvis</text>
+  <line x1="400" y1="98" x2="370" y2="178" stroke="#5b6472" marker-end="url(#arr-alg)"/>
+
+  <rect x="425" y="180" width="100" height="46" rx="5" fill="#946a2b"/>
+  <text x="475" y="194" text-anchor="middle" font-size="8" fill="#faf8f4" font-weight="700">Epigastric</text>
+  <text x="475" y="206" text-anchor="middle" font-size="7" fill="#faf8f4">&#8593;lipase &#8594; pancreatitis</text>
+  <text x="475" y="217" text-anchor="middle" font-size="7" fill="#faf8f4">free air &#8594; perforated viscus</text>
+  <line x1="400" y1="98" x2="475" y2="178" stroke="#5b6472" marker-end="url(#arr-alg)"/>
+
+  <rect x="325" y="235" width="200" height="40" rx="5" fill="#b5472a"/>
+  <text x="425" y="250" text-anchor="middle" font-size="8" fill="#faf8f4" font-weight="700">Peritonitic / hemodynamically unstable</text>
+  <text x="425" y="263" text-anchor="middle" font-size="7.5" fill="#faf8f4">&#8594; emergent surgical consult, do not delay for imaging</text>
+
+  <!-- AMS column -->
+  <text x="660" y="60" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2f7d4f">Altered mental status</text>
+  <rect x="585" y="68" width="150" height="30" rx="6" fill="#1c2430"/>
+  <text x="660" y="88" text-anchor="middle" font-size="9" fill="#faf8f4">ABCs, fingerstick glucose, vitals</text>
+  <line x1="660" y1="98" x2="660" y2="122" stroke="#5b6472" marker-end="url(#arr-alg)"/>
+
+  <rect x="545" y="124" width="80" height="40" rx="5" fill="#b5472a"/>
+  <text x="585" y="140" text-anchor="middle" font-size="7.5" fill="#faf8f4" font-weight="700">Hypoglycemia</text>
+  <text x="585" y="152" text-anchor="middle" font-size="7" fill="#faf8f4">&#8594; dextrose/glucagon</text>
+  <line x1="660" y1="98" x2="585" y2="122" stroke="#5b6472" marker-end="url(#arr-alg)"/>
+
+  <rect x="630" y="124" width="80" height="40" rx="5" fill="#c9a25a"/>
+  <text x="670" y="140" text-anchor="middle" font-size="7.5" fill="#1c2430" font-weight="700">Hypoxia/sepsis</text>
+  <text x="670" y="152" text-anchor="middle" font-size="7" fill="#1c2430">&#8594; O2, cultures, abx</text>
+  <line x1="660" y1="98" x2="670" y2="122" stroke="#5b6472" marker-end="url(#arr-alg)"/>
+
+  <!-- AEIOU-TIPS box -->
+  <rect x="545" y="170" width="215" height="130" rx="6" fill="#e2ecdf" stroke="#2f7d4f"/>
+  <text x="652" y="188" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2f7d4f">"AEIOU-TIPS" differential</text>
+  <text x="555" y="203" font-size="7.5" fill="#1c2430">Alcohol/Acidosis, Epilepsy/Electrolytes,</text>
+  <text x="555" y="215" font-size="7.5" fill="#1c2430">Insulin (hypo/hyperglycemia), Opiates/</text>
+  <text x="555" y="227" font-size="7.5" fill="#1c2430">Overdose, Uremia,</text>
+  <text x="555" y="239" font-size="7.5" fill="#1c2430">Trauma/Temperature, Infection,</text>
+  <text x="555" y="251" font-size="7.5" fill="#1c2430">Psychiatric/Poisoning, Stroke/Space-</text>
+  <text x="555" y="263" font-size="7.5" fill="#1c2430">occupying lesion</text>
+  <text x="555" y="282" font-size="7.5" fill="#1c2430" font-weight="700">Focal deficit or head trauma</text>
+  <text x="555" y="294" font-size="7.5" fill="#1c2430">&#8594; emergent non-contrast head CT</text>
+
+  <!-- footer -->
+  <rect x="20" y="400" width="760" height="75" fill="#ffffff" stroke="#c9a25a" stroke-width="1.2" rx="8"/>
+  <text x="35" y="420" font-size="10" font-weight="700" fill="#1c2430">Cross-cutting principle</text>
+  <text x="35" y="437" font-size="9.5" fill="#5b6472">In all three presentations: stabilize first (ABCs), rule out immediately life-threatening causes before broader differential workup, and let exam/vitals localize the initial test ordered.</text>
+  <text x="35" y="453" font-size="9.5" fill="#5b6472">A normal initial test does not exclude a high-pretest-probability diagnosis (e.g., serial troponins for ACS, repeat exam for early appendicitis) &#8212; clinical reassessment over time is part of the algorithm.</text>
+</svg>
