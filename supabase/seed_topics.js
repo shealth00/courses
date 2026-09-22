@@ -1994,6 +1994,1291 @@ const CLINICAL_TOPICS = [
       },
     ]),
   },
+  // ===========================================================================
+  // Module 13 — Psychiatry
+  // ===========================================================================
+  {
+    module_number: 13,
+    module_title: "Psychiatry",
+    key_submodule: "Child and Adolescent",
+    slug: "adhd-attention-deficit-hyperactivity-disorder",
+    title: "Attention-Deficit/Hyperactivity Disorder (ADHD)",
+    sort_order: 1,
+
+    hook_vignette:
+      "An 8-year-old boy is referred by his second-grade teacher for repeatedly leaving his seat during lessons, blurting out answers before questions are finished, and losing his homework folder almost every week. His parents report he cannot sit through a family meal without fidgeting and often seems not to listen when spoken to directly. The pattern has been present since kindergarten and shows up both at school and at home.",
+
+    ddx_mapping:
+      "Normal developmental variation in energy/attention for age (no functional impairment, not present across settings)\nOppositional defiant disorder — defiance and anger toward authority, not primarily an attention/impulse-control deficit\nLearning disorder — inattention is secondary to frustration with a specific academic skill (e.g., reading), not global\nAutism spectrum disorder — social communication deficits and restricted/repetitive behavior dominate, not just inattention\nHearing or vision impairment — \"inattention\" resolves once the sensory deficit is corrected\nAbsence seizures — brief, stereotyped staring episodes with abrupt on/off, not a pervasive attention pattern\nAnxiety disorder or mood disorder (including pediatric mania) — inattention tied to worry/rumination or a discrete mood episode\nInadequate or disrupted sleep — daytime inattention/hyperactivity that improves once sleep is addressed",
+
+    diagnostic_evaluation:
+      "DSM-5 requires ≥6 symptoms of inattention and/or ≥6 symptoms of hyperactivity-impulsivity (≥5 of either if the patient is 17 or older), present for at least 6 months, with onset of several symptoms before age 12, and clear evidence the symptoms interfere with functioning in at least 2 settings (e.g., home and school).\nADHD is a clinical diagnosis — there is no lab test or imaging study that confirms it. Gather standardized teacher and parent rating scales (e.g., Vanderbilt) across settings, since a single office visit rarely captures the full pattern.\nBefore diagnosing, screen for and rule out hearing or vision problems, an inadequate sleep schedule/sleep-disordered breathing, and medical contributors such as hyperthyroidism or lead exposure, since these can all mimic the presentation.",
+
+    management:
+      "For children age 6 and older, first-line treatment is a stimulant medication (a methylphenidate- or amphetamine-based agent) combined with behavioral therapy — parent training in behavior management plus classroom-based behavioral interventions.\nFor preschool-age children (4–5 years old), behavioral therapy is first-line, with medication reserved for cases where behavioral treatment alone is insufficient.\nNon-stimulant options (atomoxetine, or the alpha-2 agonists guanfacine/clonidine) are useful when there is a comorbid tic disorder, significant anxiety, a family history concerning for stimulant misuse, or intolerable stimulant side effects.\nMonitor growth (height/weight), appetite, and cardiovascular symptoms on stimulants; a routine baseline EKG is not required unless there is a personal or family history of cardiac disease.",
+
+    first_order_prompt:
+      "What is the minimum symptom duration and the age-of-onset requirement for diagnosing ADHD?",
+    first_order_answer:
+      "Symptoms must be present for at least 6 months, and several inattentive or hyperactive-impulsive symptoms must have been present before age 12.",
+
+    second_order_vignette:
+      "A 15-year-old girl is referred by her school counselor for declining grades over the past year. Her teachers describe her as quiet, \"daydreamy,\" and forgetful — she frequently loses assignments, misses details in instructions, and seems to drift off during class, but she is never disruptive and has no behavioral complaints. Her parents note she has always been this way at home too, forgetting chores and misplacing belongings, since elementary school.",
+    second_order_question:
+      "Which of the following is the most likely diagnosis?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "ADHD, predominantly inattentive presentation",
+        "correct": true,
+        "explanation": "Correct. Chronic, cross-situational inattention (losing items, forgetting instructions, distractibility) since childhood, without prominent hyperactivity/impulsivity, is the classic inattentive presentation of ADHD — often under-recognized because it is not disruptive."
+      },
+      {
+        "label": "B",
+        "text": "Generalized anxiety disorder",
+        "correct": false,
+        "explanation": "Incorrect. GAD involves excessive, hard-to-control worry about multiple areas of life plus associated physical symptoms (restlessness, muscle tension, sleep disturbance) — nothing here describes pervasive worry as the driver of her forgetfulness."
+      },
+      {
+        "label": "C",
+        "text": "Major depressive disorder",
+        "correct": false,
+        "explanation": "Incorrect. There is no depressed mood, anhedonia, or the other associated neurovegetative symptoms described, and her pattern has been stable since childhood rather than representing a new, discrete change."
+      },
+      {
+        "label": "D",
+        "text": "Normal adolescent daydreaming",
+        "correct": false,
+        "explanation": "Incorrect. A lifelong, cross-setting pattern (home and school) causing measurable academic decline is beyond ordinary variation and meets the threshold for functional impairment."
+      },
+      {
+        "label": "E",
+        "text": "Specific learning disorder in reading",
+        "correct": false,
+        "explanation": "Incorrect. A learning disorder produces academic difficulty that is circumscribed to the affected skill area; this vignette describes broad forgetfulness and inattention across both academic and everyday home tasks, not a specific skill deficit."
+      }
+    ]),
+    second_order_answer: "A",
+    second_order_explanation:
+      "The inattentive presentation of ADHD is easy to miss because it lacks the disruptive hyperactivity/impulsivity that typically prompts a referral. The key diagnostic clues are the same as for any ADHD presentation — chronicity (since childhood), pervasiveness (more than one setting), and functional impairment — just expressed through forgetfulness, distractibility, and disorganization rather than restlessness.",
+
+    flowchart_title: "ADHD Diagnostic Pathway",
+    flowchart: JSON.stringify([
+      {
+        "node": "Child presents with concerns about inattention and/or hyperactivity",
+        "branches": [
+          {
+            "label": "Symptoms <6 months or confined to one setting",
+            "next": "Reassess; consider situational factors rather than ADHD"
+          },
+          {
+            "label": "Symptoms ≥6 months, ≥2 settings, several present before age 12",
+            "next": "Proceed to rule out mimics"
+          }
+        ]
+      },
+      {
+        "node": "Rule out mimics and contributors",
+        "branches": [
+          {
+            "label": "Hearing or vision deficit identified",
+            "next": "Treat the sensory deficit first, then reassess"
+          },
+          {
+            "label": "Sleep disorder or medical cause (e.g., hyperthyroidism, lead exposure)",
+            "next": "Treat the underlying cause first"
+          },
+          {
+            "label": "None found",
+            "next": "Proceed to formal DSM-5 symptom count"
+          }
+        ]
+      },
+      {
+        "node": "Apply DSM-5 symptom criteria",
+        "branches": [
+          {
+            "label": "≥6 inattentive symptoms (≥5 if age ≥17)",
+            "next": "Predominantly Inattentive Presentation"
+          },
+          {
+            "label": "≥6 hyperactive/impulsive symptoms",
+            "next": "Predominantly Hyperactive/Impulsive Presentation"
+          },
+          {
+            "label": "Both thresholds met",
+            "next": "Combined Presentation"
+          }
+        ]
+      },
+      {
+        "node": "Initiate treatment",
+        "branches": [
+          {
+            "label": "Age 4–5",
+            "next": "Behavioral parent training first-line"
+          },
+          {
+            "label": "Age ≥6",
+            "next": "Stimulant medication + behavioral therapy first-line"
+          },
+          {
+            "label": "Comorbid tics, anxiety, or stimulant intolerance",
+            "next": "Consider non-stimulant (atomoxetine, guanfacine/clonidine)"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 13,
+    module_title: "Psychiatry",
+    key_submodule: "Ego Defenses",
+    slug: "ego-defense-mechanisms",
+    title: "Ego Defense Mechanisms: Mature vs. Immature",
+    sort_order: 2,
+
+    hook_vignette:
+      "A 45-year-old surgeon learns his research grant was rejected. Rather than confronting his disappointment directly, he spends the next week picking up extra trauma-bay shifts and mentoring junior residents with unusual intensity, later describing it as \"the most productive week of my career.\" His unacceptable frustration has been channeled into a socially valued, constructive outlet — a mature defense called sublimation.",
+
+    ddx_mapping:
+      "Defense mechanisms are unconscious (with one key exception) mental strategies the ego uses to manage anxiety from unacceptable impulses, conflicts, or stressors. They are best organized into three tiers by adaptiveness:\nMature defenses (healthiest, seen in well-adjusted adults under stress): sublimation (channeling an unacceptable impulse into a socially productive outlet), altruism (managing distress by helping others), humor (finding comic elements to defuse a difficult situation), and suppression (the one CONSCIOUS defense — deliberately, knowingly postponing attention to a distressing thought or feeling while continuing to function).\nNeurotic / intermediate defenses (common, moderately adaptive): repression (unconsciously excluding a distressing thought/memory from awareness), displacement (redirecting an emotional reaction from its true, threatening target to a safer substitute), reaction formation (converting an unacceptable feeling into its behavioral opposite), intellectualization (using abstract, detached reasoning to avoid the emotional content of a stressor), and rationalization (constructing a logical-sounding but false justification to avoid an uncomfortable truth).\nImmature defenses (associated with significant psychopathology, especially personality disorders): denial (refusing to acknowledge an obvious, distressing reality), projection (attributing one's own unacceptable feelings/impulses to someone else), splitting (viewing people/situations as all-good or all-bad, classically seen in borderline personality disorder), acting out (expressing an unconscious wish or impulse through action instead of reflection, e.g., a tantrum), regression (reverting to an earlier developmental stage of functioning under stress), and passive aggression (indirectly expressing hostility through resistance/procrastination rather than direct confrontation).",
+
+    diagnostic_evaluation:
+      "Identifying which defense is in play requires three questions: (1) Is the process conscious or unconscious? Only suppression is conscious — everything else operates outside awareness. (2) Does it distort external reality, or only redirect/transform an internal feeling? Denial and projection distort reality itself; displacement, sublimation, and reaction formation leave reality intact but redirect or transform the emotional response. (3) What is the observable behavior — avoidance, redirection to a substitute target, transformation into a productive activity, or transformation into the opposite feeling?\nA common exam trap is confusing denial with suppression: denial is unconscious refusal to accept a fact (\"I don't have cancer\"), while suppression is a conscious, deliberate choice to set the feeling aside for later (\"I know I have cancer, but I need to focus on this meeting right now\").\nAnother common trap is projection vs. displacement: projection relocates an internal, unacceptable feeling onto another person (\"She hates me\" when the patient actually harbors hostility), while displacement relocates the emotional reaction itself onto a safer external target, without misattributing the feeling's origin.",
+
+    management:
+      "In psychotherapy, the goal is not to eliminate defenses (everyone uses them) but to help a patient shift from immature/neurotic defenses toward mature ones. This is especially central in treating personality disorders — for example, borderline personality disorder is characterized by heavy reliance on splitting, and psychodynamic psychotherapy (transference-focused therapy, mentalization-based therapy) works explicitly to help the patient integrate ambivalent (both good and bad) views of the same person.\nClinicians can also model and reinforce mature coping directly: encouraging humor, structured suppression (\"let's come back to that feeling after we finish the visit\"), and channeling distress into productive activity (sublimation) are practical, teachable substitutes for denial, acting out, or projection.",
+
+    first_order_prompt:
+      "A man who is furious with his boss, but cannot safely confront him, comes home and yells at his spouse over a minor issue. Which defense mechanism is this?",
+    first_order_answer:
+      "Displacement — redirecting an emotional reaction from its true, threatening target (the boss) to a safer substitute target (the spouse).",
+
+    second_order_vignette:
+      "A 30-year-old woman is diagnosed with early-stage breast cancer. At her follow-up visit she tells her oncologist she \"doesn't have time to fall apart right now,\" and describes spending the week researching clinical trial options, scheduling her surgery, and organizing a fundraising walk with friends. She appears calm, articulate, and highly functional, with no tearfulness or avoidance of the topic, and clearly states she plans to \"deal with the emotional part later, once treatment is underway.\"",
+    second_order_question:
+      "Which defense mechanism best describes this patient's response?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Denial",
+        "correct": false,
+        "explanation": "Incorrect. Denial would involve refusing to accept the diagnosis itself or avoiding treatment; this patient fully acknowledges her diagnosis and is actively pursuing appropriate care."
+      },
+      {
+        "label": "B",
+        "text": "Suppression",
+        "correct": true,
+        "explanation": "Correct. She is consciously and deliberately choosing to postpone processing her distress (\"deal with the emotional part later\") while remaining fully functional and engaged with reality — this conscious postponement is the hallmark of suppression, a mature defense."
+      },
+      {
+        "label": "C",
+        "text": "Repression",
+        "correct": false,
+        "explanation": "Incorrect. Repression is the unconscious exclusion of a distressing thought from awareness. This patient is acutely aware of the diagnosis and her feelings about it — nothing here is outside her conscious awareness."
+      },
+      {
+        "label": "D",
+        "text": "Sublimation",
+        "correct": false,
+        "explanation": "Incorrect, though tempting. Sublimation channels an unacceptable impulse into a socially valued outlet (e.g., aggression into competitive sport). This patient is not transforming an impulse into a productive activity — she is consciously deferring an emotional reaction, which is suppression."
+      },
+      {
+        "label": "E",
+        "text": "Reaction formation",
+        "correct": false,
+        "explanation": "Incorrect. Reaction formation converts an unacceptable feeling into its behavioral opposite (e.g., hostility expressed as excessive sweetness). There is no unacceptable feeling being masked by an opposite display here."
+      }
+    ]),
+    second_order_answer: "B",
+    second_order_explanation:
+      "Suppression is the single conscious defense mechanism and is considered mature specifically because it allows a person to acknowledge a stressor honestly while choosing, deliberately, to manage the timing of their emotional response — unlike denial (unconscious refusal to accept reality) or repression (unconscious exclusion from awareness), both of which distort or hide the underlying truth from the person themselves.",
+
+    flowchart_title: "Classifying an Ego Defense",
+    flowchart: JSON.stringify([
+      {
+        "node": "Is the mental process conscious or unconscious?",
+        "branches": [
+          {
+            "label": "Conscious, deliberate postponement of a distressing feeling",
+            "next": "Suppression"
+          },
+          {
+            "label": "Unconscious",
+            "next": "Proceed to next question"
+          }
+        ]
+      },
+      {
+        "node": "Does the unconscious defense distort external reality?",
+        "branches": [
+          {
+            "label": "Yes — reality is denied or misattributed to someone else",
+            "next": "Denial or Projection"
+          },
+          {
+            "label": "No — reality is intact, but the feeling/impulse is redirected or transformed",
+            "next": "Proceed to next question"
+          }
+        ]
+      },
+      {
+        "node": "How is the feeling handled?",
+        "branches": [
+          {
+            "label": "Redirected to a safer substitute target",
+            "next": "Displacement"
+          },
+          {
+            "label": "Transformed into a productive, socially valued activity",
+            "next": "Sublimation"
+          },
+          {
+            "label": "Transformed into its behavioral opposite",
+            "next": "Reaction Formation"
+          }
+        ]
+      },
+      {
+        "node": "Overall maturity tier",
+        "branches": [
+          {
+            "label": "Sublimation, altruism, humor, suppression",
+            "next": "Mature — reinforce in therapy"
+          },
+          {
+            "label": "Repression, displacement, reaction formation, intellectualization, rationalization",
+            "next": "Neurotic — common, moderately adaptive"
+          },
+          {
+            "label": "Denial, projection, splitting, acting out, regression, passive aggression",
+            "next": "Immature — often a treatment target, especially in personality disorders"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 13,
+    module_title: "Psychiatry",
+    key_submodule: "Amnesia/Dissociation/Delirium",
+    slug: "delirium-vs-dementia",
+    title: "Delirium",
+    sort_order: 3,
+
+    hook_vignette:
+      "An 82-year-old man with mild baseline forgetfulness is admitted for a urinary tract infection. Over the following 24 hours, nursing staff note he is intermittently agitated and picking at his IV line, then becomes drowsy and calm an hour later. When asked, he cannot say what day it is and insists he is still at home.",
+
+    ddx_mapping:
+      "Dementia — insidious onset over months to years, generally stable or slowly progressive course (not fluctuating hour to hour), and preserved level of consciousness/attention until late in the disease.\nDepression (\"pseudodementia\") — cognitive complaints and psychomotor slowing that track with a depressive episode, with intact attention/consciousness and often exaggerated self-report of memory loss (versus minimization in true dementia).\nNonconvulsive status epilepticus — can also present with fluctuating confusion; distinguished by EEG showing ongoing seizure activity.\nPrimary psychotic disorder — hallucinations/delusions without the fluctuating attention, disorientation, and medical trigger that define delirium.\nThe defining features that separate delirium from all of these are onset (acute to subacute, hours to days), course (fluctuating, often worse at night — \"sundowning\"), and a clouded, waxing-and-waning level of consciousness with markedly impaired attention, which is what makes delirium a medical emergency requiring urgent cause-finding rather than a primary psychiatric or neurodegenerative diagnosis.",
+
+    diagnostic_evaluation:
+      "DSM-5 delirium criteria: a disturbance in attention and awareness that develops over a short period (hours to days), represents a change from baseline, tends to fluctuate in severity over the course of a day, is accompanied by an additional cognitive disturbance (memory, language, orientation, perception), and is not better explained by a pre-existing neurocognitive disorder — with evidence the disturbance is caused by a medical condition, intoxication, or withdrawal.\nBedside screening uses the Confusion Assessment Method (CAM): acute onset/fluctuating course AND inattention, plus either disorganized thinking or an altered level of consciousness.\nBecause delirium is, by definition, caused by something, the workup is a search for the trigger: full medication reconciliation (anticholinergics, opioids, benzodiazepines, and recent medication changes are classic culprits), CBC, basic metabolic panel, urinalysis/urine culture, chest imaging, oxygen saturation, and an EKG if indicated. Cognitive testing alone cannot reliably distinguish delirium from dementia — collateral history about the patient's cognitive baseline is essential.",
+
+    management:
+      "Identify and treat the underlying cause — infection, metabolic derangement (hypoxia, hyponatremia, hypoglycemia), or drug toxicity/withdrawal — and discontinue any offending medications.\nNonpharmacologic measures are first-line for agitation: frequent reorientation (clocks, calendars, familiar objects, consistent staff and caregivers), correcting sensory deficits (glasses, hearing aids), normalizing the sleep-wake cycle, encouraging mobility, and minimizing unnecessary lines/catheters and physical restraints, all of which can worsen agitation.\nReserve low-dose antipsychotics (e.g., haloperidol) for severe agitation that poses a safety risk when nonpharmacologic measures fail, and avoid benzodiazepines in general delirium (they can worsen confusion) — except specifically for alcohol or benzodiazepine withdrawal delirium, where benzodiazepines are the treatment of choice.",
+
+    first_order_prompt:
+      "What single clinical feature most reliably distinguishes delirium from dementia?",
+    first_order_answer:
+      "Acute onset with a fluctuating course and impaired attention/level of consciousness (delirium) versus insidious onset with a generally stable-to-progressive course and preserved consciousness early on (dementia).",
+
+    second_order_vignette:
+      "A 74-year-old woman with known mild Alzheimer disease is brought to the emergency department by her family after two days of \"not being herself.\" She reports seeing bugs crawling on the walls, cannot state the date, and alternates between somnolence and agitation throughout the visit. Her family reports she started a new medication for overactive bladder, oxybutynin, one week ago, and that before this she was consistently pleasant and oriented, if mildly forgetful.",
+    second_order_question:
+      "Which of the following is the most likely explanation for this presentation?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Natural progression of her underlying Alzheimer disease",
+        "correct": false,
+        "explanation": "Incorrect. Alzheimer disease progresses gradually over months to years; an abrupt, fluctuating change over two days — with new hallucinations and altered consciousness — is far too acute to represent dementia progression alone."
+      },
+      {
+        "label": "B",
+        "text": "Delirium superimposed on dementia, likely precipitated by the new anticholinergic medication",
+        "correct": true,
+        "explanation": "Correct. Dementia is the single strongest risk factor for delirium, and anticholinergic medications (oxybutynin is a classic culprit) are a common precipitant in older adults. The acute, fluctuating course with visual hallucinations and altered consciousness, temporally linked to a new anticholinergic, is textbook delirium superimposed on a dementia baseline."
+      },
+      {
+        "label": "C",
+        "text": "New-onset schizophrenia",
+        "correct": false,
+        "explanation": "Incorrect. Schizophrenia essentially never has its first onset at age 74, and it does not produce a fluctuating level of consciousness — the acute, waxing-waning course here points to a medical/delirious process, not a primary psychotic disorder."
+      },
+      {
+        "label": "D",
+        "text": "Major depressive disorder with psychotic features",
+        "correct": false,
+        "explanation": "Incorrect. Depression with psychotic features does not produce fluctuating consciousness or disorientation, and the abrupt onset tied to a new medication is inconsistent with a primary mood disorder."
+      },
+      {
+        "label": "E",
+        "text": "Normal aging",
+        "correct": false,
+        "explanation": "Incorrect. Hallucinations, disorientation, and a fluctuating level of consciousness are never a normal part of aging and always warrant an urgent search for a cause."
+      }
+    ]),
+    second_order_answer: "B",
+    second_order_explanation:
+      "Delirium superimposed on dementia is common and frequently under-recognized because baseline cognitive impairment can mask the acute change. The key is comparing current presentation against a clear collateral baseline: this patient's family describes a distinct, abrupt worsening — not her usual state — which should immediately trigger a search for a precipitant, in this case a newly started anticholinergic medication, a well-known cause of delirium in older adults.",
+
+    flowchart_title: "Delirium vs. Dementia Workup",
+    flowchart: JSON.stringify([
+      {
+        "node": "Acute change in mental status is reported",
+        "branches": [
+          {
+            "label": "Onset over hours to days, fluctuating course",
+            "next": "Think delirium"
+          },
+          {
+            "label": "Onset over months to years, stable or slowly progressive",
+            "next": "Think dementia"
+          }
+        ]
+      },
+      {
+        "node": "Assess attention and level of consciousness (delirium suspected)",
+        "branches": [
+          {
+            "label": "Impaired attention with altered/clouded consciousness",
+            "next": "Delirium confirmed (CAM positive)"
+          },
+          {
+            "label": "Attention and consciousness intact",
+            "next": "Reconsider dementia or a primary psychiatric cause"
+          }
+        ]
+      },
+      {
+        "node": "Search for a precipitant",
+        "branches": [
+          {
+            "label": "Infection (UTI, pneumonia)",
+            "next": "Treat the infection"
+          },
+          {
+            "label": "Medication (anticholinergic, opioid, benzodiazepine, polypharmacy)",
+            "next": "Discontinue or taper the offending agent"
+          },
+          {
+            "label": "Metabolic derangement (hypoxia, electrolyte abnormality, hypoglycemia)",
+            "next": "Correct the metabolic derangement"
+          },
+          {
+            "label": "No clear cause found",
+            "next": "Broaden workup (EEG, neuroimaging, lumbar puncture if indicated)"
+          }
+        ]
+      },
+      {
+        "node": "Manage agitation",
+        "branches": [
+          {
+            "label": "Mild-to-moderate agitation",
+            "next": "Nonpharmacologic reorientation and environmental measures first"
+          },
+          {
+            "label": "Severe agitation with safety risk",
+            "next": "Low-dose haloperidol, short-term"
+          },
+          {
+            "label": "Alcohol or benzodiazepine withdrawal delirium",
+            "next": "Benzodiazepines (not haloperidol alone)"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 13,
+    module_title: "Psychiatry",
+    key_submodule: "Psychosis",
+    slug: "psychotic-disorder-timeline",
+    title: "Psychotic Disorders by Timeline: Brief Psychotic Disorder, Schizophreniform Disorder, and Schizophrenia",
+    sort_order: 4,
+
+    hook_vignette:
+      "A 24-year-old graduate student is brought to the emergency department by her roommates after three days of believing her thesis advisor implanted a listening device in her dorm room and that classmates are being paid to monitor her. She has not slept in two days and speaks in a disorganized, tangential manner. She has no prior psychiatric history, and the episode began the week her thesis proposal was rejected.",
+
+    ddx_mapping:
+      "Once a primary psychotic disorder is suspected, the family of diagnoses is distinguished largely by duration and by the relationship to mood episodes — always after substance use and medical causes have been excluded:\nSchizoaffective disorder — psychotic symptoms occur together with a major mood episode, but psychotic symptoms are also present for at least 2 weeks in the absence of any mood symptoms at some point in the illness.\nMood disorder with psychotic features — psychotic symptoms occur exclusively during a major depressive or manic episode and resolve when the mood episode resolves.\nSubstance/medication-induced psychotic disorder — psychotic symptoms temporally linked to intoxication or withdrawal from a substance, or to a medication.\nPsychotic disorder due to another medical condition — symptoms directly attributable to a general medical condition (e.g., CNS lesion, autoimmune encephalitis, thyroid disease).\nOnce these are excluded, the primary psychotic disorders are distinguished purely by the total duration of continuous signs of the disturbance: Brief Psychotic Disorder (1 day to less than 1 month, typically triggered by acute stress, with full return to baseline), Schizophreniform Disorder (1 to 6 months), and Schizophrenia (6 months or more, including at least 1 month of active-phase symptoms plus prodromal/residual periods).",
+
+    diagnostic_evaluation:
+      "All three share the same core symptom requirement: at least 2 of the following, with at least 1 being delusions, hallucinations, or disorganized speech — delusions, hallucinations, disorganized speech, grossly disorganized or catatonic behavior, or negative symptoms (flat affect, avolition, alogia). What differs is exclusively the duration threshold described above.\nRegardless of duration, the workup must rule out substance intoxication/withdrawal (urine toxicology screen) and medical causes (TSH, B12, RPR/HIV if clinically indicated, and neuroimaging if there are focal neurologic findings, an atypical age of onset, or an atypical clinical picture) before assigning a primary psychiatric diagnosis.",
+
+    management:
+      "Brief psychotic disorder: a short course of antipsychotic medication and close monitoring, since the episode is typically self-limited; address the precipitating psychosocial stressor once symptoms improve.\nSchizophreniform disorder: managed similarly to schizophrenia with an antipsychotic trial, but the diagnosis is provisional — the patient must be reassessed at the 6-month mark, at which point the diagnosis either resolves or converts to schizophrenia if symptoms persist.\nSchizophrenia: long-term antipsychotic therapy (first- or second-generation) is the cornerstone, paired with psychosocial treatment — cognitive behavioral therapy for psychosis, supported employment, family psychoeducation, and assertive community treatment for patients with severe/frequent relapses. Clozapine is reserved for treatment-resistant disease (failure of at least two adequate antipsychotic trials) given its efficacy but need for absolute neutrophil count monitoring (agranulocytosis risk).",
+
+    first_order_prompt:
+      "A patient has had continuous psychotic symptoms, including an active phase of hallucinations and disorganized speech, for a total of 4 months. Substance use and medical causes have been excluded. What is the diagnosis?",
+    first_order_answer:
+      "Schizophreniform disorder — total duration of 1 to 6 months. (If symptoms persist beyond 6 months, the diagnosis converts to schizophrenia.)",
+
+    second_order_vignette:
+      "A 19-year-old college freshman is evaluated for 7 months of progressively worsening social withdrawal, flattened affect, and poverty of speech, along with intermittent auditory hallucinations telling him his roommates are plotting against him. His symptoms have been continuously present throughout this period. Urine toxicology is negative, TSH is normal, and there is no history of a distinct depressive or manic episode.",
+    second_order_question:
+      "Which of the following is the most likely diagnosis?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Schizophrenia",
+        "correct": true,
+        "explanation": "Correct. Continuous signs of the disturbance for 7 months (exceeding the 6-month threshold), with active-phase psychotic symptoms and negative symptoms, and with substance use and medical/mood causes excluded, meets criteria for schizophrenia."
+      },
+      {
+        "label": "B",
+        "text": "Schizophreniform disorder",
+        "correct": false,
+        "explanation": "Incorrect. Schizophreniform disorder is capped at 6 months of total duration; this patient's 7 months of continuous symptoms exceeds that window and meets criteria for schizophrenia instead."
+      },
+      {
+        "label": "C",
+        "text": "Brief psychotic disorder",
+        "correct": false,
+        "explanation": "Incorrect. Brief psychotic disorder lasts from 1 day to less than 1 month with full return to baseline; 7 months of continuous, worsening symptoms is far outside this window."
+      },
+      {
+        "label": "D",
+        "text": "Schizoaffective disorder",
+        "correct": false,
+        "explanation": "Incorrect. Schizoaffective disorder requires a concurrent major mood episode (depressive or manic) at some point during the illness; none is described here."
+      },
+      {
+        "label": "E",
+        "text": "Substance-induced psychotic disorder",
+        "correct": false,
+        "explanation": "Incorrect. Urine toxicology is negative, removing substance use as the explanation for these symptoms."
+      }
+    ]),
+    second_order_answer: "A",
+    second_order_explanation:
+      "The family of primary psychotic disorders (brief psychotic disorder, schizophreniform disorder, schizophrenia) shares an identical symptom checklist and differs only by the total duration of continuous signs of illness — a detail that is easy to overlook but is usually the entire basis for the correct answer once secondary causes and mood-disorder overlap have been excluded.",
+
+    flowchart_title: "Timeline-Based Classification of Primary Psychosis",
+    flowchart: JSON.stringify([
+      {
+        "node": "Psychotic symptoms present — first exclude secondary causes",
+        "branches": [
+          {
+            "label": "Positive toxicology screen or medical cause identified",
+            "next": "Substance/medication-induced, or due to a medical condition — treat the cause"
+          },
+          {
+            "label": "Substance use and medical causes excluded",
+            "next": "Proceed to assess for a mood episode"
+          }
+        ]
+      },
+      {
+        "node": "Assess relationship to any mood episode",
+        "branches": [
+          {
+            "label": "Psychosis occurs only during mood episodes",
+            "next": "Mood disorder with psychotic features"
+          },
+          {
+            "label": "Psychosis + mood episode, but psychosis also present ≥2 weeks without mood symptoms",
+            "next": "Schizoaffective disorder"
+          },
+          {
+            "label": "No mood episode present",
+            "next": "Proceed to assess total duration"
+          }
+        ]
+      },
+      {
+        "node": "Total duration of continuous signs",
+        "branches": [
+          {
+            "label": "1 day to <1 month, full return to baseline",
+            "next": "Brief Psychotic Disorder"
+          },
+          {
+            "label": "1 to 6 months",
+            "next": "Schizophreniform Disorder"
+          },
+          {
+            "label": "≥6 months",
+            "next": "Schizophrenia"
+          }
+        ]
+      },
+      {
+        "node": "Management",
+        "branches": [
+          {
+            "label": "Brief psychotic disorder or schizophreniform disorder",
+            "next": "Short antipsychotic course; reassess duration at follow-up"
+          },
+          {
+            "label": "Schizophrenia",
+            "next": "Long-term antipsychotic + psychosocial treatment; clozapine if treatment-resistant"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 13,
+    module_title: "Psychiatry",
+    key_submodule: "Mood Disorders",
+    slug: "major-depressive-disorder",
+    title: "Major Depressive Disorder",
+    sort_order: 5,
+
+    hook_vignette:
+      "A 52-year-old accountant presents with 6 weeks of low mood and anhedonia — he no longer enjoys his weekly golf game — along with early-morning awakening, poor appetite with a 10-pound weight loss, and difficulty concentrating at work. He denies ever having had a period of elevated mood, decreased need for sleep, or grandiosity.",
+
+    ddx_mapping:
+      "Bipolar disorder — the single most important condition to screen for before starting an antidepressant, since any history of a past manic or hypomanic episode changes the diagnosis and treatment entirely (antidepressant monotherapy can precipitate a manic switch).\nPersistent depressive disorder (dysthymia) — chronic, milder depressive symptoms lasting at least 2 years, rather than a discrete 2-week episode.\nAdjustment disorder with depressed mood — clear identifiable stressor with a mood reaction that does not meet full criteria for a major depressive episode.\nNormal grief/bereavement — DSM-5 removed the automatic bereavement exclusion, but clinically, grief tends to center on the loss itself and comes in waves tied to reminders of the deceased, whereas MDD produces a more pervasive, persistent low mood and self-worth disturbance.\nHypothyroidism and other medical mimics — screened for with labs before finalizing a psychiatric diagnosis.\nSubstance-induced mood disorder — temporally linked to intoxication, withdrawal, or a medication (e.g., interferon, corticosteroids).",
+
+    diagnostic_evaluation:
+      "DSM-5 requires at least 5 of the 9 SIGECAPS symptoms (Sleep change, loss of Interest/anhedonia, Guilt/worthlessness, low Energy, poor Concentration, Appetite/weight change, Psychomotor agitation or retardation, and Suicidal ideation) present for at least 2 weeks, with at least one of the 5 being depressed mood or anhedonia, causing clinically significant impairment, and not attributable to a substance or medical condition.\nCritically, the patient must also have no history of a manic or hypomanic episode — if one is present, the diagnosis is bipolar disorder instead, regardless of how the current episode looks.\nThe PHQ-9 is a useful screening/severity tool. Baseline labs to exclude medical mimics include TSH, CBC, and vitamin B12, with toxicology screening if substance use is suspected.",
+
+    management:
+      "For mild-to-moderate depression, psychotherapy alone (CBT or interpersonal therapy) is a reasonable first-line option.\nFor moderate-to-severe depression, an SSRI is first-line pharmacotherapy, typically combined with psychotherapy; if there is inadequate response after an adequate 4–6 week trial at an adequate dose, options include switching to another agent or augmentation.\nFor treatment-resistant depression, options include switching drug class (SNRI, bupropion, mirtazapine), augmentation with an atypical antipsychotic or lithium, or electroconvulsive therapy (ECT) — ECT is also preferred for severe depression with psychotic features, catatonia, high acute suicide risk, or during pregnancy when rapid, reliable response is needed.\nSuicide risk must be assessed at every visit regardless of chosen treatment.",
+
+    first_order_prompt:
+      "How many of the 9 SIGECAPS symptoms are required, and for how long, to diagnose a major depressive episode?",
+    first_order_answer:
+      "At least 5 of the 9 SIGECAPS symptoms (including depressed mood or anhedonia) for at least 2 weeks.",
+
+    second_order_vignette:
+      "A 34-year-old woman started on sertraline 3 weeks ago for depression returns to clinic talkative and energetic. She reports needing only 3 hours of sleep per night and feeling \"more productive than ever\" — she has started three new business ventures in the past week and maxed out a credit card on supplies for them. Her family says she is \"not herself,\" describing her as irritable and speaking unusually fast.",
+    second_order_question:
+      "Which of the following best explains this presentation, and what is the most appropriate next step?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "The sertraline is working as intended; continue the current dose",
+        "correct": false,
+        "explanation": "Incorrect. Decreased need for sleep, grandiosity/excessive goal-directed activity, and impulsive spending are core manic symptoms, not a normal antidepressant response."
+      },
+      {
+        "label": "B",
+        "text": "This represents an antidepressant-induced manic switch, suggesting underlying bipolar disorder; discontinue the antidepressant and start a mood stabilizer",
+        "correct": true,
+        "explanation": "Correct. A manic or hypomanic episode emerging during antidepressant treatment is highly suggestive of an underlying bipolar diathesis unmasked by the antidepressant. The appropriate next step is to stop the antidepressant (to avoid worsening or prolonging the manic episode) and initiate a mood stabilizer, and to revise the diagnosis from unipolar MDD to bipolar disorder."
+      },
+      {
+        "label": "C",
+        "text": "This represents generalized anxiety disorder; increase the sertraline dose",
+        "correct": false,
+        "explanation": "Incorrect. GAD does not produce decreased need for sleep, grandiosity, or impulsive overspending — these are manic, not anxious, symptoms — and increasing the antidepressant would likely worsen the mania."
+      },
+      {
+        "label": "D",
+        "text": "This is a normal SSRI side effect and requires no change in management",
+        "correct": false,
+        "explanation": "Incorrect. A full manic episode is not a benign, expected SSRI side effect — it requires stopping the antidepressant and starting mood-stabilizing treatment."
+      },
+      {
+        "label": "E",
+        "text": "This represents malingering",
+        "correct": false,
+        "explanation": "Incorrect. There is no external incentive described, and the temporal link to starting an antidepressant with classic manic symptoms points to a genuine pharmacologically triggered mood switch, not feigned symptoms."
+      }
+    ]),
+    second_order_answer: "B",
+    second_order_explanation:
+      "Any manic or hypomanic episode — even one that appears only after starting an antidepressant — reclassifies the patient's diagnosis from major depressive disorder to bipolar disorder, because antidepressant monotherapy in bipolar disorder can precipitate exactly this kind of switch. This is precisely why screening for a personal history of mania/hypomania is mandatory before starting antidepressant monotherapy for a depressive episode.",
+
+    flowchart_title: "Evaluating a Depressive Episode",
+    flowchart: JSON.stringify([
+      {
+        "node": "Patient reports depressive symptoms for ≥2 weeks",
+        "branches": [
+          {
+            "label": "<5 SIGECAPS symptoms, or a clear stressor without meeting full criteria",
+            "next": "Consider adjustment disorder with depressed mood"
+          },
+          {
+            "label": "≥5 SIGECAPS symptoms, meeting full criteria",
+            "next": "Proceed to screen for mania/hypomania"
+          }
+        ]
+      },
+      {
+        "node": "Screen for any history of mania or hypomania",
+        "branches": [
+          {
+            "label": "History positive (even one past episode)",
+            "next": "Bipolar disorder — avoid antidepressant monotherapy, use a mood stabilizer"
+          },
+          {
+            "label": "History negative",
+            "next": "Major Depressive Disorder"
+          }
+        ]
+      },
+      {
+        "node": "Rule out medical or substance causes",
+        "branches": [
+          {
+            "label": "Abnormal TSH or substance use identified",
+            "next": "Treat the underlying cause first"
+          },
+          {
+            "label": "Workup unremarkable",
+            "next": "Proceed to select treatment by severity"
+          }
+        ]
+      },
+      {
+        "node": "Choose initial treatment by severity",
+        "branches": [
+          {
+            "label": "Mild-to-moderate",
+            "next": "Psychotherapy (CBT/IPT), with or without an SSRI"
+          },
+          {
+            "label": "Moderate-to-severe",
+            "next": "SSRI + psychotherapy"
+          },
+          {
+            "label": "Psychotic features, catatonia, or high acute suicide risk",
+            "next": "Consider ECT / urgent psychiatric admission"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 13,
+    module_title: "Psychiatry",
+    key_submodule: "Anxiety Spectrum",
+    slug: "panic-disorder",
+    title: "Panic Disorder",
+    sort_order: 6,
+
+    hook_vignette:
+      "A 29-year-old woman presents to the emergency department for the third time this month with sudden chest tightness, palpitations, shortness of breath, dizziness, and a sense of impending doom that peaked within about 10 minutes and resolved over the next half hour. Cardiac workup, including troponin and EKG, has been unremarkable on each visit. She now avoids the subway for fear of having another attack while trapped underground.",
+
+    ddx_mapping:
+      "Cardiac causes (acute coronary syndrome, arrhythmia) and pulmonary causes (pulmonary embolism, asthma exacerbation) — must be excluded first given overlapping symptoms.\nEndocrine causes — hyperthyroidism, pheochromocytoma, and hypoglycemia can all mimic panic attacks.\nSubstance intoxication or withdrawal — caffeine, stimulants, and alcohol withdrawal are common triggers of panic-like symptoms.\nGeneralized anxiety disorder — chronic, diffuse worry without discrete, abrupt attacks.\nSpecific phobia — panic occurs only when confronted with a specific object or situation (e.g., heights, animals).\nSocial anxiety disorder — panic occurs only in social or performance situations involving potential scrutiny by others.\nPosttraumatic stress disorder — panic-like symptoms triggered specifically by reminders of a traumatic event.\nThe defining feature of panic disorder itself is that at least some attacks are unexpected (not tied to a specific trigger), plus persistent worry or behavior change (like this patient's subway avoidance) following the attacks.",
+
+    diagnostic_evaluation:
+      "DSM-5 requires recurrent unexpected panic attacks — an abrupt surge of intense fear or discomfort peaking within about 10 minutes, with at least 4 of: palpitations, sweating, trembling, shortness of breath, sensation of choking, chest pain, nausea, dizziness, chills or heat sensations, paresthesias, derealization/depersonalization, fear of losing control, and fear of dying — plus at least 1 month of persistent worry about additional attacks or a significant maladaptive change in behavior (such as avoidance) following at least one attack.\nBecause the physical symptoms overlap heavily with medical emergencies, initial workup should include an EKG, TSH, and, when suspicion is high, a urine toxicology screen or glucose check — a general medical condition or substance must be excluded before attributing the attacks to panic disorder.",
+
+    management:
+      "First-line treatment is cognitive behavioral therapy — including interoceptive exposure (deliberately inducing feared bodily sensations in a controlled setting to reduce their threat value) — and/or an SSRI or SNRI.\nBenzodiazepines can provide rapid short-term symptom control during an acute attack or while waiting for an SSRI/SNRI to take effect, but are not appropriate for long-term monotherapy given dependence and tolerance risk.\nPatients should also be counseled to reduce caffeine and stimulant intake, which can trigger or worsen attacks.",
+
+    first_order_prompt:
+      "What time course defines the \"peak\" of a panic attack per DSM-5?",
+    first_order_answer:
+      "An abrupt surge of intense fear or discomfort that peaks within about 10 minutes.",
+
+    second_order_vignette:
+      "A 22-year-old man refuses to attend his college classes because he fears having to give an in-class presentation in front of his peers. He reports intense anxiety, sweating, and a racing heart only in these performance situations, but is entirely comfortable in other settings, including riding a crowded bus alone.",
+    second_order_question:
+      "Which of the following is the most likely diagnosis?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Panic disorder",
+        "correct": false,
+        "explanation": "Incorrect. His attacks are always situationally bound to performance/social scrutiny rather than occurring unexpectedly \"out of the blue,\" which is the defining feature of panic disorder."
+      },
+      {
+        "label": "B",
+        "text": "Social anxiety disorder (social phobia)",
+        "correct": true,
+        "explanation": "Correct. Anxiety symptoms that occur specifically and consistently in social or performance situations involving potential scrutiny by others, with comfort in non-social settings, is the classic presentation of social anxiety disorder."
+      },
+      {
+        "label": "C",
+        "text": "Generalized anxiety disorder",
+        "correct": false,
+        "explanation": "Incorrect. GAD involves diffuse, free-floating worry across many areas of life, not anxiety confined to one specific situational trigger."
+      },
+      {
+        "label": "D",
+        "text": "Specific phobia",
+        "correct": false,
+        "explanation": "Incorrect. Specific phobia is triggered by a discrete object or situation like heights, animals, or needles — not by social evaluation, which is the trigger for social anxiety disorder specifically."
+      },
+      {
+        "label": "E",
+        "text": "Agoraphobia",
+        "correct": false,
+        "explanation": "Incorrect. Agoraphobia involves fear of situations where escape might be difficult or help unavailable (e.g., crowds, open spaces); this patient is explicitly comfortable in a crowded bus, which argues against agoraphobia."
+      }
+    ]),
+    second_order_answer: "B",
+    second_order_explanation:
+      "Distinguishing anxiety disorders hinges on identifying exactly what triggers the anxiety and whether attacks are expected/situational or unexpected. Panic disorder is defined by at least some unexpected attacks plus ongoing worry/avoidance after them; when anxiety is consistently and specifically triggered by social/performance scrutiny, social anxiety disorder is the better fit even when the physical symptoms mimic a panic attack.",
+
+    flowchart_title: "Working Up Episodic Anxiety Symptoms",
+    flowchart: JSON.stringify([
+      {
+        "node": "Patient has discrete episodes of intense fear or physical symptoms",
+        "branches": [
+          {
+            "label": "Attacks always triggered by a specific situation",
+            "next": "Situational — consider social anxiety disorder, specific phobia, or agoraphobia"
+          },
+          {
+            "label": "Attacks occur unexpectedly, \"out of the blue\"",
+            "next": "Proceed to rule out medical/substance mimics"
+          }
+        ]
+      },
+      {
+        "node": "Rule out medical and substance mimics",
+        "branches": [
+          {
+            "label": "Abnormal EKG, TSH, or toxicology screen",
+            "next": "Treat the underlying medical or substance cause"
+          },
+          {
+            "label": "Workup negative",
+            "next": "Proceed to assess for ongoing worry/avoidance"
+          }
+        ]
+      },
+      {
+        "node": "Assess for ≥1 month of anticipatory anxiety or avoidance after attacks",
+        "branches": [
+          {
+            "label": "Present",
+            "next": "Panic Disorder"
+          },
+          {
+            "label": "Absent (isolated attacks only)",
+            "next": "Panic attacks without panic disorder — monitor"
+          }
+        ]
+      },
+      {
+        "node": "Initial management of confirmed panic disorder",
+        "branches": [
+          {
+            "label": "Preference for therapy, or mild-to-moderate symptoms",
+            "next": "CBT with interoceptive exposure"
+          },
+          {
+            "label": "Moderate-to-severe, ongoing symptoms",
+            "next": "SSRI or SNRI + CBT"
+          },
+          {
+            "label": "Acute, severe symptom control needed",
+            "next": "Short-term benzodiazepine as a bridge only"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 13,
+    module_title: "Psychiatry",
+    key_submodule: "Personality Disorders",
+    slug: "borderline-personality-disorder",
+    title: "Borderline Personality Disorder",
+    sort_order: 7,
+
+    hook_vignette:
+      "A 26-year-old woman presents two days after a superficial wrist-cutting episode that followed a breakup. She describes a pattern, dating back to her late teens, of intense and unstable relationships that swing between idealizing new partners and abruptly devaluing them, chronic feelings of emptiness, an intense fear of being abandoned, and several past episodes of self-injury during periods of interpersonal conflict.",
+
+    ddx_mapping:
+      "Bipolar disorder — mood shifts in borderline personality disorder are reactive, brief (minutes to hours), and directly tied to interpersonal triggers, whereas bipolar episodes last days to weeks and are less dependent on immediate interpersonal events.\nNarcissistic personality disorder — dominated by grandiosity, need for admiration, and lack of empathy, without the chronic emptiness, abandonment fear, and recurrent self-harm central to BPD.\nHistrionic personality disorder — dominated by attention-seeking and shallow, rapidly shifting emotional expression, without BPD's core identity disturbance and self-injurious behavior.\nAntisocial personality disorder — dominated by disregard for others' rights and deceit for personal gain, rather than fear of abandonment.\nPTSD / complex trauma — frequently comorbid and with overlapping history of early trauma, but the core presentation of PTSD centers on re-experiencing/avoidance of a specific trauma rather than a pervasive identity disturbance and relational instability.\nMajor depressive disorder — mood symptoms in MDD are more pervasive and less reactive to momentary interpersonal events than the affective instability of BPD.",
+
+    diagnostic_evaluation:
+      "DSM-5 requires at least 5 of 9 criteria: frantic efforts to avoid real or imagined abandonment; a pattern of unstable, intense relationships alternating between idealization and devaluation; identity disturbance (markedly unstable self-image); impulsivity in at least 2 potentially self-damaging areas (spending, sex, substance use, reckless driving, binge eating); recurrent suicidal behavior, gestures, threats, or self-mutilation; affective instability due to marked mood reactivity (intense episodic dysphoria lasting hours); chronic feelings of emptiness; inappropriate, intense anger or difficulty controlling anger; and transient, stress-related paranoid ideation or severe dissociative symptoms.\nThis is a pervasive pattern that must begin by early adulthood and be present across multiple contexts — it is a longitudinal, history-based clinical diagnosis (ideally corroborated with collateral history), not something diagnosed from a single crisis presentation.",
+
+    management:
+      "First-line treatment is psychotherapy. Dialectical Behavior Therapy (DBT) is the best-studied approach, combining individual therapy with a skills group targeting emotion regulation, distress tolerance, interpersonal effectiveness, and mindfulness. Other evidence-based options include mentalization-based therapy and transference-focused psychotherapy.\nNo medication is FDA-approved to treat borderline personality disorder itself. Pharmacotherapy is used adjunctively and symptom-targeted — for example, an SSRI for comorbid depression/anxiety, or a low-dose second-generation antipsychotic for transient stress-related psychotic or dissociative symptoms. Long-term benzodiazepines are generally avoided given disinhibition and dependence risk in this population.",
+
+    first_order_prompt:
+      "What is the first-line, evidence-based psychotherapy for borderline personality disorder?",
+    first_order_answer:
+      "Dialectical Behavior Therapy (DBT).",
+
+    second_order_vignette:
+      "A 24-year-old man in his third serious relationship this year describes each new partner as \"perfect — the only person who has ever understood me\" within just a few weeks of dating, then abruptly calls them \"worthless and cruel\" after a minor disagreement. He also describes chronically feeling \"empty inside\" and has a history of cutting his forearms whenever a partner threatens to leave him.",
+    second_order_question:
+      "Which of the following is the most likely diagnosis?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Borderline personality disorder",
+        "correct": true,
+        "explanation": "Correct. Idealization-devaluation cycling in relationships, chronic emptiness, intense abandonment fear, and self-harm tied to relational rejection together meet the criteria for borderline personality disorder."
+      },
+      {
+        "label": "B",
+        "text": "Bipolar II disorder",
+        "correct": false,
+        "explanation": "Incorrect. His mood shifts occur over minutes to hours and are directly triggered by interpersonal rejection, rather than representing discrete, sustained hypomanic episodes lasting days as required for bipolar II."
+      },
+      {
+        "label": "C",
+        "text": "Narcissistic personality disorder",
+        "correct": false,
+        "explanation": "Incorrect. This vignette lacks the grandiosity, entitlement, and need for admiration that define narcissistic personality disorder; his devaluation of partners is reactive to fear of abandonment, not rooted in a sense of superiority."
+      },
+      {
+        "label": "D",
+        "text": "Histrionic personality disorder",
+        "correct": false,
+        "explanation": "Incorrect. The core feature of histrionic personality disorder is attention-seeking and shallow emotional expression, not the abandonment fear and self-injury described here."
+      },
+      {
+        "label": "E",
+        "text": "Adjustment disorder",
+        "correct": false,
+        "explanation": "Incorrect. This is a longstanding, pervasive relational pattern that has repeated across multiple relationships since young adulthood, not a time-limited reaction to a single recent stressor."
+      }
+    ]),
+    second_order_answer: "A",
+    second_order_explanation:
+      "The idealization-devaluation cycle (\"splitting\") combined with chronic emptiness, frantic efforts to avoid abandonment, and self-injury tied to relational rejection is the classic presentation of borderline personality disorder. The key differentiator from bipolar disorder is that the mood shifts here are reactive and brief rather than sustained, discrete episodes independent of interpersonal triggers.",
+
+    flowchart_title: "Recognizing Borderline Personality Disorder",
+    flowchart: JSON.stringify([
+      {
+        "node": "Pattern of unstable relationships and self-harm — when did it begin?",
+        "branches": [
+          {
+            "label": "Onset by early adulthood, pervasive across relationships and contexts",
+            "next": "Proceed to count DSM-5 criteria"
+          },
+          {
+            "label": "Isolated to one recent stressor or relationship",
+            "next": "Consider adjustment disorder instead"
+          }
+        ]
+      },
+      {
+        "node": "Count DSM-5 criteria (abandonment fear, unstable relationships, identity disturbance, impulsivity, self-harm, affective instability, emptiness, anger, stress-related paranoia/dissociation)",
+        "branches": [
+          {
+            "label": "≥5 criteria present",
+            "next": "Borderline Personality Disorder"
+          },
+          {
+            "label": "<5 criteria present",
+            "next": "Consider another Cluster B disorder, or trait-level features only"
+          }
+        ]
+      },
+      {
+        "node": "Characterize the mood shifts",
+        "branches": [
+          {
+            "label": "Hours in duration, tied to interpersonal triggers",
+            "next": "Consistent with BPD affective instability"
+          },
+          {
+            "label": "Days to weeks, less reactive, with true hypomanic/manic symptoms",
+            "next": "Reconsider bipolar disorder"
+          }
+        ]
+      },
+      {
+        "node": "Treatment approach",
+        "branches": [
+          {
+            "label": "Confirmed BPD",
+            "next": "Dialectical Behavior Therapy as first-line"
+          },
+          {
+            "label": "Comorbid depression or anxiety",
+            "next": "Adjunctive SSRI"
+          },
+          {
+            "label": "Acute, transient stress-related psychotic/dissociative symptoms",
+            "next": "Short-term, low-dose second-generation antipsychotic"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 13,
+    module_title: "Psychiatry",
+    key_submodule: "Factitious/Somatic",
+    slug: "somatic-symptom-disorder-factitious-disorder-malingering",
+    title: "Somatic Symptom Disorder, Factitious Disorder, and Malingering",
+    sort_order: 8,
+
+    hook_vignette:
+      "A 38-year-old woman is admitted for the fifth time this year with recurrent, unexplained hypoglycemic episodes. A nurse finds insulin syringes hidden in her hospital bag, though she denies using them and continues to request additional testing, insisting she wants to \"find out what's really wrong\" with her.",
+
+    ddx_mapping:
+      "These conditions are best distinguished by two questions: are the symptoms intentionally produced, and if so, what is the underlying goal?\nSomatic symptom disorder — one or more genuinely experienced (not intentionally produced) somatic symptoms, accompanied by excessive, disproportionate thoughts, anxiety, or behavior related to those symptoms; there is no external goal.\nIllness anxiety disorder — persistent preoccupation with having or acquiring a serious illness, with minimal or absent actual somatic symptoms, despite reassurance and appropriate workup.\nConversion disorder (functional neurological symptom disorder) — a neurologic symptom (e.g., weakness, nonepileptic seizures) that is incompatible with recognized neurologic disease, and is not intentionally produced.\nFactitious disorder (imposed on self) — symptoms are intentionally produced or feigned, and the motivation is internal: an unconscious or semi-conscious psychological need to assume the sick role and receive medical attention, with no obvious external incentive.\nFactitious disorder imposed on another (formerly Munchausen syndrome by proxy) — a caregiver intentionally produces or feigns illness in a dependent (classically a child) for that same internal psychological gain.\nMalingering — symptoms are intentionally produced or feigned, but the motivation is an external, tangible incentive (avoiding work or legal responsibility, obtaining disability payments, drugs, or housing); it is not classified as a mental disorder.",
+
+    diagnostic_evaluation:
+      "Evaluation centers on three questions: is the symptom real, exaggerated, or fabricated? Is its production intentional? And what is the apparent goal — an internal psychological need for the sick role, or an external tangible gain?\nClues supporting factitious disorder or malingering include objective evidence of self-induced findings (for example, factitious hypoglycemia shows a low C-peptide with detectable exogenous insulin, since endogenous insulin secretion would raise C-peptide along with it), materials found in the patient's possession consistent with self-induced illness, a pattern of repeated presentations across multiple providers or hospitals (\"doctor shopping\"), and a marked discrepancy between reported symptom severity and objective findings.\nMalingering is further supported by a clear, identifiable external incentive (an upcoming disability hearing, active litigation, or avoidance of a legal/work obligation) closely tied in time to the symptom presentation.",
+
+    management:
+      "Somatic symptom disorder: scheduled, regular visits with a single primary provider (rather than symptom-driven, as-needed visits), cognitive behavioral therapy, minimizing unnecessary testing and procedures (which tends to reinforce the pattern), and treating any comorbid anxiety or depression.\nFactitious disorder: a nonconfrontational approach that avoids directly accusing the patient, minimizes unnecessary invasive workups, and involves psychiatry to address the underlying psychological need; factitious disorder imposed on another requires mandatory reporting to child (or dependent adult) protective services to protect the victim.\nMalingering: not itself a treatable psychiatric illness — the appropriate approach is to identify and address the external incentive, document findings objectively, and avoid inadvertently reinforcing secondary gain, such as by prescribing controlled substances or excusing work/legal obligations without clear medical justification.",
+
+    first_order_prompt:
+      "What single factor best distinguishes malingering from factitious disorder?",
+    first_order_answer:
+      "The underlying motivation: malingering is driven by an external, tangible incentive (money, avoiding legal or work obligations), while factitious disorder is driven by an internal psychological need to assume the sick role, with no obvious external gain.",
+
+    second_order_vignette:
+      "A 45-year-old man involved in a workplace slip-and-fall two weeks before a scheduled disability hearing presents with severe, inconsistent low back pain. On repeated strength testing he gives markedly variable effort, and both imaging and a detailed neurologic exam are entirely normal. During the visit he mentions, unprompted, that his disability claim requires documentation that he \"can't work.\"",
+    second_order_question:
+      "Which of the following is the most likely explanation for this presentation?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Conversion disorder",
+        "correct": false,
+        "explanation": "Incorrect. Conversion disorder symptoms are not intentionally produced and are not driven by an external incentive; the inconsistent effort and clear financial motive here point to intentional symptom exaggeration instead."
+      },
+      {
+        "label": "B",
+        "text": "Malingering",
+        "correct": true,
+        "explanation": "Correct. A clear external incentive (the pending disability claim), combined with inconsistent effort on exam and normal objective findings, is the classic pattern of malingering — intentional symptom production or exaggeration for tangible external gain."
+      },
+      {
+        "label": "C",
+        "text": "Somatic symptom disorder",
+        "correct": false,
+        "explanation": "Incorrect. There is no evidence of genuine, disproportionate internal distress about a real symptom; instead there is inconsistent effort and an overt external incentive suggesting intentional exaggeration."
+      },
+      {
+        "label": "D",
+        "text": "Factitious disorder",
+        "correct": false,
+        "explanation": "Incorrect. There is no evidence of an internal psychological need to assume the sick role; his stated goal is explicitly the external disability payment, which defines malingering rather than factitious disorder."
+      },
+      {
+        "label": "E",
+        "text": "Illness anxiety disorder",
+        "correct": false,
+        "explanation": "Incorrect. He shows no preoccupation with or fear of having an undiagnosed serious illness — he already has an explanation for his symptoms (the fall) and a clear financial goal."
+      }
+    ]),
+    second_order_answer: "B",
+    second_order_explanation:
+      "The combination of an identifiable external incentive, inconsistent/exaggerated exam findings (such as variable effort on formal strength testing), and normal objective workup should raise suspicion for malingering. This is a behavioral pattern rather than a mental illness, and management focuses on objective documentation rather than psychiatric treatment.",
+
+    flowchart_title: "Distinguishing Somatic Symptom Conditions",
+    flowchart: JSON.stringify([
+      {
+        "node": "Are the symptoms intentionally produced or fabricated?",
+        "branches": [
+          {
+            "label": "No — patient genuinely experiences them",
+            "next": "Consider somatic symptom disorder or illness anxiety disorder"
+          },
+          {
+            "label": "Yes — intentionally produced or fabricated",
+            "next": "Proceed to assess the underlying goal"
+          }
+        ]
+      },
+      {
+        "node": "What is the underlying goal of intentional symptom production?",
+        "branches": [
+          {
+            "label": "Internal psychological need to assume the sick role, no clear external gain",
+            "next": "Factitious disorder (imposed on self, or on another if perpetrated on a dependent)"
+          },
+          {
+            "label": "Clear external, tangible incentive (money, avoiding work or legal duty)",
+            "next": "Malingering"
+          }
+        ]
+      },
+      {
+        "node": "If symptoms are genuine — what is the primary feature?",
+        "branches": [
+          {
+            "label": "Disproportionate distress or behavior about real somatic symptoms",
+            "next": "Somatic Symptom Disorder"
+          },
+          {
+            "label": "Preoccupation with having a serious illness, few or no actual symptoms",
+            "next": "Illness Anxiety Disorder"
+          },
+          {
+            "label": "Neurologic symptom incompatible with disease, not intentionally produced",
+            "next": "Conversion Disorder"
+          }
+        ]
+      },
+      {
+        "node": "Management approach",
+        "branches": [
+          {
+            "label": "Somatic symptom disorder or illness anxiety disorder",
+            "next": "Scheduled visits with one provider, CBT, minimize unnecessary testing"
+          },
+          {
+            "label": "Factitious disorder",
+            "next": "Nonconfrontational psychiatric involvement; mandatory report if imposed on a dependent"
+          },
+          {
+            "label": "Malingering",
+            "next": "Identify and address the external incentive; avoid reinforcing secondary gain"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 13,
+    module_title: "Psychiatry",
+    key_submodule: "Eating Disorders",
+    slug: "anorexia-nervosa",
+    title: "Anorexia Nervosa",
+    sort_order: 9,
+
+    hook_vignette:
+      "A 17-year-old girl is brought in by her mother for amenorrhea and progressive weight loss. She has a BMI of 16, restricts her intake to under 800 kcal per day, and exercises for two hours daily, yet insists she is \"still too big\" despite visible cachexia. On exam she has fine lanugo hair on her back and a resting heart rate of 42.",
+
+    ddx_mapping:
+      "Bulimia nervosa — recurrent binge-purge cycles, but body weight is typically within or above the normal range, lacking the significantly low body weight that defines anorexia nervosa.\nAvoidant/restrictive food intake disorder (ARFID) — food restriction without any body-image disturbance or fear of weight gain, driven instead by things like sensory sensitivity or fear of choking/vomiting.\nMajor depressive disorder — appetite loss and weight change can occur, but are not driven by body-image distortion or a specific fear of gaining weight.\nOrganic causes of weight loss — hyperthyroidism, malignancy, and inflammatory bowel disease can all cause significant weight loss but without the body-image disturbance and intentional restriction seen in anorexia nervosa.\nBody dysmorphic disorder — preoccupation with a specific perceived physical defect, rather than a global fear of fatness organized around eating and weight.",
+
+    diagnostic_evaluation:
+      "DSM-5 requires restriction of energy intake leading to a significantly low body weight (relative to age, sex, developmental trajectory, and physical health), an intense fear of gaining weight or persistent behavior that interferes with weight gain, and a disturbance in the way body weight or shape is experienced, or persistent lack of recognition of the seriousness of the current low body weight. Subtypes are restricting type and binge-eating/purging type.\nWorkup includes weight/BMI trend, vital signs (bradycardia, hypotension, and hypothermia reflect a hypometabolic adaptation to starvation), an EKG (QTc prolongation and arrhythmia risk), electrolytes (hypokalemia especially if purging is present), a CBC, and a DEXA scan if amenorrhea has been prolonged (osteoporosis risk from chronic estrogen deficiency). Note that DSM-5 removed amenorrhea as a required diagnostic criterion, though it remains a very common associated finding.",
+
+    management:
+      "Care is multidisciplinary: nutritional rehabilitation with careful, gradual caloric reintroduction, monitoring closely for refeeding syndrome; psychotherapy — family-based treatment (\"the Maudsley method\") is first-line, especially for adolescents, while cognitive behavioral therapy is favored for adults; and ongoing medical monitoring for cardiac and bone complications.\nNo medication is first-line or FDA-approved to treat the core restrictive eating behavior of anorexia nervosa itself; SSRIs may help treat comorbid depression or anxiety but do not reliably drive weight restoration on their own.\nInpatient medical admission is indicated for severe bradycardia, hypotension, significant electrolyte derangement, or other signs of medical instability.",
+
+    first_order_prompt:
+      "What life-threatening metabolic complication must be monitored for during early nutritional rehabilitation of a severely malnourished anorexia nervosa patient?",
+    first_order_answer:
+      "Refeeding syndrome — hypophosphatemia (along with hypokalemia and hypomagnesemia), which can precipitate cardiac arrhythmia and heart failure; caloric intake must be reintroduced gradually with close electrolyte monitoring.",
+
+    second_order_vignette:
+      "A 20-year-old college student with a BMI of 19 (within the normal range) presents with recurrent episodes, occurring roughly twice weekly for the past 4 months, of eating unusually large amounts of food in under two hours with a sense of loss of control, followed each time by self-induced vomiting. She reports that her self-evaluation is \"unduly influenced by my weight and shape.\"",
+    second_order_question:
+      "Which of the following is the most likely diagnosis?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Anorexia nervosa, binge-eating/purging type",
+        "correct": false,
+        "explanation": "Incorrect. Anorexia nervosa requires a significantly low body weight; this patient's BMI is within the normal range, which is the key feature ruling out anorexia nervosa here."
+      },
+      {
+        "label": "B",
+        "text": "Bulimia nervosa",
+        "correct": true,
+        "explanation": "Correct. Recurrent binge eating with a sense of loss of control, followed by compensatory purging, occurring at least weekly for 3 months, with self-evaluation unduly influenced by body shape/weight, and body weight in or above the normal range, meets criteria for bulimia nervosa."
+      },
+      {
+        "label": "C",
+        "text": "Binge eating disorder",
+        "correct": false,
+        "explanation": "Incorrect. Binge eating disorder involves recurrent binges without the regular compensatory behaviors (such as self-induced vomiting) that this patient displays."
+      },
+      {
+        "label": "D",
+        "text": "Avoidant/restrictive food intake disorder (ARFID)",
+        "correct": false,
+        "explanation": "Incorrect. ARFID involves food avoidance/restriction without body-image disturbance, and does not involve a binge-purge behavioral pattern."
+      },
+      {
+        "label": "E",
+        "text": "Major depressive disorder with atypical features",
+        "correct": false,
+        "explanation": "Incorrect. While atypical depression can feature increased appetite, it does not capture the discrete, recurrent binge-purge cycle and body-image-driven self-evaluation described here."
+      }
+    ]),
+    second_order_answer: "B",
+    second_order_explanation:
+      "The single most important feature separating bulimia nervosa from anorexia nervosa, binge-eating/purging type, is body weight: bulimia nervosa occurs at a normal or above-normal body weight, whereas the binge-eating/purging subtype of anorexia nervosa still requires the same significantly-low-body-weight criterion as the restricting subtype.",
+
+    flowchart_title: "Working Up Disordered Eating and Weight Loss",
+    flowchart: JSON.stringify([
+      {
+        "node": "Patient has significant weight loss, low body weight, or disordered eating behavior",
+        "branches": [
+          {
+            "label": "Body-image distortion or fear of weight gain drives restriction",
+            "next": "Proceed to assess body weight"
+          },
+          {
+            "label": "No body-image disturbance (e.g., sensory aversion, fear of choking)",
+            "next": "Consider ARFID"
+          },
+          {
+            "label": "Organic cause suspected (thyroid disease, malignancy, GI disease)",
+            "next": "Medical workup for organic weight loss"
+          }
+        ]
+      },
+      {
+        "node": "Is body weight significantly low for age, sex, and development?",
+        "branches": [
+          {
+            "label": "Yes, with body-image distortion or fear of weight gain",
+            "next": "Anorexia Nervosa"
+          },
+          {
+            "label": "No — weight normal or elevated, with recurrent binge-purge cycles",
+            "next": "Proceed to assess compensatory behavior"
+          }
+        ]
+      },
+      {
+        "node": "Binge eating with or without compensatory behavior?",
+        "branches": [
+          {
+            "label": "Binges + compensatory purging, laxatives, or excessive exercise",
+            "next": "Bulimia Nervosa"
+          },
+          {
+            "label": "Binges without compensatory behavior",
+            "next": "Binge Eating Disorder"
+          }
+        ]
+      },
+      {
+        "node": "Assess medical acuity",
+        "branches": [
+          {
+            "label": "Bradycardia, QTc prolongation, or severe electrolyte derangement",
+            "next": "Inpatient medical stabilization + cautious, gradual refeeding"
+          },
+          {
+            "label": "Medically stable",
+            "next": "Outpatient family-based therapy (adolescents) or CBT (adults), plus nutritional rehabilitation"
+          }
+        ]
+      }
+    ]),
+  },
+  {
+    module_number: 13,
+    module_title: "Psychiatry",
+    key_submodule: "Pharmacology and Drug Emergencies",
+    slug: "serotonin-syndrome",
+    title: "Serotonin Syndrome",
+    sort_order: 10,
+
+    hook_vignette:
+      "A 26-year-old woman on fluoxetine for depression takes tramadol for a headache. Within a few hours she develops agitation, diaphoresis, tremor, and diarrhea. On exam she has hyperreflexia with inducible clonus in her lower extremities, and her temperature is 39.4°C.",
+
+    ddx_mapping:
+      "Neuroleptic malignant syndrome (NMS) — triggered by antipsychotic (dopamine-blocking) exposure rather than serotonergic drugs, with onset over days rather than hours, \"lead-pipe\" rigidity, and hyporeflexia rather than the hyperreflexia and clonus seen in serotonin syndrome.\nMalignant hyperthermia — triggered by inhaled anesthetics or succinylcholine, occurring intraoperatively, with generalized muscle rigidity.\nAnticholinergic toxicity — presents with dry, flushed skin and dry mucous membranes, urinary retention, and absent bowel sounds (\"dry as a bone\"), in contrast to the diaphoresis, diarrhea (hyperactive bowel sounds), and clonus of serotonin syndrome.\nSepsis or CNS infection — fever and altered mental status, but without clonus and without a recent serotonergic drug exposure.\nSympathomimetic/stimulant intoxication — can overlap with agitation and hyperthermia, but typically lacks the specific combination of a serotonergic drug trigger and prominent clonus/hyperreflexia.",
+
+    diagnostic_evaluation:
+      "Serotonin syndrome is a clinical diagnosis, commonly applied using the Hunter Criteria: in a patient who has taken a serotonergic agent, the presence of spontaneous clonus, OR inducible clonus plus agitation or diaphoresis, OR ocular clonus plus agitation or diaphoresis, OR tremor plus hyperreflexia, OR hypertonia plus a temperature above 38°C plus ocular or inducible clonus.\nOnset is rapid, typically within 24 hours (often within hours) of starting, increasing the dose of, or combining serotonergic agents — classic culprits include SSRIs, SNRIs, MAOIs, tramadol, linezolid, triptans, MDMA, and St. John's Wort.\nLaboratory findings (elevated CK, leukocytosis) are nonspecific and supportive only — there is no confirmatory lab test, and the diagnosis rests on the clinical picture and medication history.",
+
+    management:
+      "The first and most important step is immediate discontinuation of all serotonergic agents.\nSupportive care follows: IV fluids, active cooling for hyperthermia, and benzodiazepines for agitation, which also help reduce muscle rigidity and indirectly control hyperthermia caused by excessive muscle activity.\nCyproheptadine, a serotonin antagonist, is used for moderate-to-severe cases that do not respond adequately to supportive care alone.\nPhysical restraints should be avoided, since isometric struggling against restraints can worsen hyperthermia and precipitate rhabdomyolysis; severe cases with marked hyperthermia and rigidity may require intubation and neuromuscular blockade with a non-depolarizing agent. Most cases resolve within 24–72 hours of stopping the offending agent(s) with supportive management.",
+
+    first_order_prompt:
+      "What exam finding helps distinguish serotonin syndrome from neuroleptic malignant syndrome?",
+    first_order_answer:
+      "Hyperreflexia and clonus (especially inducible or lower-extremity clonus) point to serotonin syndrome; neuroleptic malignant syndrome instead features hyporeflexia and \"lead-pipe\" rigidity, with a slower (days-long) onset tied to antipsychotic exposure rather than a serotonergic drug.",
+
+    second_order_vignette:
+      "A 61-year-old man with schizophrenia is started on haloperidol after a medication change during hospitalization. Three days later he develops a temperature of 40°C, generalized \"lead-pipe\" muscle rigidity, diaphoresis, and confusion, with markedly decreased (not increased) reflexes on exam. His creatine kinase is significantly elevated.",
+    second_order_question:
+      "Which of the following is the most likely diagnosis?",
+    second_order_choices: JSON.stringify([
+      {
+        "label": "A",
+        "text": "Serotonin syndrome",
+        "correct": false,
+        "explanation": "Incorrect. The trigger here is an antipsychotic (dopamine antagonist), not a serotonergic agent, and the exam shows hyporeflexia with lead-pipe rigidity rather than the hyperreflexia and clonus that define serotonin syndrome."
+      },
+      {
+        "label": "B",
+        "text": "Neuroleptic malignant syndrome",
+        "correct": true,
+        "explanation": "Correct. Onset over days following a new or increased antipsychotic, with lead-pipe rigidity, hyporeflexia, hyperthermia, autonomic instability, and elevated CK, is the classic presentation of neuroleptic malignant syndrome."
+      },
+      {
+        "label": "C",
+        "text": "Malignant hyperthermia",
+        "correct": false,
+        "explanation": "Incorrect. Malignant hyperthermia is triggered by inhaled anesthetics or succinylcholine in an intraoperative setting, neither of which is described here."
+      },
+      {
+        "label": "D",
+        "text": "Anticholinergic toxicity",
+        "correct": false,
+        "explanation": "Incorrect. Anticholinergic toxicity produces dry skin and absent bowel sounds rather than diaphoresis and rigidity, and is not temporally linked to starting an antipsychotic."
+      },
+      {
+        "label": "E",
+        "text": "Heat stroke",
+        "correct": false,
+        "explanation": "Incorrect. There is no environmental heat exposure described, and the clear temporal link to a newly started antipsychotic plus lead-pipe rigidity is much more consistent with neuroleptic malignant syndrome."
+      }
+    ]),
+    second_order_answer: "B",
+    second_order_explanation:
+      "Serotonin syndrome and neuroleptic malignant syndrome can both present with fever, altered mental status, and autonomic instability, but they are distinguished by the triggering drug class (serotonergic agent vs. antipsychotic), onset speed (hours vs. days), and neuromuscular exam (hyperreflexia/clonus vs. hyporeflexia/lead-pipe rigidity). NMS is managed by stopping the antipsychotic, supportive cooling and fluids, and dantrolene and/or bromocriptine for severe cases — a useful contrast to serotonin syndrome's management of stopping the serotonergic agent and using cyproheptadine if refractory.",
+
+    flowchart_title: "Working Up Fever with Rigidity or Agitation on Psychiatric Medications",
+    flowchart: JSON.stringify([
+      {
+        "node": "Fever with altered mental status and/or rigidity — what drug was recently started or combined?",
+        "branches": [
+          {
+            "label": "Serotonergic agent (SSRI, SNRI, MAOI, tramadol, triptan) added or increased",
+            "next": "Suspect Serotonin Syndrome"
+          },
+          {
+            "label": "Antipsychotic (dopamine antagonist) recently started or increased",
+            "next": "Suspect Neuroleptic Malignant Syndrome"
+          },
+          {
+            "label": "Inhaled anesthetic or succinylcholine, intraoperative setting",
+            "next": "Suspect Malignant Hyperthermia"
+          }
+        ]
+      },
+      {
+        "node": "Onset timing",
+        "branches": [
+          {
+            "label": "Hours after exposure",
+            "next": "Supports Serotonin Syndrome"
+          },
+          {
+            "label": "Days after exposure",
+            "next": "Supports Neuroleptic Malignant Syndrome"
+          }
+        ]
+      },
+      {
+        "node": "Neuromuscular exam",
+        "branches": [
+          {
+            "label": "Hyperreflexia and clonus (especially lower-extremity/ocular)",
+            "next": "Serotonin Syndrome"
+          },
+          {
+            "label": "Hyporeflexia with lead-pipe rigidity",
+            "next": "Neuroleptic Malignant Syndrome"
+          }
+        ]
+      },
+      {
+        "node": "Initial management",
+        "branches": [
+          {
+            "label": "Serotonin syndrome",
+            "next": "Stop serotonergic agents; supportive care/benzodiazepines; cyproheptadine if refractory"
+          },
+          {
+            "label": "Neuroleptic malignant syndrome",
+            "next": "Stop antipsychotic; supportive cooling/fluids; dantrolene/bromocriptine if severe"
+          },
+          {
+            "label": "Malignant hyperthermia",
+            "next": "Stop triggering anesthetic; give dantrolene emergently"
+          }
+        ]
+      }
+    ]),
+  },
 ];
 
 // ---------------------------------------------------------------------------
