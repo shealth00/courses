@@ -31,8 +31,28 @@ the core concept rather than the full original composite scene.
 | Fracture Pattern Atlas | `musculoskeletal/fracture-pattern-atlas.jpg` | https://commons.wikimedia.org/wiki/File:612_Types_of_Fractures.jpg | OpenStax College | CC BY 4.0 |
 | Epithelial Tissue Types | `pathology/epithelial-tissue-types.jpg` | https://commons.wikimedia.org/wiki/File:423_Table_04_02_Summary_of_Epithelial_Tissue_CellsN.jpg | OpenStax College | CC BY 3.0 |
 
-## Plates not yet sourced
+## Remaining plates (11 of 30)
 
-Remaining plates are being researched; this table will be updated as each
-is added. Any plate left out of this table entirely was skipped rather
-than guessed at, and keeps its original Supabase Storage placeholder path.
+19 of the 30 target plates are sourced above. The other 11 keep their
+original Supabase Storage placeholder `storage_path` (no file exists at
+that path, so the frontend shows a text-label placeholder) and fall into
+two groups:
+
+**Pending — a real, license-verified candidate was already identified but
+not yet downloaded/committed** (blocked by an extended Wikimedia
+upload-CDN rate limit during this pass; left for a follow-up PR rather
+than guessed at):
+- Female Pelvic Anatomy Schematic — Gray1139.png (Public Domain)
+- Classic Malignant Patterns — CC BY 4.0 annotated squamous-cell
+  carcinoma micrograph
+- Tumor Grading & Staging — CC BY 4.0 Gleason score 6 (3+3) micrograph
+- Autonomic Pharmacology Map — OpenStax "Automatic Innervation" (CC BY 3.0)
+- Congenital Malformation Atlas — Public Domain cleft-lip clinical photo
+- Procedural Step Sequences — Public Domain U.S. Navy CPR training photo
+- Imaging Correlation Panels — CC0 chest X-ray (PA view)
+- Surgical Approach Diagrams — CC0 "Incisions of the torso" diagram
+
+**Skipped — searched, no reusable CC0/Public-Domain/CC-BY source found:**
+- Limb Compartment Cross-Sections
+- Genital Duct Derivatives
+- Embryonic Folding Sequence
