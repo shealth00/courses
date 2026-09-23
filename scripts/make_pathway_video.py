@@ -221,7 +221,7 @@ def main():
             f.write(f"file '{os.path.abspath(seg)}'\n")
 
     subprocess.run(
-        ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", concat_list, "-c", "copy", out_path],
+        ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", concat_list, "-c", "copy", "-movflags", "+faststart", out_path],
         check=True,
         capture_output=True,
     )
