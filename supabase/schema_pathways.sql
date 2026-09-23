@@ -1,10 +1,13 @@
 -- USMLE Illustration Portfolio — Pathway/pathogenesis extension
 -- Run AFTER schema.sql. A step-through mechanism visualizer ("watch the
--- disease happen") — not real video/3D animation (that needs an actual
--- animation pipeline and real assets, same caveat as viewer3d.js's models),
--- but a genuine ordered-step flow a learner can play through or step
--- manually, with an optional drug-intervention note per step so pharmacology
--- can be shown acting directly on the mechanism.
+-- disease happen") — a genuine ordered-step flow a learner can play through
+-- or step manually, with an optional drug-intervention note per step so
+-- pharmacology can be shown acting directly on the mechanism.
+--
+-- Pathways can also carry a real narrated MP4 (video_path): one frame per
+-- step rendered in this same visual style, gTTS narration per step, gentle
+-- zoom motion, muxed with ffmpeg — see scripts/make_pathway_video.py. Not
+-- every pathway has one; the manual step-through always works regardless.
 
 create extension if not exists "pgcrypto";
 
@@ -15,6 +18,7 @@ create table if not exists pathways (
   title      text not null,
   summary    text,
   sort_order int not null default 0,
+  video_path text,  -- narrated MP4 (see scripts/make_pathway_video.py), null if not yet generated
   created_at timestamptz not null default now()
 );
 

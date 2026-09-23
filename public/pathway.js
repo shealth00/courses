@@ -61,7 +61,7 @@ async function renderPathwayList(appEl, supabase) {
 async function renderPathway(appEl, supabase, slug) {
   appEl.innerHTML = `<div class="empty-state">Loading pathway&hellip;</div>`;
 
-  const { data: pathway, error: pErr } = await supabase.from('pathways').select('id, title, summary').eq('slug', slug).single();
+  const { data: pathway, error: pErr } = await supabase.from('pathways').select('id, title, summary, video_path').eq('slug', slug).single();
   if (pErr || !pathway) {
     appEl.innerHTML = `<div class="empty-state">Pathway not found.</div>`;
     console.error(pErr);
@@ -87,6 +87,15 @@ async function renderPathway(appEl, supabase, slug) {
     <a class="back-link" href="#/pathways">&larr; Pathways</a>
     <h1 class="serif" style="font-size:26px;margin:0 0 4px;">${escapeHtml(pathway.title)}</h1>
     <p style="color:var(--ink-soft);font-size:13.5px;max-width:640px;margin-bottom:20px;">${escapeHtml(pathway.summary || '')}</p>
+    ${
+      pathway.video_path
+        ? `<div class="section-label">Narrated video</div>
+           <video controls preload="metadata" style="width:100%;max-width:960px;border-radius:8px;border:1px solid var(--line);margin-bottom:28px;background:#000;">
+             <source src="${escapeHtml(pathway.video_path)}" type="video/mp4">
+           </video>
+           <div class="section-label">Or step through it yourself</div>`
+        : ''
+    }
     <div class="pathway-shell">
       <div class="pathway-flow" id="pathway-flow"></div>
       <div class="pathway-detail" id="pathway-detail"></div>
